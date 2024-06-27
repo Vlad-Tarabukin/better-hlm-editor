@@ -1,0 +1,12 @@
+Floor	tlFloor	2	1001	16
+Rugs	tlRugs	6	1001	16
+Tile	tlTile	7	1001	16
+Bathroom	tlBathroom	5	1001	16
+Stairs	tlStairs	8	1001	16
+Asphalt	tlAsphalt	3	1001	16
+Train	tlTrain	47	1001	16
+Outdoor	tlSand	17	1001	16
+Litter	tlDirtBlood	4	1000	16
+Edges	tlEdges	9	1000	16
+Isolation	tlIsolation	64	1000	16
+Corners	tlCorners	10	-99	8

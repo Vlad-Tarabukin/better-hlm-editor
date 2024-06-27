@@ -1,0 +1,564 @@
+[gd_scene load_steps=17 format=3 uid="uid://cbioi6sofo75t"]
+
+[ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bbbv8p6j57h1f" path="res://Textures/left.png" id="5"]
+[ext_resource type="Script" path="res://Scripts/Tabs/BuildTab.gd" id="5_3t8kq"]
+[ext_resource type="Texture2D" uid="uid://cn1118nl2ihmo" path="res://Textures/right.png" id="6"]
+[ext_resource type="Script" path="res://Scripts/Tabs/TileSelect.gd" id="6_2gyq8"]
+[ext_resource type="Script" path="res://Scripts/UIController.gd" id="7"]
+[ext_resource type="Script" path="res://Scripts/Tabs/CornerSelect.gd" id="7_hgptj"]
+[ext_resource type="Script" path="res://Scripts/Tabs/WallPanel.gd" id="8_bm5xs"]
+[ext_resource type="FontFile" uid="uid://dey31024egok3" path="res://retro_computer.ttf" id="9_7h7e1"]
+[ext_resource type="Script" path="res://Scripts/Tabs/ItemsTab.gd" id="9_jdnfe"]
+[ext_resource type="Script" path="res://Scripts/LevelSelectMenu.gd" id="11"]
+[ext_resource type="Script" path="res://Scripts/Tabs/GameplayTab.gd" id="13_vo8kq"]
+[ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
+
+[sub_resource type="FontFile" id="FontFile_mvar6"]
+fallbacks = Array[Font]([ExtResource("9_7h7e1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Main" type="Node2D" groups=["objects_loaded"]]
+script = ExtResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("4")
+
+[node name="Floors" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("7")
+
+[node name="Level List" type="ItemList" parent="CanvasLayer"]
+visible = false
+offset_right = 500.0
+offset_bottom = 1080.0
+script = ExtResource("11")
+
+[node name="Main GUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Transition Panel" type="Panel" parent="CanvasLayer/Main GUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 790.0
+offset_top = 420.0
+offset_right = 990.0
+offset_bottom = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="X SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 100.0
+offset_bottom = 105.0
+max_value = 0.0
+step = 32.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Y SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 70.0
+offset_right = 195.0
+offset_bottom = 105.0
+max_value = 0.0
+step = 32.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 115.0
+offset_right = 95.0
+offset_bottom = 146.0
+text = "Cancel"
+
+[node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 115.0
+offset_right = 190.0
+offset_bottom = 146.0
+text = "Ok"
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 76.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 14
+text = "Direction:"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_right = 176.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 14
+text = "Floor:"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 76.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 14
+text = "X Offset:"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 50.0
+offset_right = 171.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 14
+text = "Y Offset:"
+
+[node name="Direction OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 51.0
+item_count = 4
+selected = 0
+popup/item_0/text = "Left"
+popup/item_0/id = 2
+popup/item_1/text = "Up"
+popup/item_1/id = 1
+popup/item_2/text = "Right"
+popup/item_2/id = 0
+popup/item_3/text = "Down"
+popup/item_3/id = 3
+
+[node name="Floor SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Transition Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 20.0
+offset_right = 195.0
+offset_bottom = 51.0
+min_value = 1.0
+value = 1.0
+
+[node name="Floor List" type="ItemList" parent="CanvasLayer/Main GUI"]
+layout_mode = 0
+offset_top = 920.0
+offset_right = 120.0
+offset_bottom = 1080.0
+
+[node name="Save Button" type="Button" parent="CanvasLayer/Main GUI"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 31.0
+text = "Save"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Main GUI"]
+layout_mode = 0
+offset_left = 1560.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Main GUI/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 360.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("9_7h7e1")
+theme_override_font_sizes/font_size = 12
+current_tab = 3
+
+[node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+script = ExtResource("5_3t8kq")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 35.0
+offset_right = 335.0
+offset_bottom = 259.0
+color = Color(0.870588, 0.870588, 0.870588, 1)
+
+[node name="TileSelect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 35.0
+offset_right = 335.0
+offset_bottom = 259.0
+stretch_mode = 2
+script = ExtResource("6_2gyq8")
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 30.0
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_top = 265.0
+offset_right = 190.0
+offset_bottom = 290.0
+text = "Erase Overlapping"
+
+[node name="CornerSelect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 428.0
+offset_right = 95.0
+offset_bottom = 492.0
+expand_mode = 1
+script = ExtResource("7_hgptj")
+
+[node name="Wall Panel" type="Panel" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build" groups=["objects_loaded"]]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 295.0
+offset_right = 335.0
+offset_bottom = 423.0
+script = ExtResource("8_bm5xs")
+
+[node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("9_jdnfe")
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 38.0
+offset_right = 346.0
+offset_bottom = 738.0
+max_columns = 5
+fixed_column_width = 56
+fixed_icon_size = Vector2i(60, 60)
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 346.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontFile_mvar6")
+
+[node name="Object Info" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 748.0
+offset_right = 346.0
+offset_bottom = 1038.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info"]
+layout_mode = 0
+offset_left = 95.0
+offset_right = 255.0
+offset_bottom = 160.0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Name Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info"]
+layout_mode = 0
+offset_top = 170.0
+offset_right = 340.0
+offset_bottom = 200.0
+pivot_offset = Vector2(-630, -229)
+
+[node name="Size Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info"]
+layout_mode = 0
+offset_top = 210.0
+offset_right = 340.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-630, -229)
+theme_override_fonts/font = SubResource("FontFile_mvar6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Frame Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 255.0
+offset_right = 290.0
+offset_bottom = 290.0
+pivot_offset = Vector2(-630, -229)
+theme_override_fonts/font = SubResource("FontFile_mvar6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info"]
+layout_mode = 0
+offset_top = 255.0
+offset_right = 35.0
+offset_bottom = 290.0
+icon = ExtResource("5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ForwardButton" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 255.0
+offset_right = 340.0
+offset_bottom = 290.0
+icon = ExtResource("6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("13_vo8kq")
+
+[node name="Enemies" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
+anchors_preset = 0
+
+[node name="Enemy List" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 350.0
+offset_bottom = 640.0
+
+[node name="Fraction Back Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies"]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+icon = ExtResource("5")
+expand_icon = true
+
+[node name="Fraction Forward Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies"]
+layout_mode = 0
+offset_left = 315.0
+offset_right = 350.0
+offset_bottom = 35.0
+icon = ExtResource("6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Fraction Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 310.0
+offset_bottom = 35.0
+theme_override_fonts/font = SubResource("FontFile_mvar6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D Back Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies"]
+layout_mode = 0
+offset_top = 645.0
+offset_right = 35.0
+offset_bottom = 680.0
+icon = ExtResource("5")
+expand_icon = true
+
+[node name="Sprite2D Forward Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies"]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 645.0
+offset_right = 350.0
+offset_bottom = 680.0
+icon = ExtResource("6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Weapon List" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
+layout_mode = 0
+offset_top = 690.0
+offset_right = 350.0
+offset_bottom = 962.0
+max_columns = 8
+same_column_width = true
+fixed_column_width = 40
+fixed_icon_size = Vector2i(39, 39)
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
+layout_mode = 0
+offset_top = 965.0
+offset_right = 150.0
+offset_bottom = 990.0
+text = "Random angle"
+
+[node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+layout_mode = 2
+script = ExtResource("15")
+
+[node name="Boundaries" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+anchors_preset = 0
+offset_left = 180.0
+offset_top = 50.0
+offset_right = 220.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 3.0
+offset_right = 70.0
+offset_bottom = 27.0
+theme_override_fonts/font = SubResource("FontFile_mvar6")
+text = "bOUNDARIES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Top Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 61.0
+max_value = 0.0
+step = 32.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Left Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
+layout_mode = 0
+offset_left = -180.0
+offset_top = 70.0
+offset_right = -30.0
+offset_bottom = 101.0
+max_value = 0.0
+step = 32.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Right Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = 170.0
+offset_bottom = 101.0
+max_value = 0.0
+step = 32.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Bottom Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 110.0
+offset_right = 70.0
+offset_bottom = 141.0
+max_value = 0.0
+step = 32.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 200.0
+offset_right = 175.0
+offset_bottom = 231.0
+placeholder_text = "Level Name"
+
+[node name="Author LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 200.0
+offset_right = 350.0
+offset_bottom = 231.0
+placeholder_text = "Author"
+
+[node name="Transition Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 140.0
+offset_bottom = 41.0
+text = "Floor Transition"
+
+[node name="Elevator Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 41.0
+text = "Elevator"
+
+[node name="Angle Label" type="Label" parent="CanvasLayer/Main GUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Position Label" type="Label" parent="CanvasLayer/Main GUI"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 1041.0
+offset_right = 238.0
+offset_bottom = 1071.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="New Floor Button" type="Button" parent="CanvasLayer/Main GUI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 885.0
+offset_right = 88.0
+offset_bottom = 916.0
+text = "New floor"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+texture_repeat = 2
+centered = false
+script = ExtResource("3")
+
+[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Main_objects_loaded"]
+[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Main_objects_loaded"]
+[connection signal="ready" from="CanvasLayer" to="CanvasLayer" method="_on_CanvasLayer_ready"]
+[connection signal="item_selected" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_item_selected"]
+[connection signal="ready" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_ready"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Cancel Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Ok Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_ok_button_button_up"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Floor List" to="CanvasLayer" method="_on_floor_list_item_selected"]
+[connection signal="ready" from="CanvasLayer/Main GUI/Floor List" to="CanvasLayer" method="_on_floor_list_ready"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Save Button" to="CanvasLayer" method="_on_Save_Button_button_up"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_TabContainer_tab_selected"]
+[connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Build_ready"]
+[connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
+[connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Wall_Panel_ready"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ItemList_item_selected"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_LineEdit_text_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/BackButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_BackButton_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/ForwardButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ForwardButton_button_up"]
+[connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Gameplay_ready"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Enemy List" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Enemy_List_item_selected"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Fraction Back Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Fraction_Back_Button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Fraction Forward Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Fraction_Forward_Button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Sprite2D Back Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Sprite_Back_Button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Sprite2D Forward Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Sprite_Forward_Button_button_up"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Weapon List" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Weapon_List_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Top Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Left Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Right Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Bottom Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Transition Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_transition_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Elevator Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_elevator_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/New Floor Button" to="CanvasLayer" method="_on_new_floor_button_button_up"]
+[connection signal="ready" from="Cursor" to="Cursor" method="_on_Cursor_ready"]

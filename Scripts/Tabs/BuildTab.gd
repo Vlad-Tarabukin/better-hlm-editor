@@ -1,0 +1,161 @@
+extends TabBar
+
+class_name BuildTab
+
+const TAB_INDEX = 0
+
+var active
+var start_pos
+var curr_tiles
+var curr_pos
+var curr_wall
+var corner_mode
+
+var erase_texture = preload("res://Textures/tile_erase.png")
+
+@onready var tile_select = $TileSelect
+@onready var option_button = $OptionButton
+@onready var check_box = $CheckBox
+@onready var wall_panel = $"Wall Panel"
+@onready var corner_select = $"CornerSelect"
+
+func _on_Main_objects_loaded():
+	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]
+
+func _on_TabContainer_tab_selected(tab):
+	active = tab == TAB_INDEX
+	if active:
+		option_button.select(0)
+		curr_tiles = 0
+		App.cursor.texture = ObjectsLoader.tiles[0]["tiles"]["0 0"]
+		App.cursor.snap = 16
+		App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+		App.cursor.offset = Vector2i.ZERO
+		refresh_tiles()
+		App.cursor.outline = false
+		App.cursor.region_enabled = true
+
+func refresh_tiles():
+	curr_pos = Vector2i.ZERO
+	tile_select.texture = ObjectsLoader.tiles[curr_tiles]["tilemap"]
+	tile_select.set_pos(null)
+	App.cursor.texture = null
+	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+
+func set_tile(pos):
+	curr_pos = pos
+	curr_wall = null
+	corner_mode = false
+	corner_select.set_pos(null)
+	wall_panel.set_pos(null)
+	App.submode = 0
+	App.cursor.snap = 16
+	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+	pos = str(pos.x) + " " + str(pos.y)
+	if ObjectsLoader.tiles[curr_tiles]["tiles"].has(pos):
+		App.cursor.texture = ObjectsLoader.tiles[curr_tiles]["tiles"][pos]
+	else:
+		App.cursor.texture = null
+
+func set_wall(wall):
+	curr_wall = wall
+	curr_pos = null
+	corner_mode = false
+	corner_select.set_pos(null)
+	tile_select.set_pos(null)
+	App.submode = 1
+	App.cursor.snap = 32
+	App.cursor.region_rect = Rect2i(0, 0, 32, 32)
+	App.cursor.texture = curr_wall["texture"]
+	
+func set_corner(pos):
+	curr_pos = pos
+	corner_mode = true
+	curr_wall = null
+	wall_panel.set_pos(null)
+	tile_select.set_pos(null)
+	App.submode = 2
+	App.cursor.snap = 8
+	App.cursor.region_rect = Rect2i(0, 0, 8, 8)
+	pos = str(pos.x) + " " + str(pos.y)
+	App.cursor.texture = ObjectsLoader.tiles[-1]["tiles"][pos]
+
+func erase_tile_rect():
+	var erase_rect = Rect2i(start_pos + App.cursor.region_rect.position, App.cursor.region_rect.size)
+	for obj in App.get_current_floor().get_children():
+		if obj is TileSprite and obj.depth == ObjectsLoader.tiles[curr_tiles]["depth"] and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect):
+			obj.queue_free()
+
+func erase_wall_rect(horizontal=null):
+	var erase_rect = Rect2i(start_pos + App.cursor.region_rect.position, App.cursor.region_rect.size)
+	for obj in App.get_current_floor().get_children():
+		if obj is WallSprite and (horizontal == null or obj.horizontal == horizontal) and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect):
+			obj.queue_free()
+
+func snap_vector(vector):
+	vector.x = floor(vector.x / App.cursor.snap) * App.cursor.snap
+	vector.y = floor(vector.y / App.cursor.snap) * App.cursor.snap
+	return vector
+
+func _unhandled_input(event):
+	if active:
+		if event is InputEventMouseButton:
+			if event.button_index == 1 and event.is_pressed():
+				if corner_mode:
+					var tile = TileSprite.new(ObjectsLoader.tiles[-1]["id"], curr_pos.x, curr_pos.y, ObjectsLoader.tiles[-1]["depth"], App.cursor.texture, 2)
+					App.add_object(tile)
+			if event.button_index == 2 and event.is_pressed() and curr_wall != null and Input.is_key_pressed(KEY_SHIFT):
+				wall_panel.set_next_wall(curr_wall)
+			if !corner_mode and (event.button_index == 1 or event.button_index == 2 and Input.is_key_pressed(KEY_CTRL)) and event.is_pressed():
+				start_pos = App.cursor.global_position
+				App.cursor.move = false
+				if event.button_index == 2:
+					App.cursor.texture = erase_texture
+			if !corner_mode and start_pos != null and !event.is_pressed():
+				if curr_pos != null:
+					if event.button_index == 1:
+						if check_box.button_pressed:
+							erase_tile_rect()
+						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 16):
+							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 16):
+								var tile = TileSprite.new(ObjectsLoader.tiles[curr_tiles]["id"], curr_pos.x, curr_pos.y, ObjectsLoader.tiles[curr_tiles]["depth"], App.cursor.texture)
+								tile.global_position = snap_vector(Vector2(x, y))
+								App.add_object(tile, false)
+						App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
+						erase_tile_rect()
+						set_tile(curr_pos)
+					App.cursor.move = true
+				elif curr_wall != null:
+					if event.button_index == 1:
+						erase_wall_rect(curr_wall["horizontal"])
+						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 32):
+							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 32):
+								var wall = WallSprite.new(curr_wall["object_id"], curr_wall["sprite_id"])
+								wall.global_position = snap_vector(Vector2i(x, y))
+								App.add_object(wall, false)
+						App.cursor.region_rect = Rect2i(0, 0, 32, 32)
+					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
+						erase_wall_rect()
+						set_wall(curr_wall)
+					App.cursor.move = true
+		if event is InputEventMouseMotion and !corner_mode:
+			if (Input.is_mouse_button_pressed(1) or Input.is_mouse_button_pressed(2) and Input.is_key_pressed(KEY_CTRL)) and start_pos != null:
+				var pos = snap_vector(GlobalCamera.get_mouse_position())
+				var size = snap_vector(pos - start_pos) + Vector2.ONE * App.cursor.snap
+				if curr_wall != null and !Input.is_mouse_button_pressed(2):
+					if curr_wall["horizontal"]:
+						size.y = App.cursor.snap
+					else:
+						size.x = App.cursor.snap
+				var offset = Vector2(min(size.x, 0), min(size.y, 0))
+				App.cursor.global_position = start_pos + offset
+				App.cursor.region_rect = Rect2(offset, size.abs())
+
+func _on_Build_ready():
+	for tile in ObjectsLoader.tiles.slice(0, -1):
+		option_button.add_item(tile["title"])
+
+func _on_OptionButton_item_selected(index):
+	curr_tiles = index
+	refresh_tiles()
