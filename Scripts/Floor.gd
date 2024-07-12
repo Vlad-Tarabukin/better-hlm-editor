@@ -3,6 +3,7 @@ extends Node2D
 class_name Floor
 
 var index
+var light_overlays = []
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
 
@@ -26,8 +27,21 @@ func load_floor(floor_path):
 				var params = []
 				var proper = true
 				var params_amount = 6
+				var rain_rects_amount
 				if parent_id == 2297:
 					params_amount = 9
+				elif parent_id == 2411:
+					params_amount = 4
+				elif parent_id == 2412:
+					params_amount = 7
+				elif parent_id == 1417:
+					params_amount = 4
+				elif parent_id == 663:
+					rain_rects_amount = int(file.get_line())
+					params_amount = 4 * rain_rects_amount
+				elif parent_id == 1770:
+					light_overlays.append(int(file.get_line()))
+					continue
 				for _i in range(params_amount):
 					var line = file.get_line()
 					if line == "":
@@ -66,6 +80,49 @@ func load_floor(floor_path):
 					elevator_sprite.global_position = Vector2(x, y)
 					elevator_sprite.global_rotation_degrees = angle
 					add_child(elevator_sprite)
+				elif parent_id == 2411:
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					var lenght = float(params.pop_front())
+					var angle = int(params.pop_front())
+					
+					var barrier_sprite = BarrierSprite.new(lenght)
+					barrier_sprite.level = index
+					barrier_sprite.global_position = Vector2(x, y)
+					barrier_sprite.global_rotation_degrees = angle
+					add_child(barrier_sprite)
+				elif parent_id == 2412:
+					var trigger_rect = Rect2i(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
+					params.pop_front()
+					
+					var hor_direction = max(min(int(params.pop_front()), 1), -1)
+					var ver_direction = max(min(int(params.pop_front()), 1), -1)
+					
+					var direction = 0
+					if hor_direction == 0 and ver_direction == -1:
+						direction = 1
+					elif hor_direction == -1 and ver_direction == 0:
+						direction = 2
+					elif hor_direction == 0 and ver_direction == 1:
+						direction = 3
+					
+					var entry_sprite = EntrySprite.new(trigger_rect, direction)
+					entry_sprite.level = index
+					add_child(entry_sprite)
+				elif parent_id == 1417:
+					var darkness_rect = Rect2i(int(params[0]), int(params[2]), int(params[1]), int(params[3]))
+					var darkness_sprite = DarknessSprite.new(darkness_rect)
+					darkness_sprite.level = index
+					add_child(darkness_sprite)
+				elif parent_id == 663:
+					var rain_rects = []
+					for i in range(rain_rects_amount):
+						var x = int(params[0 + i * 4])
+						var y = int(params[2 + i * 4])
+						rain_rects.append(Rect2i(x, y, int(params[1 + i * 4]) - x, int(params[3 + i * 4]) - y))
+					var rain_sprite = RainSprite.new(rain_rects)
+					rain_sprite.level = index
+					add_child(rain_sprite)
 				else:
 					var x = int(params.pop_front())
 					var y = int(params.pop_front())
@@ -227,6 +284,64 @@ func save():
 			play_file.store_line(str(obj.target_floor))
 			play_file.store_line(str(obj.transition_offset.x))
 			play_file.store_line(str(obj.transition_offset.y))
+		elif obj is BarrierSprite:
+			obj_file.store_line("2411")
+			obj_file.store_line(str(obj.position.x))
+			obj_file.store_line(str(obj.position.y))
+			obj_file.store_line(str(obj.lenght))
+			obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+			play_file.store_line("2411")
+			play_file.store_line(str(obj.position.x))
+			play_file.store_line(str(obj.position.y))
+			play_file.store_line(str(obj.lenght))
+			play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+		elif obj is EntrySprite:
+			obj_file.store_line("2412")
+			obj_file.store_line(str(obj.position.x))
+			obj_file.store_line(str(obj.position.y))
+			obj_file.store_line(str(obj.trigger_rect.size.x / 16.0))
+			obj_file.store_line(str(obj.trigger_rect.size.y / 16.0))
+			obj_file.store_line(str(obj.get_obj_object()))
+			obj_file.store_line(str(obj.get_hor_direction()))
+			obj_file.store_line(str(obj.get_ver_direction()))
+			play_file.store_line(str(obj.get_play_object()))
+			play_file.store_line(str(obj.position.x))
+			play_file.store_line(str(obj.position.y))
+			play_file.store_line(str(obj.trigger_rect.size.x / 16.0))
+			play_file.store_line(str(obj.trigger_rect.size.y / 16.0))
+			play_file.store_line(str(obj.get_hor_direction() + obj.get_ver_direction()))
+		elif obj is DarknessSprite:
+			obj_file.store_line("1417")
+			obj_file.store_line(str(obj.position.x))
+			obj_file.store_line(str(obj.darkness_rect.size.x))
+			obj_file.store_line(str(obj.position.y))
+			obj_file.store_line(str(obj.darkness_rect.size.y))
+			play_file.store_line("1417")
+			play_file.store_line(str(obj.position.x))
+			play_file.store_line(str(obj.darkness_rect.size.x))
+			play_file.store_line(str(obj.position.y))
+			play_file.store_line(str(obj.darkness_rect.size.y))
+		elif obj is RainSprite:
+			obj_file.store_line("663")
+			obj_file.store_line(str(len(obj.rain_rects)))
+			for i in obj.rain_rects:
+				obj_file.store_line(str(i.position.x))
+				obj_file.store_line(str(i.end.x))
+				obj_file.store_line(str(i.position.y))
+				obj_file.store_line(str(i.end.y))
+			play_file.store_line("663")
+			play_file.store_line(str(len(obj.rain_rects)))
+			for i in obj.rain_rects:
+				play_file.store_line(str(i.position.x))
+				play_file.store_line(str(i.end.x))
+				play_file.store_line(str(i.position.y))
+				play_file.store_line(str(i.end.y))
+	
+	for light_overlay in light_overlays:
+		obj_file.store_line("1770")
+		obj_file.store_line(str(light_overlay))
+		play_file.store_line("1770")
+		play_file.store_line(str(light_overlay))
 	
 	obj_file.close()
 	tls_file.close()

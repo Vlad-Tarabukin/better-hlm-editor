@@ -12,7 +12,7 @@ var level_info = {}
 
 func _ready():
 	ObjectsLoader.load_sprites_info()
-	ObjectsLoader.load_objects()
+	ObjectsLoader.load_sprites()
 	objects_loaded.emit()
 	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(true)

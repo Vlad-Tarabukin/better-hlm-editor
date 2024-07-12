@@ -12,21 +12,21 @@ const TAB_INDEX = 1
 
 var active = false
 
-var filter = ""
+var filter = "/Furniture/"
 
 var curr_obj = 0
 var curr_frame = 0
 var curr_frames_len = 1
 
+var objects = []
 var object_list = {}
 
 func filter_list():
 	item_list.clear()
 	object_list = []
 	var i = 0
-	for o in ObjectsLoader.objects:
-		if (filter == "" or o.object_name.to_lower().count(filter.to_lower()) > 0) \
-		 and o.object_name.match("/Furniture/*"):
+	for o in objects:
+		if (filter == "" or o.object_name.to_lower().count(filter.to_lower()) > 0):
 			var texture = ObjectsLoader.get_sprite(o.sprite_id)["frames"][0]
 			if texture != null:
 				item_list.add_icon_item(texture)
@@ -114,3 +114,12 @@ func _unhandled_input(event: InputEvent):
 		if event.is_pressed() and event.keycode == KEY_ESCAPE:
 			item_list.deselect_all()
 			refresh_sprite()
+
+
+func _on_ready():
+	var objects_tsv = FileAccess.open("res://objects.tsv", FileAccess.READ)
+	while !objects_tsv.eof_reached():
+		var st = objects_tsv.get_csv_line("\t")
+		objects.append(HLMObject.new(int(st[0]), int(st[2]), st[1]))
+		if !ObjectsLoader.sprites.has(objects[-1].sprite_id):
+			objects[-1].sprite_id = -1

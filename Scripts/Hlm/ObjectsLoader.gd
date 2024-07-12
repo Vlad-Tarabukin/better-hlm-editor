@@ -33,16 +33,6 @@ func load_sprites_info():
 		"frames": [preload("res://Textures/default_texture.png")]
 	}
 
-func load_objects():
-	load_sprites()
-	objects.clear()
-	var objects_tsv = FileAccess.open("res://objects.tsv", FileAccess.READ)
-	while !objects_tsv.eof_reached():
-		var st = objects_tsv.get_csv_line("\t")
-		objects.append(HLMObject.new(int(st[0]), int(st[2]), st[1]))
-		if !sprites.has(objects[-1].sprite_id):
-			objects[-1].sprite_id = -1
-
 func load_sprites():
 	var wad_sprite_parser = WadSpriteParser.new()
 	var wad_sprites = wad_sprite_parser.parse_sprites()

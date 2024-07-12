@@ -38,28 +38,34 @@ script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
 visible = false
-offset_right = 500.0
-offset_bottom = 1080.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 400.0
+grow_vertical = 2
 script = ExtResource("11")
 
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Transition Panel" type="Panel" parent="CanvasLayer/Main GUI"]
 visible = false
+layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 790.0
-offset_top = 420.0
-offset_right = 990.0
-offset_bottom = 575.0
+offset_left = -100.0
+offset_top = -77.5
+offset_right = 100.0
+offset_bottom = 77.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -162,31 +168,45 @@ min_value = 1.0
 value = 1.0
 
 [node name="Floor List" type="ItemList" parent="CanvasLayer/Main GUI"]
-layout_mode = 0
-offset_top = 920.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -180.0
 offset_right = 120.0
-offset_bottom = 1080.0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Save Button" type="Button" parent="CanvasLayer/Main GUI"]
-layout_mode = 0
+layout_direction = 1
+layout_mode = 1
 offset_right = 60.0
 offset_bottom = 31.0
 text = "Save"
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Main GUI"]
-layout_mode = 0
-offset_left = 1560.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer/Main GUI/Panel"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 360.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_7h7e1")
 theme_override_font_sizes/font_size = 12
-current_tab = 3
+current_tab = 2
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -261,6 +281,7 @@ offset_left = 6.0
 offset_right = 346.0
 offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontFile_mvar6")
+text = "/Furniture/"
 
 [node name="Object Info" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
 anchors_preset = 0
@@ -325,7 +346,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("13_vo8kq")
 
@@ -399,15 +419,21 @@ offset_bottom = 990.0
 text = "Random angle"
 
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("15")
 
 [node name="Boundaries" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
-anchors_preset = 0
-offset_left = 180.0
-offset_top = 50.0
-offset_right = 220.0
-offset_bottom = 90.0
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 5.5
+offset_top = 40.0
+offset_right = 45.5
+offset_bottom = 80.0
+grow_horizontal = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -465,7 +491,8 @@ allow_greater = true
 allow_lesser = true
 
 [node name="Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
-layout_mode = 0
+layout_direction = 1
+layout_mode = 1
 offset_left = 5.0
 offset_top = 200.0
 offset_right = 175.0
@@ -473,7 +500,8 @@ offset_bottom = 231.0
 placeholder_text = "Level Name"
 
 [node name="Author LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
-layout_mode = 0
+layout_direction = 1
+layout_mode = 1
 offset_left = 180.0
 offset_top = 200.0
 offset_right = 350.0
@@ -481,7 +509,8 @@ offset_bottom = 231.0
 placeholder_text = "Author"
 
 [node name="Transition Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
-layout_mode = 0
+layout_direction = 1
+layout_mode = 1
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 140.0
@@ -489,7 +518,8 @@ offset_bottom = 41.0
 text = "Floor Transition"
 
 [node name="Elevator Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
-layout_mode = 0
+layout_direction = 1
+layout_mode = 1
 offset_left = 150.0
 offset_top = 10.0
 offset_right = 230.0
@@ -502,21 +532,30 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Position Label" type="Label" parent="CanvasLayer/Main GUI"]
-layout_mode = 0
-offset_left = 138.0
-offset_top = 1041.0
-offset_right = 238.0
-offset_bottom = 1071.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 124.0
+offset_top = -34.0
+offset_right = 224.0
+offset_bottom = -4.0
+grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="New Floor Button" type="Button" parent="CanvasLayer/Main GUI"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 885.0
-offset_right = 88.0
-offset_bottom = 916.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003125
+anchor_top = 0.827778
+anchor_right = 0.003125
+anchor_bottom = 0.827778
+offset_top = -31.0
+offset_right = 84.0
+grow_vertical = 0
 text = "New floor"
+metadata/_edit_use_anchors_ = true
 
 [node name="Cursor" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.392157)
@@ -543,6 +582,7 @@ script = ExtResource("3")
 [connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Wall_Panel_ready"]
+[connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Items" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ready"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ItemList_item_selected"]
 [connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_LineEdit_text_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/BackButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_BackButton_button_up"]
