@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var tab_container = $"Main GUI/Panel/TabContainer"
 @onready var floor_list = $"Main GUI/Floor List"
+@onready var main_gui = $"Main GUI"
 
 func _on_TabContainer_tab_selected(tab):
 	App.mode = tab
@@ -17,6 +18,8 @@ func _on_CanvasLayer_ready():
 	var tab = 1
 	tab_container.current_tab = tab
 	App.mode = tab
+	tab_container.scale = Vector2.ONE * main_gui.size.y / 1080
+	tab_container.size.x = 360 / main_gui.size.y * 1080
 
 func _on_floor_list_item_selected(index):
 	App.set_floor(index)
