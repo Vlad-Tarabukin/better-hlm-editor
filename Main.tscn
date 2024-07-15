@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=18 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/LevelSelectMenu.gd" id="11"]
 [ext_resource type="Script" path="res://Scripts/Tabs/GameplayTab.gd" id="13_vo8kq"]
 [ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
+[ext_resource type="Script" path="res://Scripts/EditPanel.gd" id="15_vmsa4"]
 
 [sub_resource type="FontFile" id="FontFile_mvar6"]
 fallbacks = Array[Font]([ExtResource("9_7h7e1")])
@@ -206,7 +207,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_7h7e1")
 theme_override_font_sizes/font_size = 12
-current_tab = 2
+current_tab = 3
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -241,6 +242,7 @@ layout_mode = 0
 offset_top = 265.0
 offset_right = 190.0
 offset_bottom = 290.0
+button_pressed = true
 text = "Erase Overlapping"
 
 [node name="CornerSelect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
@@ -346,6 +348,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("13_vo8kq")
 
@@ -419,7 +422,6 @@ offset_bottom = 990.0
 text = "Random angle"
 
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("15")
 
@@ -508,6 +510,33 @@ offset_right = 350.0
 offset_bottom = 231.0
 placeholder_text = "Author"
 
+[node name="City LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_direction = 1
+layout_mode = 1
+offset_left = 5.0
+offset_top = 240.0
+offset_right = 175.0
+offset_bottom = 271.0
+placeholder_text = "City"
+
+[node name="State LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_direction = 1
+layout_mode = 1
+offset_left = 180.0
+offset_top = 240.0
+offset_right = 350.0
+offset_bottom = 271.0
+placeholder_text = "State"
+
+[node name="Address LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_direction = 1
+layout_mode = 1
+offset_left = 5.0
+offset_top = 275.0
+offset_right = 350.0
+offset_bottom = 306.0
+placeholder_text = "Address"
+
 [node name="Transition Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_direction = 1
 layout_mode = 1
@@ -525,6 +554,120 @@ offset_top = 10.0
 offset_right = 230.0
 offset_bottom = 41.0
 text = "Elevator"
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 305.0
+offset_right = 351.0
+offset_bottom = 328.0
+text = "Date: hh:mm dd/mm/yyyy (press enter)"
+
+[node name="Time LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 330.0
+offset_right = 280.0
+offset_bottom = 361.0
+text = "00:00 01/01/1991"
+alignment = 1
+
+[node name="Music OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 370.0
+offset_right = 280.0
+offset_bottom = 395.0
+fit_to_longest_item = false
+
+[node name="Background OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 405.0
+offset_right = 280.0
+offset_bottom = 430.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 435.0
+offset_right = 206.0
+offset_bottom = 458.0
+text = "Character (🚗 - needs car)"
+
+[node name="Character OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 460.0
+offset_right = 260.0
+offset_bottom = 491.0
+
+[node name="Label3" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 435.0
+offset_right = 347.0
+offset_bottom = 458.0
+text = "Mask
+"
+horizontal_alignment = 1
+
+[node name="Mask SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 460.0
+offset_right = 353.063
+offset_bottom = 491.0
+min_value = -1.0
+max_value = 26.0
+value = -1.0
+editable = false
+
+[node name="Player ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 500.0
+offset_right = 155.0
+offset_bottom = 650.0
+fixed_column_width = 140
+icon_mode = 0
+fixed_icon_size = Vector2i(120, 120)
+
+[node name="Car ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 500.0
+offset_right = 355.0
+offset_bottom = 650.0
+fixed_column_width = 180
+icon_mode = 0
+fixed_icon_size = Vector2i(170, 150)
+
+[node name="Sprite HSlider" type="HSlider" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 655.0
+offset_right = 155.0
+offset_bottom = 671.0
+max_value = 24.0
+
+[node name="S SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 700.0
+offset_right = 155.0
+offset_bottom = 731.0
+max_value = 0.0
+step = 1000.0
+allow_greater = true
+
+[node name="Label4" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 675.0
+offset_right = 58.0
+offset_bottom = 698.0
+text = "S rank:"
 
 [node name="Angle Label" type="Label" parent="CanvasLayer/Main GUI"]
 layout_mode = 0
@@ -556,6 +699,76 @@ offset_right = 84.0
 grow_vertical = 0
 text = "New floor"
 metadata/_edit_use_anchors_ = true
+
+[node name="Edit Panel" type="Panel" parent="CanvasLayer/Main GUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -65.0
+offset_right = 115.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_vmsa4")
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 84.0
+offset_bottom = 33.0
+text = "Object id:"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 84.0
+offset_bottom = 73.0
+text = "Sprite id:"
+
+[node name="Object SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 41.0
+max_value = 0.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+
+[node name="Sprite SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 220.0
+offset_bottom = 81.0
+max_value = 0.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+
+[node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 110.0
+offset_bottom = 121.0
+text = "Ok"
+
+[node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 90.0
+offset_right = 220.0
+offset_bottom = 121.0
+text = "Cancel"
 
 [node name="Cursor" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.392157)
@@ -598,7 +811,25 @@ script = ExtResource("3")
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Left Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Right Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries/Bottom Bound SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_boundaries_change"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Name LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_name_line_edit_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Author LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_author_line_edit_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/City LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_city_line_edit_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/State LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_state_line_edit_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Address LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_address_line_edit_text_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Transition Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_transition_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Elevator Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_elevator_button_button_up"]
+[connection signal="text_submitted" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Time LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_time_line_edit_text_submitted"]
+[connection signal="draw" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Music OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_music_option_button_draw"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Music OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_music_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Background OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_background_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Character OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_character_option_button_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Mask SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_mask_spin_box_value_changed"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Player ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_player_item_list_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Car ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_car_item_list_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Sprite HSlider" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_sprite_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/S SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_s_spin_box_value_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/New Floor Button" to="CanvasLayer" method="_on_new_floor_button_button_up"]
+[connection signal="visibility_changed" from="CanvasLayer/Main GUI/Edit Panel" to="CanvasLayer/Main GUI/Edit Panel" method="_on_visibility_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_ok_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_cancel_button_button_up"]
 [connection signal="ready" from="Cursor" to="Cursor" method="_on_Cursor_ready"]

@@ -7,6 +7,7 @@ var submode = 0
 var level = 0
 var level_path
 var level_info = {}
+var selected_object : ObjectSprite
 
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
 
@@ -61,11 +62,11 @@ func load_level(_level_path):
 	level_info["name"] = file.get_line()
 	level_info["floors"] = int(file.get_line())
 	level_info["author"] = file.get_line()
-	file.get_line()
+	level_info["cutscene"] = bool(int(file.get_line()))
 	level_info["s_rank"] = int(file.get_line())
-	level_info["player_id"] = int(file.get_line())
+	level_info["character_id"] = int(file.get_line())
 	file.get_line()
-	file.get_line()
+	level_info["mask_id"] = int(file.get_line())
 	level_info["music_id"] = int(file.get_line())
 	var left = int(file.get_line())
 	var top = int(file.get_line())
@@ -74,11 +75,11 @@ func load_level(_level_path):
 	level_info["level_boundaries"] = Rect2(left, top, right - left, bottom - top)
 	level_info["background_id"] = int(file.get_line())
 	file.get_line()
-	level_info["hour"] = int(file.get_line())
-	level_info["minute"] = int(file.get_line())
-	level_info["day"] = int(file.get_line())
-	level_info["month"] = int(file.get_line())
-	level_info["year"] = int(file.get_line())
+	level_info["hour"] = file.get_line()
+	level_info["minute"] = file.get_line()
+	level_info["day"] = file.get_line()
+	level_info["month"] = file.get_line()
+	level_info["year"] = file.get_line()
 	level_info["city"] = file.get_line()
 	level_info["state"] = file.get_line()
 	level_info["address"] = file.get_line()
@@ -99,26 +100,32 @@ func save_level():
 	file.store_line(level_info["name"])
 	file.store_line(str(level_info["floors"]))
 	file.store_line(level_info["author"])
-	file.store_line("0")
+	file.store_line(str(int(level_info["cutscene"])))
 	file.store_line(str(level_info["s_rank"]))
-	file.store_line(str(level_info["player_id"]))
+	file.store_line(str(level_info["character_id"]))
 	file.store_line("1")
-	file.store_line("-1")
+	file.store_line(str(level_info["mask_id"]))
 	file.store_line(str(level_info["music_id"]))
 	file.store_line(str(level_info["level_boundaries"].position.x))
 	file.store_line(str(level_info["level_boundaries"].position.y))
 	file.store_line(str(level_info["level_boundaries"].end.x))
 	file.store_line(str(level_info["level_boundaries"].end.y))
 	file.store_line(str(level_info["background_id"]))
-	file.store_line("8")
-	file.store_line(str(level_info["hour"]))
-	file.store_line(str(level_info["minute"]))
-	file.store_line(str(level_info["day"]))
-	file.store_line(str(level_info["month"]))
-	file.store_line(str(level_info["year"]))
+	file.store_line("0")
+	file.store_line(level_info["hour"])
+	file.store_line(level_info["minute"])
+	file.store_line(level_info["day"])
+	file.store_line(level_info["month"])
+	file.store_line(level_info["year"])
 	file.store_line(level_info["city"])
 	file.store_line(level_info["state"])
 	file.store_line(level_info["address"])
 	
 	for level_floor in get_tree().get_root().get_node("Main/Floors").get_children():
 		level_floor.save()
+
+func _unhandled_input(event):
+	if event is InputEventKey and event.is_pressed():
+		if event.keycode == KEY_O:
+			if level_path:
+				OS.shell_show_in_file_manager(level_path)

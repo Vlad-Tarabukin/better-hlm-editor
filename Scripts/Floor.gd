@@ -20,7 +20,7 @@ func _draw():
 
 func load_floor(floor_path):
 	var file = FileAccess.open(floor_path, FileAccess.READ)
-	if file.get_length() > 0:
+	if file and file.get_length() > 0:
 		if floor_path.get_extension() == "obj":
 			while !file.eof_reached():
 				var parent_id = int(file.get_line())
@@ -133,21 +133,11 @@ func load_floor(floor_path):
 					
 					var submode = 0
 					var mode = ItemsTab.TAB_INDEX
-					var obj_name = ""
-					for obj in ObjectsLoader.objects:
-						if object_id == 0 and obj.object_id == parent_id or obj.object_id == object_id:
-							obj_name = obj.object_name
-							break
 					
-					if obj_name.match("/Misc/Weapons/*") or obj_name.match("/Enemies/*"):
+					if parent_id == 9 or parent_id == 10:
 						mode = GameplayTab.TAB_INDEX
-					elif obj_name.match("/Editor/*Door*"):
-						var wall_sprite = WallSprite.new(object_id, sprite_id)
-						if wall_sprite != null:
-							wall_sprite.global_position = Vector2i(x, y)
-							add_child(wall_sprite)
-							continue
-					
+					elif parent_id == 1582 or parent_id == 1583:
+						mode = LevelTab.TAB_INDEX
 					var object = HLMObject.new(object_id, sprite_id)
 					var object_sprite = ObjectSprite.new(object, frame, mode, parent_id)
 					object_sprite.submode = submode
