@@ -1,6 +1,5 @@
 extends Node
 
-var objects = []
 var sprites = {}
 var tiles = []
 
@@ -33,22 +32,23 @@ func load_sprites_info():
 		"frames": [preload("res://Textures/default_texture.png")]
 	}
 
-func load_sprites():
+func load_sprites(file_path="res://base.wad"):
 	var wad_sprite_parser = WadSpriteParser.new()
-	var wad_sprites = wad_sprite_parser.parse_sprites()
+	var wad_sprites = wad_sprite_parser.parse_sprites(file_path, file_path == "res://base.wad")
 	for sprite in sprites.values():
 		if wad_sprites.has(sprite["name"]):
 			sprite["frames"] = wad_sprites[sprite["name"]]
-		else:
+		elif file_path == "res://base.wad":
 			sprite["frames"] = sprites[-1]["frames"]
 	for tile in tiles:
-		var tilemap = wad_sprites[tile["name"]][0]
-		tile["tilemap"] = tilemap
-		tilemap = tilemap.get_image()
-		for x in range(0, tilemap.get_width(), tile["size"]):
-			for y in range(0, tilemap.get_height(), tile["size"]):
-				var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, tile["size"], tile["size"])))
-				tile["tiles"][str(x) + " " + str(y)] = image_texture
+		if wad_sprites.has(tile["name"]):
+			var tilemap = wad_sprites[tile["name"]][0]
+			tile["tilemap"] = tilemap
+			tilemap = tilemap.get_image()
+			for x in range(0, tilemap.get_width(), tile["size"]):
+				for y in range(0, tilemap.get_height(), tile["size"]):
+					var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, tile["size"], tile["size"])))
+					tile["tiles"][str(x) + " " + str(y)] = image_texture
 
 func get_sprite(sprite_id):
 	if sprites.has(sprite_id):

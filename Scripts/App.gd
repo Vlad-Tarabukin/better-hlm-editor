@@ -54,6 +54,11 @@ func add_floor():
 func load_level(_level_path):
 	level_path = _level_path
 	
+	var mods = DirAccess.get_files_at(level_path + "/mods")
+	for mod in mods:
+		if mod.match("*.patchwad"):
+			ObjectsLoader.load_sprites(level_path + "/mods/" + mod)
+	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(false)
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(true)
 	

@@ -2,10 +2,14 @@ extends Node
 
 class_name WadSpriteParser
 
-const filter = "Atlases/*"
+static var basewad
+static var basewad_asset_locations
+static var basewad_asset_offset
 
-func parse_sprites(file_path="res://base.wad"):
+func parse_sprites(file_path, base):
 	var file = FileAccess.open(file_path, FileAccess.READ)
+	if base:
+		basewad = FileAccess.open(file_path, FileAccess.READ)
 	file.seek(16)
 	
 	# Parsing header
@@ -15,12 +19,11 @@ func parse_sprites(file_path="res://base.wad"):
 	for _i in range(assets_amount):
 		var asset_name_len = file.get_32()
 		var asset_name = file.get_buffer(asset_name_len).get_string_from_ascii()
-		if asset_name.match(filter):
-			asset_locations[asset_name] = {}
-			asset_locations[asset_name]["len"] = file.get_64()
-			asset_locations[asset_name]["start"] = file.get_64()
-		else:
-			file.seek(file.get_position() + 16)
+		asset_locations[asset_name] = {}
+		asset_locations[asset_name]["len"] = file.get_64()
+		asset_locations[asset_name]["start"] = file.get_64()
+	if base:
+		basewad_asset_locations = asset_locations
 	
 	# Skipping all directories names
 	
@@ -37,14 +40,25 @@ func parse_sprites(file_path="res://base.wad"):
 	
 	var sprites = {}
 	var asset_offset = file.get_position()
-	for asset_name in asset_locations.keys():
-		if asset_name.get_extension() == "meta":
-			var meta_location = asset_locations[asset_name]
-			var image_location = asset_locations[asset_name.replace(".meta", ".png")]
-			file.seek(asset_offset + image_location["start"])
-			var image_buffer = file.get_buffer(image_location["len"])
-			file.seek(asset_offset + meta_location["start"])
-			sprites.merge(parse_meta(file, meta_location["len"], image_buffer))
+	if base:
+		basewad_asset_offset = asset_offset
+		for asset_name in asset_locations.keys():
+			if asset_name.get_extension() == "meta":
+				var meta_location = asset_locations[asset_name]
+				var image_location = asset_locations[asset_name.replace(".meta", ".png")]
+				file.seek(asset_offset + image_location["start"])
+				var image_buffer = file.get_buffer(image_location["len"])
+				file.seek(asset_offset + meta_location["start"])
+				sprites.merge(parse_meta(file, meta_location["len"], image_buffer))
+	else:
+		for asset_name in asset_locations.keys():
+			if asset_name.get_extension() == "png":
+				var meta_location = basewad_asset_locations[asset_name.replace(".png", ".meta")]
+				var image_location = asset_locations[asset_name]
+				file.seek(asset_offset + image_location["start"])
+				var image_buffer = file.get_buffer(image_location["len"])
+				basewad.seek(basewad_asset_offset + meta_location["start"])
+				sprites.merge(parse_meta(basewad, meta_location["len"], image_buffer))
 	file.close()
 	return sprites
 
