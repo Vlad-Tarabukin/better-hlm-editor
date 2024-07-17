@@ -10,6 +10,7 @@ var curr_tiles
 var curr_pos
 var curr_wall
 var corner_mode
+var curr_barrier
 
 var erase_texture = preload("res://Textures/tile_erase.png")
 
@@ -18,6 +19,9 @@ var erase_texture = preload("res://Textures/tile_erase.png")
 @onready var check_box = $CheckBox
 @onready var wall_panel = $"Wall Panel"
 @onready var corner_select = $"CornerSelect"
+@onready var barrier_button = $"Barrier Button"
+@onready var entry_button = $"Entry Button"
+@onready var door_button = $"Door Button"
 
 func _on_Main_objects_loaded():
 	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]
@@ -48,6 +52,8 @@ func set_tile(pos):
 	corner_mode = false
 	corner_select.set_pos(null)
 	wall_panel.set_pos(null)
+	barrier_button.button_pressed = false
+	curr_barrier = null
 	App.submode = 0
 	App.cursor.snap = 16
 	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
@@ -63,6 +69,8 @@ func set_wall(wall):
 	corner_mode = false
 	corner_select.set_pos(null)
 	tile_select.set_pos(null)
+	barrier_button.button_pressed = false
+	curr_barrier = null
 	App.submode = 1
 	App.cursor.snap = 32
 	App.cursor.region_rect = Rect2i(0, 0, 32, 32)
@@ -74,6 +82,8 @@ func set_corner(pos):
 	curr_wall = null
 	wall_panel.set_pos(null)
 	tile_select.set_pos(null)
+	barrier_button.button_pressed = false
+	curr_barrier = null
 	App.submode = 2
 	App.cursor.snap = 8
 	App.cursor.region_rect = Rect2i(0, 0, 8, 8)
@@ -109,8 +119,10 @@ func _unhandled_input(event):
 			if !corner_mode and (event.button_index == 1 or event.button_index == 2 and Input.is_key_pressed(KEY_CTRL)) and event.is_pressed():
 				start_pos = App.cursor.global_position
 				App.cursor.move = false
-				if event.button_index == 2:
+				if event.button_index == 2 and curr_barrier == null:
 					App.cursor.texture = erase_texture
+				if curr_barrier:
+					App.add_object(curr_barrier)
 			if !corner_mode and start_pos != null and !event.is_pressed():
 				if curr_pos != null:
 					if event.button_index == 1:
@@ -139,18 +151,28 @@ func _unhandled_input(event):
 						erase_wall_rect()
 						set_wall(curr_wall)
 					App.cursor.move = true
+				elif curr_barrier != null:
+					App.cursor.move = true
+					curr_barrier = BarrierSprite.new()
+					start_pos = null
 		if event is InputEventMouseMotion and !corner_mode:
 			if (Input.is_mouse_button_pressed(1) or Input.is_mouse_button_pressed(2) and Input.is_key_pressed(KEY_CTRL)) and start_pos != null:
 				var pos = snap_vector(GlobalCamera.get_mouse_position())
-				var size = snap_vector(pos - start_pos) + Vector2.ONE * App.cursor.snap
-				if curr_wall != null and !Input.is_mouse_button_pressed(2):
-					if curr_wall["horizontal"]:
-						size.y = App.cursor.snap
-					else:
-						size.x = App.cursor.snap
-				var offset = Vector2(min(size.x, 0), min(size.y, 0))
-				App.cursor.global_position = start_pos + offset
-				App.cursor.region_rect = Rect2(offset, size.abs())
+				if curr_barrier == null:
+					var size = snap_vector(pos - start_pos) + Vector2.ONE * App.cursor.snap
+					if curr_wall != null and !Input.is_mouse_button_pressed(2):
+						if curr_wall["horizontal"]:
+							size.y = App.cursor.snap
+						else:
+							size.x = App.cursor.snap
+					var offset = Vector2(min(size.x, 0), min(size.y, 0))
+					App.cursor.global_position = start_pos + offset
+					App.cursor.region_rect = Rect2(offset, size.abs())
+				else:
+					var line_vector = Vector2(pos - start_pos)
+					curr_barrier.rotation = line_vector.angle() - PI / 2
+					curr_barrier.set_lenght(line_vector.length() / 16)
+					curr_barrier.queue_redraw()
 
 func _on_Build_ready():
 	for tile in ObjectsLoader.tiles.slice(0, -1):
@@ -159,3 +181,20 @@ func _on_Build_ready():
 func _on_OptionButton_item_selected(index):
 	curr_tiles = index
 	refresh_tiles()
+
+func _on_barrier_button_button_up():
+	curr_wall = null
+	curr_pos = null
+	corner_mode = false
+	wall_panel.set_pos(null)
+	corner_select.set_pos(null)
+	tile_select.set_pos(null)
+	entry_button.button_pressed = false
+	door_button.button_pressed = false
+	App.cursor.texture = null
+	if barrier_button.button_pressed:
+		curr_barrier = BarrierSprite.new()
+		App.submode = 3
+		App.cursor.snap = 8
+	else:
+		curr_barrier = null

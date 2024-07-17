@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=22 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -12,10 +12,15 @@
 [ext_resource type="Script" path="res://Scripts/Tabs/WallPanel.gd" id="8_bm5xs"]
 [ext_resource type="FontFile" uid="uid://dey31024egok3" path="res://retro_computer.ttf" id="9_7h7e1"]
 [ext_resource type="Script" path="res://Scripts/Tabs/ItemsTab.gd" id="9_jdnfe"]
+[ext_resource type="Texture2D" uid="uid://c8v6qcchskvtr" path="res://Textures/barrier.png" id="10_eiw45"]
 [ext_resource type="Script" path="res://Scripts/LevelSelectMenu.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://b6ptuf36ugekj" path="res://Textures/entry_icon.png" id="11_7y6nn"]
+[ext_resource type="Texture2D" uid="uid://cglhamo4gwcl4" path="res://Textures/door.png" id="12_munfg"]
 [ext_resource type="Script" path="res://Scripts/Tabs/GameplayTab.gd" id="13_vo8kq"]
 [ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
 [ext_resource type="Script" path="res://Scripts/EditPanel.gd" id="15_vmsa4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
 [sub_resource type="FontFile" id="FontFile_mvar6"]
 fallbacks = Array[Font]([ExtResource("9_7h7e1")])
@@ -264,6 +269,51 @@ offset_top = 295.0
 offset_right = 335.0
 offset_bottom = 423.0
 script = ExtResource("8_bm5xs")
+
+[node name="Barrier Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 500.0
+offset_right = 55.0
+offset_bottom = 540.0
+theme_override_colors/icon_normal_color = Color(0.423651, 0.423651, 0.423651, 1)
+theme_override_colors/icon_hover_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_colors/icon_focus_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylfqq")
+toggle_mode = true
+icon = ExtResource("10_eiw45")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Entry Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 500.0
+offset_right = 105.0
+offset_bottom = 540.0
+theme_override_colors/icon_normal_color = Color(0.423651, 0.423651, 0.423651, 1)
+theme_override_colors/icon_hover_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_colors/icon_focus_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylfqq")
+toggle_mode = true
+icon = ExtResource("11_7y6nn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Door Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 500.0
+offset_right = 155.0
+offset_bottom = 540.0
+theme_override_colors/icon_normal_color = Color(0.423651, 0.423651, 0.423651, 1)
+theme_override_colors/icon_hover_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_colors/icon_focus_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylfqq")
+toggle_mode = true
+icon = ExtResource("12_munfg")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -798,6 +848,7 @@ script = ExtResource("3")
 [connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Wall_Panel_ready"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Barrier Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_barrier_button_button_up"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Items" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ready"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ItemList_item_selected"]
 [connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_LineEdit_text_changed"]

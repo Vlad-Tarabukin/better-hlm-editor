@@ -112,6 +112,8 @@ func _on_cancel_button_button_up():
 	transition_panel.set_visible(false)
 	App.cursor.texture = null
 	App.cursor.move = true
+	placing_elevator = false
+	placing_transition = false
 
 func _on_ok_button_button_up():
 	_on_cancel_button_button_up()
@@ -122,13 +124,11 @@ func _on_ok_button_button_up():
 		var transition_sprite = TransitionSprite.new(trigger_rect, direction, target_floor, offset)
 		App.add_object(transition_sprite, false)
 		transition_sprite.global_position = start_pos
-		placing_transition = false
 	elif placing_elevator:
 		var target_floor = $"../../../Transition Panel/Floor SpinBox".value - 1
 		var offset = Vector2i($"../../../Transition Panel/X SpinBox".value, $"../../../Transition Panel/Y SpinBox".value)
 		var elevator_sprite = ElevatorSprite.new(target_floor, offset)
 		App.add_object(elevator_sprite)
-		placing_elevator = false
 		$"../../../Transition Panel/Direction OptionButton".disabled = false
 
 
