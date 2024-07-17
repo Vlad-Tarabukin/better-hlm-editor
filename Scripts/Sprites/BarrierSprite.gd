@@ -13,10 +13,10 @@ func _init(_lenght = 0):
 
 func set_lenght(_lenght):
 	lenght = _lenght
-	custom_rect = Rect2(Vector2.ZERO, Vector2(4, lenght * 16))
+	custom_rect = Rect2(Vector2.ZERO, Vector2(lenght * 16, 4))
 
 func _draw():
-	draw_line(Vector2.ZERO, Vector2(0, lenght * 16), COLOR, 3)
+	draw_line(Vector2.ZERO, Vector2(lenght * 16, 0), COLOR, 3)
 
 func should_delete():
 	return super.should_delete()

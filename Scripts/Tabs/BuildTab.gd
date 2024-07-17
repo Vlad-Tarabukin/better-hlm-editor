@@ -22,6 +22,7 @@ var erase_texture = preload("res://Textures/tile_erase.png")
 @onready var barrier_button = $"Barrier Button"
 @onready var entry_button = $"Entry Button"
 @onready var door_button = $"Door Button"
+@onready var entry_direction_option_button = $"Entry Direction OptionButton"
 
 func _on_Main_objects_loaded():
 	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]
@@ -53,6 +54,8 @@ func set_tile(pos):
 	corner_select.set_pos(null)
 	wall_panel.set_pos(null)
 	barrier_button.button_pressed = false
+	entry_button.button_pressed = false
+	door_button.button_pressed = false
 	curr_barrier = null
 	App.submode = 0
 	App.cursor.snap = 16
@@ -70,6 +73,8 @@ func set_wall(wall):
 	corner_select.set_pos(null)
 	tile_select.set_pos(null)
 	barrier_button.button_pressed = false
+	entry_button.button_pressed = false
+	door_button.button_pressed = false
 	curr_barrier = null
 	App.submode = 1
 	App.cursor.snap = 32
@@ -83,6 +88,8 @@ func set_corner(pos):
 	wall_panel.set_pos(null)
 	tile_select.set_pos(null)
 	barrier_button.button_pressed = false
+	entry_button.button_pressed = false
+	door_button.button_pressed = false
 	curr_barrier = null
 	App.submode = 2
 	App.cursor.snap = 8
@@ -155,6 +162,16 @@ func _unhandled_input(event):
 					App.cursor.move = true
 					curr_barrier = BarrierSprite.new()
 					start_pos = null
+				elif entry_button.button_pressed:
+					App.cursor.move = true
+					App.cursor.texture = null
+					App.cursor.region_rect.position = start_pos
+					var entry_sprite = EntrySprite.new(App.cursor.region_rect, entry_direction_option_button.selected)
+					App.add_object(entry_sprite, false)
+					entry_button.button_pressed = false
+					_on_entry_button_button_up()
+					start_pos = null
+					App.cursor.region_rect = Rect2(0, 0, 0, 0)
 		if event is InputEventMouseMotion and !corner_mode:
 			if (Input.is_mouse_button_pressed(1) or Input.is_mouse_button_pressed(2) and Input.is_key_pressed(KEY_CTRL)) and start_pos != null:
 				var pos = snap_vector(GlobalCamera.get_mouse_position())
@@ -165,12 +182,19 @@ func _unhandled_input(event):
 							size.y = App.cursor.snap
 						else:
 							size.x = App.cursor.snap
+					if entry_button.button_pressed:
+						size.x = max(8, size.x)
+						size.y = max(8, size.y)
+						if entry_direction_option_button.selected % 2 == 0:
+							size.x = App.cursor.snap
+						else:
+							size.y = App.cursor.snap
 					var offset = Vector2(min(size.x, 0), min(size.y, 0))
 					App.cursor.global_position = start_pos + offset
 					App.cursor.region_rect = Rect2(offset, size.abs())
 				else:
 					var line_vector = Vector2(pos - start_pos)
-					curr_barrier.rotation = line_vector.angle() - PI / 2
+					curr_barrier.rotation = line_vector.angle()
 					curr_barrier.set_lenght(line_vector.length() / 16)
 					curr_barrier.queue_redraw()
 
@@ -197,4 +221,22 @@ func _on_barrier_button_button_up():
 		App.submode = 3
 		App.cursor.snap = 8
 	else:
-		curr_barrier = null
+		App.submode = null
+
+func _on_entry_button_button_up():
+	curr_wall = null
+	curr_pos = null
+	corner_mode = false
+	wall_panel.set_pos(null)
+	corner_select.set_pos(null)
+	tile_select.set_pos(null)
+	curr_barrier = null
+	barrier_button.button_pressed = false
+	door_button.button_pressed = false
+	App.cursor.texture = EntrySprite.TEXTURE
+	entry_direction_option_button.visible = entry_button.button_pressed
+	if entry_button.button_pressed:
+		App.submode = 4
+		App.cursor.snap = 8
+	else:
+		App.submode = null

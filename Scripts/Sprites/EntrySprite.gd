@@ -19,7 +19,7 @@ func _init(_trigger_rect, _direciton):
 	region_rect = trigger_rect
 
 func _draw():
-	draw_texture(ObjectsLoader.get_sprite(286)["frames"][direction], trigger_rect.size / 2 - Vector2i(6, 6))
+	draw_texture(ObjectsLoader.get_sprite(286)["frames"][direction], trigger_rect.size / 2 - Vector2(6, 6))
 
 func get_ver_direction():
 	if direction == 1:

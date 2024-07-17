@@ -84,7 +84,7 @@ func load_floor(floor_path):
 					var x = int(params.pop_front())
 					var y = int(params.pop_front())
 					var lenght = float(params.pop_front())
-					var angle = int(params.pop_front())
+					var angle = -int(params.pop_front())
 					
 					var barrier_sprite = BarrierSprite.new(lenght)
 					barrier_sprite.level = index
@@ -92,7 +92,7 @@ func load_floor(floor_path):
 					barrier_sprite.global_rotation_degrees = angle
 					add_child(barrier_sprite)
 				elif parent_id == 2412:
-					var trigger_rect = Rect2i(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
+					var trigger_rect = Rect2(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
 					params.pop_front()
 					
 					var hor_direction = max(min(int(params.pop_front()), 1), -1)
@@ -279,12 +279,12 @@ func save():
 			obj_file.store_line(str(obj.position.x))
 			obj_file.store_line(str(obj.position.y))
 			obj_file.store_line(str(obj.lenght))
-			obj_file.store_line(str((720 + int(obj.rotation_degrees) % 360) % 360))
+			obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
 			play_file.store_line("2411")
 			play_file.store_line(str(obj.position.x))
 			play_file.store_line(str(obj.position.y))
 			play_file.store_line(str(obj.lenght))
-			play_file.store_line(str((720 + int(obj.rotation_degrees) % 360) % 360))
+			play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
 		elif obj is EntrySprite:
 			obj_file.store_line("2412")
 			obj_file.store_line(str(obj.position.x))

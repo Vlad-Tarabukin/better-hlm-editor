@@ -105,7 +105,7 @@ func _on_transition_button_button_up():
 
 func _on_elevator_button_button_up():
 	placing_elevator = true
-	App.cursor.texture = ObjectsLoader.get_sprite(1512)["frames"][0]
+	App.cursor.texture = ObjectsLoader.get_sprite(1512)["frames"][-1]
 	$"../../../Transition Panel/Direction OptionButton".disabled = true
 
 func _on_cancel_button_button_up():
