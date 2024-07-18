@@ -54,6 +54,8 @@ func add_floor():
 func load_level(_level_path):
 	level_path = _level_path
 	
+	get_tree().get_root().get_node("Main/Floors")
+	
 	var mods = DirAccess.get_files_at(level_path + "/mods")
 	for mod in mods:
 		if mod.match("*.patchwad"):

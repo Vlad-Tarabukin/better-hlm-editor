@@ -30,4 +30,4 @@ func _on_Level_List_item_selected(index):
 		App.load_level(path)
 	else:
 		App.load_level(level_paths[index - 1])
-	queue_free()
+	visible = false

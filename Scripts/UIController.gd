@@ -33,3 +33,10 @@ func show_levels():
 func _on_new_floor_button_button_up():
 	App.add_floor()
 	show_levels()
+
+func _on_load_button_button_up():
+	ObjectsLoader.load_sprites()
+	for i in $"../Floors".get_children():
+		i.queue_free()
+	$"Main GUI".visible = false
+	$"Level List".visible = true

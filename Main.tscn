@@ -191,6 +191,15 @@ offset_bottom = 31.0
 text = "Save"
 metadata/_edit_use_anchors_ = true
 
+[node name="Load Button" type="Button" parent="CanvasLayer/Main GUI"]
+layout_direction = 1
+layout_mode = 1
+offset_left = 70.0
+offset_right = 130.0
+offset_bottom = 31.0
+text = "Load"
+metadata/_edit_use_anchors_ = true
+
 [node name="Panel" type="Panel" parent="CanvasLayer/Main GUI"]
 layout_direction = 2
 layout_mode = 1
@@ -873,6 +882,7 @@ script = ExtResource("3")
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Floor List" to="CanvasLayer" method="_on_floor_list_item_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Floor List" to="CanvasLayer" method="_on_floor_list_ready"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Save Button" to="CanvasLayer" method="_on_Save_Button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Load Button" to="CanvasLayer" method="_on_load_button_button_up"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_TabContainer_tab_selected"]

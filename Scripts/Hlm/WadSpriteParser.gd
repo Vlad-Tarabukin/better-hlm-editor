@@ -5,8 +5,11 @@ class_name WadSpriteParser
 static var basewad
 static var basewad_asset_locations
 static var basewad_asset_offset
+static var modified = []
 
 func parse_sprites(file_path, base):
+	if base and len(modified) > 0:
+		return reload_modified()
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if base:
 		basewad = FileAccess.open(file_path, FileAccess.READ)
@@ -53,6 +56,7 @@ func parse_sprites(file_path, base):
 	else:
 		for asset_name in asset_locations.keys():
 			if asset_name.get_extension() == "png":
+				modified.append(asset_name)
 				var meta_location = basewad_asset_locations[asset_name.replace(".png", ".meta")]
 				var image_location = asset_locations[asset_name]
 				file.seek(asset_offset + image_location["start"])
@@ -85,4 +89,16 @@ func parse_meta(file:FileAccess, meta_len, image_buffer:PackedByteArray):
 			var texture = ImageTexture.create_from_image(image)
 			sprites[sprite_name].append(texture)
 	f.seek(start + meta_len)
+	return sprites
+
+func reload_modified():
+	var sprites = {}
+	for asset_name in modified:
+		var meta_location = basewad_asset_locations[asset_name.replace(".png", ".meta")]
+		var image_location = basewad_asset_locations[asset_name]
+		basewad.seek(basewad_asset_offset + image_location["start"])
+		var image_buffer = basewad.get_buffer(image_location["len"])
+		basewad.seek(basewad_asset_offset + meta_location["start"])
+		sprites.merge(parse_meta(basewad, meta_location["len"], image_buffer))
+	modified.clear()
 	return sprites
