@@ -59,6 +59,7 @@ func set_tile(pos):
 	curr_barrier = null
 	direction_option_button.visible = false
 	App.cursor.region_enabled = true
+	App.cursor.move = true
 	App.submode = 0
 	App.cursor.snap = 16
 	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
@@ -80,6 +81,7 @@ func set_wall(wall):
 	curr_barrier = null
 	direction_option_button.visible = false
 	App.cursor.region_enabled = true
+	App.cursor.move = true
 	App.submode = 1
 	App.cursor.snap = 32
 	App.cursor.region_rect = Rect2i(0, 0, 32, 32)
@@ -96,10 +98,10 @@ func set_corner(pos):
 	door_button.button_pressed = false
 	curr_barrier = null
 	direction_option_button.visible = false
+	App.cursor.move = true
 	App.cursor.region_enabled = false
 	App.submode = 2
 	App.cursor.snap = 8
-	App.cursor.region_rect = Rect2i(0, 0, 8, 8)
 	pos = str(pos.x) + " " + str(pos.y)
 	App.cursor.texture = ObjectsLoader.tiles[-1]["tiles"][pos]
 
@@ -228,6 +230,7 @@ func _on_barrier_button_button_up():
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
 	App.cursor.offset = Vector2.ZERO
 	if barrier_button.button_pressed:
+		App.cursor.move = true
 		App.cursor.region_enabled = false
 		curr_barrier = BarrierSprite.new()
 		App.submode = 3
@@ -247,9 +250,11 @@ func _on_entry_button_button_up():
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
 	App.cursor.offset = Vector2.ZERO
 	if entry_button.button_pressed:
+		App.cursor.move = true
 		App.cursor.region_enabled = true
 		App.submode = 4
 		App.cursor.snap = 8
+		App.cursor.region_rect = Rect2i(0, 0, 8, 8)
 
 func _on_door_button_button_up():
 	curr_wall = null
@@ -266,11 +271,13 @@ func _on_door_button_button_up():
 	App.cursor.offset = sprite["center"]
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
 	if door_button.button_pressed:
+		App.cursor.move = true
 		App.cursor.region_enabled = false
 		App.submode = 5
 		App.cursor.snap = 32
 
-func _on_direction_option_button_item_selected(index):
-	var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
-	App.cursor.texture = sprite["frames"][0]
-	App.cursor.offset = sprite["center"]
+func _on_direction_option_button_item_selected(index):\
+	if door_button.button_pressed:
+		var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
+		App.cursor.texture = sprite["frames"][0]
+		App.cursor.offset = sprite["center"]

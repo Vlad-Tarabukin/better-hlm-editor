@@ -29,15 +29,17 @@ func _process(_delta):
 		queue_redraw()
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton:
+	if App.level == level and App.mode == mode and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
 			if App.cursor.texture == null and get_rect().has_point(to_local(GlobalCamera.get_mouse_position())):
 				App.selected_object = self
 				get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Edit Panel").visible = true
+				get_tree().get_root().set_input_as_handled()
 
-func set_ids(object_id, sprite_id):
+func set_ids(object_id, sprite_id, _frame):
 	object.object_id = object_id
 	object.sprite_id = sprite_id
+	object_frame = _frame
 	var spr = ObjectsLoader.get_sprite(sprite_id)
 	texture = spr["frames"][object_frame]
 	offset = spr["center"]

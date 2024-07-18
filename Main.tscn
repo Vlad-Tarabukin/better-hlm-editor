@@ -781,7 +781,7 @@ anchor_bottom = 0.5
 offset_left = -115.0
 offset_top = -65.0
 offset_right = 115.0
-offset_bottom = 65.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("15_vmsa4")
@@ -791,16 +791,27 @@ layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 84.0
-offset_bottom = 33.0
+offset_bottom = 41.0
 text = "Object id:"
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 50.0
 offset_right = 84.0
-offset_bottom = 73.0
+offset_bottom = 81.0
 text = "Sprite id:"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 84.0
+offset_bottom = 121.0
+text = "Frame:"
+vertical_alignment = 1
 
 [node name="Object SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -809,7 +820,6 @@ offset_top = 10.0
 offset_right = 220.0
 offset_bottom = 41.0
 max_value = 0.0
-rounded = true
 allow_greater = true
 allow_lesser = true
 
@@ -820,24 +830,31 @@ offset_top = 50.0
 offset_right = 220.0
 offset_bottom = 81.0
 max_value = 0.0
-rounded = true
 allow_greater = true
 allow_lesser = true
+
+[node name="Frame SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 220.0
+offset_bottom = 121.0
+max_value = 0.0
 
 [node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 90.0
+offset_top = 130.0
 offset_right = 110.0
-offset_bottom = 121.0
+offset_bottom = 161.0
 text = "Ok"
 
 [node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 90.0
+offset_top = 130.0
 offset_right = 220.0
-offset_bottom = 121.0
+offset_bottom = 161.0
 text = "Cancel"
 
 [node name="Cursor" type="Sprite2D" parent="."]
@@ -904,6 +921,7 @@ script = ExtResource("3")
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/S SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_s_spin_box_value_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/New Floor Button" to="CanvasLayer" method="_on_new_floor_button_button_up"]
 [connection signal="visibility_changed" from="CanvasLayer/Main GUI/Edit Panel" to="CanvasLayer/Main GUI/Edit Panel" method="_on_visibility_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Sprite SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_sprite_spin_box_value_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_ok_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_cancel_button_button_up"]
 [connection signal="ready" from="Cursor" to="Cursor" method="_on_Cursor_ready"]
