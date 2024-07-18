@@ -86,7 +86,7 @@ func _unhandled_input(event):
 					transition_panel.set_visible(true)
 					App.cursor.move = false
 				elif event.button_index == MOUSE_BUTTON_RIGHT and Input.is_key_pressed(KEY_SHIFT):
-					App.cursor.global_rotation += 90
+					App.cursor.global_rotation_degrees += 90
 		elif object_to_place:
 			if event is InputEventMouseButton and event.pressed:
 				if event.button_index == MOUSE_BUTTON_LEFT:
@@ -102,18 +102,25 @@ func _unhandled_input(event):
 
 func _on_transition_button_button_up():
 	placing_transition = true
+	placing_elevator = false
+	object_to_place = null
 
 func _on_elevator_button_button_up():
 	placing_elevator = true
-	App.cursor.texture = ObjectsLoader.get_sprite(1512)["frames"][-1]
+	placing_transition = false
+	object_to_place = null
+	var sprite = ObjectsLoader.get_sprite(1512)
+	App.cursor.flip_v = true
+	App.cursor.texture = sprite["frames"][-1]
+	App.cursor.offset = sprite["center"]
+	App.cursor.snap = 8
 	$"../../../Transition Panel/Direction OptionButton".disabled = true
 
 func _on_cancel_button_button_up():
 	transition_panel.set_visible(false)
 	App.cursor.texture = null
 	App.cursor.move = true
-	placing_elevator = false
-	placing_transition = false
+	App.cursor.flip_v = false
 
 func _on_ok_button_button_up():
 	_on_cancel_button_button_up()
@@ -130,6 +137,8 @@ func _on_ok_button_button_up():
 		var elevator_sprite = ElevatorSprite.new(target_floor, offset)
 		App.add_object(elevator_sprite)
 		$"../../../Transition Panel/Direction OptionButton".disabled = false
+	placing_elevator = false
+	placing_transition = false
 
 
 func _on_name_line_edit_text_changed(new_text):

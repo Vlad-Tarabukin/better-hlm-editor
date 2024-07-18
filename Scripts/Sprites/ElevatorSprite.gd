@@ -10,4 +10,7 @@ func _init(_target_floor, _transition_offset):
 	transition_offset = _transition_offset
 	
 	mode = LevelTab.TAB_INDEX
-	texture = ObjectsLoader.get_sprite(1512)["frames"][-1]
+	var sprite = ObjectsLoader.get_sprite(1512)
+	texture = sprite["frames"][-1]
+	offset = sprite["center"]
+	flip_v = true
