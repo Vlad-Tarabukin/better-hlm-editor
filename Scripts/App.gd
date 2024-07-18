@@ -42,7 +42,7 @@ func set_floor(_floor):
 		level_floor.visible = level == i
 		i += 1
 
-func get_current_floor():
+func get_current_floor() -> Floor:
 	return get_tree().get_root().get_node("Main/Floors/Floor" + str(level))
 
 func add_floor():

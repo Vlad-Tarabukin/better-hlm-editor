@@ -4,6 +4,7 @@ class_name Floor
 
 var index
 var light_overlays = []
+var rain
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
 
@@ -122,6 +123,7 @@ func load_floor(floor_path):
 						rain_rects.append(Rect2i(x, y, int(params[1 + i * 4]) - x, int(params[3 + i * 4]) - y))
 					var rain_sprite = RainSprite.new(rain_rects)
 					rain_sprite.level = index
+					rain = rain_sprite
 					add_child(rain_sprite)
 				elif parent_id in DoorSprite.object_ids:
 					var x = int(params.pop_front())

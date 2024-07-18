@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=21 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://Scripts/UIController.gd" id="7"]
 [ext_resource type="Script" path="res://Scripts/Tabs/CornerSelect.gd" id="7_hgptj"]
 [ext_resource type="Script" path="res://Scripts/Tabs/WallPanel.gd" id="8_bm5xs"]
-[ext_resource type="FontFile" uid="uid://dey31024egok3" path="res://retro_computer.ttf" id="9_7h7e1"]
 [ext_resource type="Script" path="res://Scripts/Tabs/ItemsTab.gd" id="9_jdnfe"]
 [ext_resource type="Texture2D" uid="uid://c8v6qcchskvtr" path="res://Textures/barrier.png" id="10_eiw45"]
 [ext_resource type="Script" path="res://Scripts/LevelSelectMenu.gd" id="11"]
@@ -18,18 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://cglhamo4gwcl4" path="res://Textures/door.png" id="12_munfg"]
 [ext_resource type="Script" path="res://Scripts/Tabs/GameplayTab.gd" id="13_vo8kq"]
 [ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
+[ext_resource type="Script" path="res://Scripts/Tabs/EffectsTab.gd" id="15_tiai6"]
 [ext_resource type="Script" path="res://Scripts/EditPanel.gd" id="15_vmsa4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
-
-[sub_resource type="FontFile" id="FontFile_mvar6"]
-fallbacks = Array[Font]([ExtResource("9_7h7e1")])
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="Main" type="Node2D" groups=["objects_loaded"]]
 script = ExtResource("1")
@@ -222,10 +213,11 @@ offset_right = -2.0
 offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_7h7e1")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 15
+current_tab = 2
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 7
 script = ExtResource("5_3t8kq")
@@ -360,7 +352,6 @@ layout_mode = 0
 offset_left = 6.0
 offset_right = 346.0
 offset_bottom = 30.0
-theme_override_fonts/font = SubResource("FontFile_mvar6")
 text = "/Furniture/"
 
 [node name="Object Info" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
@@ -391,7 +382,6 @@ offset_top = 210.0
 offset_right = 340.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-630, -229)
-theme_override_fonts/font = SubResource("FontFile_mvar6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -402,7 +392,6 @@ offset_top = 255.0
 offset_right = 290.0
 offset_bottom = 290.0
 pivot_offset = Vector2(-630, -229)
-theme_override_fonts/font = SubResource("FontFile_mvar6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -424,6 +413,34 @@ offset_bottom = 290.0
 icon = ExtResource("6")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Effects" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+layout_mode = 2
+script = ExtResource("15_tiai6")
+
+[node name="Sunset CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 36.0
+text = "Sunset"
+
+[node name="Day CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 5.0
+offset_right = 158.0
+offset_bottom = 36.0
+text = "Day"
+
+[node name="Twilight CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 5.0
+offset_right = 264.0
+offset_bottom = 36.0
+text = "Twilight"
 
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -460,7 +477,6 @@ layout_mode = 0
 offset_left = 40.0
 offset_right = 310.0
 offset_bottom = 35.0
-theme_override_fonts/font = SubResource("FontFile_mvar6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -522,8 +538,7 @@ offset_left = -80.0
 offset_top = 3.0
 offset_right = 70.0
 offset_bottom = 27.0
-theme_override_fonts/font = SubResource("FontFile_mvar6")
-text = "bOUNDARIES"
+text = "Boundaries"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -888,6 +903,7 @@ script = ExtResource("3")
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_tab_container_tab_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Build_ready"]
 [connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
@@ -901,6 +917,7 @@ script = ExtResource("3")
 [connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_LineEdit_text_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/BackButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_BackButton_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/ForwardButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ForwardButton_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Effects/Sunset CheckBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_effect_check_box_button_up"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Gameplay_ready"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Enemy List" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Enemy_List_item_selected"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Fraction Back Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Fraction_Back_Button_button_up"]

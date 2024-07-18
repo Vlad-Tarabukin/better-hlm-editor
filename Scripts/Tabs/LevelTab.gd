@@ -13,7 +13,7 @@ var cars = []
 var object_to_place
 var curr_player_sprite
 
-const TAB_INDEX = 3
+const TAB_INDEX = 4
 
 const TEXTURE = preload("res://Textures/transition.png")
 

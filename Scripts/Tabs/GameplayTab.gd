@@ -2,7 +2,7 @@ extends TabBar
 
 class_name GameplayTab
 
-const TAB_INDEX = 2
+const TAB_INDEX = 3
 
 var enemy_fractions = []
 var curr_fraction = 0
