@@ -313,7 +313,7 @@ icon = ExtResource("12_munfg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Entry Direction OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+[node name="Direction OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
 visible = false
 layout_mode = 0
 offset_left = 15.0
@@ -867,6 +867,8 @@ script = ExtResource("3")
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Wall_Panel_ready"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Barrier Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_barrier_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Entry Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_entry_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Door Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_door_button_button_up"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/Direction OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_direction_option_button_item_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Items" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ready"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ItemList_item_selected"]
 [connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_LineEdit_text_changed"]

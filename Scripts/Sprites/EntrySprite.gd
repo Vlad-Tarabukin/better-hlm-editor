@@ -12,6 +12,7 @@ func _init(_trigger_rect, _direciton):
 	direction = _direciton
 	
 	mode = BuildTab.TAB_INDEX
+	submode = 4
 	texture = TEXTURE
 	position = trigger_rect.position
 	texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
@@ -44,3 +45,6 @@ func get_obj_object():
 	if direction == 0 or direction == 2:
 		return 4356
 	return 4355
+
+func should_delete():
+	return true

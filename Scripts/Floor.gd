@@ -123,6 +123,14 @@ func load_floor(floor_path):
 					var rain_sprite = RainSprite.new(rain_rects)
 					rain_sprite.level = index
 					add_child(rain_sprite)
+				elif parent_id in DoorSprite.object_ids:
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					
+					var door_sprite = DoorSprite.new(parent_id)
+					door_sprite.level = index
+					door_sprite.position = Vector2(x, y)
+					add_child(door_sprite)
 				else:
 					var x = int(params.pop_front())
 					var y = int(params.pop_front())
@@ -326,6 +334,21 @@ func save():
 				play_file.store_line(str(i.end.x))
 				play_file.store_line(str(i.position.y))
 				play_file.store_line(str(i.end.y))
+		elif obj is DoorSprite:
+			obj_file.store_line(str(obj.object_id))
+			obj_file.store_line(str(obj.position.x))
+			obj_file.store_line(str(obj.position.y))
+			obj_file.store_line(str(DoorSprite.sprite_ids[obj.direction]))
+			obj_file.store_line("0")
+			obj_file.store_line("0")
+			obj_file.store_line("0")
+			play_file.store_line(str(obj.object_id))
+			play_file.store_line(str(obj.position.x))
+			play_file.store_line(str(obj.position.y))
+			play_file.store_line(str(DoorSprite.sprite_ids[obj.direction]))
+			play_file.store_line("0")
+			play_file.store_line("0")
+			play_file.store_line("0")
 	
 	for light_overlay in light_overlays:
 		obj_file.store_line("1770")
