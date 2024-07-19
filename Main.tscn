@@ -39,6 +39,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 400.0
 grow_vertical = 2
+allow_reselect = true
 script = ExtResource("11")
 
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
@@ -441,6 +442,32 @@ offset_top = 5.0
 offset_right = 264.0
 offset_bottom = 36.0
 text = "Twilight"
+
+[node name="Darkness Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 119.0
+offset_bottom = 71.0
+toggle_mode = true
+text = "Edit Darkness"
+
+[node name="Rain CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 75.0
+offset_right = 68.0
+offset_bottom = 106.0
+text = "Rain"
+
+[node name="Rain Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 75.0
+offset_right = 158.0
+offset_bottom = 106.0
+toggle_mode = true
+text = "Edit rain"
 
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -889,6 +916,7 @@ script = ExtResource("3")
 
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Main_objects_loaded"]
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Main_objects_loaded"]
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="CanvasLayer" to="CanvasLayer" method="_on_CanvasLayer_ready"]
 [connection signal="item_selected" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_item_selected"]
 [connection signal="ready" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_ready"]
@@ -901,9 +929,9 @@ script = ExtResource("3")
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_tab_container_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_TabContainer_tab_selected"]
-[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_tab_container_tab_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Build_ready"]
 [connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
@@ -918,6 +946,9 @@ script = ExtResource("3")
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/BackButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_BackButton_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Items/Object Info/ForwardButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Items" method="_on_ForwardButton_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Effects/Sunset CheckBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_effect_check_box_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Effects/Darkness Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_darkness_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Effects/Rain CheckBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_rain_check_box_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Effects/Rain Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_rain_button_button_up"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Gameplay_ready"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Enemy List" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Enemy_List_item_selected"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Enemies/Fraction Back Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_Fraction_Back_Button_button_up"]

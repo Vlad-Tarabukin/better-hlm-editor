@@ -4,9 +4,11 @@ class_name Floor
 
 var index
 var light_overlays = []
-var rain
+var rain = false
+var rain_rects = []
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
+const RAIN_TEXTURE = preload("res://Textures/rain.png")
 
 func _init(_index):
 	index = _index
@@ -18,6 +20,9 @@ func _draw():
 		for obj in floor_node.get_children():
 			if obj is WallSprite:
 				draw_rect(Rect2(obj.global_position, obj.get_rect().size), WALL_HINT_COLOR)
+	if rain:
+		for rect in rain_rects:
+			draw_texture_rect(RAIN_TEXTURE, rect, true)
 
 func load_floor(floor_path):
 	var file = FileAccess.open(floor_path, FileAccess.READ)
@@ -111,20 +116,18 @@ func load_floor(floor_path):
 					entry_sprite.level = index
 					add_child(entry_sprite)
 				elif parent_id == 1417:
-					var darkness_rect = Rect2i(int(params[0]), int(params[2]), int(params[1]), int(params[3]))
+					var darkness_rect = Rect2i(int(params[0]), int(params[2]), int(params[1]) - int(params[0]), int(params[3]) - int(params[2]))
 					var darkness_sprite = DarknessSprite.new(darkness_rect)
 					darkness_sprite.level = index
 					add_child(darkness_sprite)
 				elif parent_id == 663:
-					var rain_rects = []
+					rain = true
+					rain_rects.clear()
 					for i in range(rain_rects_amount):
 						var x = int(params[0 + i * 4])
 						var y = int(params[2 + i * 4])
 						rain_rects.append(Rect2i(x, y, int(params[1 + i * 4]) - x, int(params[3 + i * 4]) - y))
-					var rain_sprite = RainSprite.new(rain_rects)
-					rain_sprite.level = index
-					rain = rain_sprite
-					add_child(rain_sprite)
+					queue_redraw()
 				elif parent_id in DoorSprite.object_ids:
 					var x = int(params.pop_front())
 					var y = int(params.pop_front())
@@ -313,29 +316,14 @@ func save():
 		elif obj is DarknessSprite:
 			obj_file.store_line("1417")
 			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.darkness_rect.size.x))
+			obj_file.store_line(str(obj.darkness_rect.end.x))
 			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str(obj.darkness_rect.size.y))
+			obj_file.store_line(str(obj.darkness_rect.end.y))
 			play_file.store_line("1417")
 			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.darkness_rect.size.x))
+			play_file.store_line(str(obj.darkness_rect.end.x))
 			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str(obj.darkness_rect.size.y))
-		elif obj is RainSprite:
-			obj_file.store_line("663")
-			obj_file.store_line(str(len(obj.rain_rects)))
-			for i in obj.rain_rects:
-				obj_file.store_line(str(i.position.x))
-				obj_file.store_line(str(i.end.x))
-				obj_file.store_line(str(i.position.y))
-				obj_file.store_line(str(i.end.y))
-			play_file.store_line("663")
-			play_file.store_line(str(len(obj.rain_rects)))
-			for i in obj.rain_rects:
-				play_file.store_line(str(i.position.x))
-				play_file.store_line(str(i.end.x))
-				play_file.store_line(str(i.position.y))
-				play_file.store_line(str(i.end.y))
+			play_file.store_line(str(obj.darkness_rect.end.y))
 		elif obj is DoorSprite:
 			obj_file.store_line(str(obj.object_id))
 			obj_file.store_line(str(obj.position.x))
@@ -357,6 +345,22 @@ func save():
 		obj_file.store_line(str(light_overlay))
 		play_file.store_line("1770")
 		play_file.store_line(str(light_overlay))
+	
+	if rain:
+		obj_file.store_line("663")
+		obj_file.store_line(str(len(rain_rects)))
+		for i in rain_rects:
+			obj_file.store_line(str(i.position.x))
+			obj_file.store_line(str(i.end.x))
+			obj_file.store_line(str(i.position.y))
+			obj_file.store_line(str(i.end.y))
+		play_file.store_line("663")
+		play_file.store_line(str(len(rain_rects)))
+		for i in rain_rects:
+			play_file.store_line(str(i.position.x))
+			play_file.store_line(str(i.end.x))
+			play_file.store_line(str(i.position.y))
+			play_file.store_line(str(i.end.y))
 	
 	obj_file.close()
 	tls_file.close()
