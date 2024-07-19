@@ -10,6 +10,7 @@ func _on_TabContainer_tab_selected(tab):
 	App.cursor.texture = null
 	App.cursor.move = true
 	App.cursor.rotation_degrees = 0
+	App.cursor.offset = Vector2.ZERO
 
 func _on_Save_Button_button_up():
 	App.save_level()
@@ -35,6 +36,8 @@ func _on_new_floor_button_button_up():
 	show_levels()
 
 func _on_load_button_button_up():
+	for i in tab_container.get_children():
+		i.active = false
 	ObjectsLoader.load_sprites()
 	for i in $"../Floors".get_children():
 		i.queue_free()

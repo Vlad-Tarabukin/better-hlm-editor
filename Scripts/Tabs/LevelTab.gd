@@ -90,7 +90,10 @@ func _unhandled_input(event):
 		elif object_to_place:
 			if event is InputEventMouseButton and event.pressed:
 				if event.button_index == MOUSE_BUTTON_LEFT:
-					var object = ObjectSprite.new(object_to_place, 0, LevelTab.TAB_INDEX, 1582)
+					var parent_id = 1582
+					if car_item_list.is_anything_selected():
+						parent_id = 1583
+					var object = ObjectSprite.new(object_to_place, 0, LevelTab.TAB_INDEX, parent_id)
 					App.add_object(object)
 					object_to_place = null
 					App.cursor.texture = null
@@ -192,7 +195,7 @@ func _ready():
 			sprites.append(int(i))
 		characters.append({
 			"object_name": params[0],
-			"object_id": params[1],
+			"object_id": int(params[1]),
 			"sprites": sprites
 		})
 		player_item_list.add_item(params[0], ObjectsLoader.get_sprite(sprites[0])["frames"][0])
