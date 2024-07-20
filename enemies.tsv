@@ -4,6 +4,7 @@ Colombians	Range Random	1356	2288,2291,2293,2294
 Colombians	Range Static 	1357	2288,2291,2293,2294
 Colombians	Range Patrol	1358	2288,2291,2293,2294
 Colombians	Dodger	1886	3287
+Colombians	Hide	1737	3009
 Colombians	Idle	1359	2324
 Colombians	Fat	1464	2596
 Colombians	Dog	1064	1766
@@ -85,6 +86,8 @@ Soldier	Melee Patrol	2396	1118
 Soldier	Range Random	674	1117
 Soldier	Range Static	697	1117
 Soldier	Range Patrol	696	1117
+Soldier	Dodger	2287	3977
+Soldier	Hide	1460	2589
 Soldier	Idle Poncho	706	1178
 Soldier	Idle Rain	708	1179
 Soldier	Fat Melee	698	1163

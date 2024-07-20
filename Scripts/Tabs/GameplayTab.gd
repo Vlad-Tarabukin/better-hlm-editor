@@ -121,14 +121,14 @@ func _unhandled_input(event: InputEvent):
 				if enemy_list.is_anything_selected():
 					var enemy = enemies_on_list[enemy_list.get_selected_items()[0]]
 					var obj = HLMObject.new(enemy["object"], enemy["sprites"][curr_enemy_sprite])
-					var object_sprite = ObjectSprite.new(obj, 0, 2, 10, -1)
+					var object_sprite = ObjectSprite.new(obj, 0, TAB_INDEX, 10, -1)
 					App.add_object(object_sprite)
 				elif weapon_list.is_anything_selected():
 					if check_box.button_pressed:
 						App.cursor.rotation_degrees = int(randf() * 360)
 					var weapon = weapons[weapon_list.get_selected_items()[0]]
 					var obj = HLMObject.new(weapon["object"], weapon["sprite"])
-					var object_sprite = ObjectSprite.new(obj, 0, 2, 2401, -1)
+					var object_sprite = ObjectSprite.new(obj, 0, TAB_INDEX, 2401, -1)
 					App.add_object(object_sprite)
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				if Input.is_key_pressed(KEY_SHIFT):
