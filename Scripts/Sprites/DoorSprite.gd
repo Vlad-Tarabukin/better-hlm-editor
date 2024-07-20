@@ -9,9 +9,13 @@ var object_id
 var direction
 var last_mode
 var last_submode
+var locked
+var cutscene
 
-func _init(_object_id):
+func _init(_object_id, _locked, _cutscene):
 	object_id = _object_id
+	locked = _locked
+	cutscene = _cutscene
 	for i in range(4):
 		if _object_id == object_ids[i]:
 			direction = i

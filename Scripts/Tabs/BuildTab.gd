@@ -23,6 +23,8 @@ var erase_texture = preload("res://Textures/tile_erase.png")
 @onready var entry_button = $"Entry Button"
 @onready var door_button = $"Door Button"
 @onready var direction_option_button = $"Direction OptionButton"
+@onready var locked_check_box = $"Locked CheckBox"
+@onready var cutscene_check_box = $"Cutscene CheckBox"
 
 func _on_Main_objects_loaded():
 	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]
@@ -58,9 +60,12 @@ func set_tile(pos):
 	door_button.button_pressed = false
 	curr_barrier = null
 	direction_option_button.visible = false
+	locked_check_box.visible = false
+	cutscene_check_box.visible = false
 	App.cursor.region_enabled = true
 	App.cursor.move = true
 	App.submode = 0
+	App.offset = Vector2.ZERO
 	App.cursor.snap = 16
 	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
 	pos = str(pos.x) + " " + str(pos.y)
@@ -80,9 +85,12 @@ func set_wall(wall):
 	door_button.button_pressed = false
 	curr_barrier = null
 	direction_option_button.visible = false
+	locked_check_box.visible = false
+	cutscene_check_box.visible = false
 	App.cursor.region_enabled = true
 	App.cursor.move = true
 	App.submode = 1
+	App.offset = Vector2.ZERO
 	App.cursor.snap = 32
 	App.cursor.region_rect = Rect2i(0, 0, 32, 32)
 	App.cursor.texture = curr_wall["texture"]
@@ -98,9 +106,12 @@ func set_corner(pos):
 	door_button.button_pressed = false
 	curr_barrier = null
 	direction_option_button.visible = false
+	locked_check_box.visible = false
+	cutscene_check_box.visible = false
 	App.cursor.move = true
 	App.cursor.region_enabled = false
 	App.submode = 2
+	App.offset = Vector2.ZERO
 	App.cursor.snap = 8
 	pos = str(pos.x) + " " + str(pos.y)
 	App.cursor.texture = ObjectsLoader.tiles[-1]["tiles"][pos]
@@ -130,7 +141,7 @@ func _unhandled_input(event):
 					var tile = TileSprite.new(ObjectsLoader.tiles[-1]["id"], curr_pos.x, curr_pos.y, ObjectsLoader.tiles[-1]["depth"], App.cursor.texture, 2)
 					App.add_object(tile)
 				if door_button.button_pressed:
-					var door = DoorSprite.new(DoorSprite.object_ids[direction_option_button.selected])
+					var door = DoorSprite.new(DoorSprite.object_ids[direction_option_button.selected], int(locked_check_box.button_pressed), int(cutscene_check_box.button_pressed))
 					App.add_object(door)
 			if event.button_index == 2 and event.is_pressed() and curr_wall != null and Input.is_key_pressed(KEY_SHIFT):
 				wall_panel.set_next_wall(curr_wall)
@@ -228,12 +239,15 @@ func _on_barrier_button_button_up():
 	door_button.button_pressed = false
 	App.cursor.texture = null
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
+	locked_check_box.visible = false
+	cutscene_check_box.visible = false
 	App.cursor.offset = Vector2.ZERO
 	if barrier_button.button_pressed:
 		App.cursor.move = true
 		App.cursor.region_enabled = false
 		curr_barrier = BarrierSprite.new()
 		App.submode = 3
+		App.offset = Vector2.ZERO
 		App.cursor.snap = 8
 
 func _on_entry_button_button_up():
@@ -248,11 +262,14 @@ func _on_entry_button_button_up():
 	door_button.button_pressed = false
 	App.cursor.texture = EntrySprite.TEXTURE
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
+	locked_check_box.visible = false
+	cutscene_check_box.visible = false
 	App.cursor.offset = Vector2.ZERO
 	if entry_button.button_pressed:
 		App.cursor.move = true
 		App.cursor.region_enabled = true
 		App.submode = 4
+		App.offset = Vector2.ZERO
 		App.cursor.snap = 8
 		App.cursor.region_rect = Rect2i(0, 0, 8, 8)
 
@@ -266,11 +283,13 @@ func _on_door_button_button_up():
 	curr_barrier = null
 	barrier_button.button_pressed = false
 	entry_button.button_pressed = false
-	var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
-	App.cursor.texture = sprite["frames"][0]
-	App.cursor.offset = sprite["center"]
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
+	locked_check_box.visible = true
+	cutscene_check_box.visible = true
 	if door_button.button_pressed:
+		var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
+		App.cursor.texture = sprite["frames"][0]
+		App.cursor.offset = sprite["center"]
 		App.cursor.move = true
 		App.cursor.region_enabled = false
 		App.submode = 5

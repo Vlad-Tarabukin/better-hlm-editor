@@ -215,10 +215,8 @@ offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 15
-current_tab = 2
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 7
 script = ExtResource("5_3t8kq")
@@ -333,6 +331,24 @@ popup/item_2/id = 1
 popup/item_3/text = "Down"
 popup/item_3/id = 3
 
+[node name="Locked CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+visible = false
+layout_mode = 0
+offset_left = 120.0
+offset_top = 550.0
+offset_right = 144.0
+offset_bottom = 574.0
+text = "Locked"
+
+[node name="Cutscene CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Build"]
+visible = false
+layout_mode = 0
+offset_left = 220.0
+offset_top = 550.0
+offset_right = 319.0
+offset_bottom = 581.0
+text = "Cutscene"
+
 [node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
@@ -416,6 +432,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Effects" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("15_tiai6")
 
