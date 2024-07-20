@@ -2,9 +2,10 @@ Program to create custom levels for Hotline Miami 2: Wrong number
 
 CONTROLS:
   Common:
-    MMB - move camer
+    MMB - move camera
     Scroll wheel - zoom
     O - open level folder
+    Double click LBM - edit object
   Build tab:
     Tile mode:
       LMB - place tiles
@@ -36,4 +37,6 @@ CONTROLS:
     RMB - delete object
     Shift + RMB - rotate 90 degrees
 
-  Special thanks to Maxim_s
+Custom .tsv folder: "Documents/My Games/Better HLM Editor"
+
+Special thanks to Maxim_s
