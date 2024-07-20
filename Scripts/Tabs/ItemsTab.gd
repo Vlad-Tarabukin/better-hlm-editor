@@ -117,9 +117,17 @@ func _unhandled_input(event: InputEvent):
 
 
 func _on_ready():
-	var objects_tsv = FileAccess.open("res://objects.tsv", FileAccess.READ)
-	while !objects_tsv.eof_reached():
-		var st = objects_tsv.get_csv_line("\t")
-		objects.append(HLMObject.new(int(st[0]), int(st[2]), st[1]))
-		if !ObjectsLoader.sprites.has(objects[-1].sprite_id):
-			objects[-1].sprite_id = -1
+	var objects_tsv_paths = ["res://objects.tsv"]
+	var custom_tsv_folder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor"
+	if !DirAccess.dir_exists_absolute(custom_tsv_folder):
+		DirAccess.make_dir_recursive_absolute(custom_tsv_folder)
+	for tsv in DirAccess.get_files_at(custom_tsv_folder):
+		objects_tsv_paths.append(custom_tsv_folder + "/" + tsv)
+	for objects_tsv_path in objects_tsv_paths:
+		var objects_tsv = FileAccess.open(objects_tsv_path, FileAccess.READ)
+		while !objects_tsv.eof_reached():
+			var st = objects_tsv.get_csv_line("\t")
+			if st[0].is_valid_int() and st[1].is_valid_int():
+				objects.append(HLMObject.new(int(st[0]), int(st[1]), st[2]))
+				if !ObjectsLoader.sprites.has(objects[-1].sprite_id):
+					objects[-1].sprite_id = -1
