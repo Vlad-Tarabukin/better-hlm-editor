@@ -65,7 +65,7 @@ func set_tile(pos):
 	App.cursor.region_enabled = true
 	App.cursor.move = true
 	App.submode = 0
-	App.offset = Vector2.ZERO
+	App.cursor.offset = Vector2.ZERO
 	App.cursor.snap = 16
 	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
 	pos = str(pos.x) + " " + str(pos.y)
@@ -90,7 +90,7 @@ func set_wall(wall):
 	App.cursor.region_enabled = true
 	App.cursor.move = true
 	App.submode = 1
-	App.offset = Vector2.ZERO
+	App.cursor.offset = Vector2.ZERO
 	App.cursor.snap = 32
 	App.cursor.region_rect = Rect2i(0, 0, 32, 32)
 	App.cursor.texture = curr_wall["texture"]
@@ -111,7 +111,7 @@ func set_corner(pos):
 	App.cursor.move = true
 	App.cursor.region_enabled = false
 	App.submode = 2
-	App.offset = Vector2.ZERO
+	App.cursor.offset = Vector2.ZERO
 	App.cursor.snap = 8
 	pos = str(pos.x) + " " + str(pos.y)
 	App.cursor.texture = ObjectsLoader.tiles[-1]["tiles"][pos]
@@ -247,7 +247,7 @@ func _on_barrier_button_button_up():
 		App.cursor.region_enabled = false
 		curr_barrier = BarrierSprite.new()
 		App.submode = 3
-		App.offset = Vector2.ZERO
+		App.cursor.offset = Vector2.ZERO
 		App.cursor.snap = 8
 
 func _on_entry_button_button_up():
@@ -269,7 +269,7 @@ func _on_entry_button_button_up():
 		App.cursor.move = true
 		App.cursor.region_enabled = true
 		App.submode = 4
-		App.offset = Vector2.ZERO
+		App.cursor.offset = Vector2.ZERO
 		App.cursor.snap = 8
 		App.cursor.region_rect = Rect2i(0, 0, 8, 8)
 
