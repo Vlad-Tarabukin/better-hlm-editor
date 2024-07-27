@@ -6,6 +6,7 @@ var index
 var light_overlays = []
 var rain = false
 var rain_rects = []
+var cutscene = {}
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
 const RAIN_TEXTURE = preload("res://Textures/rain.png")
@@ -211,6 +212,150 @@ func load_floor(floor_path):
 					wall_sprite.global_position = Vector2i(x, y)
 					wall_sprite.level = index
 					add_child(wall_sprite)
+		elif floor_path.get_extension() == "csf":
+			cutscene["rects"] = []
+			for _i in range(int(file.get_line())):
+				var x = int(file.get_line())
+				var y = int(file.get_line())
+				cutscene["rects"].append(Rect2(x, y, int(file.get_line()) - x, int(file.get_line()) - y))
+			
+			var dialogue_messages = []
+			cutscene["frames"] = []
+			for i in range(int(file.get_line()) + 1):
+				cutscene["frames"].append({})
+				cutscene["frames"][-1]["actions"] = []
+				for j in range(int(file.get_line())):
+					var action_id = int(file.get_line())
+					if action_id == 0:
+						var speed = float(file.get_line())
+						var positions = []
+						for _i in range(int(file.get_line())):
+							positions.append(Vector2(int(file.get_line()), int(file.get_line())))
+						var character = file.get_line()
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"speed": speed,
+							"positions": positions,
+							"character": character
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 1:
+						file.get_line()
+						dialogue_messages.append({
+							"index": j,
+							"frame": i,
+							"start": int(file.get_line()),
+							"end": int(file.get_line()),
+						})
+						file.get_line()
+						file.get_line()
+						cutscene["frames"][-1]["focus"] = file.get_line()
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": 1
+						})
+					elif action_id == 2:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"sprite_id": int(file.get_line()),
+							"character": file.get_line()
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 3:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"character": file.get_line(),
+							"loop": file.get_line() == "1",
+							"interval": int(file.get_line()),
+							"freely": file.get_line() == "1",
+							"stop": file.get_line() == "1"
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 4:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"character": file.get_line(),
+							"manual": file.get_line() == "1",
+							"angle": int(file.get_line()),
+							"target": file.get_line(),
+							"keep": file.get_line() == "1",
+							"fire_rate": int(file.get_line())
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 5:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"delay": int(file.get_line())
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 6:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"character": file.get_line(),
+							"reason": int(file.get_line()) + int(file.get_line()) * 2,
+							"delay": int(file.get_line())
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 7:
+						file.get_line()
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"sound_id": int(file.get_line())
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 8:
+						file.get_line()
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"music_name": file.get_line()
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 9:
+						file.get_line()
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"fade": file.get_line() == "1",
+							"fade_time": float(file.get_line())
+						})
+						file.get_line()
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 10:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"level_complete": file.get_line() == "1"
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 11:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"fade": file.get_line() == "1",
+							"fade_time": float(file.get_line())
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 12:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"item": file.get_line(),
+							"active": file.get_line() == "1",
+							"visible": file.get_line() == "1"
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+					elif action_id == 13:
+						cutscene["frames"][-1]["actions"].append({
+							"action_id": action_id,
+							"character": file.get_line(),
+							"angle": int(file.get_line()),
+							"animate": file.get_line() == "1"
+						})
+						cutscene["frames"][-1]["focus"] = file.get_line()
+			var messages = []
+			for _i in range(int(file.get_line())):
+				messages.append({})
+				messages[-1]["first_line"] = file.get_line()
+				messages[-1]["second_line"] = file.get_line()
+				messages[-1]["sprite_id"] = int(file.get_line())
+				messages[-1]["character"] = file.get_line()
+			for message in dialogue_messages:
+				cutscene["frames"][message["frame"]]["actions"][message["index"]]["messages"] = messages.slice(message["start"], message["end"])
 
 func save():
 	var obj_file = FileAccess.open(App.level_path + "/level" + str(index) + ".obj", FileAccess.WRITE)

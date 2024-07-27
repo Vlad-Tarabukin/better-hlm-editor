@@ -97,6 +97,7 @@ func load_level(_level_path):
 		level_floor.load_floor(level_path + "/level" + str(i) + ".obj")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".tls")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".wll")
+		level_floor.load_floor(level_path + "/level" + str(i) + ".csf")
 		floors_node.add_child(level_floor)
 	queue_redraw()
 	get_tree().get_root().get_node("Main/CanvasLayer").show_levels()

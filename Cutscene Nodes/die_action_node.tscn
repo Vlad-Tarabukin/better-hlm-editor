@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://pi2m0vwjqihk"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/DieActionNode.gd" id="1_58om2"]
+
+[node name="Die Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 120.0
+script = ExtResource("1_58om2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Die:"
+
+[node name="Character OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 181.0
+offset_bottom = 61.0
+focus_mode = 0
+item_count = 1
+popup/item_0/text = "Character1"
+popup/item_0/id = 0
+
+[node name="Reason OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 160.0
+offset_bottom = 100.0
+focus_mode = 0
+item_count = 4
+fit_to_longest_item = false
+popup/item_0/text = "Blunt"
+popup/item_0/id = 0
+popup/item_1/text = "Cut"
+popup/item_1/id = 1
+popup/item_2/text = "Shot"
+popup/item_2/id = 2
+popup/item_3/text = "Blasted"
+popup/item_3/id = 3
+
+[node name="Delay SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 70.0
+offset_right = 253.063
+offset_bottom = 101.0
+max_value = 0.0
+step = 0.1
+allow_greater = true
+suffix = "s"

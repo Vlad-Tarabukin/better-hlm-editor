@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1dmxivpwb57r"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/AttackActionNode.gd" id="1_15apf"]
+
+[node name="Attack Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 190.0
+script = ExtResource("1_15apf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 91.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Attack:"
+
+[node name="Character OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 170.0
+offset_bottom = 60.0
+focus_mode = 0
+
+[node name="Manual CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 148.0
+offset_bottom = 101.0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Target"
+
+[node name="Label" type="Label" parent="Manual CheckButton"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 4.0
+offset_right = 139.0
+offset_bottom = 27.0
+text = "Angle"
+
+[node name="Target OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 70.0
+offset_right = 320.0
+offset_bottom = 100.0
+focus_mode = 0
+
+[node name="Angle SpinBox" type="SpinBox" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 210.0
+offset_top = 70.0
+offset_right = 293.063
+offset_bottom = 101.0
+max_value = 360.0
+step = 45.0
+suffix = "º"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 110.0
+offset_right = 276.0
+offset_bottom = 133.0
+text = "Fire rate (leave 0 to fire once)"
+
+[node name="Fire Rate SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 140.0
+offset_right = 200.0
+offset_bottom = 171.0
+max_value = 0.0
+allow_greater = true
+suffix = "frames"
+
+[connection signal="button_up" from="Manual CheckButton" to="." method="_on_manual_check_button_button_up"]

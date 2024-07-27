@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://k04jg31wyks2"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/WalkActionNode.gd" id="1_d6w72"]
+
+[node name="Walk Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 220.0
+script = ExtResource("1_d6w72")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 78.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Walk:"
+
+[node name="Speed SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 170.0
+offset_bottom = 61.0
+max_value = 0.0
+step = 0.5
+allow_greater = true
+prefix = "Speed:"
+
+[node name="Character OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 30.0
+offset_right = 335.0
+offset_bottom = 61.0
+focus_mode = 0
+item_count = 1
+selected = 0
+popup/item_0/text = "Character1"
+popup/item_0/id = 0
+
+[node name="Positions ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 335.0
+offset_bottom = 200.0
+focus_mode = 0

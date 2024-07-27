@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bka60fuxwk0k2"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/NextLevelActionNode.gd" id="1_hcfpi"]
+
+[node name="Next Level Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 80.0
+script = ExtResource("1_hcfpi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 127.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Next Level:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 134.0
+offset_bottom = 60.0
+text = "Fade Time:"
+vertical_alignment = 1
+
+[node name="Fade SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 30.0
+offset_right = 233.063
+offset_bottom = 61.0
+max_value = 0.0
+step = 0.1
+allow_greater = true
+suffix = "s"

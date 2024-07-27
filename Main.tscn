@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=22 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
 [ext_resource type="Script" path="res://Scripts/Tabs/EffectsTab.gd" id="15_tiai6"]
 [ext_resource type="Script" path="res://Scripts/EditPanel.gd" id="15_vmsa4"]
+[ext_resource type="Script" path="res://Scripts/Tabs/CutsceneTab.gd" id="18_wg3gp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -39,6 +40,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 400.0
 grow_vertical = 2
+focus_mode = 0
 allow_reselect = true
 script = ExtResource("11")
 
@@ -173,6 +175,7 @@ anchor_bottom = 1.0
 offset_top = -180.0
 offset_right = 120.0
 grow_vertical = 0
+focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Save Button" type="Button" parent="CanvasLayer/Main GUI"]
@@ -180,6 +183,7 @@ layout_direction = 1
 layout_mode = 1
 offset_right = 60.0
 offset_bottom = 31.0
+focus_mode = 0
 text = "Save"
 metadata/_edit_use_anchors_ = true
 
@@ -189,6 +193,7 @@ layout_mode = 1
 offset_left = 70.0
 offset_right = 130.0
 offset_bottom = 31.0
+focus_mode = 0
 text = "Load"
 metadata/_edit_use_anchors_ = true
 
@@ -214,10 +219,11 @@ offset_right = -2.0
 offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 11
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 7
 script = ExtResource("5_3t8kq")
 
@@ -352,6 +358,7 @@ text = "Cutscene"
 [node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("9_jdnfe")
 
 [node name="ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
@@ -434,6 +441,7 @@ expand_icon = true
 [node name="Effects" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("15_tiai6")
 
 [node name="Sunset CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
@@ -489,6 +497,7 @@ text = "Edit rain"
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("13_vo8kq")
 
 [node name="Enemies" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
@@ -562,6 +571,7 @@ text = "Random angle"
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("15")
 
 [node name="Boundaries" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
@@ -807,6 +817,47 @@ offset_right = 58.0
 offset_bottom = 698.0
 text = "S rank:"
 
+[node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+script = ExtResource("18_wg3gp")
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 1030.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NPC" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+
+[node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+
 [node name="Angle Label" type="Label" parent="CanvasLayer/Main GUI"]
 layout_mode = 0
 offset_right = 40.0
@@ -835,6 +886,7 @@ anchor_bottom = 0.827778
 offset_top = -31.0
 offset_right = 84.0
 grow_vertical = 0
+focus_mode = 0
 text = "New floor"
 metadata/_edit_use_anchors_ = true
 
@@ -931,8 +983,6 @@ texture_repeat = 2
 centered = false
 script = ExtResource("3")
 
-[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Main_objects_loaded"]
-[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Main_objects_loaded"]
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="CanvasLayer" to="CanvasLayer" method="_on_CanvasLayer_ready"]
 [connection signal="item_selected" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_item_selected"]
@@ -949,6 +999,7 @@ script = ExtResource("3")
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_tab_container_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_tab_container_tab_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Build_ready"]
 [connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
