@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj380pvr86v4f"]
+[gd_scene load_steps=3 format=3 uid="uid://bj380pvr86v4f"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/RotateActionNode.gd" id="1_wrgsn"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_nn82a"]
 
 [node name="Rotate Action Node" type="Control"]
 layout_mode = 3
@@ -43,3 +44,6 @@ offset_top = 70.0
 offset_right = 244.0
 offset_bottom = 101.0
 text = "Animate"
+
+[node name="Position Control" parent="." instance=ExtResource("2_nn82a")]
+layout_mode = 1

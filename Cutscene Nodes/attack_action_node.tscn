@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1dmxivpwb57r"]
+[gd_scene load_steps=3 format=3 uid="uid://c1dmxivpwb57r"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/AttackActionNode.gd" id="1_15apf"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_tk8kh"]
 
 [node name="Attack Action Node" type="Control"]
 layout_mode = 3
@@ -86,5 +87,8 @@ offset_bottom = 171.0
 max_value = 0.0
 allow_greater = true
 suffix = "frames"
+
+[node name="Position Control" parent="." instance=ExtResource("2_tk8kh")]
+layout_mode = 1
 
 [connection signal="button_up" from="Manual CheckButton" to="." method="_on_manual_check_button_button_up"]

@@ -12,7 +12,7 @@ func set_pos(_pos):
 	pos = _pos
 	queue_redraw()
 
-func _on_Main_objects_loaded():
+func _on_main_objects_loaded():
 	var i = 0
 	for wall in walls:
 		var texture_rect = TextureRect.new()

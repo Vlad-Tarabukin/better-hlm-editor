@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rh8icl87eaim"]
+[gd_scene load_steps=3 format=3 uid="uid://rh8icl87eaim"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/PlaySoundActionNode.gd" id="1_uqf4q"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_7p0qn"]
 
 [node name="Play Sound Action Node" type="Control"]
 layout_mode = 3
@@ -275,3 +276,6 @@ popup/item_123/text = "sndBoilingWater"
 popup/item_123/id = 180
 popup/item_124/text = "sndHitWall"
 popup/item_124/id = 180
+
+[node name="Position Control" parent="." instance=ExtResource("2_7p0qn")]
+layout_mode = 1

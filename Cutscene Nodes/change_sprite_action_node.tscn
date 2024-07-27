@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dis2m5f3tlkkl"]
+[gd_scene load_steps=3 format=3 uid="uid://dis2m5f3tlkkl"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/ChangeSpriteActionNode.gd" id="1_21vqc"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_b4o27"]
 
 [node name="Change Sprite Action Node" type="Control"]
 layout_mode = 3
@@ -36,3 +37,6 @@ min_value = -1.0
 max_value = 0.0
 rounded = true
 allow_greater = true
+
+[node name="Position Control" parent="." instance=ExtResource("2_b4o27")]
+layout_mode = 1

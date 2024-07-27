@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://k04jg31wyks2"]
+[gd_scene load_steps=3 format=3 uid="uid://k04jg31wyks2"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/WalkActionNode.gd" id="1_d6w72"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_nenxh"]
 
 [node name="Walk Action Node" type="Control"]
 layout_mode = 3
@@ -48,3 +49,6 @@ offset_top = 70.0
 offset_right = 335.0
 offset_bottom = 200.0
 focus_mode = 0
+
+[node name="Position Control" parent="." instance=ExtResource("2_nenxh")]
+layout_mode = 1

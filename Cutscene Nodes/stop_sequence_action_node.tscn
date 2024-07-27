@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qf76jilwqivl"]
+[gd_scene load_steps=3 format=3 uid="uid://qf76jilwqivl"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/StopSequenceActionNode.gd" id="1_xtffr"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_c4vpy"]
 
 [node name="Stop Sequence Action Node" type="Control"]
 layout_mode = 3
@@ -25,3 +26,6 @@ offset_top = 30.0
 offset_right = 197.0
 offset_bottom = 61.0
 text = "Scene Complete"
+
+[node name="Position Control" parent="." instance=ExtResource("2_c4vpy")]
+layout_mode = 1

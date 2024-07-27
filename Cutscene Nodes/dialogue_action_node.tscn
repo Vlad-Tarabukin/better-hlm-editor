@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc0gs0ajmfki1"]
+[gd_scene load_steps=3 format=3 uid="uid://dc0gs0ajmfki1"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/DialogueActionNode.gd" id="1_mb0ed"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_qncmk"]
 
 [node name="Dialogue Action Node" type="Control"]
 layout_mode = 3
@@ -357,6 +358,9 @@ offset_bottom = 180.0
 focus_mode = 0
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Position Control" parent="." instance=ExtResource("2_qncmk")]
+layout_mode = 1
 
 [connection signal="item_selected" from="Face OptionButton" to="." method="_on_face_option_button_item_selected"]
 [connection signal="value_changed" from="Face SpinBox" to="." method="_on_face_spin_box_value_changed"]

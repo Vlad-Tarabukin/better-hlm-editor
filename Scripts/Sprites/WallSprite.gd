@@ -18,12 +18,11 @@ func _init(_object_id, _sprite_id, wall = null):
 				wall = _wall
 				break
 	if wall == null:
-		horizontal = null
 		var sprite = ObjectsLoader.get_sprite(sprite_id)
 		texture = sprite["frames"][0]
 		offset = sprite["center"]
 	else:
-		horizontal = wall["horizontal"]
 		texture = wall["texture_sprite"]
+	horizontal = null
 	mode = 0
 	submode = 1

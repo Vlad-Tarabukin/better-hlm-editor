@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://pi2m0vwjqihk"]
+[gd_scene load_steps=3 format=3 uid="uid://pi2m0vwjqihk"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/DieActionNode.gd" id="1_58om2"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_ps350"]
 
 [node name="Die Action Node" type="Control"]
 layout_mode = 3
@@ -57,3 +58,6 @@ max_value = 0.0
 step = 0.1
 allow_greater = true
 suffix = "s"
+
+[node name="Position Control" parent="." instance=ExtResource("2_ps350")]
+layout_mode = 1

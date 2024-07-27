@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgeanjqvwqpy6"]
+[gd_scene load_steps=3 format=3 uid="uid://dgeanjqvwqpy6"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/PlayMusicActionNode.gd" id="1_0m5pn"]
+[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_o1w0v"]
 
 [node name="Play Music Action Node" type="Control"]
 layout_mode = 3
@@ -121,3 +122,6 @@ popup/item_46/text = "Abyss Intro"
 popup/item_46/id = 46
 popup/item_47/text = "Black Tar"
 popup/item_47/id = 47
+
+[node name="Position Control" parent="." instance=ExtResource("2_o1w0v")]
+layout_mode = 1

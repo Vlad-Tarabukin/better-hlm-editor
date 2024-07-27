@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddr23v5o32rof"]
+[gd_scene load_steps=3 format=3 uid="uid://ddr23v5o32rof"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/AnimationActionNode.gd" id="1_u17mn"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_txyyd"]
 
 [node name="Animation Action Node" type="Control"]
 layout_mode = 3
@@ -72,6 +73,9 @@ offset_right = 99.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 13
 text = "Interval"
+
+[node name="Position Control" parent="." instance=ExtResource("2_txyyd")]
+layout_mode = 1
 
 [connection signal="button_up" from="Loop CheckBox" to="." method="_on_loop_check_box_button_up"]
 [connection signal="button_up" from="Stop CheckBox" to="." method="_on_stop_check_box_button_up"]

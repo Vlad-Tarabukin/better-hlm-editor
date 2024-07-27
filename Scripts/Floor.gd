@@ -6,7 +6,10 @@ var index
 var light_overlays = []
 var rain = false
 var rain_rects = []
-var cutscene = {}
+var cutscene = {
+	"rects": [],
+	"frames": []
+}
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
 const RAIN_TEXTURE = preload("res://Textures/rain.png")
@@ -286,6 +289,7 @@ func load_floor(floor_path):
 							"action_id": action_id,
 							"delay": int(file.get_line())
 						})
+						file.get_line()
 						cutscene["frames"][-1]["focus"] = file.get_line()
 					elif action_id == 6:
 						cutscene["frames"][-1]["actions"].append({

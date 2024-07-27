@@ -32,15 +32,47 @@ offset_bottom = 90.0
 
 [node name="Action OptionButton" type="OptionButton" parent="After VBox"]
 layout_mode = 0
-offset_left = 40.0
-offset_right = 198.0
-offset_bottom = 20.0
+offset_left = 50.0
+offset_right = 209.0
+offset_bottom = 25.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+item_count = 14
+popup/item_0/text = "Walk"
+popup/item_0/id = 0
+popup/item_1/text = "Dialogue"
+popup/item_1/id = 1
+popup/item_2/text = "Change Sprite"
+popup/item_2/id = 2
+popup/item_3/text = "Animate"
+popup/item_3/id = 3
+popup/item_4/text = "Attack"
+popup/item_4/id = 4
+popup/item_5/text = "Wait"
+popup/item_5/id = 5
+popup/item_6/text = "Die"
+popup/item_6/id = 6
+popup/item_7/text = "Play Sound"
+popup/item_7/id = 7
+popup/item_8/text = "Play Music"
+popup/item_8/id = 8
+popup/item_9/text = "Stop Music"
+popup/item_9/id = 9
+popup/item_10/text = "Stop Sequence"
+popup/item_10/id = 10
+popup/item_11/text = "Next Level"
+popup/item_11/id = 11
+popup/item_12/text = "Activate Item"
+popup/item_12/id = 12
+popup/item_13/text = "Rotate"
+popup/item_13/id = 13
 
 [node name="Create Action Button" type="Button" parent="After VBox"]
 layout_mode = 0
 offset_left = 10.0
-offset_right = 30.0
-offset_bottom = 20.0
+offset_right = 35.0
+offset_bottom = 25.0
+focus_mode = 0
 icon = ExtResource("1_ehray")
 icon_alignment = 1
 expand_icon = true
@@ -53,3 +85,4 @@ offset_right = 335.0
 offset_bottom = 39.0
 
 [connection signal="resized" from="VBoxContainer" to="." method="_on_v_box_container_resized"]
+[connection signal="button_up" from="After VBox/Create Action Button" to="." method="_on_create_action_button_button_up"]
