@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddr23v5o32rof"]
+[gd_scene load_steps=4 format=3 uid="uid://ddr23v5o32rof"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/AnimationActionNode.gd" id="1_u17mn"]
 [ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_txyyd"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_un2k7"]
 
 [node name="Animation Action Node" type="Control"]
 layout_mode = 3
@@ -57,13 +58,13 @@ step = 0.1
 allow_greater = true
 suffix = "s"
 
-[node name="Character OptionButton" type="OptionButton" parent="."]
+[node name="NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 75.0
-offset_right = 290.0
+offset_right = 260.0
 offset_bottom = 105.0
-focus_mode = 0
+script = ExtResource("2_un2k7")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0

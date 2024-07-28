@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://pi2m0vwjqihk"]
+[gd_scene load_steps=4 format=3 uid="uid://pi2m0vwjqihk"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/DieActionNode.gd" id="1_58om2"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_ps350"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_maqof"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_ps350"]
 
 [node name="Die Action Node" type="Control"]
 layout_mode = 3
@@ -19,16 +20,14 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Die:"
 
-[node name="Character OptionButton" type="OptionButton" parent="."]
+[node name="NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 30.0
 offset_right = 181.0
 offset_bottom = 61.0
 focus_mode = 0
-item_count = 1
-popup/item_0/text = "Character1"
-popup/item_0/id = 0
+script = ExtResource("2_maqof")
 
 [node name="Reason OptionButton" type="OptionButton" parent="."]
 layout_mode = 0

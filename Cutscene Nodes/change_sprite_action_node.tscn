@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dis2m5f3tlkkl"]
+[gd_scene load_steps=4 format=3 uid="uid://dis2m5f3tlkkl"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/ChangeSpriteActionNode.gd" id="1_21vqc"]
 [ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_b4o27"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_sai3f"]
 
 [node name="Change Sprite Action Node" type="Control"]
 layout_mode = 3
@@ -19,13 +20,14 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Change Sprite:"
 
-[node name="Character OptionButton" type="OptionButton" parent="."]
+[node name="NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 30.0
 offset_right = 230.0
 offset_bottom = 60.0
 focus_mode = 0
+script = ExtResource("2_sai3f")
 
 [node name="Sprite SpinBox" type="SpinBox" parent="."]
 layout_mode = 0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc0gs0ajmfki1"]
+[gd_scene load_steps=4 format=3 uid="uid://dc0gs0ajmfki1"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/DialogueActionNode.gd" id="1_mb0ed"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_qncmk"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_pe6n4"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_qncmk"]
 
 [node name="Dialogue Action Node" type="Control"]
 layout_mode = 3
@@ -349,13 +350,14 @@ offset_right = 340.0
 offset_bottom = 300.0
 focus_mode = 0
 
-[node name="Focus OptionButton" type="OptionButton" parent="."]
+[node name="Focus NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 150.0
 offset_right = 220.0
 offset_bottom = 180.0
 focus_mode = 0
+script = ExtResource("2_pe6n4")
 
 [node name="Timer" type="Timer" parent="."]
 

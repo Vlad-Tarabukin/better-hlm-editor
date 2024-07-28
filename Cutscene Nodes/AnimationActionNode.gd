@@ -4,7 +4,7 @@ extends Control
 @onready var freely_check_box = $"Freely CheckBox"
 @onready var stop_check_box = $"Stop CheckBox"
 @onready var interval_spin_box = $"Interval SpinBox"
-@onready var character_option_button = $"Character OptionButton"
+@onready var npc_button = $NPCButton
 
 func _ready():
 	custom_minimum_size = Vector2(360, 120)
@@ -14,6 +14,7 @@ func initialize(action):
 	freely_check_box.button_pressed = action["freely"]
 	stop_check_box.button_pressed = action["stop"]
 	interval_spin_box.value = action["interval"] / 60.0
+	npc_button.set_character(action["character"])
 
 func _on_stop_check_box_button_up():
 	loop_check_box.disabled = stop_check_box.button_pressed

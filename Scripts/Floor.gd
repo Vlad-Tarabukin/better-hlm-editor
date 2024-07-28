@@ -8,7 +8,8 @@ var rain = false
 var rain_rects = []
 var cutscene = {
 	"rects": [],
-	"frames": []
+	"frames": [],
+	"npc": {}
 }
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
@@ -215,6 +216,37 @@ func load_floor(floor_path):
 					wall_sprite.global_position = Vector2i(x, y)
 					wall_sprite.level = index
 					add_child(wall_sprite)
+		elif floor_path.get_extension() == "npc":
+			for _i in range(int(file.get_line())):
+				var character_name = file.get_line()
+				var sprite_id = int(file.get_line())
+				var angle = int(file.get_line())
+				var pos = Vector2(int(file.get_line()), int(file.get_line()))
+				file.get_line()
+				file.get_line()
+				file.get_line()
+				file.get_line()
+				file.get_line()
+				var trigger_behavior = int(file.get_line())
+				var proximity_trigger_range = int(file.get_line())
+				var solid = file.get_line() == "1"
+				var killable = file.get_line() == "1"
+				file.get_line()
+				file.get_line()
+				file.get_line()
+				
+				var npc_sprite = NPCSprite.new(sprite_id)
+				add_child(npc_sprite)
+				npc_sprite.position = pos
+				npc_sprite.rotation_degrees = angle
+				
+				cutscene["npc"][character_name] = {
+					"sprite": npc_sprite,
+					"trigger_behavior": trigger_behavior,
+					"proximity_trigger_range": proximity_trigger_range,
+					"solid": solid,
+					"killable": killable
+				}
 		elif floor_path.get_extension() == "csf":
 			cutscene["rects"] = []
 			for _i in range(int(file.get_line())):
@@ -375,14 +407,14 @@ func save():
 			obj_file.store_line(str(obj.position.x))
 			obj_file.store_line(str(obj.position.y))
 			obj_file.store_line(str(obj.object.sprite_id))
-			obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360) )
+			obj_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
 			obj_file.store_line(str(obj.object.object_id))
 			obj_file.store_line(str(obj.object_frame))
 			play_file.store_line(str(obj.object.object_id))
 			play_file.store_line(str(obj.position.x))
 			play_file.store_line(str(obj.position.y))
 			play_file.store_line(str(obj.object.sprite_id))
-			play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360) )
+			play_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
 			play_file.store_line(str(obj.object_frame))
 		elif obj is TileSprite:
 			tls_file.store_line(str(obj.tile_id))

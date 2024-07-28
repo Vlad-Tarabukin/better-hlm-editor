@@ -13,6 +13,8 @@ var last_floor
 func _process(delta):
 	if active and last_floor != App.level:
 		last_floor = App.level
+		for child in v_box_container.get_children():
+			child.queue_free()
 		for i in range(len(App.get_current_floor().cutscene["frames"])):
 			var frame_node = FRAME_NODE.instantiate()
 			v_box_container.add_child(frame_node)

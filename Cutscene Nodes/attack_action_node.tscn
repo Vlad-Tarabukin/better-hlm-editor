@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1dmxivpwb57r"]
+[gd_scene load_steps=4 format=3 uid="uid://c1dmxivpwb57r"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/AttackActionNode.gd" id="1_15apf"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_38y84"]
 [ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_tk8kh"]
 
 [node name="Attack Action Node" type="Control"]
@@ -19,13 +20,14 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Attack:"
 
-[node name="Character OptionButton" type="OptionButton" parent="."]
+[node name="NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 30.0
 offset_right = 170.0
 offset_bottom = 60.0
 focus_mode = 0
+script = ExtResource("2_38y84")
 
 [node name="Manual CheckButton" type="CheckButton" parent="."]
 layout_mode = 0
@@ -51,13 +53,14 @@ offset_right = 139.0
 offset_bottom = 27.0
 text = "Angle"
 
-[node name="Target OptionButton" type="OptionButton" parent="."]
+[node name="Target NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 70.0
 offset_right = 320.0
 offset_bottom = 100.0
 focus_mode = 0
+script = ExtResource("2_38y84")
 
 [node name="Angle SpinBox" type="SpinBox" parent="."]
 visible = false

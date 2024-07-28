@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj380pvr86v4f"]
+[gd_scene load_steps=4 format=3 uid="uid://bj380pvr86v4f"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/RotateActionNode.gd" id="1_wrgsn"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_nn82a"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_bmlts"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_nn82a"]
 
 [node name="Rotate Action Node" type="Control"]
 layout_mode = 3
@@ -19,7 +20,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Rotate:"
 
-[node name="Character OptionButton" type="OptionButton" parent="."]
+[node name="NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 30.0
@@ -27,6 +28,7 @@ offset_right = 200.0
 offset_bottom = 60.0
 text_overrun_behavior = 1
 fit_to_longest_item = false
+script = ExtResource("2_bmlts")
 
 [node name="Angle SpinBox" type="SpinBox" parent="."]
 layout_mode = 0
