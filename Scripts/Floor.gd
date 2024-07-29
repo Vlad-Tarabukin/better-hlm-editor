@@ -9,7 +9,8 @@ var rain_rects = []
 var cutscene = {
 	"rects": [],
 	"frames": [],
-	"npc": {}
+	"npc": {},
+	"items": {}
 }
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
@@ -235,7 +236,7 @@ func load_floor(floor_path):
 				file.get_line()
 				file.get_line()
 				
-				var npc_sprite = NPCSprite.new(sprite_id)
+				var npc_sprite = CutsceneSprite.new(sprite_id)
 				add_child(npc_sprite)
 				npc_sprite.position = pos
 				npc_sprite.rotation_degrees = angle
@@ -247,6 +248,28 @@ func load_floor(floor_path):
 					"solid": solid,
 					"killable": killable
 				}
+		elif floor_path.get_extension() == "itm":
+			for _i in range(int(file.get_line())):
+				var item_name = file.get_line()
+				var sprite_id = int(file.get_line())
+				var angle = int(file.get_line())
+				var pos = Vector2(int(file.get_line()), int(file.get_line()))
+				
+				var item_sprite = CutsceneSprite.new(sprite_id)
+				add_child(item_sprite)
+				item_sprite.position = pos
+				item_sprite.rotation_degrees = angle
+				
+				cutscene["items"][item_name] = {
+					"sprite": item_sprite,
+					"active": file.get_line() == "1",
+					"visible": file.get_line() == "1",
+					"finish": file.get_line() == "1"
+				}
+				
+				file.get_line()
+				file.get_line()
+				file.get_line()
 		elif floor_path.get_extension() == "csf":
 			cutscene["rects"] = []
 			for _i in range(int(file.get_line())):
