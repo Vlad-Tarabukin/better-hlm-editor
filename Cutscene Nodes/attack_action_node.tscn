@@ -43,7 +43,7 @@ theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-text = "Target"
+text = "Angle"
 
 [node name="Label" type="Label" parent="Manual CheckButton"]
 layout_mode = 0
@@ -51,7 +51,7 @@ offset_left = 95.0
 offset_top = 4.0
 offset_right = 139.0
 offset_bottom = 27.0
-text = "Angle"
+text = "Target"
 
 [node name="Target NPCButton" type="OptionButton" parent="."]
 layout_mode = 0
@@ -71,6 +71,7 @@ offset_right = 293.063
 offset_bottom = 101.0
 max_value = 360.0
 step = 45.0
+rounded = true
 suffix = "º"
 
 [node name="Label2" type="Label" parent="."]
@@ -94,4 +95,8 @@ suffix = "frames"
 [node name="Position Control" parent="." instance=ExtResource("2_tk8kh")]
 layout_mode = 1
 
+[connection signal="item_selected" from="NPCButton" to="." method="_on_npc_button_item_selected"]
 [connection signal="button_up" from="Manual CheckButton" to="." method="_on_manual_check_button_button_up"]
+[connection signal="item_selected" from="Target NPCButton" to="." method="_on_target_npc_button_item_selected"]
+[connection signal="value_changed" from="Angle SpinBox" to="." method="_on_angle_spin_box_value_changed"]
+[connection signal="value_changed" from="Fire Rate SpinBox" to="." method="_on_fire_rate_spin_box_value_changed"]

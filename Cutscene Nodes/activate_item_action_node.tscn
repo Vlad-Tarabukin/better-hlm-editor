@@ -45,3 +45,6 @@ text = "Visible"
 
 [node name="Position Control" parent="." instance=ExtResource("2_4vawh")]
 layout_mode = 1
+
+[connection signal="item_selected" from="Item OptionButton" to="." method="_on_item_option_button_item_selected"]
+[connection signal="button_up" from="Active CheckBox" to="." method="_on_active_check_box_button_up"]

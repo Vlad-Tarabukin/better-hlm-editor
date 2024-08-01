@@ -220,8 +220,10 @@ offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 11
+current_tab = 5
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 7
@@ -818,7 +820,6 @@ offset_bottom = 698.0
 text = "S rank:"
 
 [node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("18_wg3gp")
@@ -831,30 +832,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 11
+current_tab = 1
 
 [node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
+
+[node name="Add Frame Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 990.0
+offset_right = 102.0
+offset_bottom = 1021.0
+text = "Add Frame"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
 layout_mode = 0
 offset_right = 360.0
-offset_bottom = 1030.0
+offset_bottom = 980.0
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="NPC" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
-visible = false
-layout_mode = 2
-focus_mode = 0
-
-[node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
-visible = false
 layout_mode = 2
 focus_mode = 0
 
@@ -1046,6 +1051,7 @@ script = ExtResource("3")
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Car ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_car_item_list_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Sprite HSlider" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_sprite_h_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/S SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_s_spin_box_value_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/Add Frame Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_add_frame_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/New Floor Button" to="CanvasLayer" method="_on_new_floor_button_button_up"]
 [connection signal="visibility_changed" from="CanvasLayer/Main GUI/Edit Panel" to="CanvasLayer/Main GUI/Edit Panel" method="_on_visibility_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Sprite SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_sprite_spin_box_value_changed"]

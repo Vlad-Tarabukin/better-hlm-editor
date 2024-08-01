@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8mec7c7pv5ov"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/WaitActionNode.gd" id="1_s437c"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_6gq24"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_6gq24"]
 
 [node name="Wait Action Node" type="Control"]
 layout_mode = 3
@@ -32,3 +32,5 @@ suffix = "s"
 
 [node name="Position Control" parent="." instance=ExtResource("2_6gq24")]
 layout_mode = 1
+
+[connection signal="value_changed" from="Delay SpinBox" to="." method="_on_delay_spin_box_value_changed"]

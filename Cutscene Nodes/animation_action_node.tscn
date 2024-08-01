@@ -79,4 +79,7 @@ text = "Interval"
 layout_mode = 1
 
 [connection signal="button_up" from="Loop CheckBox" to="." method="_on_loop_check_box_button_up"]
+[connection signal="button_up" from="Freely CheckBox" to="." method="_on_freely_check_box_button_up"]
 [connection signal="button_up" from="Stop CheckBox" to="." method="_on_stop_check_box_button_up"]
+[connection signal="value_changed" from="Interval SpinBox" to="." method="_on_interval_spin_box_value_changed"]
+[connection signal="item_selected" from="NPCButton" to="." method="_on_npc_button_item_selected"]

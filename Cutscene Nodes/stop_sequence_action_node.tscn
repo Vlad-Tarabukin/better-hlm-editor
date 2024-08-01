@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://qf76jilwqivl"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/StopSequenceActionNode.gd" id="1_xtffr"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_c4vpy"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_c4vpy"]
 
 [node name="Stop Sequence Action Node" type="Control"]
 layout_mode = 3
@@ -29,3 +29,5 @@ text = "Scene Complete"
 
 [node name="Position Control" parent="." instance=ExtResource("2_c4vpy")]
 layout_mode = 1
+
+[connection signal="button_up" from="Complete CheckBox" to="." method="_on_complete_check_box_button_up"]

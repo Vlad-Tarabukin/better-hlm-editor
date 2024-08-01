@@ -42,3 +42,6 @@ allow_greater = true
 
 [node name="Position Control" parent="." instance=ExtResource("2_b4o27")]
 layout_mode = 1
+
+[connection signal="item_selected" from="NPCButton" to="." method="_on_npc_button_item_selected"]
+[connection signal="value_changed" from="Sprite SpinBox" to="." method="_on_sprite_spin_box_value_changed"]

@@ -380,7 +380,7 @@ func load_floor(floor_path):
 					elif action_id == 10:
 						cutscene["frames"][-1]["actions"].append({
 							"action_id": action_id,
-							"level_complete": file.get_line() == "1"
+							"scene_complete": file.get_line() == "1"
 						})
 						cutscene["frames"][-1]["focus"] = file.get_line()
 					elif action_id == 11:
@@ -421,6 +421,7 @@ func save():
 	var tls_file = FileAccess.open(App.level_path + "/level" + str(index) + ".tls", FileAccess.WRITE)
 	var wll_file = FileAccess.open(App.level_path + "/level" + str(index) + ".wll", FileAccess.WRITE)
 	var play_file = FileAccess.open(App.level_path + "/level" + str(index) + ".play", FileAccess.WRITE)
+	var csf_file = FileAccess.open(App.level_path + "/level" + str(index) + ".csf", FileAccess.WRITE)
 	play_file.store_line("0")
 	play_file.store_line("-1")
 	
@@ -569,7 +570,91 @@ func save():
 			play_file.store_line(str(i.position.y))
 			play_file.store_line(str(i.end.y))
 	
+	csf_file.store_line(str(len(cutscene["rects"])))
+	for i in range(len(cutscene["rects"])):
+		csf_file.store_line(str(cutscene["rects"][i].position.x))
+		csf_file.store_line(str(cutscene["rects"][i].position.y))
+		csf_file.store_line(str(cutscene["rects"][i].end.x))
+		csf_file.store_line(str(cutscene["rects"][i].end.y))
+	csf_file.store_line(str(len(cutscene["frames"]) - 1))
+	var messages = []
+	for frame in cutscene["frames"]:
+		csf_file.store_line(str(len(frame["actions"])))
+		for action in frame["actions"]:
+			csf_file.store_line(str(action["action_id"]))
+			if action["action_id"] == 0:
+				csf_file.store_line(str(action["speed"]))
+				csf_file.store_line(str(len(action["position"])))
+				for pos in action["position"]:
+					csf_file.store_line(str(pos.x))
+					csf_file.store_line(str(pos.y))
+				csf_file.store_line(action["character"])
+			elif action["action_id"] == 1:
+				csf_file.store_line(str(len(action["messages"])))
+				var first_len = str(len(messages))
+				csf_file.store_line(str(first_len))
+				messages.append_array(action["messages"])
+				csf_file.store_line(str(len(messages)))
+				csf_file.store_line(str(first_len))
+				csf_file.store_line("0")
+			elif action["action_id"] == 2:
+				csf_file.store_line(str(action["sprite_id"]))
+				csf_file.store_line(action["character"])
+			elif action["action_id"] == 3:
+				csf_file.store_line(action["character"])
+				csf_file.store_line(str(int(action["loop"])))
+				csf_file.store_line(str(action["interval"]))
+				csf_file.store_line(str(int(action["freely"])))
+				csf_file.store_line(str(int(action["stop"])))
+			elif action["action_id"] == 4:
+				csf_file.store_line(action["character"])
+				csf_file.store_line(str(int(!action["manual"])))
+				csf_file.store_line(str(action["angle"]))
+				csf_file.store_line(action["target"])
+				csf_file.store_line(str(int(action["keep"])))
+				csf_file.store_line(str(action["fire_rate"]))
+			elif action["action_id"] == 5:
+				csf_file.store_line(str(action["delay"]))
+				csf_file.store_line("0")
+			elif action["action_id"] == 6:
+				csf_file.store_line(action["character"])
+				csf_file.store_line(str(action["reason"] % 2))
+				csf_file.store_line(str(floor(action["reason"] / 2)))
+				csf_file.store_line(str(action["delay"]))
+			elif action["action_id"] == 7:
+				csf_file.store_line("0")
+				csf_file.store_line(str(action["sound_id"]))
+			elif action["action_id"] == 8:
+				csf_file.store_line("0")
+				csf_file.store_line(action["music_name"])
+			elif action["action_id"] == 9:
+				csf_file.store_line("0")
+				csf_file.store_line(str(int(action["fade"])))
+				csf_file.store_line(str(action["fade_time"]))
+				csf_file.store_line("0")
+			elif action["action_id"] == 10:
+				csf_file.store_line(str(int(action["scene_complete"])))
+			elif action["action_id"] == 11:
+				csf_file.store_line(str(int(action["fade"])))
+				csf_file.store_line(str(action["fade_time"]))
+			elif action["action_id"] == 12:
+				csf_file.store_line(action["item"])
+				csf_file.store_line(str(int(action["active"])))
+				csf_file.store_line(str(int(action["visible"])))
+			elif action["action_id"] == 13:
+				csf_file.store_line(action["character"])
+				csf_file.store_line(str(action["angle"]))
+				csf_file.store_line(str(int(action["animate"])))
+			csf_file.store_line(frame["focus"])
+	csf_file.store_line(str(len(messages)))
+	for message in messages:
+		csf_file.store_line(message["first_line"])
+		csf_file.store_line(message["second_line"])
+		csf_file.store_line(str(message["sprite_id"]))
+		csf_file.store_line(message["character"])
+	
 	obj_file.close()
 	tls_file.close()
 	wll_file.close()
 	play_file.close()
+	csf_file.close()

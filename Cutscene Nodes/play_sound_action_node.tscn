@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rh8icl87eaim"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/PlaySoundActionNode.gd" id="1_uqf4q"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_7p0qn"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_7p0qn"]
 
 [node name="Play Sound Action Node" type="Control"]
 layout_mode = 3
@@ -279,3 +279,5 @@ popup/item_124/id = 180
 
 [node name="Position Control" parent="." instance=ExtResource("2_7p0qn")]
 layout_mode = 1
+
+[connection signal="item_selected" from="Sound OptionButton" to="." method="_on_sound_option_button_item_selected"]

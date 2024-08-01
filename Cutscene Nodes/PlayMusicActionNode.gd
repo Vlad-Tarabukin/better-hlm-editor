@@ -53,10 +53,19 @@ const MUSIC = [
 	"BlackTar.mp3"
 ]
 
+var action
+
 func _ready():
 	custom_minimum_size = Vector2(360, 80)
 
-func initialize(action):
+func initialize(_action):
+	action = _action
+	action["music_name"] = action.get("music_name", MUSIC[0])
+	
 	for i in range(music_option_button.item_count):
 		if MUSIC[i] == action["music_name"]:
 			music_option_button.selected = i
+			return
+
+func _on_music_option_button_item_selected(index):
+	action["music_name"] = MUSIC[index]

@@ -49,3 +49,7 @@ text = "Animate"
 
 [node name="Position Control" parent="." instance=ExtResource("2_nn82a")]
 layout_mode = 1
+
+[connection signal="item_selected" from="NPCButton" to="." method="_on_npc_button_item_selected"]
+[connection signal="value_changed" from="Angle SpinBox" to="." method="_on_angle_spin_box_value_changed"]
+[connection signal="button_up" from="Animate CheckBox" to="." method="_on_animate_check_box_button_up"]

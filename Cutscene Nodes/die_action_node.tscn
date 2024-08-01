@@ -60,3 +60,7 @@ suffix = "s"
 
 [node name="Position Control" parent="." instance=ExtResource("2_ps350")]
 layout_mode = 1
+
+[connection signal="item_selected" from="NPCButton" to="." method="_on_npc_button_item_selected"]
+[connection signal="item_selected" from="Reason OptionButton" to="." method="_on_reason_option_button_item_selected"]
+[connection signal="value_changed" from="Delay SpinBox" to="." method="_on_delay_spin_box_value_changed"]

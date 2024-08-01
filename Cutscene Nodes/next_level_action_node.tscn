@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bka60fuxwk0k2"]
 
 [ext_resource type="Script" path="res://Cutscene Nodes/NextLevelActionNode.gd" id="1_hcfpi"]
-[ext_resource type="PackedScene" path="res://Cutscene Nodes/position_control.tscn" id="2_g17xm"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_g17xm"]
 
 [node name="Next Level Action Node" type="Control"]
 layout_mode = 3
@@ -41,3 +41,5 @@ suffix = "s"
 
 [node name="Position Control" parent="." instance=ExtResource("2_g17xm")]
 layout_mode = 1
+
+[connection signal="value_changed" from="Fade SpinBox" to="." method="_on_fade_spin_box_value_changed"]
