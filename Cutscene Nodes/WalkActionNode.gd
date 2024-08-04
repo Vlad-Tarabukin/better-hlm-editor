@@ -20,7 +20,6 @@ func initialize(_action):
 	speed_spin_box.value = action["speed"]
 	for pos in action["positions"]:
 		positions_item_list.add_item(str(pos.x) + " " + str(pos.y))
-	positions_item_list.set_item_selectable(0, false)
 
 func _on_speed_spin_box_value_changed(value):
 	action["speed"] = value

@@ -25,6 +25,7 @@ const ACTION_NODES = [
 
 func initialize(frame, index):
 	name_label.text = "Frame " + str(index)
+	npc_button.set_character(frame["focus"])
 	for action in frame["actions"]:
 		var action_node = ACTION_NODES[action["action_id"]].instantiate()
 		v_box_container.add_child(action_node)

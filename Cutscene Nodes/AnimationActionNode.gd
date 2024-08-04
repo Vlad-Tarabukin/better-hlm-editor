@@ -24,8 +24,10 @@ func initialize(_action):
 	stop_check_box.button_pressed = action["stop"]
 	interval_spin_box.value = action["interval"] / 60.0
 	npc_button.set_character(action["character"])
+	_on_stop_check_box_button_up()
 
 func _on_stop_check_box_button_up():
+	action["stop"] = stop_check_box.button_pressed
 	loop_check_box.disabled = stop_check_box.button_pressed
 	freely_check_box.disabled = stop_check_box.button_pressed
 	interval_spin_box.editable = !stop_check_box.button_pressed

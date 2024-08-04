@@ -26,9 +26,6 @@ var erase_texture = preload("res://Textures/tile_erase.png")
 @onready var locked_check_box = $"Locked CheckBox"
 @onready var cutscene_check_box = $"Cutscene CheckBox"
 
-func _on_Main_objects_loaded():
-	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]
-
 func _on_TabContainer_tab_selected(tab):
 	active = tab == TAB_INDEX
 	if active:
@@ -300,3 +297,7 @@ func _on_direction_option_button_item_selected(index):\
 		var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
 		App.cursor.texture = sprite["frames"][0]
 		App.cursor.offset = sprite["center"]
+
+
+func _on_main_objects_loaded():
+	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]

@@ -29,7 +29,7 @@ offset_top = 30.0
 offset_right = 170.0
 offset_bottom = 61.0
 max_value = 0.0
-step = 0.5
+step = 0.1
 allow_greater = true
 prefix = "Speed:"
 

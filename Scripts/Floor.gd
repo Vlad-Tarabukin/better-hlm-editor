@@ -9,8 +9,8 @@ var rain_rects = []
 var cutscene = {
 	"rects": [],
 	"frames": [],
-	"npc": {},
-	"items": {}
+	"npc": [],
+	"items": []
 }
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
@@ -19,6 +19,7 @@ const RAIN_TEXTURE = preload("res://Textures/rain.png")
 func _init(_index):
 	index = _index
 	name = "Floor" + str(index)
+	z_index = 99
 
 func _draw():
 	var floor_node = get_node_or_null("../Floor" + str(index - 1))
@@ -29,6 +30,10 @@ func _draw():
 	if rain:
 		for rect in rain_rects:
 			draw_texture_rect(RAIN_TEXTURE, rect, true)
+	
+	for i in range(len(cutscene["rects"])):
+		draw_rect(cutscene["rects"][i], Color.GREEN, false)
+		draw_string(Control.new().get_theme_default_font(), cutscene["rects"][i].position + Vector2(0, 10), "Trigger " + str(i), HORIZONTAL_ALIGNMENT_LEFT, -1, 10, Color.GREEN)
 
 func load_floor(floor_path):
 	var file = FileAccess.open(floor_path, FileAccess.READ)
@@ -221,7 +226,7 @@ func load_floor(floor_path):
 			for _i in range(int(file.get_line())):
 				var character_name = file.get_line()
 				var sprite_id = int(file.get_line())
-				var angle = int(file.get_line())
+				var angle = -int(file.get_line())
 				var pos = Vector2(int(file.get_line()), int(file.get_line()))
 				file.get_line()
 				file.get_line()
@@ -229,43 +234,53 @@ func load_floor(floor_path):
 				file.get_line()
 				file.get_line()
 				var trigger_behavior = int(file.get_line())
-				var proximity_trigger_range = int(file.get_line())
+				var trigger_range = int(file.get_line())
 				var solid = file.get_line() == "1"
 				var killable = file.get_line() == "1"
 				file.get_line()
 				file.get_line()
 				file.get_line()
 				
-				var npc_sprite = CutsceneSprite.new(sprite_id)
-				add_child(npc_sprite)
-				npc_sprite.position = pos
-				npc_sprite.rotation_degrees = angle
-				
-				cutscene["npc"][character_name] = {
-					"sprite": npc_sprite,
+				var info = {
+					"sprite_id": sprite_id,
+					"npc": true,
 					"trigger_behavior": trigger_behavior,
-					"proximity_trigger_range": proximity_trigger_range,
+					"trigger_range": trigger_range,
 					"solid": solid,
 					"killable": killable
 				}
+				
+				var npc_sprite = CutsceneSprite.new(info)
+				add_child(npc_sprite)
+				npc_sprite.name = character_name
+				npc_sprite.position = pos
+				npc_sprite.rotation_degrees = angle
+				npc_sprite.level = index
+				
+				cutscene["npc"].append(npc_sprite)
 		elif floor_path.get_extension() == "itm":
 			for _i in range(int(file.get_line())):
 				var item_name = file.get_line()
 				var sprite_id = int(file.get_line())
-				var angle = int(file.get_line())
+				var angle = -int(file.get_line())
 				var pos = Vector2(int(file.get_line()), int(file.get_line()))
 				
-				var item_sprite = CutsceneSprite.new(sprite_id)
-				add_child(item_sprite)
-				item_sprite.position = pos
-				item_sprite.rotation_degrees = angle
-				
-				cutscene["items"][item_name] = {
-					"sprite": item_sprite,
+				var info = {
+					"sprite_id": sprite_id,
+					"npc": false,
 					"active": file.get_line() == "1",
 					"visible": file.get_line() == "1",
 					"finish": file.get_line() == "1"
 				}
+				
+				var item_sprite = CutsceneSprite.new(info)
+				add_child(item_sprite)
+				item_sprite.name = item_name
+				item_sprite.position = pos
+				item_sprite.rotation_degrees = angle
+				item_sprite.level = index
+				
+				cutscene["items"].append(item_sprite)
 				
 				file.get_line()
 				file.get_line()
@@ -421,9 +436,13 @@ func save():
 	var tls_file = FileAccess.open(App.level_path + "/level" + str(index) + ".tls", FileAccess.WRITE)
 	var wll_file = FileAccess.open(App.level_path + "/level" + str(index) + ".wll", FileAccess.WRITE)
 	var play_file = FileAccess.open(App.level_path + "/level" + str(index) + ".play", FileAccess.WRITE)
+	var npc_file = FileAccess.open(App.level_path + "/level" + str(index) + ".npc", FileAccess.WRITE)
+	var itm_file = FileAccess.open(App.level_path + "/level" + str(index) + ".itm", FileAccess.WRITE)
 	var csf_file = FileAccess.open(App.level_path + "/level" + str(index) + ".csf", FileAccess.WRITE)
 	play_file.store_line("0")
 	play_file.store_line("-1")
+	npc_file.store_line(str(len(cutscene["npc"])))
+	itm_file.store_line(str(len(cutscene["items"])))
 	
 	for obj in get_children():
 		if obj is ObjectSprite:
@@ -547,6 +566,37 @@ func save():
 			play_file.store_line("0")
 			play_file.store_line(str(obj.locked))
 			play_file.store_line(str(obj.cutscene))
+		elif obj is CutsceneSprite:
+			if obj.info["npc"]:
+				npc_file.store_line(obj.name)
+				npc_file.store_line(str(obj.info["sprite_id"]))
+				npc_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+				npc_file.store_line(str(obj.position.x))
+				npc_file.store_line(str(obj.position.y))
+				npc_file.store_line("1")
+				npc_file.store_line("99999")
+				npc_file.store_line("99999")
+				npc_file.store_line("0")
+				npc_file.store_line("0")
+				npc_file.store_line(str(obj.info["trigger_behavior"]))
+				npc_file.store_line(str(obj.info["trigger_range"]))
+				npc_file.store_line(str(int(obj.info["solid"])))
+				npc_file.store_line(str(int(obj.info["killable"])))
+				npc_file.store_line("1")
+				npc_file.store_line(str(obj.position.x))
+				npc_file.store_line(str(obj.position.y))
+			else:
+				itm_file.store_line(obj.name)
+				itm_file.store_line(str(obj.info["sprite_id"]))
+				itm_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+				itm_file.store_line(str(obj.position.x))
+				itm_file.store_line(str(obj.position.y))
+				itm_file.store_line(str(int(obj.info["active"])))
+				itm_file.store_line(str(int(obj.info["visible"])))
+				itm_file.store_line(str(int(obj.info["finish"])))
+				itm_file.store_line("0")
+				itm_file.store_line("10000")
+				itm_file.store_line("10000")
 	
 	for light_overlay in light_overlays:
 		obj_file.store_line("1770")
@@ -584,8 +634,8 @@ func save():
 			csf_file.store_line(str(action["action_id"]))
 			if action["action_id"] == 0:
 				csf_file.store_line(str(action["speed"]))
-				csf_file.store_line(str(len(action["position"])))
-				for pos in action["position"]:
+				csf_file.store_line(str(len(action["positions"])))
+				for pos in action["positions"]:
 					csf_file.store_line(str(pos.x))
 					csf_file.store_line(str(pos.y))
 				csf_file.store_line(action["character"])
@@ -657,4 +707,6 @@ func save():
 	tls_file.close()
 	wll_file.close()
 	play_file.close()
+	npc_file.close()
+	itm_file.close()
 	csf_file.close()

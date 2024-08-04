@@ -8,14 +8,17 @@ var action
 
 func _ready():
 	custom_minimum_size = Vector2(360, 120)
-	for item in App.get_current_floor().cutscene["items"].keys():
-		item_option_button.add_item(item)
+	for item in App.get_current_floor().cutscene["items"]:
+		item_option_button.add_item(item.name)
 
 func initialize(_action):
 	action = _action
 	action["active"] = action.get("active", true)
 	action["visible"] = action.get("visible", true)
-	action["item"] = action.get("item", null)
+	if len(App.get_current_floor().cutscene["items"]) > 0:
+		action["item"] = action.get("item", App.get_current_floor().cutscene["items"][0].name)
+	else:
+		action["item"] = action.get("item", null)
 	
 	active_check_box.button_pressed = action["active"]
 	visible_check_box.button_pressed = action["visible"]
