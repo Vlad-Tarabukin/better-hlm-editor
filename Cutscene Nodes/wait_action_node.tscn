@@ -28,6 +28,7 @@ offset_bottom = 61.0
 max_value = 0.0
 step = 0.1
 allow_greater = true
+update_on_text_changed = true
 suffix = "s"
 
 [node name="Position Control" parent="." instance=ExtResource("2_6gq24")]

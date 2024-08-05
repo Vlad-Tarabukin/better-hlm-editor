@@ -71,6 +71,7 @@ offset_right = 293.063
 offset_bottom = 101.0
 max_value = 360.0
 rounded = true
+update_on_text_changed = true
 suffix = "º"
 
 [node name="Label2" type="Label" parent="."]
@@ -89,6 +90,7 @@ offset_right = 200.0
 offset_bottom = 171.0
 max_value = 0.0
 allow_greater = true
+update_on_text_changed = true
 suffix = "frames"
 
 [node name="Position Control" parent="." instance=ExtResource("2_tk8kh")]

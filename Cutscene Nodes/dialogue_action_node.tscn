@@ -339,8 +339,10 @@ offset_left = 230.0
 offset_top = 150.0
 offset_right = 340.0
 offset_bottom = 181.0
+min_value = -1.0
 max_value = 0.0
 allow_greater = true
+update_on_text_changed = true
 
 [node name="Messages ItemList" type="ItemList" parent="."]
 layout_mode = 0

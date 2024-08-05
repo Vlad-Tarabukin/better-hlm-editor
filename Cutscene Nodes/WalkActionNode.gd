@@ -4,6 +4,8 @@ extends Control
 @onready var npc_button = $NPCButton
 @onready var positions_item_list = $"Positions ItemList"
 @onready var add_point_button = $"Add Point Button"
+@onready var x_spin_box = $"X SpinBox"
+@onready var y_spin_box = $"Y SpinBox"
 
 var action
 
@@ -41,3 +43,19 @@ func _on_delete_point_button_button_up():
 		var index = positions_item_list.get_selected_items()[0]
 		positions_item_list.remove_item(index)
 		action["positions"].remove_at(index)
+
+func _on_positions_item_list_item_selected(index):
+	x_spin_box.value = action["positions"][index].x
+	y_spin_box.value = action["positions"][index].y
+
+func _on_x_spin_box_value_changed(value):
+	if positions_item_list.is_anything_selected():
+		var index = positions_item_list.get_selected_items()[0]
+		action["positions"][index].x = value
+		positions_item_list.set_item_text(index, str(action["positions"][index].x) + " " + str(action["positions"][index].y))
+
+func _on_y_spin_box_value_changed(value):
+	if positions_item_list.is_anything_selected():
+		var index = positions_item_list.get_selected_items()[0]
+		action["positions"][index].y = value
+		positions_item_list.set_item_text(index, str(action["positions"][index].x) + " " + str(action["positions"][index].y))

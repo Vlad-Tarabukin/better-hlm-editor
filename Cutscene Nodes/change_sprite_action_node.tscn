@@ -39,6 +39,7 @@ min_value = -1.0
 max_value = 0.0
 rounded = true
 allow_greater = true
+update_on_text_changed = true
 
 [node name="Position Control" parent="." instance=ExtResource("2_b4o27")]
 layout_mode = 1

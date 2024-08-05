@@ -79,9 +79,9 @@ offset_top = 70.0
 offset_right = 100.0
 offset_bottom = 105.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Y SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Transition Panel"]
 layout_mode = 0
@@ -90,9 +90,9 @@ offset_top = 70.0
 offset_right = 195.0
 offset_bottom = 105.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Transition Panel"]
 layout_mode = 0
@@ -168,7 +168,10 @@ offset_top = 20.0
 offset_right = 195.0
 offset_bottom = 51.0
 min_value = 1.0
+max_value = 1.0
 value = 1.0
+allow_greater = true
+update_on_text_changed = true
 
 [node name="Floor List" type="ItemList" parent="CanvasLayer/Main GUI"]
 layout_mode = 1
@@ -611,6 +614,7 @@ max_value = 0.0
 step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Left Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -622,6 +626,7 @@ max_value = 0.0
 step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Right Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -633,6 +638,7 @@ max_value = 0.0
 step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Bottom Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -644,6 +650,7 @@ max_value = 0.0
 step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_direction = 1
@@ -775,6 +782,7 @@ min_value = -1.0
 max_value = 26.0
 value = -1.0
 editable = false
+update_on_text_changed = true
 
 [node name="Player ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_mode = 0
@@ -813,6 +821,7 @@ offset_bottom = 731.0
 max_value = 0.0
 step = 1000.0
 allow_greater = true
+update_on_text_changed = true
 
 [node name="Label4" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_mode = 0
@@ -1093,6 +1102,7 @@ offset_bottom = 41.0
 max_value = 0.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Sprite SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -1103,6 +1113,7 @@ offset_bottom = 81.0
 max_value = 0.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Frame SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -1111,6 +1122,7 @@ offset_top = 90.0
 offset_right = 220.0
 offset_bottom = 121.0
 max_value = 0.0
+update_on_text_changed = true
 
 [node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -1171,6 +1183,7 @@ offset_bottom = 61.0
 min_value = -1.0
 max_value = 0.0
 allow_greater = true
+update_on_text_changed = true
 
 [node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
 layout_mode = 0
@@ -1237,6 +1250,7 @@ offset_bottom = 66.0
 max_value = 0.0
 allow_greater = true
 editable = false
+update_on_text_changed = true
 suffix = "px"
 
 [node name="Item" type="Control" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
