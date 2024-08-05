@@ -143,6 +143,7 @@ func load_floor(floor_path):
 					var x = int(params.pop_front())
 					var y = int(params.pop_front())
 					params.pop_front()
+					params.pop_front()
 					var locked = int(params.pop_front())
 					var cutscene = int(params.pop_front())
 					
