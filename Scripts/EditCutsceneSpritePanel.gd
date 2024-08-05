@@ -6,6 +6,7 @@ extends Panel
 @onready var killable_check_box = $"NPC/Killable CheckBox"
 @onready var trigger_option_button = $"NPC/Trigger OptionButton"
 @onready var range_spin_box = $"NPC/Range SpinBox"
+@onready var trigger_spin_box = $"NPC/Trigger SpinBox"
 @onready var active_check_box = $"Item/Active CheckBox"
 @onready var visible_check_box = $"Item/Visible CheckBox"
 @onready var finish_check_box = $"Item/Finish CheckBox"
@@ -22,6 +23,7 @@ func open(_sprite):
 	if sprite.info["npc"]:
 		solid_check_box.button_pressed = sprite.info["solid"]
 		killable_check_box.button_pressed = sprite.info["killable"]
+		trigger_spin_box.value = sprite.info["trigger_index"]
 		trigger_option_button.select(sprite.info["trigger_behavior"] + 1)
 		range_spin_box.value = sprite.info["trigger_range"]
 	else:
@@ -31,6 +33,7 @@ func open(_sprite):
 
 func _on_trigger_option_button_item_selected(index):
 	range_spin_box.editable = index == 2
+	trigger_spin_box.editable = index != 0
 	range_spin_box.value = 0
 
 func _on_cancel_button_button_up():
@@ -51,6 +54,7 @@ func _on_ok_button_button_up():
 	if sprite.info["npc"]:
 		sprite.info["solid"] = solid_check_box.button_pressed
 		sprite.info["killable"] = killable_check_box.button_pressed
+		sprite.info["trigger_index"] = int(trigger_spin_box.value)
 		sprite.info["trigger_behavior"] = trigger_option_button.selected - 1
 		sprite.info["trigger_range"] = int(range_spin_box.value)
 	else:

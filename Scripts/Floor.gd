@@ -231,7 +231,7 @@ func load_floor(floor_path):
 				file.get_line()
 				file.get_line()
 				file.get_line()
-				file.get_line()
+				var trigger_index = int(file.get_line())
 				file.get_line()
 				var trigger_behavior = int(file.get_line())
 				var trigger_range = int(file.get_line())
@@ -244,6 +244,7 @@ func load_floor(floor_path):
 				var info = {
 					"sprite_id": sprite_id,
 					"npc": true,
+					"trigger_index": trigger_index,
 					"trigger_behavior": trigger_behavior,
 					"trigger_range": trigger_range,
 					"solid": solid,
@@ -433,8 +434,11 @@ func load_floor(floor_path):
 
 func sorting(a, b):
 	if a is WallSprite and b is WallSprite:
-		if a.position.x <= b.position.x:
-			return a.position.y <= b.position.y
+		if a.position.x == b.position.x:
+			return a.position.y < b.position.y
+		if a.position.y == b.position.y:
+			return a.position.x < b.position.x
+		return a.position.x < b.position.x or a.position.y < b.position.y
 	return false
 
 func save():
@@ -585,8 +589,8 @@ func save():
 				npc_file.store_line("1")
 				npc_file.store_line("99999")
 				npc_file.store_line("99999")
-				npc_file.store_line("0")
-				npc_file.store_line("0")
+				npc_file.store_line(str(int(obj.info["trigger_behavior"] != -1)))
+				npc_file.store_line(str(obj.info["trigger_index"]))
 				npc_file.store_line(str(obj.info["trigger_behavior"]))
 				npc_file.store_line(str(obj.info["trigger_range"]))
 				npc_file.store_line(str(int(obj.info["solid"])))

@@ -87,6 +87,7 @@ func _unhandled_input(event):
 					}
 					if npc_check_button.button_pressed:
 						info.merge({
+							"trigger_index": 0,
 							"trigger_behavior": -1,
 							"trigger_range": 0,
 							"solid": solid_check_box.button_pressed,

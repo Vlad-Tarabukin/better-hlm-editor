@@ -1148,7 +1148,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
 offset_top = -90.0
-offset_right = 150.0
+offset_right = 210.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1195,7 +1195,7 @@ visible = false
 anchors_preset = 0
 offset_left = 10.0
 offset_top = 65.0
-offset_right = 290.0
+offset_right = 350.0
 offset_bottom = 135.0
 
 [node name="Solid CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
@@ -1249,7 +1249,26 @@ editable = false
 update_on_text_changed = true
 suffix = "px"
 
+[node name="Trigger SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 35.0
+offset_right = 343.063
+offset_bottom = 66.0
+max_value = 0.0
+allow_greater = true
+editable = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC/Trigger SpinBox"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 68.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 14
+text = "Trigger id:"
+
 [node name="Item" type="Control" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+visible = false
 anchors_preset = 0
 offset_left = 10.0
 offset_top = 65.0
@@ -1299,9 +1318,9 @@ text = "Cancel"
 
 [node name="Delete Button" type="Button" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
 layout_mode = 0
-offset_left = 220.0
+offset_left = 280.0
 offset_top = 140.0
-offset_right = 290.0
+offset_right = 350.0
 offset_bottom = 171.0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
