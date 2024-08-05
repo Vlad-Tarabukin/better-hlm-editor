@@ -4,7 +4,9 @@ extends ItemList
 
 var level_paths = []
 
-func _on_Level_List_ready():
+func _on_visibility_changed():
+	clear()
+	level_paths = []
 	add_item("-Create Level-")
 	var levels_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single"
 	var dir = DirAccess.open(levels_path)
@@ -19,15 +21,36 @@ func _on_Level_List_ready():
 			level_paths.append(levels_path + "/" + file_name)
 		file_name = dir.get_next()
 
+func new_folder():
+	var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single/" + uuid.v4()
+	var error = DirAccess.make_dir_recursive_absolute(path)
+	while error != OK:
+		path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single/" + uuid.v4()
+		error = DirAccess.make_dir_recursive_absolute(path)
+	return path
+
 func _on_Level_List_item_selected(index):
 	if index == 0:
-		var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single/" + uuid.v4()
-		var error = DirAccess.make_dir_recursive_absolute(path)
-		while error != OK:
-			path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single/" + uuid.v4()
-			error = DirAccess.make_dir_recursive_absolute(path)
+		var path = new_folder()
 		FileAccess.open(path + "/level.hlm", FileAccess.WRITE).store_string(FileAccess.open("res://default_level.hlm", FileAccess.READ).get_as_text())
 		App.load_level(path)
-	else:
-		App.load_level(level_paths[index - 1])
-	visible = false
+		visible = false
+
+func _on_load_button_button_up():
+	if is_anything_selected():
+		App.load_level(level_paths[get_selected_items()[0] - 1])
+		visible = false
+
+func _on_backup_button_button_up():
+	if is_anything_selected():
+		var path = level_paths[get_selected_items()[0] - 1]
+		var new_path = new_folder()
+		DirAccess.copy_absolute(path, new_path)
+		var new_hlm = FileAccess.open(path + "/level.hlm", FileAccess.READ).get_as_text().split("\n")
+		new_hlm[0] = new_hlm[0] + " (backup {time})".format({"time": Time.get_datetime_string_from_system()})
+		var hlm_file = FileAccess.open(new_path + "/level.hlm", FileAccess.WRITE)
+		for st in new_hlm:
+			hlm_file.store_line(st)
+		hlm_file.close()
+		App.load_level(path)
+		visible = false

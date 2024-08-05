@@ -38,7 +38,7 @@ script = ExtResource("4")
 script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
-visible = false
+clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 400.0
@@ -47,7 +47,22 @@ focus_mode = 0
 allow_reselect = true
 script = ExtResource("11")
 
+[node name="Backup Button" type="Button" parent="CanvasLayer/Level List"]
+layout_mode = 0
+offset_left = 410.0
+offset_right = 550.0
+offset_bottom = 31.0
+text = "Backup and load"
+
+[node name="Load Button" type="Button" parent="CanvasLayer/Level List"]
+layout_mode = 0
+offset_left = 560.0
+offset_right = 606.0
+offset_bottom = 31.0
+text = "Load"
+
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1339,7 +1354,9 @@ script = ExtResource("3")
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="CanvasLayer" to="CanvasLayer" method="_on_CanvasLayer_ready"]
 [connection signal="item_selected" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_item_selected"]
-[connection signal="ready" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_ready"]
+[connection signal="visibility_changed" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_visibility_changed"]
+[connection signal="button_up" from="CanvasLayer/Level List/Backup Button" to="CanvasLayer/Level List" method="_on_backup_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Level List/Load Button" to="CanvasLayer/Level List" method="_on_load_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Cancel Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Ok Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_ok_button_button_up"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Floor List" to="CanvasLayer" method="_on_floor_list_item_selected"]
