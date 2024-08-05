@@ -219,7 +219,7 @@ func load_floor(floor_path):
 				
 				var wall_sprite = WallSprite.new(object_id, sprite_id)
 				if wall_sprite != null:
-					wall_sprite.global_position = Vector2i(x, y)
+					wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
 					wall_sprite.level = index
 					add_child(wall_sprite)
 		elif floor_path.get_extension() == "npc":
@@ -431,6 +431,12 @@ func load_floor(floor_path):
 			for message in dialogue_messages:
 				cutscene["frames"][message["frame"]]["actions"][message["index"]]["messages"] = messages.slice(message["start"], message["end"])
 
+func sorting(a, b):
+	if a is WallSprite and b is WallSprite:
+		if a.position.x <= b.position.x:
+			return a.position.y <= b.position.y
+	return false
+
 func save():
 	var obj_file = FileAccess.open(App.level_path + "/level" + str(index) + ".obj", FileAccess.WRITE)
 	var tls_file = FileAccess.open(App.level_path + "/level" + str(index) + ".tls", FileAccess.WRITE)
@@ -444,7 +450,10 @@ func save():
 	npc_file.store_line(str(len(cutscene["npc"])))
 	itm_file.store_line(str(len(cutscene["items"])))
 	
-	for obj in get_children():
+	var objects = get_children().duplicate()
+	objects.sort_custom(sorting)
+	
+	for obj in objects:
 		if obj is ObjectSprite:
 			obj_file.store_line(str(obj.parent))
 			obj_file.store_line(str(obj.position.x))
@@ -468,13 +477,13 @@ func save():
 			tls_file.store_line(str(obj.depth))
 		elif obj is WallSprite:
 			wll_file.store_line(str(obj.object_id))
-			wll_file.store_line(str(obj.position.x))
-			wll_file.store_line(str(obj.position.y))
+			wll_file.store_line(str(obj.position.x + obj.wall_offset.x))
+			wll_file.store_line(str(obj.position.y + obj.wall_offset.y))
 			wll_file.store_line(str(obj.sprite_id))
 			wll_file.store_line("0")
 			play_file.store_line(str(obj.object_id))
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.position.y))
+			play_file.store_line(str(obj.position.x + obj.wall_offset.x))
+			play_file.store_line(str(obj.position.y + obj.wall_offset.y))
 			play_file.store_line(str(obj.sprite_id))
 			play_file.store_line("0")
 			play_file.store_line("0")
