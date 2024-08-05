@@ -38,6 +38,7 @@ script = ExtResource("4")
 script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
+visible = false
 clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -62,7 +63,6 @@ offset_bottom = 31.0
 text = "Load"
 
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,7 +241,7 @@ offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 11
-current_tab = 5
+current_tab = 1
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -379,7 +379,6 @@ offset_bottom = 581.0
 text = "Cutscene"
 
 [node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("9_jdnfe")
@@ -843,6 +842,7 @@ offset_bottom = 698.0
 text = "S rank:"
 
 [node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("18_wg3gp")

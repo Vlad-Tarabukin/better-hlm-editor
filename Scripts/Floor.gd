@@ -12,8 +12,10 @@ var cutscene = {
 	"npc": [],
 	"items": []
 }
+var transition_markers = []
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
+const TRANSITION_HINT_COLOR = Color(1, 0, 0, 0.2)
 const RAIN_TEXTURE = preload("res://Textures/rain.png")
 
 func _init(_index):
@@ -30,6 +32,11 @@ func _draw():
 	if rain:
 		for rect in rain_rects:
 			draw_texture_rect(RAIN_TEXTURE, rect, true)
+	
+	for marker in transition_markers:
+		var rect = marker.region_rect
+		rect.position = marker.position + Vector2(marker.transition_offset)
+		draw_rect(rect, TRANSITION_HINT_COLOR)
 	
 	for i in range(len(cutscene["rects"])):
 		draw_rect(cutscene["rects"][i], Color.GREEN, false)
@@ -68,12 +75,12 @@ func load_floor(floor_path):
 				if !proper:
 					break
 				if parent_id == 2297:
-					var trigger_rect = Rect2i(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
+					var trigger_rect = Rect2(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
 					trigger_rect.position -= trigger_rect.size / 2
 					var hor_direction = max(min(int(params.pop_front()), 1), -1)
 					var ver_direction = max(min(int(params.pop_front()), 1), -1)
 					var target_floor = int(params.pop_front())
-					var offset = Vector2i(int(params.pop_front()), int(params.pop_front()))
+					var offset = Vector2(int(params.pop_front()), int(params.pop_front()))
 					var direction = 0
 					if hor_direction == 0 and ver_direction == -1:
 						direction = 1

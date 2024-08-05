@@ -40,3 +40,10 @@ func get_hor_direction():
 	elif direction == 0:
 		return 1
 	return 0
+
+func _enter_tree():
+	get_tree().get_root().get_node("Main/Floors").get_children()[target_floor].transition_markers.append(self)
+
+func _exit_tree():
+	var floor_node = get_tree().get_root().get_node("Main/Floors").get_children()[target_floor]
+	floor_node.transition_markers.remove_at(floor_node.transition_markers.rfind(self))
