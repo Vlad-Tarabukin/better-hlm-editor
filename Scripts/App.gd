@@ -93,14 +93,20 @@ func load_level(_level_path):
 	
 	for i in range(level_info["floors"] + 1):
 		var level_floor = Floor.new(i)
-		level_floor.visible = i == 0
+		level_floor.visible = false
+		floors_node.add_child(level_floor)
+	
+	floors_node.get_child(0).visible = true
+	
+	for i in range(level_info["floors"] + 1):
+		var level_floor = floors_node.get_child(i)
 		level_floor.load_floor(level_path + "/level" + str(i) + ".obj")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".tls")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".wll")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".npc")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".itm")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".csf")
-		floors_node.add_child(level_floor)
+	
 	queue_redraw()
 	get_tree().get_root().get_node("Main/CanvasLayer").show_levels()
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Panel/TabContainer/Level").show_level_info()
