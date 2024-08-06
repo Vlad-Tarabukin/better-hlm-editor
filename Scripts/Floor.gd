@@ -239,8 +239,8 @@ func load_floor(floor_path):
 				file.get_line()
 				file.get_line()
 				file.get_line()
-				var trigger_index = int(file.get_line())
 				file.get_line()
+				var trigger_index = int(file.get_line())
 				var trigger_behavior = int(file.get_line())
 				var trigger_range = int(file.get_line())
 				var solid = file.get_line() == "1"
