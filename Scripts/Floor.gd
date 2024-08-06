@@ -203,7 +203,7 @@ func load_floor(floor_path):
 				if depth == -99:
 					submode = 2
 				
-				var tile_sprite = TileSprite.new(tile_id, tile_x, tile_y, depth, null, submode)
+				var tile_sprite = TileSprite.new(tile_id, tile_x, tile_y, depth, submode)
 				tile_sprite.global_position = Vector2(x, y)
 				tile_sprite.level = index
 				add_child(tile_sprite)

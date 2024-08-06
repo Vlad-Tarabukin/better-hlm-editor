@@ -43,8 +43,10 @@ func refresh_tiles():
 	curr_pos = Vector2i.ZERO
 	tile_select.texture = ObjectsLoader.tiles[curr_tiles]["tilemap"]
 	tile_select.set_pos(null)
+	tile_select.tile_size = ObjectsLoader.tiles[curr_tiles]["size"]
 	App.cursor.texture = null
-	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+	App.cursor.snap = tile_select.tile_size
+	App.cursor.region_rect = Rect2i(0, 0, tile_select.tile_size, tile_select.tile_size)
 
 func set_tile(pos):
 	curr_pos = pos
@@ -63,7 +65,7 @@ func set_tile(pos):
 	App.cursor.move = true
 	App.submode = 0
 	App.cursor.offset = Vector2.ZERO
-	App.cursor.snap = 16
+	App.cursor.snap = tile_select.tile_size
 	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
 	pos = str(pos.x) + " " + str(pos.y)
 	if ObjectsLoader.tiles[curr_tiles]["tiles"].has(pos):
@@ -135,7 +137,7 @@ func _unhandled_input(event):
 		if event is InputEventMouseButton:
 			if event.button_index == 1 and event.is_pressed():
 				if corner_mode:
-					var tile = TileSprite.new(ObjectsLoader.tiles[-1]["id"], curr_pos.x, curr_pos.y, ObjectsLoader.tiles[-1]["depth"], App.cursor.texture, 2)
+					var tile = TileSprite.new(ObjectsLoader.tiles[-1]["id"], curr_pos.x, curr_pos.y, ObjectsLoader.tiles[-1]["depth"], 2)
 					App.add_object(tile)
 				if door_button.button_pressed:
 					var door = DoorSprite.new(DoorSprite.object_ids[direction_option_button.selected], int(locked_check_box.button_pressed), int(cutscene_check_box.button_pressed))
@@ -156,10 +158,13 @@ func _unhandled_input(event):
 							erase_tile_rect()
 						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 16):
 							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 16):
-								var tile = TileSprite.new(ObjectsLoader.tiles[curr_tiles]["id"], curr_pos.x, curr_pos.y, ObjectsLoader.tiles[curr_tiles]["depth"], App.cursor.texture)
-								tile.global_position = snap_vector(Vector2(x, y))
+								var tile = TileSprite.new(ObjectsLoader.tiles[curr_tiles]["id"], curr_pos.x + (x % tile_select.tile_size), curr_pos.y + (y % tile_select.tile_size), ObjectsLoader.tiles[curr_tiles]["depth"])
+								var pos = Vector2(x, y)
+								pos.x = floor(pos.x / 16) * 16
+								pos.y = floor(pos.y / 16) * 16
+								tile.global_position = pos
 								App.add_object(tile, false)
-						App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+						App.cursor.region_rect = Rect2i(0, 0, tile_select.tile_size, tile_select.tile_size)
 					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
 						erase_tile_rect()
 						set_tile(curr_pos)

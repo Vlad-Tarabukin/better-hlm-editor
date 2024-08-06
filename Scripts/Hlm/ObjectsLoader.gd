@@ -45,9 +45,9 @@ func load_sprites(file_path="res://base.wad"):
 			var tilemap = wad_sprites[tile["name"]][0]
 			tile["tilemap"] = tilemap
 			tilemap = tilemap.get_image()
-			for x in range(0, tilemap.get_width(), tile["size"]):
-				for y in range(0, tilemap.get_height(), tile["size"]):
-					var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, tile["size"], tile["size"])))
+			for x in range(0, tilemap.get_width(), 16):
+				for y in range(0, tilemap.get_height(), 16):
+					var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, 16, 16)))
 					tile["tiles"][str(x) + " " + str(y)] = image_texture
 
 func get_sprite(sprite_id):
