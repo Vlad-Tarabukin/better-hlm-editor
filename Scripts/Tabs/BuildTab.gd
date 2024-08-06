@@ -158,7 +158,7 @@ func _unhandled_input(event):
 							erase_tile_rect()
 						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 16):
 							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 16):
-								var tile = TileSprite.new(ObjectsLoader.tiles[curr_tiles]["id"], curr_pos.x + (x % tile_select.tile_size), curr_pos.y + (y % tile_select.tile_size), ObjectsLoader.tiles[curr_tiles]["depth"])
+								var tile = TileSprite.new(ObjectsLoader.tiles[curr_tiles]["id"], curr_pos.x + ((x % tile_select.tile_size + tile_select.tile_size) % tile_select.tile_size), curr_pos.y + ((y % tile_select.tile_size + tile_select.tile_size) % tile_select.tile_size), ObjectsLoader.tiles[curr_tiles]["depth"])
 								var pos = Vector2(x, y)
 								pos.x = floor(pos.x / 16) * 16
 								pos.y = floor(pos.y / 16) * 16
@@ -168,6 +168,14 @@ func _unhandled_input(event):
 					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
 						erase_tile_rect()
 						set_tile(curr_pos)
+					elif event.button_index == 3:
+						for obj in App.get_current_floor().get_children():
+							if obj is TileSprite and obj.tile_id != 10 and Rect2(obj.global_position, obj.get_rect().size).has_point(GlobalCamera.get_mouse_position()):
+								if obj.is_pixel_opaque(obj.to_local(GlobalCamera.get_mouse_position())):
+									var index = option_button.get_item_index(obj.tile_id)
+									option_button.select(index)
+									_on_OptionButton_item_selected(index)
+									set_tile(snap_vector(Vector2(obj.tile_x, obj.tile_y)))
 					App.cursor.move = true
 				elif curr_wall != null:
 					if event.button_index == 1:
@@ -224,7 +232,7 @@ func _unhandled_input(event):
 
 func _on_Build_ready():
 	for tile in ObjectsLoader.tiles.slice(0, -1):
-		option_button.add_item(tile["title"])
+		option_button.add_item(tile["title"], tile["id"])
 
 func _on_OptionButton_item_selected(index):
 	curr_tiles = index
@@ -302,7 +310,6 @@ func _on_direction_option_button_item_selected(index):\
 		var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
 		App.cursor.texture = sprite["frames"][0]
 		App.cursor.offset = sprite["center"]
-
 
 func _on_main_objects_loaded():
 	corner_select.texture = ObjectsLoader.tiles[-1]["tilemap"]
