@@ -69,7 +69,7 @@ func load_level(_level_path):
 	level_info["name"] = file.get_line()
 	level_info["floors"] = int(file.get_line())
 	level_info["author"] = file.get_line()
-	level_info["cutscene"] = bool(int(file.get_line()))
+	file.get_line()
 	level_info["s_rank"] = int(file.get_line())
 	level_info["character_id"] = int(file.get_line())
 	file.get_line()
@@ -93,11 +93,20 @@ func load_level(_level_path):
 	
 	for i in range(level_info["floors"] + 1):
 		var level_floor = Floor.new(i)
-		level_floor.visible = i == 0
+		level_floor.visible = false
+		floors_node.add_child(level_floor)
+	
+	floors_node.get_child(0).visible = true
+	
+	for i in range(level_info["floors"] + 1):
+		var level_floor = floors_node.get_child(i)
 		level_floor.load_floor(level_path + "/level" + str(i) + ".obj")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".tls")
 		level_floor.load_floor(level_path + "/level" + str(i) + ".wll")
-		floors_node.add_child(level_floor)
+		level_floor.load_floor(level_path + "/level" + str(i) + ".npc")
+		level_floor.load_floor(level_path + "/level" + str(i) + ".itm")
+		level_floor.load_floor(level_path + "/level" + str(i) + ".csf")
+	
 	queue_redraw()
 	get_tree().get_root().get_node("Main/CanvasLayer").show_levels()
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Panel/TabContainer/Level").show_level_info()
@@ -107,7 +116,7 @@ func save_level():
 	file.store_line(level_info["name"])
 	file.store_line(str(level_info["floors"]))
 	file.store_line(level_info["author"])
-	file.store_line(str(int(level_info["cutscene"])))
+	file.store_line("1")
 	file.store_line(str(level_info["s_rank"]))
 	file.store_line(str(level_info["character_id"]))
 	file.store_line("1")

@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://k04jg31wyks2"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/WalkActionNode.gd" id="1_d6w72"]
+[ext_resource type="Script" path="res://Scripts/Tabs/NPCButton.gd" id="2_7atfy"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_nenxh"]
+[ext_resource type="Texture2D" uid="uid://djbhtc64tvtm7" path="res://Textures/create.png" id="4_w4axj"]
+[ext_resource type="Texture2D" uid="uid://bl6o0peaql6mg" path="res://Textures/delete.png" id="5_wm3kj"]
+
+[node name="Walk Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 250.0
+script = ExtResource("1_d6w72")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 78.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Walk:"
+
+[node name="Speed SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 170.0
+offset_bottom = 61.0
+max_value = 0.0
+step = 0.1
+allow_greater = true
+update_on_text_changed = true
+prefix = "Speed:"
+
+[node name="NPCButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 30.0
+offset_right = 335.0
+offset_bottom = 61.0
+focus_mode = 0
+script = ExtResource("2_7atfy")
+
+[node name="Positions ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 335.0
+offset_bottom = 200.0
+focus_mode = 0
+
+[node name="X SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 210.0
+offset_right = 133.063
+offset_bottom = 241.0
+max_value = 0.0
+allow_greater = true
+allow_lesser = true
+update_on_text_changed = true
+
+[node name="Y SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 210.0
+offset_right = 220.063
+offset_bottom = 241.0
+max_value = 0.0
+allow_greater = true
+allow_lesser = true
+update_on_text_changed = true
+
+[node name="Add Point Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 210.0
+offset_right = 275.0
+offset_bottom = 240.0
+theme_override_colors/icon_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 0, 1)
+toggle_mode = true
+icon = ExtResource("4_w4axj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Delete Point Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 210.0
+offset_right = 335.0
+offset_bottom = 240.0
+icon = ExtResource("5_wm3kj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Position Control" parent="." instance=ExtResource("2_nenxh")]
+layout_mode = 1
+
+[connection signal="value_changed" from="Speed SpinBox" to="." method="_on_speed_spin_box_value_changed"]
+[connection signal="item_selected" from="NPCButton" to="." method="_on_npc_button_item_selected"]
+[connection signal="item_selected" from="Positions ItemList" to="." method="_on_positions_item_list_item_selected"]
+[connection signal="value_changed" from="X SpinBox" to="." method="_on_x_spin_box_value_changed"]
+[connection signal="value_changed" from="Y SpinBox" to="." method="_on_y_spin_box_value_changed"]
+[connection signal="button_up" from="Delete Point Button" to="." method="_on_delete_point_button_button_up"]

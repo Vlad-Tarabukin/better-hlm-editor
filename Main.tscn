@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=25 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -19,6 +19,10 @@
 [ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
 [ext_resource type="Script" path="res://Scripts/Tabs/EffectsTab.gd" id="15_tiai6"]
 [ext_resource type="Script" path="res://Scripts/EditPanel.gd" id="15_vmsa4"]
+[ext_resource type="Script" path="res://Scripts/Tabs/CutsceneTab.gd" id="18_wg3gp"]
+[ext_resource type="Texture2D" uid="uid://djbhtc64tvtm7" path="res://Textures/create.png" id="19_ugaxn"]
+[ext_resource type="Script" path="res://Scripts/EditCutsceneSpritePanel.gd" id="20_l1xlu"]
+[ext_resource type="Texture2D" uid="uid://bl6o0peaql6mg" path="res://Textures/delete.png" id="20_tsx7a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -35,12 +39,28 @@ script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
 visible = false
+clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 400.0
 grow_vertical = 2
+focus_mode = 0
 allow_reselect = true
 script = ExtResource("11")
+
+[node name="Backup Button" type="Button" parent="CanvasLayer/Level List"]
+layout_mode = 0
+offset_left = 410.0
+offset_right = 550.0
+offset_bottom = 31.0
+text = "Backup and load"
+
+[node name="Load Button" type="Button" parent="CanvasLayer/Level List"]
+layout_mode = 0
+offset_left = 560.0
+offset_right = 606.0
+offset_bottom = 31.0
+text = "Load"
 
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -74,9 +94,9 @@ offset_top = 70.0
 offset_right = 100.0
 offset_bottom = 105.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Y SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Transition Panel"]
 layout_mode = 0
@@ -85,9 +105,9 @@ offset_top = 70.0
 offset_right = 195.0
 offset_bottom = 105.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Transition Panel"]
 layout_mode = 0
@@ -163,7 +183,10 @@ offset_top = 20.0
 offset_right = 195.0
 offset_bottom = 51.0
 min_value = 1.0
+max_value = 1.0
 value = 1.0
+allow_greater = true
+update_on_text_changed = true
 
 [node name="Floor List" type="ItemList" parent="CanvasLayer/Main GUI"]
 layout_mode = 1
@@ -173,6 +196,7 @@ anchor_bottom = 1.0
 offset_top = -180.0
 offset_right = 120.0
 grow_vertical = 0
+focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Save Button" type="Button" parent="CanvasLayer/Main GUI"]
@@ -180,6 +204,7 @@ layout_direction = 1
 layout_mode = 1
 offset_right = 60.0
 offset_bottom = 31.0
+focus_mode = 0
 text = "Save"
 metadata/_edit_use_anchors_ = true
 
@@ -189,6 +214,7 @@ layout_mode = 1
 offset_left = 70.0
 offset_right = 130.0
 offset_bottom = 31.0
+focus_mode = 0
 text = "Load"
 metadata/_edit_use_anchors_ = true
 
@@ -214,10 +240,13 @@ offset_right = -2.0
 offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 11
+current_tab = 1
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 7
 script = ExtResource("5_3t8kq")
 
@@ -350,8 +379,8 @@ offset_bottom = 581.0
 text = "Cutscene"
 
 [node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("9_jdnfe")
 
 [node name="ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Items"]
@@ -434,6 +463,7 @@ expand_icon = true
 [node name="Effects" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("15_tiai6")
 
 [node name="Sunset CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
@@ -489,6 +519,7 @@ text = "Edit rain"
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("13_vo8kq")
 
 [node name="Enemies" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
@@ -562,6 +593,7 @@ text = "Random angle"
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 script = ExtResource("15")
 
 [node name="Boundaries" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
@@ -593,9 +625,9 @@ offset_top = 30.0
 offset_right = 70.0
 offset_bottom = 61.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Left Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -604,9 +636,9 @@ offset_top = 70.0
 offset_right = -30.0
 offset_bottom = 101.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Right Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -615,9 +647,9 @@ offset_top = 70.0
 offset_right = 170.0
 offset_bottom = 101.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Bottom Bound SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Boundaries"]
 layout_mode = 0
@@ -626,9 +658,9 @@ offset_top = 110.0
 offset_right = 70.0
 offset_bottom = 141.0
 max_value = 0.0
-step = 32.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_direction = 1
@@ -760,6 +792,7 @@ min_value = -1.0
 max_value = 26.0
 value = -1.0
 editable = false
+update_on_text_changed = true
 
 [node name="Player ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_mode = 0
@@ -798,6 +831,7 @@ offset_bottom = 731.0
 max_value = 0.0
 step = 1000.0
 allow_greater = true
+update_on_text_changed = true
 
 [node name="Label4" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_mode = 0
@@ -806,6 +840,194 @@ offset_top = 675.0
 offset_right = 58.0
 offset_bottom = 698.0
 text = "S rank:"
+
+[node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+script = ExtResource("18_wg3gp")
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="Triggers ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 140.0
+
+[node name="Add Trigger Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 40.0
+focus_mode = 0
+theme_override_colors/icon_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 0, 1)
+toggle_mode = true
+icon = ExtResource("19_ugaxn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Delete Trigger Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 80.0
+focus_mode = 0
+icon = ExtResource("20_tsx7a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Add Frame Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 990.0
+offset_right = 102.0
+offset_bottom = 1021.0
+text = "Add Frame"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 360.0
+offset_bottom = 980.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="NPC" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+
+[node name="Search LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 41.0
+placeholder_text = "Search"
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 550.0
+max_columns = 3
+same_column_width = true
+fixed_column_width = 100
+icon_mode = 0
+fixed_icon_size = Vector2i(90, 90)
+
+[node name="Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 560.0
+offset_right = 230.0
+offset_bottom = 591.0
+placeholder_text = "Name"
+
+[node name="Used Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/Name LineEdit"]
+visible = false
+layout_mode = 0
+offset_left = 230.0
+offset_right = 335.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Already used!"
+vertical_alignment = 1
+
+[node name="NPC CheckButton" type="CheckButton" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 600.0
+offset_right = 91.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Item
+"
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/NPC CheckButton"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 1.0
+offset_right = 120.0
+offset_bottom = 31.0
+text = "NPC"
+vertical_alignment = 1
+
+[node name="NPC" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC"]
+visible = false
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 640.0
+offset_right = 350.0
+offset_bottom = 670.0
+
+[node name="Solid CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/NPC"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+text = "Solid"
+
+[node name="Killable CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/NPC"]
+layout_mode = 0
+offset_left = 70.0
+offset_right = 151.0
+offset_bottom = 31.0
+text = "Kilable"
+
+[node name="Item" type="Control" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC"]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 640.0
+offset_right = 350.0
+offset_bottom = 670.0
+
+[node name="Active CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/Item"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+text = "Active"
+
+[node name="Visible CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/Item"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 161.0
+offset_bottom = 31.0
+text = "Visible"
+
+[node name="Finish CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/Item"]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 241.0
+offset_bottom = 31.0
+text = "Finish"
 
 [node name="Angle Label" type="Label" parent="CanvasLayer/Main GUI"]
 layout_mode = 0
@@ -835,6 +1057,7 @@ anchor_bottom = 0.827778
 offset_top = -31.0
 offset_right = 84.0
 grow_vertical = 0
+focus_mode = 0
 text = "New floor"
 metadata/_edit_use_anchors_ = true
 
@@ -890,6 +1113,7 @@ offset_bottom = 41.0
 max_value = 0.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Sprite SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -900,6 +1124,7 @@ offset_bottom = 81.0
 max_value = 0.0
 allow_greater = true
 allow_lesser = true
+update_on_text_changed = true
 
 [node name="Frame SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -908,6 +1133,7 @@ offset_top = 90.0
 offset_right = 220.0
 offset_bottom = 121.0
 max_value = 0.0
+update_on_text_changed = true
 
 [node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
@@ -915,6 +1141,7 @@ offset_left = 10.0
 offset_top = 130.0
 offset_right = 110.0
 offset_bottom = 161.0
+focus_mode = 0
 text = "Ok"
 
 [node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
@@ -923,7 +1150,198 @@ offset_left = 120.0
 offset_top = 130.0
 offset_right = 220.0
 offset_bottom = 161.0
+focus_mode = 0
 text = "Cancel"
+
+[node name="Edit Cutscene Sprite Panel" type="Panel" parent="CanvasLayer/Main GUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -90.0
+offset_right = 210.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("20_l1xlu")
+
+[node name="Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 30.0
+offset_right = 190.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 14
+text = "Name:"
+
+[node name="Sprite SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 30.0
+offset_right = 290.0
+offset_bottom = 61.0
+min_value = -1.0
+max_value = 0.0
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 5.0
+offset_right = 245.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 14
+text = "Sprite:"
+
+[node name="NPC" type="Control" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+visible = false
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 65.0
+offset_right = 350.0
+offset_bottom = 135.0
+
+[node name="Solid CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 31.0
+focus_mode = 0
+text = "Solid"
+
+[node name="Killable CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 165.0
+offset_bottom = 31.0
+focus_mode = 0
+text = "Killable"
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 59.0
+offset_bottom = 65.0
+text = "Trigger:"
+vertical_alignment = 1
+
+[node name="Trigger OptionButton" type="OptionButton" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 35.0
+offset_right = 163.0
+offset_bottom = 66.0
+focus_mode = 0
+item_count = 3
+selected = 0
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Click"
+popup/item_1/id = 1
+popup/item_2/text = "Range"
+popup/item_2/id = 2
+
+[node name="Range SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 35.0
+offset_right = 256.063
+offset_bottom = 66.0
+max_value = 0.0
+allow_greater = true
+editable = false
+update_on_text_changed = true
+suffix = "px"
+
+[node name="Trigger SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 35.0
+offset_right = 343.063
+offset_bottom = 66.0
+max_value = 0.0
+allow_greater = true
+editable = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC/Trigger SpinBox"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 68.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 14
+text = "Trigger id:"
+
+[node name="Item" type="Control" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+visible = false
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 65.0
+offset_right = 290.0
+offset_bottom = 135.0
+
+[node name="Active CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Item"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 76.0
+offset_bottom = 41.0
+text = "Active"
+
+[node name="Visible CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Item"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 10.0
+offset_right = 159.0
+offset_bottom = 41.0
+text = "Visible"
+
+[node name="Finish CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Item"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 10.0
+offset_right = 244.0
+offset_bottom = 41.0
+text = "Finish"
+
+[node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 140.0
+offset_right = 100.0
+offset_bottom = 171.0
+focus_mode = 0
+text = "Ok"
+
+[node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 140.0
+offset_right = 200.0
+offset_bottom = 171.0
+focus_mode = 0
+text = "Cancel"
+
+[node name="Delete Button" type="Button" parent="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 140.0
+offset_right = 350.0
+offset_bottom = 171.0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.392157, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+text = "Delete"
 
 [node name="Cursor" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.392157)
@@ -931,12 +1349,14 @@ texture_repeat = 2
 centered = false
 script = ExtResource("3")
 
-[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Main_objects_loaded"]
-[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_Main_objects_loaded"]
+[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_main_objects_loaded"]
+[connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_main_objects_loaded"]
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="CanvasLayer" to="CanvasLayer" method="_on_CanvasLayer_ready"]
 [connection signal="item_selected" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_item_selected"]
-[connection signal="ready" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_ready"]
+[connection signal="visibility_changed" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_visibility_changed"]
+[connection signal="button_up" from="CanvasLayer/Level List/Backup Button" to="CanvasLayer/Level List" method="_on_backup_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Level List/Load Button" to="CanvasLayer/Level List" method="_on_load_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Cancel Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Ok Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_ok_button_button_up"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Floor List" to="CanvasLayer" method="_on_floor_list_item_selected"]
@@ -949,6 +1369,7 @@ script = ExtResource("3")
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Effects" method="_on_tab_container_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay" method="_on_TabContainer_tab_selected"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_TabContainer_tab_selected"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_tab_container_tab_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Panel/TabContainer/Build" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_Build_ready"]
 [connection signal="gui_input" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" to="CanvasLayer/Main GUI/Panel/TabContainer/Build/TileSelect" method="_on_TileSelect_gui_input"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Build/OptionButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_OptionButton_item_selected"]
@@ -994,9 +1415,20 @@ script = ExtResource("3")
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Car ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_car_item_list_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Sprite HSlider" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_sprite_h_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/S SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_s_spin_box_value_changed"]
+[connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_cutscene_tab_container_tab_selected"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/Delete Trigger Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_delete_trigger_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/Add Frame Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_add_frame_button_button_up"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/Search LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_search_line_edit_text_changed"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_item_list_item_selected"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/Name LineEdit" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_name_line_edit_text_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/NPC/NPC CheckButton" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_npc_check_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/New Floor Button" to="CanvasLayer" method="_on_new_floor_button_button_up"]
 [connection signal="visibility_changed" from="CanvasLayer/Main GUI/Edit Panel" to="CanvasLayer/Main GUI/Edit Panel" method="_on_visibility_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Sprite SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_sprite_spin_box_value_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_ok_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_cancel_button_button_up"]
+[connection signal="item_selected" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC/Trigger OptionButton" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_trigger_option_button_item_selected"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_ok_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Delete Button" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_delete_button_button_up"]
 [connection signal="ready" from="Cursor" to="Cursor" method="_on_Cursor_ready"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://qf76jilwqivl"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/StopSequenceActionNode.gd" id="1_xtffr"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_c4vpy"]
+
+[node name="Stop Sequence Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 80.0
+script = ExtResource("1_xtffr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 149.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Stop Sequence:"
+
+[node name="Complete CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 197.0
+offset_bottom = 61.0
+text = "Scene Complete"
+
+[node name="Position Control" parent="." instance=ExtResource("2_c4vpy")]
+layout_mode = 1
+
+[connection signal="button_up" from="Complete CheckBox" to="." method="_on_complete_check_box_button_up"]

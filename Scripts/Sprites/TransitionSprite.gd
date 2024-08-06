@@ -25,7 +25,7 @@ func _init(_trigger_rect, _direciton, _target_floor, _transition_offset):
 	region_rect = trigger_rect
 
 func _draw():
-	draw_texture(ObjectsLoader.get_sprite(286)["frames"][direction], trigger_rect.size / 2 - Vector2i(6, 6))
+	draw_texture(ObjectsLoader.get_sprite(286)["frames"][direction], trigger_rect.size / 2 - Vector2(6, 6))
 
 func get_ver_direction():
 	if direction == 1:
@@ -40,3 +40,10 @@ func get_hor_direction():
 	elif direction == 0:
 		return 1
 	return 0
+
+func _enter_tree():
+	get_tree().get_root().get_node("Main/Floors").get_children()[target_floor].transition_markers.append(self)
+
+func _exit_tree():
+	var floor_node = get_tree().get_root().get_node("Main/Floors").get_children()[target_floor]
+	floor_node.transition_markers.remove_at(floor_node.transition_markers.rfind(self))

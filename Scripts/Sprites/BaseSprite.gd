@@ -8,6 +8,7 @@ var level
 var custom_rect
 
 func _ready():
+	z_as_relative = false
 	centered = false
 
 func should_delete():

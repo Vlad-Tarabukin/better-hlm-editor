@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ulh0ve1se5s"]
+
+[ext_resource type="Script" path="res://Cutscene Nodes/StopMusicActionNode.gd" id="1_uyn8y"]
+[ext_resource type="PackedScene" uid="uid://cl4lc4gommka2" path="res://Cutscene Nodes/position_control.tscn" id="2_edfs2"]
+
+[node name="Stop Music Action Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 80.0
+script = ExtResource("1_uyn8y")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 130.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Stop Music:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 134.0
+offset_bottom = 60.0
+text = "Fade Time:"
+vertical_alignment = 1
+
+[node name="Fade SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 30.0
+offset_right = 233.063
+offset_bottom = 61.0
+max_value = 0.0
+step = 0.1
+allow_greater = true
+update_on_text_changed = true
+suffix = "s"
+
+[node name="Position Control" parent="." instance=ExtResource("2_edfs2")]
+layout_mode = 1
+
+[connection signal="value_changed" from="Fade SpinBox" to="." method="_on_fade_spin_box_value_changed"]
