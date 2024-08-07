@@ -38,7 +38,7 @@ func _on_new_floor_button_button_up():
 func _on_load_button_button_up():
 	for i in tab_container.get_children():
 		i.active = false
-	ObjectsLoader.load_sprites()
+	ObjectsLoader.load_assets()
 	for i in $"../Floors".get_children():
 		i.queue_free()
 	$"Main GUI".visible = false

@@ -12,8 +12,8 @@ var selected_object : ObjectSprite
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
 
 func _ready():
-	ObjectsLoader.load_sprites_info()
-	ObjectsLoader.load_sprites()
+	ObjectsLoader.load_info()
+	ObjectsLoader.load_assets()
 	objects_loaded.emit()
 	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(true)
@@ -59,7 +59,7 @@ func load_level(_level_path):
 	var mods = DirAccess.get_files_at(level_path + "/mods")
 	for mod in mods:
 		if mod.match("*.patchwad"):
-			ObjectsLoader.load_sprites(level_path + "/mods/" + mod)
+			ObjectsLoader.load_assets(level_path + "/mods/" + mod)
 	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(false)
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(true)

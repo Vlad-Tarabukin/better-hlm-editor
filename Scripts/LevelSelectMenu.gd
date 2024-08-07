@@ -32,7 +32,7 @@ func new_folder():
 func _on_Level_List_item_selected(index):
 	if index == 0:
 		var path = new_folder()
-		FileAccess.open(path + "/level.hlm", FileAccess.WRITE).store_string(FileAccess.open("res://default_level.hlm", FileAccess.READ).get_as_text())
+		DirAccess.copy_absolute("res://default_level.hlm", path + "/level.hlm")
 		App.load_level(path)
 		visible = false
 
@@ -45,7 +45,8 @@ func _on_backup_button_button_up():
 	if is_anything_selected():
 		var path = level_paths[get_selected_items()[0] - 1]
 		var new_path = new_folder()
-		DirAccess.copy_absolute(path, new_path)
+		for file_name in DirAccess.get_files_at(path):
+			DirAccess.copy_absolute(path + "/" + file_name, new_path + "/" + file_name)
 		var new_hlm = FileAccess.open(path + "/level.hlm", FileAccess.READ).get_as_text().split("\n")
 		new_hlm[0] = new_hlm[0] + " (backup {time})".format({"time": Time.get_datetime_string_from_system()})
 		var hlm_file = FileAccess.open(new_path + "/level.hlm", FileAccess.WRITE)

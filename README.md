@@ -11,6 +11,7 @@ CONTROLS:
       LMB - place tiles
       RMB - delete tile
       Ctrl + RMB - clear area
+      MMB - pick tile
     Wall mode:
       LMB - place walls
       RMB - delete wall

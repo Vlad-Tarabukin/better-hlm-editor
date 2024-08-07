@@ -277,7 +277,21 @@ popup/item_123/id = 180
 popup/item_124/text = "sndHitWall"
 popup/item_124/id = 180
 
+[node name="Play Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 30.0
+offset_right = 342.0
+offset_bottom = 61.0
+toggle_mode = true
+text = "Play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+
 [node name="Position Control" parent="." instance=ExtResource("2_7p0qn")]
 layout_mode = 1
 
 [connection signal="item_selected" from="Sound OptionButton" to="." method="_on_sound_option_button_item_selected"]
+[connection signal="toggled" from="Play Button" to="." method="_on_play_button_toggled"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

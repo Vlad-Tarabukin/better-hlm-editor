@@ -2,8 +2,9 @@ extends Node
 
 var sprites = {}
 var tiles = []
+var sounds = {}
 
-func load_sprites_info():
+func load_info():
 	var sprites_tsv = FileAccess.open("res://sprites.tsv", FileAccess.READ)
 	while !sprites_tsv.eof_reached():
 		var sprite = sprites_tsv.get_csv_line("\t")
@@ -32,14 +33,16 @@ func load_sprites_info():
 		"frames": [preload("res://Textures/default_texture.png")]
 	}
 
-func load_sprites(file_path="res://base.wad"):
-	var wad_sprite_parser = WadSpriteParser.new()
+func load_assets(file_path="res://base.wad"):
+	var base = file_path == "res://base.wad"
+	var wad_sprite_parser = WadParser.new()
 	var wad_sprites = wad_sprite_parser.parse_sprites(file_path, file_path == "res://base.wad")
 	for sprite in sprites.values():
 		if wad_sprites.has(sprite["name"]):
 			sprite["frames"] = wad_sprites[sprite["name"]]
 		elif file_path == "res://base.wad":
 			sprite["frames"] = sprites[-1]["frames"]
+	
 	for tile in tiles:
 		if wad_sprites.has(tile["name"]):
 			var tilemap = wad_sprites[tile["name"]][0]
@@ -52,6 +55,8 @@ func load_sprites(file_path="res://base.wad"):
 				for y in range(0, tilemap.get_height(), size):
 					var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, size, size)))
 					tile["tiles"][str(x) + " " + str(y)] = image_texture
+	
+	sounds = wad_sprite_parser.parse_sounds()
 
 func get_sprite(sprite_id):
 	if sprites.has(sprite_id):
