@@ -8,6 +8,7 @@ var level = 0
 var level_path
 var level_info = {}
 var selected_object : ObjectSprite
+var undo_redo : UndoRedo = UndoRedo.new()
 
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
 

@@ -43,3 +43,9 @@ func _on_load_button_button_up():
 		i.queue_free()
 	$"Main GUI".visible = false
 	$"Level List".visible = true
+
+func _on_undo_button_button_up():
+	App.undo_redo.undo()
+
+func _on_redo_button_button_up():
+	App.undo_redo.redo()

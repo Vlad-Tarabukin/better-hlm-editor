@@ -91,6 +91,7 @@ func load_floor(floor_path):
 					
 					var transition_sprite = TransitionSprite.new(trigger_rect, direction, target_floor, offset)
 					transition_sprite.level = index
+					transition_sprite.loaded = true
 					add_child(transition_sprite)
 				elif parent_id == 2410:
 					var x = int(params.pop_front())
@@ -103,6 +104,7 @@ func load_floor(floor_path):
 					elevator_sprite.level = index
 					elevator_sprite.global_position = Vector2(x, y)
 					elevator_sprite.global_rotation_degrees = angle
+					elevator_sprite.loaded = true
 					add_child(elevator_sprite)
 				elif parent_id == 2411:
 					var x = int(params.pop_front())
@@ -114,6 +116,7 @@ func load_floor(floor_path):
 					barrier_sprite.level = index
 					barrier_sprite.global_position = Vector2(x, y)
 					barrier_sprite.global_rotation_degrees = angle
+					barrier_sprite.loaded = true
 					add_child(barrier_sprite)
 				elif parent_id == 2412:
 					var trigger_rect = Rect2(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
@@ -132,11 +135,13 @@ func load_floor(floor_path):
 					
 					var entry_sprite = EntrySprite.new(trigger_rect, direction)
 					entry_sprite.level = index
+					entry_sprite.loaded = true
 					add_child(entry_sprite)
 				elif parent_id == 1417:
 					var darkness_rect = Rect2i(int(params[0]), int(params[2]), int(params[1]) - int(params[0]), int(params[3]) - int(params[2]))
 					var darkness_sprite = DarknessSprite.new(darkness_rect)
 					darkness_sprite.level = index
+					darkness_sprite.loaded = true
 					add_child(darkness_sprite)
 				elif parent_id == 663:
 					rain = true
@@ -157,6 +162,7 @@ func load_floor(floor_path):
 					var door_sprite = DoorSprite.new(parent_id, locked, cutscene)
 					door_sprite.level = index
 					door_sprite.position = Vector2(x, y)
+					door_sprite.loaded = true
 					add_child(door_sprite)
 				else:
 					var x = int(params.pop_front())
@@ -179,6 +185,7 @@ func load_floor(floor_path):
 					object_sprite.global_position = Vector2(x, y)
 					object_sprite.rotation_degrees = angle
 					object_sprite.level = index
+					object_sprite.loaded = true
 					add_child(object_sprite)
 		elif floor_path.get_extension() == "tls":
 			while !file.eof_reached():
@@ -206,6 +213,7 @@ func load_floor(floor_path):
 				var tile_sprite = TileSprite.new(tile_id, tile_x, tile_y, depth, submode)
 				tile_sprite.global_position = Vector2(x, y)
 				tile_sprite.level = index
+				tile_sprite.loaded = true
 				add_child(tile_sprite)
 		elif floor_path.get_extension() == "wll":
 			while !file.eof_reached():
@@ -226,10 +234,10 @@ func load_floor(floor_path):
 				var _depth = int(params.pop_front())
 				
 				var wall_sprite = WallSprite.new(object_id, sprite_id)
-				if wall_sprite != null:
-					wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
-					wall_sprite.level = index
-					add_child(wall_sprite)
+				wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
+				wall_sprite.level = index
+				wall_sprite.loaded = true
+				add_child(wall_sprite)
 		elif floor_path.get_extension() == "npc":
 			for _i in range(int(file.get_line())):
 				var character_name = file.get_line()
@@ -260,11 +268,12 @@ func load_floor(floor_path):
 				}
 				
 				var npc_sprite = CutsceneSprite.new(info)
-				add_child(npc_sprite)
 				npc_sprite.name = character_name
 				npc_sprite.position = pos
 				npc_sprite.rotation_degrees = angle
 				npc_sprite.level = index
+				npc_sprite.loaded = true
+				add_child(npc_sprite)
 				
 				cutscene["npc"].append(npc_sprite)
 		elif floor_path.get_extension() == "itm":
@@ -283,11 +292,12 @@ func load_floor(floor_path):
 				}
 				
 				var item_sprite = CutsceneSprite.new(info)
-				add_child(item_sprite)
 				item_sprite.name = item_name
 				item_sprite.position = pos
 				item_sprite.rotation_degrees = angle
 				item_sprite.level = index
+				item_sprite.loaded = true
+				add_child(item_sprite)
 				
 				cutscene["items"].append(item_sprite)
 				
@@ -466,158 +476,159 @@ func save():
 	objects.sort_custom(sorting)
 	
 	for obj in objects:
-		if obj is ObjectSprite:
-			obj_file.store_line(str(obj.parent))
-			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str(obj.object.sprite_id))
-			obj_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
-			obj_file.store_line(str(obj.object.object_id))
-			obj_file.store_line(str(obj.object_frame))
-			play_file.store_line(str(obj.object.object_id))
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str(obj.object.sprite_id))
-			play_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
-			play_file.store_line(str(obj.object_frame))
-		elif obj is TileSprite:
-			tls_file.store_line(str(obj.tile_id))
-			tls_file.store_line(str(obj.tile_x))
-			tls_file.store_line(str(obj.tile_y))
-			tls_file.store_line(str(obj.position.x))
-			tls_file.store_line(str(obj.position.y))
-			tls_file.store_line(str(obj.depth))
-		elif obj is WallSprite:
-			wll_file.store_line(str(obj.object_id))
-			wll_file.store_line(str(obj.position.x + obj.wall_offset.x))
-			wll_file.store_line(str(obj.position.y + obj.wall_offset.y))
-			wll_file.store_line(str(obj.sprite_id))
-			wll_file.store_line("0")
-			play_file.store_line(str(obj.object_id))
-			play_file.store_line(str(obj.position.x + obj.wall_offset.x))
-			play_file.store_line(str(obj.position.y + obj.wall_offset.y))
-			play_file.store_line(str(obj.sprite_id))
-			play_file.store_line("0")
-			play_file.store_line("0")
-		elif obj is TransitionSprite:
-			obj_file.store_line("2297")
-			obj_file.store_line(str(obj.position.x + obj.trigger_rect.size.x / 2))
-			obj_file.store_line(str(obj.position.y + obj.trigger_rect.size.y / 2))
-			obj_file.store_line(str(obj.trigger_rect.size.x / 16.0))
-			obj_file.store_line(str(obj.trigger_rect.size.y / 16.0))
-			obj_file.store_line(str(obj.get_hor_direction()))
-			obj_file.store_line(str(obj.get_ver_direction()))
-			obj_file.store_line(str(obj.target_floor))
-			obj_file.store_line(str(obj.transition_offset.x))
-			obj_file.store_line(str(obj.transition_offset.y))
-			play_file.store_line("124")
-			play_file.store_line(str(obj.position.x + obj.trigger_rect.size.x / 2))
-			play_file.store_line(str(obj.position.y + obj.trigger_rect.size.y / 2))
-			play_file.store_line(str(obj.trigger_rect.size.x / 16.0))
-			play_file.store_line(str(obj.trigger_rect.size.y / 16.0))
-			play_file.store_line(str(obj.get_hor_direction()))
-			play_file.store_line(str(obj.get_ver_direction()))
-			play_file.store_line(str(obj.target_floor))
-			play_file.store_line(str(obj.transition_offset.x))
-			play_file.store_line(str(obj.transition_offset.y))
-		elif obj is ElevatorSprite:
-			obj_file.store_line("2410")
-			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
-			obj_file.store_line(str(obj.target_floor))
-			obj_file.store_line(str(obj.transition_offset.x))
-			obj_file.store_line(str(obj.transition_offset.y))
-			play_file.store_line("810")
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
-			play_file.store_line(str(obj.target_floor))
-			play_file.store_line(str(obj.transition_offset.x))
-			play_file.store_line(str(obj.transition_offset.y))
-		elif obj is BarrierSprite:
-			obj_file.store_line("2411")
-			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str(obj.lenght))
-			obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
-			play_file.store_line("2411")
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str(obj.lenght))
-			play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
-		elif obj is EntrySprite:
-			obj_file.store_line("2412")
-			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str(obj.trigger_rect.size.x / 16.0))
-			obj_file.store_line(str(obj.trigger_rect.size.y / 16.0))
-			obj_file.store_line(str(obj.get_obj_object()))
-			obj_file.store_line(str(obj.get_hor_direction()))
-			obj_file.store_line(str(obj.get_ver_direction()))
-			play_file.store_line(str(obj.get_play_object()))
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str(obj.trigger_rect.size.x / 16.0))
-			play_file.store_line(str(obj.trigger_rect.size.y / 16.0))
-			play_file.store_line(str(obj.get_hor_direction() + obj.get_ver_direction()))
-		elif obj is DarknessSprite:
-			obj_file.store_line("1417")
-			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.darkness_rect.end.x))
-			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str(obj.darkness_rect.end.y))
-			play_file.store_line("1417")
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.darkness_rect.end.x))
-			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str(obj.darkness_rect.end.y))
-		elif obj is DoorSprite:
-			obj_file.store_line(str(obj.object_id))
-			obj_file.store_line(str(obj.position.x))
-			obj_file.store_line(str(obj.position.y))
-			obj_file.store_line(str(DoorSprite.sprite_ids[obj.direction]))
-			obj_file.store_line("0")
-			obj_file.store_line(str(obj.locked))
-			obj_file.store_line(str(obj.cutscene))
-			play_file.store_line(str(obj.object_id))
-			play_file.store_line(str(obj.position.x))
-			play_file.store_line(str(obj.position.y))
-			play_file.store_line(str(DoorSprite.sprite_ids[obj.direction]))
-			play_file.store_line("0")
-			play_file.store_line(str(obj.locked))
-			play_file.store_line(str(obj.cutscene))
-		elif obj is CutsceneSprite:
-			if obj.info["npc"]:
-				npc_file.store_line(obj.name)
-				npc_file.store_line(str(obj.info["sprite_id"]))
-				npc_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
-				npc_file.store_line(str(obj.position.x))
-				npc_file.store_line(str(obj.position.y))
-				npc_file.store_line("1")
-				npc_file.store_line("99999")
-				npc_file.store_line("99999")
-				npc_file.store_line(str(int(obj.info["trigger_behavior"] != -1)))
-				npc_file.store_line(str(obj.info["trigger_index"]))
-				npc_file.store_line(str(obj.info["trigger_behavior"]))
-				npc_file.store_line(str(obj.info["trigger_range"]))
-				npc_file.store_line(str(int(obj.info["solid"])))
-				npc_file.store_line(str(int(obj.info["killable"])))
-				npc_file.store_line("1")
-				npc_file.store_line(str(obj.position.x))
-				npc_file.store_line(str(obj.position.y))
-			else:
-				itm_file.store_line(obj.name)
-				itm_file.store_line(str(obj.info["sprite_id"]))
-				itm_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
-				itm_file.store_line(str(obj.position.x))
-				itm_file.store_line(str(obj.position.y))
-				itm_file.store_line(str(int(obj.info["active"])))
-				itm_file.store_line(str(int(obj.info["visible"])))
-				itm_file.store_line(str(int(obj.info["finish"])))
-				itm_file.store_line("0")
-				itm_file.store_line("10000")
-				itm_file.store_line("10000")
+		if obj.visible:
+			if obj is ObjectSprite:
+				obj_file.store_line(str(obj.parent))
+				obj_file.store_line(str(obj.position.x))
+				obj_file.store_line(str(obj.position.y))
+				obj_file.store_line(str(obj.object.sprite_id))
+				obj_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
+				obj_file.store_line(str(obj.object.object_id))
+				obj_file.store_line(str(obj.object_frame))
+				play_file.store_line(str(obj.object.object_id))
+				play_file.store_line(str(obj.position.x))
+				play_file.store_line(str(obj.position.y))
+				play_file.store_line(str(obj.object.sprite_id))
+				play_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
+				play_file.store_line(str(obj.object_frame))
+			elif obj is TileSprite:
+				tls_file.store_line(str(obj.tile_id))
+				tls_file.store_line(str(obj.tile_x))
+				tls_file.store_line(str(obj.tile_y))
+				tls_file.store_line(str(obj.position.x))
+				tls_file.store_line(str(obj.position.y))
+				tls_file.store_line(str(obj.depth))
+			elif obj is WallSprite:
+				wll_file.store_line(str(obj.object_id))
+				wll_file.store_line(str(obj.position.x + obj.wall_offset.x))
+				wll_file.store_line(str(obj.position.y + obj.wall_offset.y))
+				wll_file.store_line(str(obj.sprite_id))
+				wll_file.store_line("0")
+				play_file.store_line(str(obj.object_id))
+				play_file.store_line(str(obj.position.x + obj.wall_offset.x))
+				play_file.store_line(str(obj.position.y + obj.wall_offset.y))
+				play_file.store_line(str(obj.sprite_id))
+				play_file.store_line("0")
+				play_file.store_line("0")
+			elif obj is TransitionSprite:
+				obj_file.store_line("2297")
+				obj_file.store_line(str(obj.position.x + obj.trigger_rect.size.x / 2))
+				obj_file.store_line(str(obj.position.y + obj.trigger_rect.size.y / 2))
+				obj_file.store_line(str(obj.trigger_rect.size.x / 16.0))
+				obj_file.store_line(str(obj.trigger_rect.size.y / 16.0))
+				obj_file.store_line(str(obj.get_hor_direction()))
+				obj_file.store_line(str(obj.get_ver_direction()))
+				obj_file.store_line(str(obj.target_floor))
+				obj_file.store_line(str(obj.transition_offset.x))
+				obj_file.store_line(str(obj.transition_offset.y))
+				play_file.store_line("124")
+				play_file.store_line(str(obj.position.x + obj.trigger_rect.size.x / 2))
+				play_file.store_line(str(obj.position.y + obj.trigger_rect.size.y / 2))
+				play_file.store_line(str(obj.trigger_rect.size.x / 16.0))
+				play_file.store_line(str(obj.trigger_rect.size.y / 16.0))
+				play_file.store_line(str(obj.get_hor_direction()))
+				play_file.store_line(str(obj.get_ver_direction()))
+				play_file.store_line(str(obj.target_floor))
+				play_file.store_line(str(obj.transition_offset.x))
+				play_file.store_line(str(obj.transition_offset.y))
+			elif obj is ElevatorSprite:
+				obj_file.store_line("2410")
+				obj_file.store_line(str(obj.position.x))
+				obj_file.store_line(str(obj.position.y))
+				obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+				obj_file.store_line(str(obj.target_floor))
+				obj_file.store_line(str(obj.transition_offset.x))
+				obj_file.store_line(str(obj.transition_offset.y))
+				play_file.store_line("810")
+				play_file.store_line(str(obj.position.x))
+				play_file.store_line(str(obj.position.y))
+				play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+				play_file.store_line(str(obj.target_floor))
+				play_file.store_line(str(obj.transition_offset.x))
+				play_file.store_line(str(obj.transition_offset.y))
+			elif obj is BarrierSprite:
+				obj_file.store_line("2411")
+				obj_file.store_line(str(obj.position.x))
+				obj_file.store_line(str(obj.position.y))
+				obj_file.store_line(str(obj.lenght))
+				obj_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+				play_file.store_line("2411")
+				play_file.store_line(str(obj.position.x))
+				play_file.store_line(str(obj.position.y))
+				play_file.store_line(str(obj.lenght))
+				play_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+			elif obj is EntrySprite:
+				obj_file.store_line("2412")
+				obj_file.store_line(str(obj.position.x))
+				obj_file.store_line(str(obj.position.y))
+				obj_file.store_line(str(obj.trigger_rect.size.x / 16.0))
+				obj_file.store_line(str(obj.trigger_rect.size.y / 16.0))
+				obj_file.store_line(str(obj.get_obj_object()))
+				obj_file.store_line(str(obj.get_hor_direction()))
+				obj_file.store_line(str(obj.get_ver_direction()))
+				play_file.store_line(str(obj.get_play_object()))
+				play_file.store_line(str(obj.position.x))
+				play_file.store_line(str(obj.position.y))
+				play_file.store_line(str(obj.trigger_rect.size.x / 16.0))
+				play_file.store_line(str(obj.trigger_rect.size.y / 16.0))
+				play_file.store_line(str(obj.get_hor_direction() + obj.get_ver_direction()))
+			elif obj is DarknessSprite:
+				obj_file.store_line("1417")
+				obj_file.store_line(str(obj.position.x))
+				obj_file.store_line(str(obj.darkness_rect.end.x))
+				obj_file.store_line(str(obj.position.y))
+				obj_file.store_line(str(obj.darkness_rect.end.y))
+				play_file.store_line("1417")
+				play_file.store_line(str(obj.position.x))
+				play_file.store_line(str(obj.darkness_rect.end.x))
+				play_file.store_line(str(obj.position.y))
+				play_file.store_line(str(obj.darkness_rect.end.y))
+			elif obj is DoorSprite:
+				obj_file.store_line(str(obj.object_id))
+				obj_file.store_line(str(obj.position.x))
+				obj_file.store_line(str(obj.position.y))
+				obj_file.store_line(str(DoorSprite.sprite_ids[obj.direction]))
+				obj_file.store_line("0")
+				obj_file.store_line(str(obj.locked))
+				obj_file.store_line(str(obj.cutscene))
+				play_file.store_line(str(obj.object_id))
+				play_file.store_line(str(obj.position.x))
+				play_file.store_line(str(obj.position.y))
+				play_file.store_line(str(DoorSprite.sprite_ids[obj.direction]))
+				play_file.store_line("0")
+				play_file.store_line(str(obj.locked))
+				play_file.store_line(str(obj.cutscene))
+			elif obj is CutsceneSprite:
+				if obj.info["npc"]:
+					npc_file.store_line(obj.name)
+					npc_file.store_line(str(obj.info["sprite_id"]))
+					npc_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+					npc_file.store_line(str(obj.position.x))
+					npc_file.store_line(str(obj.position.y))
+					npc_file.store_line("1")
+					npc_file.store_line("99999")
+					npc_file.store_line("99999")
+					npc_file.store_line(str(int(obj.info["trigger_behavior"] != -1)))
+					npc_file.store_line(str(obj.info["trigger_index"]))
+					npc_file.store_line(str(obj.info["trigger_behavior"]))
+					npc_file.store_line(str(obj.info["trigger_range"]))
+					npc_file.store_line(str(int(obj.info["solid"])))
+					npc_file.store_line(str(int(obj.info["killable"])))
+					npc_file.store_line("1")
+					npc_file.store_line(str(obj.position.x))
+					npc_file.store_line(str(obj.position.y))
+				else:
+					itm_file.store_line(obj.name)
+					itm_file.store_line(str(obj.info["sprite_id"]))
+					itm_file.store_line(str((720 - int(obj.rotation_degrees) % 360) % 360))
+					itm_file.store_line(str(obj.position.x))
+					itm_file.store_line(str(obj.position.y))
+					itm_file.store_line(str(int(obj.info["active"])))
+					itm_file.store_line(str(int(obj.info["visible"])))
+					itm_file.store_line(str(int(obj.info["finish"])))
+					itm_file.store_line("0")
+					itm_file.store_line("10000")
+					itm_file.store_line("10000")
 	
 	for light_overlay in light_overlays:
 		obj_file.store_line("1770")
