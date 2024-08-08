@@ -6,7 +6,7 @@ var mode
 var submode = 0
 var level
 var custom_rect
-var loaded = false
+var register_creation = true
 var register_vibility_change = true
 
 func _ready():
@@ -14,10 +14,11 @@ func _ready():
 	centered = false
 	visibility_changed.connect(_visibility_changed)
 	
-	App.undo_redo.create_action("Added " + name)
-	App.undo_redo.add_do_method(set_visibile_no_register.bind(true))
-	App.undo_redo.add_undo_method(set_visibile_no_register.bind(false))
-	App.undo_redo.commit_action(false)
+	if register_creation:
+		App.undo_redo.create_action("Added " + name)
+		App.undo_redo.add_do_method(set_visibile_no_register.bind(true))
+		App.undo_redo.add_undo_method(set_visibile_no_register.bind(false))
+		App.undo_redo.commit_action(false)
 
 func should_delete():
 	return !Input.is_key_pressed(KEY_SHIFT)

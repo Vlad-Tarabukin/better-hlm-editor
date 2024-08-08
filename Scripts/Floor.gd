@@ -91,7 +91,7 @@ func load_floor(floor_path):
 					
 					var transition_sprite = TransitionSprite.new(trigger_rect, direction, target_floor, offset)
 					transition_sprite.level = index
-					transition_sprite.loaded = true
+					transition_sprite.register_creation = false
 					add_child(transition_sprite)
 				elif parent_id == 2410:
 					var x = int(params.pop_front())
@@ -104,7 +104,7 @@ func load_floor(floor_path):
 					elevator_sprite.level = index
 					elevator_sprite.global_position = Vector2(x, y)
 					elevator_sprite.global_rotation_degrees = angle
-					elevator_sprite.loaded = true
+					elevator_sprite.register_creation = false
 					add_child(elevator_sprite)
 				elif parent_id == 2411:
 					var x = int(params.pop_front())
@@ -116,7 +116,7 @@ func load_floor(floor_path):
 					barrier_sprite.level = index
 					barrier_sprite.global_position = Vector2(x, y)
 					barrier_sprite.global_rotation_degrees = angle
-					barrier_sprite.loaded = true
+					barrier_sprite.register_creation = false
 					add_child(barrier_sprite)
 				elif parent_id == 2412:
 					var trigger_rect = Rect2(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
@@ -135,13 +135,13 @@ func load_floor(floor_path):
 					
 					var entry_sprite = EntrySprite.new(trigger_rect, direction)
 					entry_sprite.level = index
-					entry_sprite.loaded = true
+					entry_sprite.register_creation = false
 					add_child(entry_sprite)
 				elif parent_id == 1417:
 					var darkness_rect = Rect2i(int(params[0]), int(params[2]), int(params[1]) - int(params[0]), int(params[3]) - int(params[2]))
 					var darkness_sprite = DarknessSprite.new(darkness_rect)
 					darkness_sprite.level = index
-					darkness_sprite.loaded = true
+					darkness_sprite.register_creation = false
 					add_child(darkness_sprite)
 				elif parent_id == 663:
 					rain = true
@@ -162,7 +162,7 @@ func load_floor(floor_path):
 					var door_sprite = DoorSprite.new(parent_id, locked, cutscene)
 					door_sprite.level = index
 					door_sprite.position = Vector2(x, y)
-					door_sprite.loaded = true
+					door_sprite.register_creation = false
 					add_child(door_sprite)
 				else:
 					var x = int(params.pop_front())
@@ -185,7 +185,7 @@ func load_floor(floor_path):
 					object_sprite.global_position = Vector2(x, y)
 					object_sprite.rotation_degrees = angle
 					object_sprite.level = index
-					object_sprite.loaded = true
+					object_sprite.register_creation = false
 					add_child(object_sprite)
 		elif floor_path.get_extension() == "tls":
 			while !file.eof_reached():
@@ -213,7 +213,7 @@ func load_floor(floor_path):
 				var tile_sprite = TileSprite.new(tile_id, tile_x, tile_y, depth, submode)
 				tile_sprite.global_position = Vector2(x, y)
 				tile_sprite.level = index
-				tile_sprite.loaded = true
+				tile_sprite.register_creation = false
 				add_child(tile_sprite)
 		elif floor_path.get_extension() == "wll":
 			while !file.eof_reached():
@@ -236,7 +236,7 @@ func load_floor(floor_path):
 				var wall_sprite = WallSprite.new(object_id, sprite_id)
 				wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
 				wall_sprite.level = index
-				wall_sprite.loaded = true
+				wall_sprite.register_creation = false
 				add_child(wall_sprite)
 		elif floor_path.get_extension() == "npc":
 			for _i in range(int(file.get_line())):
@@ -272,7 +272,7 @@ func load_floor(floor_path):
 				npc_sprite.position = pos
 				npc_sprite.rotation_degrees = angle
 				npc_sprite.level = index
-				npc_sprite.loaded = true
+				npc_sprite.register_creation = false
 				add_child(npc_sprite)
 				
 				cutscene["npc"].append(npc_sprite)
@@ -296,7 +296,7 @@ func load_floor(floor_path):
 				item_sprite.position = pos
 				item_sprite.rotation_degrees = angle
 				item_sprite.level = index
-				item_sprite.loaded = true
+				item_sprite.register_creation = false
 				add_child(item_sprite)
 				
 				cutscene["items"].append(item_sprite)

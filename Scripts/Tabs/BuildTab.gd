@@ -117,15 +117,19 @@ func set_corner(pos):
 
 func erase_tile_rect():
 	var erase_rect = Rect2i(start_pos + App.cursor.region_rect.position, App.cursor.region_rect.size)
-	for obj in App.get_current_floor().get_children():
-		if obj is TileSprite and obj.depth == ObjectsLoader.tiles[curr_tiles]["depth"] and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect):
-			obj.queue_free()
+	var erase = App.get_current_floor().get_children().filter(func(obj): return obj.visible and obj is TileSprite and obj.depth == ObjectsLoader.tiles[curr_tiles]["depth"] and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect))
+	App.undo_redo.create_action("Remove tiles")
+	App.undo_redo.add_do_method(func(): erase.map(func(obj): obj.set_visibile_no_register(false)))
+	App.undo_redo.add_undo_method(func(): erase.map(func(obj): obj.set_visibile_no_register(true)))
+	App.undo_redo.commit_action()
 
-func erase_wall_rect(horizontal=null):
+func erase_wall_rect():
 	var erase_rect = Rect2i(start_pos + App.cursor.region_rect.position, App.cursor.region_rect.size)
-	for obj in App.get_current_floor().get_children():
-		if obj is WallSprite and (horizontal == null or obj.horizontal == horizontal) and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect):
-			obj.queue_free()
+	var erase = App.get_current_floor().get_children().filter(func(obj): return obj.visible and obj is WallSprite and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect))
+	App.undo_redo.create_action("Remove walls")
+	App.undo_redo.add_do_method(func(): erase.map(func(obj): obj.set_visibile_no_register(false)))
+	App.undo_redo.add_undo_method(func(): erase.map(func(obj): obj.set_visibile_no_register(true)))
+	App.undo_redo.commit_action()
 
 func snap_vector(vector):
 	vector.x = floor(vector.x / App.cursor.snap) * App.cursor.snap
@@ -156,6 +160,7 @@ func _unhandled_input(event):
 					if event.button_index == 1:
 						if check_box.button_pressed:
 							erase_tile_rect()
+						var tiles = []
 						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 16):
 							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 16):
 								var tile = TileSprite.new(ObjectsLoader.tiles[curr_tiles]["id"], curr_pos.x + ((x % tile_select.tile_size + tile_select.tile_size) % tile_select.tile_size), curr_pos.y + ((y % tile_select.tile_size + tile_select.tile_size) % tile_select.tile_size), ObjectsLoader.tiles[curr_tiles]["depth"])
@@ -163,8 +168,15 @@ func _unhandled_input(event):
 								pos.x = floor(pos.x / 16) * 16
 								pos.y = floor(pos.y / 16) * 16
 								tile.global_position = pos
+								tile.register_creation = false
+								tiles.append(tile)
 								App.add_object(tile, false)
 						App.cursor.region_rect = Rect2i(0, 0, tile_select.tile_size, tile_select.tile_size)
+						
+						App.undo_redo.create_action("Place tiles")
+						App.undo_redo.add_do_method(func(): tiles.map(func(obj): obj.set_visibile_no_register(true)))
+						App.undo_redo.add_undo_method(func(): tiles.map(func(obj): obj.set_visibile_no_register(false)))
+						App.undo_redo.commit_action(false)
 					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
 						erase_tile_rect()
 						set_tile(curr_pos)
@@ -179,13 +191,20 @@ func _unhandled_input(event):
 					App.cursor.move = true
 				elif curr_wall != null:
 					if event.button_index == 1:
-						erase_wall_rect(curr_wall["horizontal"])
+						var walls = []
 						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 32):
 							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 32):
 								var wall = WallSprite.new(curr_wall["object_id"], curr_wall["sprite_id"])
 								wall.global_position = snap_vector(Vector2i(x, y))
+								wall.register_creation = false
+								walls.append(wall)
 								App.add_object(wall, false)
 						App.cursor.region_rect = Rect2i(0, 0, 32, 32)
+						
+						App.undo_redo.create_action("Place walls")
+						App.undo_redo.add_do_method(func(): walls.map(func(obj): obj.set_visibile_no_register(true)))
+						App.undo_redo.add_undo_method(func(): walls.map(func(obj): obj.set_visibile_no_register(false)))
+						App.undo_redo.commit_action(false)
 					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
 						erase_wall_rect()
 						set_wall(curr_wall)
