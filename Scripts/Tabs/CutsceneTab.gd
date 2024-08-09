@@ -17,6 +17,7 @@ const FRAME_NODE = preload("res://Cutscene Nodes/frame_node.tscn")
 @onready var used_label = $"TabContainer/NPC/Name LineEdit/Used Label"
 @onready var triggers_item_list = $"TabContainer/Cutscene/Triggers ItemList"
 @onready var add_trigger_button = $"TabContainer/Cutscene/Add Trigger Button"
+@onready var cutscene_check_box = $"TabContainer/Cutscene/Cutscene CheckBox"
 
 var active
 var last_floor
@@ -26,6 +27,7 @@ func _process(delta):
 		last_floor = App.level
 		refresh_frames()
 		refresh_triggers()
+		cutscene_check_box.button_pressed = App.level_info["cutscene"]
 
 func refresh_frames():
 	for child in v_box_container.get_children():
@@ -36,9 +38,9 @@ func refresh_frames():
 		frame_node.initialize(App.get_current_floor().cutscene["frames"][i], i)
 
 func refresh_triggers():
-		triggers_item_list.clear()
-		for i in range(len(App.get_current_floor().cutscene["rects"])):
-			triggers_item_list.add_item("Trigger " + str(i))
+	triggers_item_list.clear()
+	for i in range(len(App.get_current_floor().cutscene["rects"])):
+		triggers_item_list.add_item("Trigger " + str(i))
 
 func _on_tab_container_tab_selected(tab):
 	active = tab == TAB_INDEX
@@ -160,3 +162,6 @@ func _on_delete_trigger_button_button_up():
 		App.get_current_floor().cutscene["rects"].remove_at(index)
 		App.get_current_floor().queue_redraw()
 		triggers_item_list.remove_item(index)
+
+func _on_cutscene_check_box_toggled(toggled_on):
+	App.level_info["cutscene"] = toggled_on

@@ -5,7 +5,8 @@ CONTROLS:
     MMB - move camera
     Scroll wheel - zoom
     O - open level folder
-    Double click LBM - edit object
+    Double click LMB - edit object
+    Shift + LMB - move object
   Build tab:
     Tile mode:
       LMB - place tiles

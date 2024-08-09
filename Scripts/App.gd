@@ -70,7 +70,7 @@ func load_level(_level_path):
 	level_info["name"] = file.get_line()
 	level_info["floors"] = int(file.get_line())
 	level_info["author"] = file.get_line()
-	file.get_line()
+	level_info["cutscene"] = file.get_line() == "1"
 	level_info["s_rank"] = int(file.get_line())
 	level_info["character_id"] = int(file.get_line())
 	file.get_line()
@@ -117,7 +117,7 @@ func save_level():
 	file.store_line(level_info["name"])
 	file.store_line(str(level_info["floors"]))
 	file.store_line(level_info["author"])
-	file.store_line("1")
+	file.store_line(str(int(level_info["cutscene"])))
 	file.store_line(str(level_info["s_rank"]))
 	file.store_line(str(level_info["character_id"]))
 	file.store_line("1")
