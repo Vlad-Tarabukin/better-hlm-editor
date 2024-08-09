@@ -4,7 +4,6 @@ CONTROLS:
   Common:
     MMB - move camera
     Scroll wheel - zoom
-    O - open level folder
     Double click LMB - edit object
     Shift + LMB - move object
   Build tab:
