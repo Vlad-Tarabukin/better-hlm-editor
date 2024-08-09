@@ -29,12 +29,23 @@ func _process(_delta):
 		queue_redraw()
 
 func _unhandled_input(event):
-	if App.level == level and App.mode == mode and event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
+	if App.level == level and App.mode == mode:
+		if event is InputEventMouseButton:
 			if App.cursor.texture == null and get_rect().has_point(to_local(GlobalCamera.get_mouse_position())):
-				App.selected_object = self
-				get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Edit Panel").visible = true
-				get_tree().get_root().set_input_as_handled()
+				if event.button_index == MOUSE_BUTTON_LEFT and event.double_click and App.selected_object == null:
+					App.selected_object = self
+					get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Edit Panel").visible = true
+					get_tree().get_root().set_input_as_handled()
+				elif event.button_index == MOUSE_BUTTON_LEFT and Input.is_key_pressed(KEY_SHIFT):
+					if event.pressed:
+						App.selected_object = self
+					elif App.selected_object == self:
+						App.selected_object = null
+		elif event is InputEventMouseMotion:
+			if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+				if App.selected_object == self and App.cursor.texture == null and get_rect().has_point(to_local(GlobalCamera.get_mouse_position())):
+					position += event.relative / GlobalCamera.target_zoom
+					get_tree().get_root().set_input_as_handled()
 
 func set_ids(object_id, sprite_id, _frame):
 	object.object_id = object_id
