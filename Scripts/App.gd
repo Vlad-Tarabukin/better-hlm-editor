@@ -140,9 +140,3 @@ func save_level():
 	
 	for level_floor in get_tree().get_root().get_node("Main/Floors").get_children():
 		level_floor.save()
-
-func _unhandled_input(event):
-	if event is InputEventKey and event.is_pressed():
-		if event.keycode == KEY_O:
-			if level_path:
-				OS.shell_show_in_file_manager(level_path)

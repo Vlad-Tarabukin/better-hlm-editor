@@ -64,3 +64,12 @@ func _on_undo_button_button_up():
 
 func _on_redo_button_button_up():
 	App.undo_redo.redo()
+
+func _on_quit_button_button_up():
+	$"../Quit ConfirmationDialog".show()
+
+func _on_quit_confirmation_dialog_confirmed():
+	get_tree().quit()
+
+func _on_open_button_button_up():
+	OS.shell_show_in_file_manager(App.level_path)
