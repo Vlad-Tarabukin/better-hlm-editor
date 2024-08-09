@@ -36,6 +36,7 @@ const TEXTURE = preload("res://Textures/transition.png")
 @onready var car_item_list = $"Car ItemList"
 @onready var sprite_h_slider = $"Sprite HSlider"
 @onready var transition_panel = $"../../../Transition Panel"
+@onready var cover_texture_rect = $"Cover TextureRect"
 
 func _on_TabContainer_tab_selected(tab):
 	active = tab == TAB_INDEX
@@ -253,3 +254,14 @@ func _on_car_item_list_item_selected(index):
 
 func _on_s_spin_box_value_changed(value):
 	App.level_info["s_rank"] = value
+
+func _on_cover_button_button_up():
+	var file_dialog = $"../../../../../FileDialog"
+	file_dialog.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES)
+	file_dialog.show()
+
+func _on_file_dialog_file_selected(path):
+	var texture = ImageTexture.create_from_image(Image.load_from_file(path))
+	cover_texture_rect.texture = texture
+	cover_texture_rect.size = texture.get_size() * 3
+	DirAccess.copy_absolute(path, App.level_path + "/level.png")

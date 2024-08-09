@@ -823,6 +823,30 @@ offset_right = 58.0
 offset_bottom = 698.0
 text = "S rank:"
 
+[node name="Cover Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 740.0
+offset_right = 155.0
+offset_bottom = 771.0
+text = "Select Cover"
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level/Cover Button"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 150.0
+offset_bottom = 58.0
+text = "34 x 57"
+horizontal_alignment = 1
+
+[node name="Cover TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 700.0
+offset_right = 272.0
+offset_bottom = 871.0
+expand_mode = 1
+
 [node name="Cutscene" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
 layout_mode = 2
@@ -1412,6 +1436,15 @@ initial_position = 4
 ok_button_text = "Quit"
 dialog_text = "Are you sure you want to exit?"
 
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 4
+size = Vector2i(1200, 800)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png")
+
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_main_objects_loaded"]
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_main_objects_loaded"]
 [connection signal="ready" from="." to="." method="_on_ready"]
@@ -1476,6 +1509,7 @@ dialog_text = "Are you sure you want to exit?"
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Car ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_car_item_list_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Sprite HSlider" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_sprite_h_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/S SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_s_spin_box_value_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Cover Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cover_button_button_up"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_cutscene_tab_container_tab_selected"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/Delete Trigger Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_delete_trigger_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/Add Frame Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_add_frame_button_button_up"]
@@ -1500,3 +1534,4 @@ dialog_text = "Are you sure you want to exit?"
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Redo Button" to="CanvasLayer" method="_on_redo_button_button_up"]
 [connection signal="ready" from="Cursor" to="Cursor" method="_on_Cursor_ready"]
 [connection signal="confirmed" from="Quit ConfirmationDialog" to="CanvasLayer" method="_on_quit_confirmation_dialog_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_file_dialog_file_selected"]
