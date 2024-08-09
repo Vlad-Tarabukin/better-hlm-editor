@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=26 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://djbhtc64tvtm7" path="res://Textures/create.png" id="19_ugaxn"]
 [ext_resource type="Script" path="res://Scripts/EditCutsceneSpritePanel.gd" id="20_l1xlu"]
 [ext_resource type="Texture2D" uid="uid://bl6o0peaql6mg" path="res://Textures/delete.png" id="20_tsx7a"]
+[ext_resource type="Texture2D" uid="uid://dx5mqvx34srx4" path="res://Textures/watermark.png" id="24_pao8c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -222,8 +223,10 @@ offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 11
+current_tab = 4
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 7
@@ -571,7 +574,6 @@ offset_bottom = 990.0
 text = "Random angle"
 
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("15")
@@ -1355,6 +1357,37 @@ modulate = Color(1, 1, 1, 0.392157)
 texture_repeat = 2
 centered = false
 script = ExtResource("3")
+
+[node name="Screenshot SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(1024, 512)
+render_target_update_mode = 4
+
+[node name="Background" type="Control" parent="Screenshot SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Watermark TextureRect" type="TextureRect" parent="Screenshot SubViewport/Background"]
+z_index = 4096
+layout_mode = 1
+offset_right = 1324.0
+offset_bottom = 256.0
+texture = ExtResource("24_pao8c")
+
+[node name="ColorRect" type="ColorRect" parent="Screenshot SubViewport/Background"]
+z_index = -4096
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.266575, 0.266575, 0.266575, 1)
 
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_main_objects_loaded"]
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_main_objects_loaded"]

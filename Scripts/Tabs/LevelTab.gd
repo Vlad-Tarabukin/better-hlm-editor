@@ -143,7 +143,6 @@ func _on_ok_button_button_up():
 	placing_elevator = false
 	placing_transition = false
 
-
 func _on_name_line_edit_text_changed(new_text):
 	App.level_info["name"] = new_text
 
