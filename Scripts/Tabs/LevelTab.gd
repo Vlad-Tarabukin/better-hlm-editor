@@ -125,9 +125,11 @@ func _on_cancel_button_button_up():
 	App.cursor.texture = null
 	App.cursor.move = true
 	App.cursor.flip_v = false
+	$"../../../Transition Panel/Direction OptionButton".disabled = false
+	placing_elevator = false
+	placing_transition = false
 
 func _on_ok_button_button_up():
-	_on_cancel_button_button_up()
 	if placing_transition:
 		var direction = $"../../../Transition Panel/Direction OptionButton".get_selected_id()
 		var target_floor = $"../../../Transition Panel/Floor SpinBox".value - 1
@@ -140,9 +142,7 @@ func _on_ok_button_button_up():
 		var offset = Vector2i($"../../../Transition Panel/X SpinBox".value, $"../../../Transition Panel/Y SpinBox".value)
 		var elevator_sprite = ElevatorSprite.new(target_floor, offset)
 		App.add_object(elevator_sprite)
-		$"../../../Transition Panel/Direction OptionButton".disabled = false
-	placing_elevator = false
-	placing_transition = false
+	_on_cancel_button_button_up()
 
 func _on_name_line_edit_text_changed(new_text):
 	App.level_info["name"] = new_text
