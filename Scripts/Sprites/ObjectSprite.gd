@@ -5,10 +5,9 @@ class_name ObjectSprite
 var object: HLMObject
 var object_frame
 var parent
-var depth
 var last_mode
 
-func _init(_object: HLMObject, _object_frame, _mode, _parent = 11, _depth = 0):
+func _init(_object: HLMObject, _object_frame, _mode, _parent = 11):
 	object = _object
 	object_frame = _object_frame
 	mode = _mode
@@ -16,8 +15,7 @@ func _init(_object: HLMObject, _object_frame, _mode, _parent = 11, _depth = 0):
 	texture = spr["frames"][object_frame]
 	offset = spr["center"]
 	parent = _parent
-	depth = _depth
-	z_index = -depth
+	z_index = object.z_index
 
 func _draw():
 	if App.mode == mode:

@@ -12,6 +12,7 @@ var curr_enemy_sprites_len = 1
 var active = false
 var enemies_on_list = []
 var weapons = []
+static var weapon_ids = []
 
 @onready var enemy_list = $"Enemies/Enemy List"
 @onready var fraction_label = $"Enemies/Fraction Label"
@@ -63,6 +64,7 @@ func _on_Gameplay_ready():
 			"object": int(params[1]),
 			"sprite": int(params[2])
 		})
+		weapon_ids.append(int(params[1]))
 	weapons_tsv.close()
 
 func _on_TabContainer_tab_selected(tab):
@@ -120,15 +122,17 @@ func _unhandled_input(event: InputEvent):
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				if enemy_list.is_anything_selected():
 					var enemy = enemies_on_list[enemy_list.get_selected_items()[0]]
-					var obj = HLMObject.new(enemy["object"], enemy["sprites"][curr_enemy_sprite])
-					var object_sprite = ObjectSprite.new(obj, 0, TAB_INDEX, 10, -1)
+					var obj = ObjectsLoader.objects[enemy["object"]].clone()
+					obj.sprite_id = enemy["sprites"][curr_enemy_sprite]
+					var object_sprite = ObjectSprite.new(obj, 0, TAB_INDEX, 10)
 					App.add_object(object_sprite)
 				elif weapon_list.is_anything_selected():
 					if check_box.button_pressed:
 						App.cursor.rotation_degrees = int(randf() * 360)
 					var weapon = weapons[weapon_list.get_selected_items()[0]]
-					var obj = HLMObject.new(weapon["object"], weapon["sprite"])
-					var object_sprite = ObjectSprite.new(obj, 0, TAB_INDEX, 2401, -1)
+					var obj = ObjectsLoader.objects[weapon["object"]].clone()
+					obj.sprite_id = weapon["sprite"]
+					var object_sprite = ObjectSprite.new(obj, 0, TAB_INDEX, 2401)
 					App.add_object(object_sprite)
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				if Input.is_key_pressed(KEY_SHIFT):

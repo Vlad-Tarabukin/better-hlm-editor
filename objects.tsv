@@ -1,1997 +1,1998 @@
-0	-1	/Interface/TitleScreen/objTitleScreen
-3	3	/Interface/TitleScreen/objPalmTree
-4	8	/Interface/TitleScreen/objHouses
-5	-1	/Editor/objEditor
-6	-1	/Interface/objBackgroundColor
-7	62	/Editor/objEditorWallH
-8	63	/Editor/objEditorWallV
-9	-1	/Editor/objWall
-10	-1	/Editor/objEditorEnemy
-11	-1	/Editor/objEditorObjects
-12	71	/Editor/objCheckbox
-13	77	/Editor/objButtons
-14	-1	/Interface/Act/objAct
-16	-1	/Interface/Act/objFlock2
-19	-1	/Interface/Scene/City/objBloodDraw
-20	82	/Interface/Scene/City/objTextBlood
-21	84	/Interface/Scene/City/objPalmTrees
-22	94	/Interface/Scene/City/objSeaGlimmer
-23	95	/Interface/Scene/City/objSkyline1
-24	96	/Interface/Scene/City/objSkyline2
-25	91	/Editor/objEditorDoorV
-26	92	/Editor/objEditorDoorH
-27	87	/Editor/objEditorWindowLeft
-28	88	/Editor/objEditorWindowRight
-29	89	/Editor/objEditorWindowUp
-30	90	/Editor/objEditorWindowDown
-31	100	/Editor/objEditorBrickWallV
-32	99	/Editor/objEditorBrickWallH
-33	97	/Editor/objEditorSoftWallV
-34	98	/Editor/objEditorSoftWallH
-35	12	/Player/PigButcher/objPigButcher
-36	-1	/Player/objPlayer
-37	-1	/Interface/objConversation
-38	72	/Interface/objEffector
-39	-1	/Furniture/objFurniture
-40	30	/Enemies/Victims/objVictim1
-41	38	/Enemies/Victims/objVictim3
-42	174	/Enemies/Victims/objVictim2
-43	103	/Misc/LightSmoke/objPiglight1
-44	-1	/Effects/Blood/objSplat
-45	-1	/Interface/objGore
-46	-1	/Effects/Blood/objSmudge
-47	-1	/Effects/Blood/objBigBlood
-48	123	/Effects/Blood/objTinyBlood
-49	-1	/Effects/Blood/objBlood
-50	-1	/Enemies/objEnemy
-51	42	/Enemies/objDeadBody
-52	102	/Effects/Blood/objBloodPool
-53	128	/Editor/sprEditorRailsLeft
-54	130	/Editor/objEditorRailsRight
-55	127	/Editor/objEditorRailsDown
-56	1863	/Editor/objEditorRailsUp
-57	131	/Furniture/PigButcher/Party/objCouchParty
-58	132	/Furniture/PigButcher/Party/objMiscKeg
-59	134	/Furniture/PigButcher/Party/objAquariumParty
-60	135	/Furniture/PigButcher/Party/objTableParty
-61	136	/Furniture/PigButcher/Party/objTableKitchenParty
-62	137	/Furniture/PigButcher/Party/objTableBrokenParty
-63	138	/Furniture/objSinkParty
-64	140	/Furniture/PigButcher/Party/objStrollerParty
-65	141	/Furniture/objToiletParty
-66	142	/Furniture/objTubParty
-67	143	/Furniture/PigButcher/Party/objTVTableParty
-68	144	/Furniture/PigButcher/Party/objRecordPlayerParty
-69	145	/Furniture/objBenchPorchParty
-70	146	/Furniture/objWheelBarrowParty
-71	125	/Furniture/objCounterKitchen
-72	147	/Furniture/objCupboardKitchen
-73	148	/Furniture/objSink
-74	149	/Furniture/objFridge
-75	139	/Furniture/PigButcher/Party/objStoveParty
-76	-1	/Interface/objPigBackground
-77	-1	/Interface/objFilmTitle
-78	36	/Enemies/Victims/objVictim3KnockedOut
-79	155	/Furniture/Floor/objBrokenVinyls
-80	28	/Enemies/objKnockedOut
-81	20	/Player/PigButcher/objPigKillBlunt
-82	156	/Effects/Blood/objBloodSquirt
-83	158	/Misc/Weapons/objBat
-84	-1	/Furniture/objSolid
-85	213	/Player/objPlayerDead
-86	161	/Furniture/objTrashbagOpen
-87	163	/Furniture/objTrashbag
-88	162	/Furniture/Floor/objPizza
-89	159	/Furniture/Floor/objDoorMat
-90	160	/Furniture/objHatRack
-91	165	/Furniture/Floor/objCigaretteButts
-92	167	/Furniture/Floor/objAlcoholContainers
-93	166	/Furniture/PigButcher/Party/objDeskParty
-94	173	/Furniture/Floor/objVideoGames
-95	168	/Furniture/PigButcher/Party/objGlobe
-96	170	/Furniture/PigButcher/Party/objBoxes
-97	172	/Furniture/objPhones
-98	171	/Furniture/objBookshelf
-99	169	/Furniture/objToolbox
-100	175	/Misc/Weapons/objShotgunWall
-101	177	/Editor/objEditorPorchWallV
-102	176	/Editor/objEditorPorchWallH
-103	179	/Furniture/objChairWood
-104	178	/Furniture/objArmChair
-105	181	/Enemies/Victims/objVictim45Idle
-106	180	/Misc/LightSmoke/objPiglight2
-107	189	/Furniture/PigButcher/Party/objBedKid
-108	188	/Furniture/objBigBed
-109	190	/Furniture/objBoomboxParty
-110	191	/Furniture/PigButcher/Party/objTVParty2
-111	186	/Furniture/PigButcher/Party/objGuitarRig
-112	187	/Furniture/Floor/objShirts
-113	220	/Furniture/PigButcher/Party/objDeskKidParty
-114	221	/Furniture/objSofaTV
-115	222	/Furniture/PigButcher/Party/objTVParty3
-116	224	/Furniture/PigButcher/Party/objTVParty4
-117	225	/Furniture/objMakeupTable
-118	226	/Furniture/objNightstandParty
-119	227	/Furniture/objDeskPictures
-120	228	/Furniture/Floor/objVaseBroken
-121	229	/Furniture/objVaseStand
-122	223	/Furniture/objCabinBooze
-123	237	/Furniture/objCloset
-124	219	/Interface/objNextroom
-125	268	/Enemies/Victims/objVictim5
-126	230	/Enemies/Victims/objVictim4
-127	239	/Furniture/objClosetHanger1
-128	240	/Furniture/objClosetHanger2
-129	243	/Editor/objDoorWardrobe
-130	241	/Furniture/Floor/objMagazines
-131	244	/Furniture/objPlantBig
-132	245	/Furniture/objPlantSmall
-133	246	/Furniture/objTub
-134	247	/Furniture/objToilet
-135	248	/Furniture/Floor/objNetDoor
-136	250	/Furniture/Floor/objSocks
-137	251	/Furniture/Floor/objDressParty
-138	252	/Furniture/Floor/objPants
-139	254	/Furniture/Floor/objRobeParty
-140	253	/Furniture/objLaundryBasket
-141	255	/Furniture/Floor/objWaterPuddle
-142	37	/Enemies/objVictimCrawl
-143	21	/Player/PigButcher/objPKillRape
-144	260	/Misc/Weapons/objHammer
-145	-1	/Misc/Weapons/objWeapon
-146	22	/Player/PigButcher/objPigKillStomp
-147	262	/Player/objBullet
-148	263	/Effects/objSpark
-149	264	/Effects/objSmokeHit
-150	266	/Misc/Weapons/objDoubleBarrel
-151	267	/Misc/objMaskDrop
-152	270	/Furniture/MovieSet/objMovieWallUp
-153	272	/Furniture/MovieSet/objMovieWallRight
-154	273	/Furniture/MovieSet/objMovieWallLeft
-155	271	/Furniture/MovieSet/objMovieWallDown
-156	282	/NPCs/PigButcher/Party/objSoundEngineer
-157	279	/NPCs/PigButcher/Party/objCleaner
-158	278	/NPCs/PigButcher/Party/objCameraman
-159	281	/NPCs/PigButcher/Party/objDirector
-160	39	/NPCs/PigButcher/Party/objVictim5Script
-161	12	/NPCs/PigButcher/Party/objPigButcherIdle
-162	274	/Furniture/MovieSet/objFilmCamera
-163	275	/Furniture/MovieSet/objFilmLight
-164	276	/Furniture/MovieSet/objPortableGenerator
-165	-1	/Furniture/MovieSet/objFilmCrew
-166	287	/NPCs/PigButcher/Party/objDirectorWalk
-167	288	/Interface/FloorCleared/objFloorCleared
-169	293	/Player/Fans/objPlayerTiger
-170	205	/Enemies/Gang/objEGangMeleeRandom
-171	-1	/Enemies/Gang/objEGang
-173	307	/Misc/Weapons/objKnife
-174	308	/Misc/Weapons/objChain
-175	307	/Misc/Weapons/objButterfly
-176	305	/Misc/Weapons/objPipe
-177	304	/Misc/Weapons/objShotgun
-178	303	/Misc/Weapons/objUzi
-179	302	/Misc/Weapons/obj9mm
-180	3868	/Misc/Weapons/objNailGun
-181	262	/Enemies/objEBullet
-182	310	/Effects/Cartridges/objShell
-183	201	/Enemies/Gang/objEGangRandom
-184	201	/Enemies/Gang/objEGangPatrol
-185	326	/Player/Fans/objPlayerZebra
-186	208	/Enemies/Gang/objEGangStatic
-187	333	/Player/Kills/objPKillChain
-188	20	/Player/Kills/objPKillBlunt
-189	20	/Player/Kills/objPKillBash
-190	292	/Player/Kills/Specific/objTigerKill
-191	336	/Player/Kills/objPKillKnife
-192	334	/Player/Kills/objPKillLean
-193	370	/Furniture/Floor/objTrashFood
-194	372	/Furniture/Floor/objWeight
-195	362	/Furniture/Floor/objCouchCushion
-196	357	/Furniture/Floor/objStyrofoam
-197	356	/Furniture/Floor/objDumbbell
-198	355	/Furniture/objDeadLift
-199	371	/Furniture/Fans/StolenGoods/objTreadmill
-200	369	/Furniture/Fans/StolenGoods/objStolenGoodsTV
-201	368	/Furniture/Fans/StolenGoods/objStolenGoodsTable
-202	367	/Furniture/Fans/StolenGoods/objStolenGoodsBox
-203	366	/Furniture/Fans/StolenGoods/objStolenGoods
-204	365	/Furniture/Fans/StolenGoods/objSmallTableGang
-205	364	/Furniture/Fans/StolenGoods/objTableGang
-206	363	/Furniture/objCouchPurple
-207	361	/Furniture/objCouchBeige
-208	360	/Furniture/Fans/StolenGoods/objBedGang
-209	359	/Furniture/Fans/DrugDealer/objBarShelfGang2
-210	358	/Furniture/Fans/DrugDealer/objBarGang2
-212	353	/Furniture/Fans/DrugDealer/objDrugCrates
-213	352	/Furniture/Fans/StolenGoods/objBenchPress
-214	373	/Furniture/objKitchenSink
-215	374	/Furniture/objTVBig
-216	375	/Furniture/Fans/StolenGoods/objWaterPipes
-217	376	/Furniture/Fans/StolenGoods/objTableCarStereo
-218	377	/Furniture/Fans/DrugDealer/objFusebox
-219	378	/Furniture/Fans/DrugDealer/objTableBluePrints
-220	379	/Furniture/objGeneratorBig
-221	380	/Furniture/Floor/objHubCaps
-222	382	/Furniture/objToolboxBig
-223	381	/Furniture/Floor/objSewerGrate
-224	383	/Furniture/Fans/StolenGoods/objTableCameras
-225	384	/Furniture/Fans/StolenGoods/objConsolesBox
-226	385	/Furniture/Floor/objMatressGang
-227	387	/Furniture/objLaundryMachine
-228	386	/Furniture/Fans/StolenGoods/objClothesLine
-229	195	/Enemies/Gang/objEGangIdlePipe
-230	211	/Enemies/Gang/objEGangIdleKnife
-231	210	/Enemies/Gang/objEGangIdleSmoke
-233	389	/Enemies/Victims/objVictim6
-234	391	/Interface/objMaskMenu
-235	393	/Player/Cars/Fans_Van/objFansVanBottom
-236	392	/Player/Cars/Fans_Van/objFansVan
-237	-1	/Interface/objFloorBlood
-238	-1	/Interface/FloorCleared/objLevelCleared
-239	395	/Furniture/Floor/objChemicals
-240	396	/Furniture/Fans/DrugDealer/objCocaineCrates
-241	397	/Furniture/Fans/DrugDealer/objCocaineTable
-242	400	/Furniture/Fans/DrugDealer/objTableComputerGang
-243	401	/Furniture/Fans/DrugDealer/objFileCabinet
-244	402	/Furniture/Fans/DrugDealer/objLightbulbsBox
-245	403	/Furniture/Fans/DrugDealer/objMarijuanaBig
-246	404	/Furniture/Fans/DrugDealer/objMarijuanaCrate
-247	405	/Furniture/Fans/DrugDealer/objMarijuanaCrop
-248	406	/Furniture/Fans/DrugDealer/objMarijuanaTable
-249	407	/Furniture/Fans/DrugDealer/objMarijuanaSmall
-250	398	/Furniture/Floor/objFloorSafe
-251	399	/Furniture/Fans/DrugDealer/objTableChemicals
-252	408	/Furniture/Fans/DrugDealer/objTableMoney
-253	410	/Misc/LightSmoke/objMarijuanaLight
-254	412	/Furniture/Fans/DrugDealer/objGunTable
-255	413	/Furniture/Fans/DrugDealer/objGunrack
-256	411	/Furniture/Fans/DrugDealer/objAmmoCrates
-257	414	/Furniture/Fans/HQ/objStageFans
-258	415	/Furniture/Fans/HQ/objFansTable
-259	416	/Furniture/Fans/HQ/objFansMannequins
-260	417	/Effects/Smoke/ArcadeMachines/objArcadeKDFW
-261	418	/Furniture/Fans/HQ/objBarFans
-262	419	/Furniture/Fans/HQ/objFansInCouch
-263	422	/Furniture/Fans/HQ/objFansComputerTable
-264	421	/Furniture/Fans/HQ/objFansCouch1
-265	420	/Furniture/Fans/HQ/objMasksBox
-266	423	/Player/Fans/objPlayerSwan1
-267	425	/Misc/LightSmoke/objFansHQLight
-268	426	/Furniture/Fans/HQ/objFansLights
-269	427	/Furniture/objUrinal
-270	428	/Furniture/Fans/HQ/objNeonSign
-271	429	/Furniture/Fans/DrugDealer/objAirHockey
-272	430	/Effects/Smoke/ArcadeMachines/objArcadeLuftrausers
-273	431	/Effects/Smoke/ArcadeMachines/objArcadeGuns
-274	432	/Furniture/Fans/DrugDealer/objBarTable
-275	433	/Furniture/Fans/DrugDealer/objBasketballGame
-276	434	/Furniture/Fans/DrugDealer/objBarGang
-277	435	/Furniture/Fans/DrugDealer/objBarShelfGang
-278	437	/Furniture/Fans/DrugDealer/objChairGang
-279	438	/Furniture/Fans/DrugDealer/objDJSet
-280	439	/Furniture/Fans/DrugDealer/objBarTableTiny
-281	440	/Furniture/Fans/DrugDealer/objBarTableGlass
-283	442	/Furniture/Fans/DrugDealer/objKaraokeMachine
-284	436	/Furniture/Fans/DrugDealer/objBoothGang
-285	443	/Misc/LightSmoke/objBarLight
-286	444	/Furniture/Fans/HQ/objBarLightsBig
-287	445	/Furniture/Fans/HQ/objBarLightsMedium
-288	446	/Furniture/Fans/DrugDealer/objBarLightsSmall
-289	447	/Furniture/objHugePlant
-290	461	/NPCs/Fans/DrugDealers/objHenchmanDie
-291	-1	/Interface/objRestart
-292	-1	/Interface/objGameOverBackground
-293	474	/NPCs/Fans/HQParty/objPandaBartender
-294	475	/NPCs/Fans/HQParty/objPartyBoy1
-295	476	/NPCs/Fans/HQParty/objPartyBoy2
-296	479	/NPCs/Fans/HQParty/objPartyGirl2
-297	477	/NPCs/Fans/HQParty/objPartyGirl1
-298	478	/NPCs/Fans/HQParty/objPartyGirl2Mask
-299	480	/NPCs/Fans/HQParty/objPartyBoy1Mask
-300	482	/NPCs/Fans/HQParty/objMoon
-301	483	/NPCs/Fans/HQParty/objMoonGlasses
-302	485	/Interface/objVBorder
-303	484	/Interface/objHBorder
-304	-1	/Interface/Points/objPoints
-305	488	/NPCs/Fans/DrugDealers/objPerturbator
-306	492	/NPCs/Fans/HQParty/objJasper
-307	491	/NPCs/Fans/HQParty/objBarbecue
-308	-1	/Interface/HUD/objAmmoDraw
-309	493	/NPCs/PigButcher/Interview/objHost
-310	496	/NPCs/PigButcher/Interview/objPigInterview
-311	503	/Furniture/PigButcher/Interview/objTalkShowChairs
-312	502	/Furniture/PigButcher/Interview/objAudience
-313	507	/Furniture/PigButcher/Interview/objTalkShowCurtains
-314	508	/Furniture/PigButcher/Interview/objTalkShowDJ
-315	509	/Furniture/PigButcher/Interview/objRichard
-316	513	/Furniture/PigButcher/Interview/objTalkshowCamera
-317	512	/Furniture/PigButcher/Interview/objTalkShowTable
-318	510	/Furniture/PigButcher/Interview/objTeleprompter
-319	511	/Furniture/PigButcher/Interview/objTalkshowCoach
-320	-1	/Misc/LightSmoke/objTalkshowLight
-321	514	/Misc/LightSmoke/objSpotlight
-322	516	/Furniture/PigButcher/Interview/objEllenDead
-323	530	/NPCs/PigButcher/Interview/objPigInterviewStand
-324	533	/Player/Nicke/objNicke
-325	-1	/Effects/Flamethrower/objFlamer
-326	539	/Effects/Flamethrower/objFlame
-327	540	/Effects/Flamethrower/objFireBallFlame
-328	-1	/Interface/objBackgroundTropicalEvening
-329	-1	/Interface/objBackgroundTropicalNight
-660	1085	/Furniture/Jungle/Trees/objPalmTreeDay
-661	1085	/Furniture/Jungle/Trees/objPalmTreeNight
-662	-1	/Interface/objBackgroundTropicalJungle
-663	-1	/Interface/Rain/objRain
-664	-1	/Interface/Rain/objRainDrop
-665	1091	/Interface/Rain/objRainHit
-666	1089	/Furniture/Jungle/Trees/objBigTreeDay
-667	1089	/Furniture/Jungle/Trees/objBigTreeNight
-668	1109	/Furniture/Jungle/Trees/objAlienPlant2
-669	1110	/Furniture/Jungle/Trees/objAlienPlant2Roots
-670	1111	/Furniture/Jungle/Trees/objAlienPlant3
-671	1112	/Furniture/Jungle/Trees/objAlienPlant3Roots
-672	1118	/Enemies/Soldier/objSoldierMeleeRandom
-673	-1	/Enemies/Soldier/objSoldier
-674	1117	/Enemies/Soldier/objSoldierRandom
-675	1132	/Editor/objWoodWallV
-676	1133	/Editor/objWoodWallInteriorV
-677	1131	/Editor/objWoodWallH
-678	1134	/Editor/objWoodWallInteriorH
-679	1136	/Furniture/Jungle/objFirePlace
-680	1138	/Furniture/Jungle/objRussianFlag
-681	1137	/Furniture/Jungle/objMilitaryJeep
-682	1143	/Editor/objWoodWindowV
-683	1925	/Editor/objWoodWindowH
-684	1147	/Furniture/Jungle/objMilitaryBed
-685	1148	/Furniture/Jungle/objMilitaryBunk
-686	1149	/Furniture/Jungle/objMilitaryPlans
-687	1145	/Furniture/Jungle/objTent
-688	1146	/Furniture/Jungle/objBarbedWire
-689	1150	/Furniture/Jungle/objRadioCentral
-690	1155	/Furniture/Jungle/objSupplies
-691	1154	/Furniture/Jungle/objStoveMilitary
-692	1157	/Furniture/Jungle/objClosetMilitary
-693	1151	/Furniture/Jungle/objAmmoBox
-694	1152	/Furniture/Jungle/objSupplyBox
-695	1153	/Furniture/Jungle/objFoodBox
-696	1117	/Enemies/Soldier/objSoldierPatrol
-697	1117	/Enemies/Soldier/objSoldierStatic
-698	1163	/Enemies/Soldier/objSoldierFatKnife
-699	1170	/Furniture/Jungle/objMilitaryDiningTable
-700	1171	/Furniture/Jungle/objMilitaryBuffe
-701	1172	/Furniture/Jungle/objMilitaryKitchen
-702	1173	/Furniture/Jungle/objHelicopter
-703	1175	/Furniture/Floor/Jungle/objBeanCan
-704	1161	/Enemies/Soldier/objSoldierFatGun
-705	-1	/Editor/objGlassPanel
-706	1178	/Enemies/Soldier/objSoldierIdlePonchoSmoke
-707	1177	/Enemies/Soldier/objPoncho
-708	1179	/Enemies/Soldier/objSoldierIdleRain
-709	-1	/Player/objStartPoint
-710	1183	/Editor/objInvisibleWallH
-711	1184	/Editor/objInvisibleWallV
-712	1185	/Editor/objInvisibleWallD1
-713	1186	/Editor/objInvisibleWallD2
-714	1187	/Furniture/Jungle/objSoldierTent
-715	1192	/Furniture/Jungle/objWeaponTable
-716	1188	/Furniture/Jungle/objFirePlacePot
-717	1190	/Furniture/Jungle/objLog
-718	1189	/Furniture/Jungle/objGeneralTable
-719	1191	/Furniture/Jungle/objTurtleCorpse
-720	1193	/Misc/Weapons/objHeavy
-721	1195	/Misc/Weapons/objFlameThrower
-722	1196	/Misc/Weapons/objSniperRifle
-723	1197	/Misc/Weapons/objKalashnikov
-724	1194	/Misc/Weapons/objM16
-725	1199	/NPCs/Soldiers/Jungle/objSquadBlack1
-726	1200	/NPCs/Soldiers/Jungle/objSquadFat1
-727	1201	/NPCs/Soldiers/Jungle/objSquadJacket1
-728	1202	/NPCs/Soldiers/Jungle/objGeneralTalk1
-729	-1	/NPCs/Soldiers/Jungle/objGeneral
-730	-1	/Furniture/Jungle/objGeneralDrapes
-731	1205	/Furniture/Jungle/objGeneralDrape
-732	1206	/Furniture/Floor/Jungle/objBones
-733	1216	/Furniture/Floor/Jungle/objStoneNight
-734	1207	/Furniture/Floor/Jungle/objJeepTyre
-735	1209	/Furniture/Floor/Jungle/objAmericanFlag
-736	1215	/Furniture/Jungle/objGeneralBed
-737	1210	/NPCs/Soldiers/Jungle/objParrot
-738	1210	/NPCs/Soldiers/Jungle/objGeneralParrot
-740	1208	/Furniture/Floor/Jungle/objStoneDay
-741	1198	/Misc/Weapons/objMachete
-742	1217	/Interface/Scene/NickeScene/objNickePalmTree
-743	1218	/Interface/Scene/NickeScene/objNickeBigTree
-744	-1	/Interface/Scene/NickeScene/objForest
-745	-1	/Interface/Scene/NickeScene/objJungleNightBG
-746	1220	/Interface/Scene/NickeScene/objNickeGreenery
-747	-1	/Interface/Scene/NickeScene/objJungleNightScene
-748	-1	/Interface/Scene/NickeScene/objJungleDayScene
-749	-1	/Interface/Scene/NickeScene/objJungleDayBG
-750	-1	/Interface/LevelSelect/objLevelSelect
-751	1222	/Interface/LevelSelect/objLevelPalmTree
-752	1223	/Furniture/Cop/Mall/objMallBasketBalls
-753	1224	/Furniture/Cop/Mall/objMallRegister
-754	1225	/Furniture/Cop/Mall/objMallChair
-755	1226	/Furniture/Cop/Mall/objMallFootballs
-756	1227	/Furniture/Cop/Mall/objMallGames
-757	1228	/Furniture/Cop/Mall/objMallJewels
-758	1229	/Furniture/Cop/Mall/objMallShoes
-759	1230	/Furniture/Cop/Mall/objMallTrashCan
-760	1231	/Furniture/Cop/Mall/objMallTVs
-761	1232	/Furniture/Cop/Mall/objMallVinyls
-762	1234	/Furniture/Cop/Mall/objMallSuperFunCabinet
-763	1243	/Player/Cop/objCop
-764	1258	/Player/Cars/Cop_Car/objCopCar
-765	1260	/Player/Cars/Cop_Car/objCopCarFloor
-766	1259	/Player/Cars/Cop_Car/objCopCarTrunk
-767	1267	/NPCs/Soldiers/Jungle/objSquadField1
-768	1268	/NPCs/Soldiers/Jungle/objSquadBlackField1
-769	1270	/NPCs/Soldiers/Jungle/objEnemySoldierGivenUp
-770	1269	/NPCs/Soldiers/Jungle/objSquadJacket2
-771	1274	/NPCs/Soldiers/Jungle/objSquadJacket3Idle
-772	1275	/NPCs/Soldiers/Jungle/objSquadFat2Idle
-773	1279	/Enemies/Soldier/objSoldierBurn
-774	42	/Enemies/objDyingBody
-775	1280	/Effects/Flamethrower/objFlameSmoke
-776	1284	/Furniture/Cop/Mall/objCheapSign
-777	1286	/Furniture/Cop/Mall/objClothesHanger2
-778	1282	/Furniture/Cop/Mall/objEmptyShelf
-779	1289	/Furniture/Cop/Mall/objTurtlesRack
-780	1288	/Furniture/Cop/Mall/objMallPerfume
-781	1283	/Furniture/Cop/Mall/objClothesHanger1
-782	1293	/Furniture/Cop/Mall/objSlidingDoors
-783	1294	/Furniture/Cop/Mall/objToyGuns
-784	1295	/Furniture/Cop/Mall/objStuffSign
-785	1290	/Furniture/Floor/Mall/objTurtle
-786	1233	/Furniture/Floor/Mall/objMallSuperFun
-787	1291	/Furniture/Floor/Mall/objNesCartridge
-788	1281	/Furniture/Floor/Mall/objBrokenPerfume
-789	1311	/Furniture/Floor/Mall/objJewelShard
-790	1297	/Furniture/Cop/Mall/objBasketBall
-791	1298	/Player/Kills/Specific/objCopKillShotgun
-792	1252	/Player/Kills/Specific/objPKillStomp
-793	1306	/Furniture/Cop/Mall/objNuclearThrone1
-794	1307	/Furniture/Cop/Mall/objNuclearThrone2
-795	1308	/Furniture/Cop/Mall/objNuclearThrone3
-796	1309	/Furniture/Cop/Mall/objNuclearThrone4
-797	1310	/Furniture/Cop/Mall/objNuclearThrone5
-798	1301	/Furniture/Cop/Mall/objATM
-799	1305	/Furniture/Floor/objMoney
-800	1302	/Furniture/Cop/Mall/objMallCoffeeTable
-801	1312	/Furniture/Cop/Mall/objVendingMachine
-802	1313	/Furniture/Cop/Mall/objCleaningCart
-803	1314	/Furniture/Cop/Mall/FoodStore/objDoubleFridge
-805	1316	/Furniture/Cop/Mall/FoodStore/objFreezer
-806	1315	/Furniture/Cop/Mall/FoodStore/objFan
-807	1317	/Furniture/Cop/Mall/FoodStore/objFoodFridge
-808	1318	/Furniture/Cop/Mall/FoodStore/objMagazineRack
-809	1319	/Furniture/Cop/Mall/FoodStore/objStoreShelf
-810	1320	/Interface/Elevators/objElevator
-811	-1	/Interface/Date/objDate
-812	1326	/Furniture/Cop/Mall/Storage/objMallSafe
-813	1325	/Furniture/Cop/Mall/Storage/objMallStorage
-814	1322	/Furniture/Cop/Mall/Storage/objBench
-815	1323	/Furniture/Cop/Mall/Storage/objLocker
-816	1324	/Furniture/Cop/Mall/Storage/objMallSecurity
-817	1327	/Furniture/Floor/Mall/objTowels
-818	1292	/Furniture/Cop/Mall/objGangVan
-819	1328	/Furniture/Cop/Mall/Storage/objDumpster
-820	1329	/Misc/LightSmoke/objFreezerSmoke
-821	1330	/Effects/objSparkle
-822	1334	/NPCs/Cop/Mall/objPoliceAim
-823	1335	/NPCs/Cop/Mall/objPolicePoint
-824	1339	/Furniture/Cop/objPoliceCar
-826	1344	/Furniture/Cop/Diner/objDinerBuffe
-827	1347	/Furniture/Cop/Diner/objDinerGrill
-828	1348	/Furniture/Cop/Diner/objDinerSink
-829	1349	/Furniture/Cop/Diner/objDinerSupplies
-830	1351	/Furniture/Cop/Diner/objDinerTable
-831	1350	/Furniture/Cop/Diner/objDinerSupplies2
-832	1345	/Furniture/Cop/Diner/objDinerCounter
-833	1368	/Furniture/Cop/Diner/objDinerChair
-834	1352	/Furniture/Cobra/Apartment/objFlipperGame
-835	1355	/Furniture/Cobra/Apartment/objArmchairBeads
-836	1356	/Furniture/Cobra/Apartment/objDirtyBathTub
-837	1359	/Furniture/Cobra/Apartment/objRedneckCouch
-838	1362	/Furniture/Cobra/Apartment/objDirtySink
-839	1363	/Furniture/Cobra/Apartment/objDirtyToilet
-840	1361	/Furniture/Fans/PizzaPlace/objPizzaDisplay
-841	1360	/Furniture/Cobra/Apartment/objTVDinner
-842	1369	/Furniture/Cobra/Apartment/objCobraPhone
-843	1364	/Furniture/Fans/PizzaPlace/objPizzaCounter
-844	1367	/Furniture/Fans/PizzaPlace/objPizzaTable
-845	1366	/Furniture/Fans/PizzaPlace/objPizzaOven
-847	1372	/Furniture/Fans/PizzaPlace/objPizzaRegister
-848	1371	/Furniture/Cobra/Apartment/objKitchenBench
-849	1370	/Furniture/Cobra/Apartment/objDeadPlant
-850	1374	/Furniture/Cop/Diner/objWashingMachine
-851	1373	/Furniture/Cop/Diner/objDinerBench
-852	1375	/Furniture/Cop/Diner/objPhoneBooth
-853	1376	/Furniture/objStove
-854	1378	/NPCs/Cop/Diner/objDinerChef
-855	1377	/NPCs/Cop/Diner/objDinerWaitress
-856	1346	/Furniture/Cop/Diner/objDinerCup
-857	1389	/Editor/objDinerWindowLeft
-858	1387	/Editor/objDinerWindowTop
-859	462	/Player/Fans/objPlayerBear
-860	1393	/Furniture/Fans/PizzaPlace/objPizzaPickUp
-861	1394	/Furniture/Cop/Diner/objChange
-862	1395	/Editor/objDinerWindowBottom
-863	1379	/NPCs/Fans/PizzaPlace/objPizzaDude
-864	-1	/Interface/ScoreScreen/objScoreScreen
-865	1397	/Interface/ScoreScreen/objSmallPalmTree
-866	1401	/Player/Cobra/objPlayerCobra
-867	1354	/Furniture/Cobra/Apartment/objShaver
-868	1353	/Furniture/Cobra/Apartment/objHair
-869	1430	/Furniture/Cobra/Apartment/objForms
-870	1432	/Player/Cars/Cobra_Car/objCobraCar
-871	1434	/Player/Cars/Cobra_Car/objCobraCarFloor
-873	1437	/Player/Kills/Specific/objPKill9mm
-874	1438	/Player/Kills/Specific/objPKillUzi
-875	66	/Enemies/Mafia/objEMafiaMeleeRandom
-876	70	/Enemies/Mafia/objEMafiaRandom
-877	70	/Enemies/Mafia/objEMafiaStatic
-878	70	/Enemies/Mafia/objEMafiaPatrol
-880	1458	/Misc/Weapons/objSilencer
-881	1457	/Misc/Weapons/objClub
-882	1459	/Misc/Weapons/objMP5
-883	-1	/Enemies/Mafia/objEMafia
-884	469	/Furniture/Cobra/NewsPaper/objCopyMachine
-885	1483	/Furniture/Cobra/NewsPaper/objEditorTable
-886	1485	/Furniture/Cobra/NewsPaper/objBeverageTable
-887	1486	/Furniture/Cobra/NewsPaper/objOfficeBoxes
-888	1487	/Furniture/Cobra/NewsPaper/objOfficeCabinet
-889	1488	/Furniture/Cobra/NewsPaper/objOfficeArmChair
-890	1489	/Furniture/Cobra/NewsPaper/objOfficeCouch
-891	1490	/Furniture/Cobra/NewsPaper/objOfficeLunchTable
-892	1491	/Furniture/Cobra/NewsPaper/objOfficeMiniGolf
-893	1492	/Furniture/Cobra/NewsPaper/objOfficeMeetingTable
-894	1493	/Furniture/Cobra/NewsPaper/objOfficeConferenceTable
-895	1494	/Furniture/Cobra/NewsPaper/objOfficeRoundTable
-896	1495	/Furniture/Cobra/NewsPaper/objOfficeReception
-897	1496	/Furniture/Cobra/NewsPaper/objOfficeDeskBig
-898	1497	/Furniture/Cobra/NewsPaper/objOfficeDeskSmall
-899	1498	/Furniture/Cobra/NewsPaper/objOfficeTrophies
-900	1503	/Furniture/Cobra/NewsPaper/objEditorAquarium
-901	1507	/Furniture/Cobra/NewsPaper/objEditorModernArt
-902	1506	/Furniture/Cobra/NewsPaper/objEditorGlassTable
-903	1505	/Furniture/Cobra/NewsPaper/objEditorLiquor
-904	1504	/Furniture/Cobra/NewsPaper/objEditorCouch
-905	1509	/Furniture/Cobra/NewsPaper/objWaterCooler
-906	1502	/Editor/objDinerWindowRight
-907	1510	/Furniture/Cobra/NewsPaper/objOfficeDrapes
-908	1536	/Furniture/Cobra/Tattoo/objTattooTrophies
-909	1511	/Furniture/Cobra/NewsPaper/objOfficeProjector
-910	1513	/Misc/Weapons/objBottle
-911	1470	/Player/Kills/objPKillBottle
-912	1471	/Player/Kills/objPKillBottleBroken
-914	1518	/NPCs/Cobra/NewsPaper/objNewsPaperEditor
-916	1521	/Enemies/Mafia/objEMafiaIdlePhoneSilencer
-918	1524	/Interface/objCobraMaskMenu
-919	1531	/Furniture/Cobra/Tattoo/objTattooRegister
-920	1535	/Furniture/Cobra/Tattoo/objTattooShelf
-921	1533	/Furniture/Cobra/Tattoo/objTattooEquipment
-923	1530	/Furniture/Cobra/Tattoo/objTattooChair
-924	1529	/Furniture/Cobra/Tattoo/objTattooBed
-925	1534	/Furniture/Floor/Tattoo/objTattooLogo
-926	1538	/NPCs/Cobra/Tattoo/objTattooClient
-927	1537	/NPCs/Cobra/Tattoo/objTattooerWork
-928	1522	/NPCs/Cobra/Tattoo/objTattooerTalk
-929	1484	/Furniture/Cobra/NewsPaper/objMoneyCase
-930	-1	/Interface/vhs/objPlay
-931	1553	/Enemies/Police/objEPoliceMeleeRandom
-932	1551	/Enemies/Police/objEPoliceRandom
-933	1558	/Enemies/Police/objEPolicePatrol
-934	1558	/Enemies/Police/objEPoliceStatic
-935	-1	/Enemies/Police/objPolice
-936	1567	/Misc/Weapons/objStick
-937	1570	/Enemies/Police/objFatPolice
-938	66	/Enemies/Mafia/objEMafiaMeleePatrol
-939	1553	/Enemies/Police/objEPoliceMeleePatrol
-940	1580	/Misc/Weapons/objTaser
-941	202	/Enemies/Gang/objEGangMeleePatrol
-942	1587	/Furniture/PigButcher/PoliceStation/objMetalDetector
-943	1603	/NPCs/PigButcher/PoliceStation/Jail/objPoliceInterrogation
-944	1607	/NPCs/PigButcher/PoliceStation/Jail/objPigInterrogation
-945	1608	/Furniture/PigButcher/PoliceStation/objPoliceDeskPig
-946	1594	/Furniture/PigButcher/PoliceStation/objCellDoor
-947	1611	/Furniture/PigButcher/PoliceStation/objPoliceChairPig
-948	1550	/NPCs/PigButcher/PoliceStation/Jail/objPoliceGuard
-949	1613	/NPCs/PigButcher/PoliceStation/Jail/objPigKillNeck
-950	1609	/Editor/objBarsH
-951	1610	/Editor/objBarsV
-952	1594	/Editor/objCellDoorH
-953	1593	/Furniture/PigButcher/PoliceStation/objCellBed
-954	1597	/Furniture/PigButcher/PoliceStation/objCellToilet
-955	1589	/Furniture/PigButcher/PoliceStation/objPoliceDesk
-956	1618	/Furniture/PigButcher/PoliceStation/objPolicePhoneTable
-957	1619	/Furniture/PigButcher/PoliceStation/objPoliceRecorder
-958	1620	/Furniture/PigButcher/PoliceStation/objPoliceSpeakerBooth
-959	1616	/Furniture/PigButcher/PoliceStation/objPolicePhone1
-960	1617	/Furniture/PigButcher/PoliceStation/objPolicePhone2
-961	1621	/Furniture/PigButcher/PoliceStation/objPoliceSpeakerDesk
-962	1590	/Furniture/PigButcher/PoliceStation/objPoliceFileCabinet
-963	1595	/Furniture/PigButcher/PoliceStation/objCamera
-964	1591	/Furniture/PigButcher/PoliceStation/objPoliceInterrogationDesk
-965	1623	/Furniture/PigButcher/PoliceStation/objPoliceForensicsTable
-966	1624	/Furniture/PigButcher/PoliceStation/objPoliceCoffeeTable
-967	1592	/Furniture/objTrashCan
-968	1625	/Furniture/PigButcher/PoliceStation/objPoliceArmChair
-969	1626	/Furniture/PigButcher/PoliceStation/objPoliceCouch
-970	1628	/Furniture/PigButcher/PoliceStation/objPoliceBlackBoard
-971	1627	/Furniture/PigButcher/PoliceStation/objPoliceReception
-972	1633	/Furniture/PigButcher/PoliceStation/objPoliceRelaxTable
-973	1634	/NPCs/PigButcher/PoliceStation/Jail/objPrisoner1
-974	-1	/Interface/smokebackground/objNewBGNormal
-975	-1	/Interface/smokebackground/objNewBGPig
-976	1629	/NPCs/PigButcher/PoliceStation/Interrogation/objGirlRevenge
-977	1637	/NPCs/PigButcher/PoliceStation/Interrogation/objFatPoliceInterrogate
-978	1638	/NPCs/PigButcher/PoliceStation/Interrogation/objPoliceChairWeigh
-979	1639	/Furniture/PigButcher/PoliceStation/objSpeakerTable
-980	1644	/Furniture/PigButcher/PoliceStation/objPoliceInterrogationTable
-981	1645	/Furniture/Writer/Subway/objTrainSeatsDouble
-982	1646	/Furniture/Writer/Subway/objTrainSeatsLine
-983	1648	/Furniture/Writer/Subway/objTrainStandHandles
-984	1651	/Furniture/Writer/Subway/objTrainLeanHandles
-985	1647	/Furniture/Writer/Subway/objHandles
-986	1649	/Editor/objSubwayWallH
-987	1650	/Editor/objSubwayWindowH
-988	1652	/Furniture/Writer/Subway/objSubwayDoors
-989	-1	/Interface/objTrain
-990	-1	/objStorm
-991	94	/objSpeedLine
-992	1666	/NPCs/Writer/Subway/objGirl1Subway
-993	1669	/NPCs/Writer/Subway/objMan1Subway
-994	1665	/NPCs/Writer/Subway/objBoy2Subway
-995	1668	/NPCs/Writer/Subway/objBoy1Subway
-996	1667	/NPCs/Writer/Subway/objWoman1Subway
-997	-1	/NPCs/objNPC
-998	1654	/Player/Writer/objWriterSubway
-999	1662	/NPCs/Writer/Subway/objSubwayHobo
-1000	1675	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceTakingFood
-1001	1674	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceNoHat
-1002	1673	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceEat
-1003	1678	/Furniture/MovieSet/objMovieDishes
-1004	1677	/Furniture/MovieSet/objMovieBuffe
-1005	1336	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceTalk
-1008	1689	/Furniture/PigButcher/Apartment/objPigTub
-1009	1679	/Furniture/PigButcher/Apartment/objPigCouch
-1010	1680	/Furniture/PigButcher/Apartment/objPigDinnerTable
-1011	1682	/Furniture/PigButcher/Apartment/objPigKitchenShelf
-1012	1685	/Furniture/PigButcher/Apartment/objScript
-1013	1684	/Furniture/PigButcher/Apartment/objPigPhone
-1014	1683	/Furniture/PigButcher/Apartment/objPigKitchenTable
-1015	1681	/Furniture/PigButcher/Apartment/objPigKitchenCounter
-1016	1691	/NPCs/PigButcher/Apartment/objGirlEscape
-1017	1692	/NPCs/PigButcher/Apartment/objPigSleeping
-1018	1693	/Furniture/PigButcher/Apartment/objPigPaper
-1020	1694	/Furniture/PigButcher/Apartment/objPigTV
-1022	1601	/NPCs/PigButcher/Apartment/objPoliceKnock
-1023	1699	/Misc/objKeys
-1024	-1	/Interface/part/objPartTitle
-1025	1701	/Interface/part/Flock/objBirdpoint
-1026	-1	/Interface/part/Flock/objFlock
-1027	1701	/Interface/part/Flock/objBird
-1028	1702	/Furniture/Writer/Court/objCourtBench
-1029	1703	/Furniture/Writer/Court/objCourtChair
-1030	1704	/Furniture/Writer/Court/objCourtPodium
-1031	1705	/Furniture/Writer/Court/objCourtReporterTable
-1032	1706	/Furniture/Writer/Court/objCourtTable
-1033	1707	/Furniture/Writer/Court/objCourtJurySeats
-1034	1716	/Furniture/Writer/Court/objCourtBigTable
-1035	1717	/Furniture/Writer/Court/objCourtFence
-1036	1708	/Furniture/Writer/Court/objCourtLogo
-1037	1712	/NPCs/Writer/Court/objJury
-1038	1714	/NPCs/Writer/Court/objJuror2Idle
-1039	1713	/NPCs/Writer/Court/objJuror1Idle
-1040	1710	/NPCs/Writer/Court/objCourtReporter
-1041	1727	/NPCs/Writer/Court/objLawyer
-1042	1711	/NPCs/Writer/Court/objJudge
-1043	1709	/NPCs/Writer/Court/objJacketCourt
-1044	1719	/Player/Writer/objWriterCourt
-1045	-1	/objNextRoom
-1046	3356	/NPCs/Writer/Court/objInspectorWitness
-1047	1715	/NPCs/Writer/Court/objProsecutor
-1048	2022	/Player/Writer/objWriter
-1049	1731	/Player/Cars/Taxi/objTaxi
-1050	1733	/Player/Cars/Taxi/objTaxiFloor
-1051	1735	/Player/Fans/objPlayerSwanChainsaw
-1052	1740	/Player/Fans/objPlayerSwanGun
-1053	-1	/Enemies/objBodyPiece
-1054	342	/Enemies/objSeveredHead
-1055	1754	/Misc/Weapons/objChainsaw
-1057	1748	/Player/Kills/Specific/objPKillChainsaw
-1059	-1	/Interface/LSDblend/objLSD
-1060	1756	/NPCs/Henchman/Highway/objHenchmanHighwayCar
-1061	1758	/NPCs/Henchman/Highway/objMoneyFly
-1062	1761	/NPCs/Henchman/Highway/objPalmTreeTop
-1063	1765	/Player/Kills/Specific/objPKillChainsawLean
-1064	1766	/Enemies/Dog/objDogPatrol
-1065	1772	/Player/objPlayerDieDog
-1066	-1	/Enemies/Dog/objDog
-1067	1786	/Player/Henchman/objPlayerHenchman
-1068	1777	/Editor/objEditorAtticDoorV
-1069	92	/Editor/objEditorAtticDoorH
-1070	1809	/Player/Kills/Specific/objTigerKillDog
-1071	-1	/Player/Kills/objKill
-1072	-1	/Interface/objBG
-1073	-1	/Interface/vhs/objPause
-1074	392	/Player/Cars/Fans_Van/objFansVanDrive
-1075	1841	/Effects/objCellPhone
-1076	1842	/Furniture/Henchman/ChopShop/objFerrari
-1077	1843	/Furniture/Henchman/ChopShop/objLambourghini
-1078	1844	/Furniture/Henchman/ChopShop/objMustang
-1079	1845	/Furniture/Henchman/ChopShop/objWinnebago
-1080	1846	/Furniture/Floor/Henchman/objCarFinishHose
-1081	1847	/Furniture/Henchman/ChopShop/objEngineLift
-1082	1848	/Furniture/Henchman/ChopShop/objAcadoGT
-1083	1858	/Furniture/Henchman/ChopShop/objCarTyre
-1084	1857	/Furniture/Henchman/ChopShop/objCarWorkTable
-1085	1856	/Furniture/Henchman/ChopShop/objCarVacuum
-1086	1855	/Furniture/Henchman/ChopShop/objCarWashHose
-1087	1854	/Furniture/Henchman/ChopShop/objWashBucket
-1088	1849	/Furniture/Henchman/ChopShop/objCarFinishSupplies
-1089	1853	/Furniture/Henchman/ChopShop/objCarSuppliesShelf
-1090	1859	/Furniture/Henchman/ChopShop/objCarWashSupplies
-1091	1851	/Furniture/Henchman/ChopShop/objCarPartsShelf
-1092	1852	/Furniture/Henchman/ChopShop/objCarSuppliesLocker
-1093	1850	/Furniture/Henchman/ChopShop/objCarLocker
-1094	1860	/Furniture/Henchman/ChopShop/objCarLift
-1095	1861	/Furniture/Henchman/ChopShop/objPoolTable
-1096	1867	/Furniture/Fans/Squat/objBox
-1097	1868	/Furniture/Fans/Squat/objBoxSmall
-1098	1869	/Furniture/Floor/objBrokenWallH
-1099	1870	/Furniture/Floor/objBrokenWallV
-1100	1873	/Furniture/Fans/Squat/objHookah
-1101	1874	/Effects/Water/objWaterPool
-1102	1871	/Furniture/Fans/Squat/objAtticParty
-1103	1872	/Furniture/Fans/Squat/objHomelessBed
-1104	1875	/Furniture/Fans/HQ/objFansCouch2
-1105	1879	/NPCs/Fans/HQ2/objBearCheckGun
-1106	1877	/NPCs/Fans/HQ2/objSwanRollJoint
-1107	1878	/NPCs/Fans/HQ2/objSwan2Sitting
-1108	1876	/NPCs/Fans/HQ2/objTigerDrink
-1109	1882	/NPCs/Fans/Highway/objFansVanRepair
-1110	-1	/NPCs/Fans/Highway/objHighwayNightBackground
-1111	1887	/Furniture/Fans/Highway/objStreetLight
-1112	-1	/NPCs/Fans/HQ2/objFansHQScene2
-1113	1890	/NPCs/Fans/Squat/objSister
-1115	1895	/Furniture/Floor/Henchman/objSkeletons
-1116	2050	/Interface/LSDblend/objLSDSmoke
-1117	1894	/Furniture/Floor/Henchman/objSkeletonParts
-1118	1893	/NPCs/Henchman/Highway/objCarWreck
-1119	-1	/NPCs/Henchman/Highway/objHighwayBackground
-1120	-1	/NPCs/Henchman/Home/objHenchmanLostCar
-1121	1911	/Furniture/Floor/objTigerFur
-1122	1901	/Furniture/Henchman/Home/objHenchmanAquarium
-1123	1902	/Furniture/Henchman/Home/objHenchmanBed
-1124	1896	/Furniture/Henchman/Home/objHenchmanGlassTable
-1125	1904	/Furniture/Henchman/Home/objGlassWall
-1126	1905	/Furniture/Henchman/Home/objKitchenIsland
-1127	1907	/Furniture/Henchman/Home/objHenchmanTrophies
-1128	1906	/Furniture/Henchman/Home/objHenchmanMinibar
-1129	1908	/Furniture/Henchman/Home/objHenchmanTVStereo
-1130	1909	/Furniture/Henchman/Home/objHenchmanGunCabinet
-1131	1910	/Furniture/Henchman/Home/objPoolRack
-1132	1912	/Furniture/Henchman/Home/objExerciseBike
-1133	1913	/Furniture/Henchman/Home/objHenchmanBar
-1134	481	/Furniture/objLeatherCouch
-1135	1903	/NPCs/Henchman/Home/objHenchmanGirlfriend
-1136	1899	/Furniture/Henchman/Home/objCat
-1137	1917	/Furniture/Henchman/Home/objHenchmanKitchen
-1138	1914	/Furniture/Henchman/Home/objHenchmanPhone
-1139	1918	/Furniture/objBarStool
-1140	1919	/Furniture/Henchman/Home/objHenchmanBarStool
-1141	1920	/Furniture/Henchman/Home/objHenchmanBedSpecial
-1142	1930	/Furniture/Henchman/ChopShop/objSafe
-1143	1931	/Furniture/Henchman/ChopShop/objCarDesk
-1144	1927	/Enemies/Gang/objEGangIdleMoney
-1145	1928	/Furniture/Henchman/ChopShop/objMoneyBag
-1146	210	/NPCs/Henchman/objAndy
-1147	1933	/Player/Cars/Henchman_Car/objHenchmanCar
-1148	1935	/Player/Cars/Henchman_Car/objHenchmanCarFloor
-1149	1941	/Furniture/Henchman/ChopShop/objSkateRamp
-1150	1940	/Furniture/Henchman/ChopShop/objSkateRail
-1151	1939	/Furniture/Henchman/ChopShop/objSkateBox
-1152	1938	/Furniture/Henchman/ChopShop/objCarDiningTable
-1153	1944	/Furniture/Henchman/Home/objNote
-1154	1947	/Furniture/Henchman/ChopShop/objGraffittiCar
-1155	1946	/Furniture/Floor/objCarCover
-1156	1949	/Glass/objGlassV
-1157	1950	/Glass/objShard
-1158	1951	/Glass/objShine
-1159	1952	/Effects/Smoke/objFirePuff
-1161	1954	/Effects/Smoke/objSmokeExhale
-1162	1955	/Effects/Smoke/objFireBall
-1163	1956	/Effects/Smoke/objFireSpark
-1164	1957	/Effects/Smoke/objElectricity
-1165	1958	/Furniture/objComputerMonitorGrey
-1166	1959	/Effects/Smoke/objComputerMonitorGreyParts
-1167	1961	/Furniture/objComputerMonitorBlack
-1168	1962	/Effects/Smoke/objComputerMonitorBlackParts
-1169	1964	/Effects/Smoke/objComputerMonitorGreyBigParts
-1170	1963	/Effects/Smoke/objComputerMonitorBlackBigParts
-1172	1968	/Effects/Smoke/objTVShards
-1173	1969	/Effects/Smoke/objTVBigParts
-1174	1956	/Effects/Smoke/objElectricSpark
-1175	-1	/Effects/Water/objWaterSplat
-1176	-1	/Effects/Water/objWaterSmudge
-1177	-1	/Effects/Water/objBigWater
-1178	-1	/Effects/Water/objWater
-1179	1991	/Glass/objPlasticShard
-1180	1973	/Effects/Smoke/objAquarium
-1181	1972	/Effects/Smoke/objAquariumWater
-1182	-1	/Interface/objJungleBG
-1183	1999	/Effects/Blood/objIntestine
-1184	1998	/Effects/Blood/objBrains
-1185	2001	/Effects/Blood/objHeadPiece
-1186	-1	/Interface/LSDblend/objLSDBlend
-1187	2041	/Interface/LSDblend/objEnemyLSD
-1188	2044	/Interface/LSDblend/objTigerBoss
-1189	2048	/Enemies/Bosses/TigerBoss/objTigerFadeV
-1190	2049	/Enemies/Bosses/TigerBoss/objTigerFadeH
-1191	-1	/Enemies/Bosses/TigerBoss/objNewBGTiger
-1192	2036	/Enemies/Bosses/TigerBoss/objTigerHead
-1193	2052	/Furniture/Jungle/Trees/objPalmTreeLSD
-1194	2051	/Furniture/Jungle/Trees/objBigTreeLSD
-1195	2035	/Enemies/Bosses/TigerBoss/objTigerAttack
-1196	2054	/Interface/LSDblend/objLSDBloodWhirl
-1197	-1	/Interface/LSDblend/objLSDParticle
-1198	2058	/Interface/LSDblend/objLSDBird
-1199	2059	/Player/Son/objSonLSD
-1200	2062	/Interface/LSDblend/objLSDFlame
-1201	2063	/Interface/LSDblend/objLSDPop
-1202	2065	/Editor/objSteelDoorH
-1203	2066	/Editor/objSteelDoorH2
-1204	2068	/Furniture/Son/Hideout/objSonAmmoBox
-1205	2069	/Furniture/Son/Hideout/objSonAquarium
-1206	2070	/Furniture/Son/Hideout/objSonCouch
-1207	2071	/Furniture/Son/Hideout/objSonShrine
-1208	2073	/Furniture/Son/Hideout/objSonDesk
-1209	2074	/Furniture/Son/Hideout/objSonTrophies
-1210	2075	/Furniture/Son/Hideout/objSonGunTable
-1211	2081	/NPCs/Son/Hideout1/objSonGuardIdlePhone
-1212	2077	/NPCs/Son/Hideout1/objSonGuardIdleSmoke
-1213	2078	/NPCs/Son/Hideout1/objSonGuardIdlePipe
-1214	2079	/NPCs/Son/Hideout1/objSonCouchHideout
-1215	2084	/Furniture/Son/Hideout/objBoxingBag
-1216	2067	/Misc/objDrugSample
-1217	2089	/NPCs/Son/Hideout1/objSonGuardIdleSit
-1218	2088	/Furniture/Son/Hideout/objSonDeskChair
-1219	2087	/Furniture/Son/Hideout/objSonSecurity
-1220	2085	/Furniture/Son/Hideout/objSonVodkaBar
-1221	2095	/Interface/Elevators/BigElevator/objBigElevator
-1222	2095	/Interface/Elevators/BigElevator/objBigElevatorMask
-1223	2095	/Interface/Elevators/BigElevator/objBigElevatorFloor
-1224	2096	/Furniture/Son/Hideout/objSonCarWhole
-1225	2394	/Player/Rat/objRat
-1226	2098	/Player/Kills/Specific/objWriterKillPunch
-1227	2103	/Misc/Weapons/objDiscardedGun
-1228	2104	/Misc/Weapons/objGunClip
-1229	2136	/NPCs/Writer/Casino/objSaunaGangster
-1230	2108	/Furniture/Writer/Casino/Downstairs/objBlackJackTable
-1231	2109	/Furniture/Writer/Casino/Downstairs/objCrapsTable
-1232	2110	/Furniture/Writer/Casino/Downstairs/objCasinoRegister
-1233	2111	/Furniture/Writer/Casino/Downstairs/objPokerTable
-1234	2112	/Furniture/Writer/Casino/Downstairs/objRouletteTable
-1235	2113	/Furniture/Writer/Casino/Downstairs/objSlotMachine
-1236	2114	/Furniture/Writer/Casino/Downstairs/objVIPArmchair
-1237	2115	/Furniture/Writer/Casino/Downstairs/objVIPBar
-1238	2116	/Furniture/Writer/Casino/Downstairs/objVIPBarShelf
-1239	2117	/Furniture/Writer/Casino/Downstairs/objVIPFootStool
-1240	2118	/Furniture/Writer/Casino/Downstairs/objVIPStatue
-1241	2119	/Furniture/Writer/Casino/Downstairs/objVIPTable
-1242	2120	/Furniture/Writer/Casino/Upstairs/objMassageTable
-1243	2121	/Furniture/Writer/Casino/Upstairs/objSaunaBench
-1244	2122	/Furniture/Writer/Casino/Upstairs/objSaunaHeater
-1245	2123	/Furniture/Writer/Casino/Upstairs/objSolariumClosed
-1246	2124	/Furniture/Writer/Casino/Upstairs/objSolariumOpen
-1247	2125	/Furniture/Writer/Casino/Upstairs/objVIPDesk
-1248	2137	/Furniture/Writer/Casino/Downstairs/objCasinoEntrance
-1249	2126	/Furniture/Writer/Casino/Downstairs/objCasinoEntranceRibbons
-1250	2127	/Furniture/Writer/Casino/Upstairs/objSmallPainting
-1251	2128	/Furniture/Writer/Casino/Upstairs/objVIPJacuzzi
-1252	2129	/Furniture/Writer/Casino/Upstairs/objVIPCloset
-1253	2130	/Furniture/Writer/Casino/Upstairs/objMassageTools
-1254	2131	/Furniture/Writer/Casino/Upstairs/objVIPMiniBar
-1255	2132	/Furniture/Writer/Casino/Upstairs/objVIPPhoneStand
-1256	2220	/Furniture/Jungle/TikiBar/objTikiBar
-1257	2133	/Furniture/Writer/Casino/Upstairs/objVIPSink
-1258	2134	/Furniture/Floor/objVIPTowels
-1259	2138	/Editor/objBalconyRailsH
-1260	2139	/Editor/objBalconyRailsV
-1261	2140	/Furniture/Writer/Casino/Upstairs/objTowelBag
-1262	2141	/Furniture/Writer/Casino/Upstairs/objTowelDisposal
-1263	2077	/NPCs/Writer/Casino/objCasinoGuard
-1264	-1	/NPCs/Writer/Casino/objAskForHelp
-1265	-1	/NPCs/Writer/Casino/objCasinoEnemy
-1266	2156	/Effects/WaterBlood/objSewerWaterLarge
-1269	2157	/Effects/WaterBlood/objSewerWaterMedium
-1270	2168	/Effects/WaterBlood/objSewerWaterSmall
-1271	2149	/Editor/objSewerWallV
-1272	2148	/Editor/objSewerWallH
-1273	2166	/objWaterSplash
-1274	-1	/Effects/WaterBlood/objSewerWater
-1275	2175	/Furniture/Fans/Sewer/objBigPipe
-1276	2174	/Furniture/Fans/Sewer/objMediumPipe
-1277	2173	/Furniture/Fans/Sewer/objSmallPipe
-1278	2153	/Furniture/Fans/Sewer/objSewerPipe
-1279	2155	/Furniture/Fans/Sewer/objSewerPipeEnd
-1280	2172	/Furniture/Floor/objSewerVentillation
-1281	-1	/Effects/WaterBlood/objWaterSteps
-1282	-1	/Interface/Rain/objSewerDrip
-1283	-1	/Interface/smokebackground/objNewBGUNUSED
-1284	-1	/Interface/objSewerBackground
-1285	2150	/Furniture/Fans/Sewer/objSewerEntrance
-1286	2179	/Furniture/Floor/Sewers/objLeaveOrDie
-1287	293	/NPCs/Fans/Sewers/objFanSewers
-1288	2151	/Furniture/Fans/Sewer/objSewerLadder
-1289	2194	/Enemies/Gang/objEGangFat
-1290	2195	/Player/Kills/Specific/objTigerKnee
-1291	2203	/Furniture/Fans/Sewer/objPlasticFloor
-1292	2204	/Furniture/Fans/Sewer/objTortureTable
-1293	2198	/Furniture/Fans/Sewer/objAcidBath3
-1294	2176	/Furniture/Fans/Sewer/objAcidBath2
-1295	2197	/Furniture/Fans/Sewer/objAcidBath1
-1296	2199	/Furniture/Fans/Sewer/objAcidContainer
-1297	2200	/Furniture/Fans/Sewer/objBodyBag
-1298	2201	/Furniture/Fans/Sewer/objBodyBagPart
-1299	2206	/Furniture/Fans/Sewer/objManholeToxicWaste
-1300	2202	/Furniture/Fans/Sewer/objPlasticCoverChair
-1301	2207	/Furniture/Jungle/objPlasticDrape
-1302	-1	/Furniture/Jungle/objPlasticDrapes
-1303	2189	/Player/Kills/Specific/objSwanKillFat
-1304	2208	/Furniture/Floor/objAcidPuddle
-1305	381	/Furniture/Fans/Sewer/objSewerGrateKick
-1306	2224	/Furniture/Jungle/TikiBar/objTikiWindowFlap
-1307	2223	/Furniture/Jungle/TikiBar/objTikiTable
-1308	2222	/Furniture/Jungle/TikiBar/objTikiStatue
-1309	2221	/Furniture/Jungle/TikiBar/objTikiChair
-1310	2227	/NPCs/Soldiers/TikiBar/objWarBear
-1311	2232	/NPCs/Soldiers/TikiBar/objWarSwan1
-1312	2233	/NPCs/Soldiers/TikiBar/objWarSwan2
-1313	2234	/NPCs/Soldiers/TikiBar/objWarTiger
-1314	2237	/NPCs/Soldiers/TikiBar/objWarZebra
-1315	2235	/NPCs/Soldiers/TikiBar/objWarWriter
-1316	2228	/NPCs/Soldiers/TikiBar/objWarPhotographer
-1317	2226	/NPCs/Soldiers/TikiBar/objUSASoldier
-1318	2239	/NPCs/Soldiers/TikiBar/objWarSquadBlack
-1319	2240	/NPCs/Soldiers/TikiBar/objWarSquadFat
-1320	2241	/NPCs/Soldiers/TikiBar/objWarNicke
-1321	1201	/NPCs/Soldiers/TikiBar/objWarJacket
-1322	2238	/NPCs/Soldiers/TikiBar/objShelby
-1323	2214	/Furniture/Writer/HipsterBar/objHipsterBar
-1324	2215	/Furniture/Writer/HipsterBar/objHipsterBarBottles
-1325	2216	/Furniture/Writer/HipsterBar/objHipsterChairs
-1326	2217	/Furniture/Writer/HipsterBar/objHipsterTable
-1327	2218	/Furniture/Writer/HipsterBar/objHipsterJukebox
-1328	2246	/NPCs/Writer/HipsterBar/objHipsterBartender
-1329	2245	/NPCs/Writer/HipsterBar/objWriterHipsterBar
-1330	1385	/NPCs/Writer/HipsterBar/objCopHipsterBar
-1331	2247	/NPCs/Writer/HipsterBar/objCopLegsSit
-1332	2251	/Interface/VHSMenu/objVHSBox
-1333	-1	/Interface/VHSMenu/objBoxSelector
-1335	-1	/Interface/VHSMenu/objFader
-1336	2256	/Interface/VHSMenu/objMidnightVHS
-1337	-1	/Enemies/Victims/objVictim
-1338	2163	/Editor/objWallCorner
-1339	2270	/Editor/objBrickWallCorner
-1340	2271	/Player/Kills/objPigKillLean
-1341	2225	/Player/Cars/Military_Jeep/objMilitaryJeepUSA
-1342	2274	/Player/Cars/Military_Jeep/objMilitaryJeepUSARoof
-1343	2282	/Player/Kills/Specific/objWriterKillBlunt
-1344	2283	/Player/Kills/Specific/objWriterKillLean
-1345	2286	/Editor/objBlackRailsH
-1346	2287	/Furniture/Son/StripClub/objStripClubTable
-1347	2358	/Player/Son/objSon
-1348	2385	/Misc/Weapons/objFamae
-1349	2386	/Misc/Weapons/objMendoza
-1350	2387	/Misc/Weapons/objShardBlade
-1351	1942	/Misc/Weapons/objSkateboard
-1352	2388	/Misc/Weapons/objMagnum
-1353	-1	/Enemies/Colombians/objColombian
-1354	2292	/Enemies/Colombians/objColombianMeleeRandom
-1355	2290	/Enemies/Colombians/objColombianMeleePatrol
-1356	2291	/Enemies/Colombians/objColombianRandom
-1357	2291	/Enemies/Colombians/objColombianStatic
-1358	2291	/Enemies/Colombians/objColombianPatrol
-1359	2324	/Enemies/Colombians/objColombianIdlePipe
-1360	2390	/Interface/objSonStyleMenu
-1361	2372	/Player/Kills/Specific/objSonKillKnife
-1362	2371	/Player/Kills/Specific/objSonKillClub
-1363	2376	/Player/Kills/Specific/objSonKillStomp
-1364	2374	/Player/Kills/Specific/objSonKillSword
-1365	2378	/Player/Kills/Specific/objPKillMachete
-1366	2439	/Player/Cars/Son_Car/objSonCar
-1367	2442	/Player/Cars/Son_Car/objSonCarBottom
-1368	2444	/Misc/Weapons/objSword
-1369	2446	/Effects/discolights/objDiscoLights
-1370	-1	/Effects/discolights/objDiscoDarkness
-1371	2448	/Furniture/Writer/Subway/objSubwayGate
-1372	2449	/Furniture/Writer/Subway/objSubwayGateHolder
-1373	2447	/Furniture/Writer/Subway/objSubwayBench
-1374	2451	/Furniture/Writer/Subway/objSubwayLocker
-1375	2463	/Furniture/Writer/Subway/objSubwayTrain
-1376	2461	/Furniture/Writer/Subway/objSubwayBillBoard
-1377	2464	/Furniture/Writer/Subway/objSubwayMap
-1378	2465	/Furniture/Writer/Subway/objSubwayTicketMachine
-1379	2469	/Furniture/Writer/Subway/objSubwayTimeDisplay
-1380	2470	/Furniture/Writer/Subway/objSubwayNameDisplay
-1381	2471	/Furniture/Writer/Subway/objSubwayClosedGate
-1382	2472	/Furniture/Writer/Subway/objSubwayGlassWall
-1383	2473	/Furniture/Writer/Subway/objHoboCart
-1384	2476	/Furniture/Writer/50Blessings/objBunkerBed
-1385	2477	/Furniture/Writer/50Blessings/objBunkerCabinet
-1386	2478	/Furniture/Writer/50Blessings/objBunkerComputerTable
-1387	2479	/Furniture/Writer/50Blessings/objBunkerEmptyBoxes
-1388	2480	/Furniture/Floor/Bunker/objBunkerFiles
-1389	2484	/Furniture/Writer/50Blessings/objBunkerWaterFilter
-1390	2481	/Furniture/Writer/50Blessings/objBunkerGenerators
-1391	2483	/Furniture/Writer/50Blessings/objBunkerShelves
-1392	2475	/Furniture/Floor/Bunker/objBrokenComputerParts
-1393	2474	/Furniture/Floor/Bunker/obj50BlessingsCrap
-1394	2482	/Furniture/Floor/Bunker/objBunkerMasks
-1395	2492	/Furniture/Floor/MethLab/objMethSupplies
-1396	2490	/Furniture/Floor/MethLab/objGasMask
-1397	2493	/Furniture/Cobra/MethLab/objMethExplosion
-1398	2491	/Furniture/Cobra/MethLab/objMethLab
-1399	2498	/Furniture/Writer/50Blessings/objBasketballHoop
-1400	2495	/Furniture/Writer/50Blessings/objCopyingMachineBroken
-1401	2496	/Furniture/Writer/50Blessings/objBunkerMeetingTable
-1402	2499	/Furniture/Jungle/Hotel/objBrokenTable
-1403	2485	/Furniture/Floor/Bunker/obj50BlessingsFlag
-1404	2500	/Furniture/Writer/50Blessings/obj50BlessingsTable
-1405	2501	/Furniture/Writer/50Blessings/objBunkerCounter
-1406	2502	/Furniture/Writer/50Blessings/objBunkerKitchen
-1407	2503	/Furniture/Writer/50Blessings/objBunkerWorkTable
-1408	2504	/Furniture/Writer/50Blessings/objBurntOutHoboFire
-1409	2497	/Furniture/Writer/50Blessings/objBunkerChair
-1410	2505	/Furniture/Writer/50Blessings/objAirDuct
-1411	2506	/Editor/objBunkerWallH
-1412	2507	/Editor/objBunkerWallV
-1413	2508	/Editor/objBunkerCorner
-1414	2509	/Furniture/Writer/50Blessings/objBunkerDoor
-1415	-1	/objEnemyHide
-1416	-1	/objEnemySpawn
-1417	-1	/objDarkness
-1418	2510	/Furniture/Jungle/Hotel/objBrokenBlackJackTable
-1419	2511	/Furniture/Jungle/Hotel/objBrokenDiceTable
-1420	2514	/Furniture/Jungle/Hotel/objBrokenPokerTable
-1421	2515	/Furniture/Jungle/Hotel/objBrokenRouletteTable
-1422	2512	/Furniture/Jungle/Hotel/objBrokenAquarium
-1423	2512	/Furniture/Jungle/Hotel/objBrokenAquariumWater
-1424	2513	/Furniture/Floor/Hotel/objBrokenPalmTree
-1425	2516	/NPCs/Writer/50Blessings/objMaskHoboOwl
-1426	2517	/NPCs/Writer/50Blessings/objMaskHoboWolf
-1427	2518	/NPCs/Writer/50Blessings/objMaskHoboGiraffe
-1428	2519	/NPCs/Writer/50Blessings/objMaskHoboMonkey
-1429	2520	/NPCs/Writer/50Blessings/objMaskHoboPanther
-1430	2521	/NPCs/Writer/50Blessings/objMaskHoboLocust
-1431	2522	/NPCs/Writer/50Blessings/objMaskHoboChameleon
-1432	2523	/NPCs/Writer/50Blessings/objMaskHoboElephant
-1433	2524	/NPCs/Writer/50Blessings/objMaskHoboChicken
-1434	2525	/NPCs/Writer/50Blessings/objMaskHoboSit
-1435	2526	/NPCs/Writer/50Blessings/objMaskHoboStanding
-1436	2528	/Furniture/Floor/Bunker/obj50BlessingsLogoCandles
-1437	2568	/Misc/objWriterJacket
-1438	2580	/Furniture/Floor/Hotel/objHotelPaintingBroken
-1439	2581	/Furniture/Floor/Hotel/objHotelPool
-1440	2573	/Furniture/Jungle/Hotel/objHotelPlantsHolder1
-1441	2573	/Furniture/Jungle/Hotel/objHotelPlant1
-1442	2574	/Furniture/Jungle/Hotel/objHotelPlantsHolder2
-1443	2574	/Furniture/Jungle/Hotel/objHotelPlant2
-1444	2571	/Furniture/Jungle/Hotel/objBrokenBar2
-1445	2572	/Furniture/Jungle/Hotel/objBrokenBarBottles
-1446	2575	/Furniture/Jungle/Hotel/objHotelBed
-1447	2576	/Furniture/Jungle/Hotel/objHotelCloset
-1448	2577	/Furniture/Jungle/Hotel/objHotelMiniBar
-1449	2578	/Furniture/Jungle/Hotel/objHotelNightStand
-1450	2582	/Furniture/Jungle/Hotel/objHotelSink
-1451	2583	/Furniture/Jungle/Hotel/objBoardedWindow
-1452	2579	/Furniture/Jungle/Hotel/objHotelPainting
-1453	2584	/Furniture/Jungle/Hotel/objBrokenDiningTable
-1454	2585	/Furniture/Jungle/Hotel/objHotelBuffe
-1455	2486	/Effects/Debris/objWoodDebris
-1456	2587	/Furniture/Jungle/Hotel/objParasol
-1457	2586	/Furniture/Jungle/Hotel/objSunChair
-1458	2588	/Furniture/Jungle/Hotel/objBrokenReception
-1460	2589	/Enemies/Soldier/objSoldierHiding
-1461	2591	/NPCs/Cobra/Meth/objCobraEnemy
-1463	2489	/Furniture/Floor/MethLab/objExplosionGround
-1464	2596	/Enemies/Mafia/objEMafiaFat
-1466	2603	/Furniture/Cobra/50BlessingsOffice/obj50BlessingsBluePrints
-1467	2604	/Furniture/Cobra/50BlessingsOffice/obj50BlessingsForms
-1468	2608	/Furniture/Cobra/50BlessingsOffice/obj50BlessingsDesk
-1469	2607	/NPCs/Cobra/50Blessings/objCobraChair
-1470	2611	/Furniture/Cobra/50BlessingsOffice/objManagerVan
-1471	2612	/Effects/Debris/objMethDebris
-1472	2609	/NPCs/Cobra/50Blessings/objCobraSitChair
-1473	2618	/NPCs/Cobra/50Blessings/obj50Manager
-1474	2606	/Misc/objFloppy
-1475	2622	/Furniture/Rat/Bar/objRussianBarFlag
-1476	2623	/Furniture/Rat/Bar/objTVHolder
-1477	2621	/Furniture/Rat/Bar/objRussianBarBottles
-1478	2620	/Furniture/Rat/Bar/objHuntingTrophy
-1479	2619	/Furniture/Rat/Bar/objDartBoard
-1480	2625	/Furniture/Rat/Bar/objRussianBarStove
-1481	2626	/Furniture/Rat/Bar/objRussianPokerTable
-1482	2627	/Furniture/Son/StripClub/objStripClubArmChair
-1483	2628	/Furniture/Son/StripClub/objStripClubBar
-1484	2629	/Furniture/Son/StripClub/objStripClubBooth
-1485	2630	/Furniture/Son/StripClub/objStripClubBoothSmall
-1486	2632	/Furniture/Son/StripClub/objStripClubMinibar
-1487	2631	/Furniture/Son/StripClub/objStripClubEntryPodium
-1488	2634	/Furniture/Son/StripClub/objStripClubPodium
-1489	2635	/Furniture/Son/StripClub/objStripClubPodiumLights
-1490	2636	/Furniture/Son/StripClub/objStripClubPole
-1491	2637	/Furniture/Son/StripClub/objStripClubRunway
-1492	2638	/Furniture/Son/StripClub/objStripClubRunwayLights
-1493	2639	/Furniture/Son/StripClub/objStripClubSmallTable
-1494	2640	/Furniture/Son/StripClub/objStripClubStool
-1495	2641	/Furniture/Son/StripClub/objStripClubWardrobe
-1496	2633	/Furniture/Son/StripClub/objStripClubPlant
-1497	2642	/Furniture/Son/StripClub/objStripClubDJPlayer
-1498	-1	/Interface/smokebackground/objNewBGSon
-1499	-1	/Effects/discolights/objChangingRoomLight
-1500	-1	/Effects/discolights/objBoothLight
-1501	2645	/Furniture/Son/StripClub/objStripClubMakeUpTable
-1502	2647	/Furniture/Son/StripClub/objStripClubPodiumPrivate
-1503	2643	/Furniture/Son/StripClub/objStripClubClothesRack
-1504	2644	/Furniture/Floor/objStripClubClothes
-1505	2646	/Editor/objMakeUpMirror
-1506	2651	/Furniture/Rat/Abandonned_Building/objFloorHole1
-1507	2652	/Furniture/Rat/Abandonned_Building/objFloorHole2
-1508	2653	/Furniture/Rat/Abandonned_Building/objFloorHole3
-1509	2654	/Furniture/Rat/Abandonned_Building/objFloorHole4
-1511	2656	/Furniture/Rat/Abandonned_Building/objRenovationWallH
-1512	2657	/Furniture/Rat/Abandonned_Building/objRenovationWallV
-1513	2650	/Furniture/Rat/Abandonned_Building/objFloorBoard
-1514	2660	/Interface/vhs/VHSOptions/objPauseMenu
-1515	2661	/Furniture/Rat/Villa/objChildrensBed
-1516	2663	/Furniture/Rat/Villa/objRichDiningTable
-1517	2664	/Furniture/Rat/Villa/objRichDesk
-1518	2665	/Furniture/Rat/Villa/objSmallLiquorTable
-1519	2662	/Furniture/Rat/Villa/objFountainStatue
-1520	2666	/Furniture/Rat/Villa/objToyGun
-1521	2667	/Furniture/Rat/Villa/objToyLego
-1522	2668	/Furniture/Rat/Villa/objToyTurtle
-1523	2669	/Furniture/Rat/Villa/objRichWorkTable
-1524	2670	/Furniture/Rat/Villa/objRichMinibar
-1525	2672	/Furniture/Henchman/ChopShop/objBeerCooler
-1526	2674	/Furniture/Henchman/ChopShop/objSkateBox2
-1527	2675	/Furniture/Henchman/ChopShop/objHalfPipe
-1528	2673	/Furniture/Floor/objBrokenSkateboard
-1529	2677	/Furniture/Floor/Hotel/objLuggage
-1530	2681	/Enemies/Guards/objGuardMeleeRandom
-1531	2681	/Enemies/Guards/objGuardMeleePatrol
-1532	2679	/Enemies/Guards/objGuardRandom
-1533	2679	/Enemies/Guards/objGuardStatic
-1534	2679	/Enemies/Guards/objGuardPatrol
-1535	-1	/Enemies/Guards/objGuard
-1536	2701	/Furniture/Son/Bank/objBankChair
-1537	2702	/Furniture/Son/Bank/objBankArmchair
-1538	2703	/Furniture/Son/Bank/objBankSofa
-1539	2704	/Furniture/Son/Bank/objBankCouch
-1540	2705	/Furniture/Son/Bank/objBankRegisters
-1541	2706	/Furniture/Son/Bank/objBankLoungeTable
-1542	2707	/Furniture/Son/Bank/objBankDesk
-1543	2708	/Furniture/Son/Bank/objBankSecurity
-1544	2648	/Furniture/Son/Bank/objArmoredTransport
-1545	2430	/Player/Kills/objPKillStick
-1546	2710	/NPCs/Son/Bank/objRobberBag
-1547	1453	/NPCs/Son/Bank/objRobber
-1548	2718	/Misc/objWeaponBag
-1549	2725	/Furniture/Son/Bank/objVaultOpening
-1550	2721	/Furniture/Son/Bank/objBankLunchTable
-1551	2722	/Furniture/Son/Bank/objBankMeetingTable
-1552	2724	/Furniture/Son/Bank/objBankMoneyTable
-1553	2723	/Furniture/Son/Bank/objBankMoneyCarrier
-1555	2726	/Editor/objVaultDoor
-1556	2727	/Furniture/Son/Bank/objBankMoneyCarrierStack
-1557	2720	/Furniture/Son/Bank/objBankLocker
-1558	2716	/NPCs/Son/Bank/objBanker
-1560	2730	/Furniture/Son/Bank/objGoldBar
-1561	2731	/Furniture/Son/Bank/objGoldStack
-1562	2732	/Furniture/Son/Bank/objVaultMoneyBag
-1563	2733	/Furniture/Son/Bank/objVaultTrophy
-1564	2735	/NPCs/Son/Bank/objBodyGuard
-1565	2738	/NPCs/Son/Bank/objGrandFather
-1566	2737	/NPCs/Son/Bank/objFather
-1567	1484	/Furniture/Son/Bank/objVaultMoneyCase
-1568	-1	/Interface/objShade
-1569	2744	/Editor/Editor_Menus/objWindowList
-1571	1114	/Furniture/Jungle/Trees/objAlienPlant1
-1572	1113	/Furniture/Jungle/Trees/objAlienPlant4
-1573	1866	/Furniture/Fans/Squat/objFootBall
-1574	460	/Furniture/objLeatherCouchSmall
-1575	-1	/Interface/objEditorBackgroundColor
-1576	-1	/Editor/Editor_Menus/objTopMenu
-1577	-1	/Editor/Editor_Menus/objQuery
-1578	-1	/Editor/Editor_Menus/objSelectPlayer
-1579	-1	/Editor/Editor_Menus/objEditorWindow
-1580	-1	/Editor/objEditorCharacters
-1581	2748	/Editor/objNextButton
-1582	-1	/Editor/objEditorPlayer
-1583	-1	/Editor/objEditorCar
-1584	-1	/Editor/objLoadLevel
-1585	-1	/Player/Cars/objCar
-1586	2744	/Editor/Editor_Menus/objDialogueEditor
-1587	2750	/Furniture/Fans/HQ/objBearCar
-1588	2751	/Furniture/Fans/HQ/objBearCarTrunk
-1589	2749	/Misc/objMaskBox
-1590	-1	/NPCs/Fans/HQ5/objFansHQScene5
-1591	2753	/NPCs/Fans/HQ5/objSwan1HQ5
-1592	2754	/NPCs/Fans/HQ5/objTigerHQ5
-1593	2755	/NPCs/Fans/HQ5/objZebraHQ5
-1594	462	/NPCs/Fans/HQ5/objBearHQ5
-1595	2757	/NPCs/Fans/HQ5/objSwan2HQ5
-1596	-1	/Effects/Ocean/objOcean
-1598	-1	/Effects/Ocean/objOceanDay
-1599	2761	/NPCs/Soldiers/Hotel/Beach/objJacketSunBathing
-1600	2763	/NPCs/Soldiers/Hotel/Beach/objSquadCards
-1601	2762	/NPCs/Soldiers/Hotel/Beach/objGeneralDrink
-1602	2764	/Furniture/Floor/Jungle/objSurfBoard
-1603	2766	/Furniture/Jungle/Beach/objCrab
-1604	2768	/NPCs/Soldiers/Hotel/Outside/objUSASoldierM16
-1605	2769	/NPCs/Soldiers/Hotel/Outside/objUSASoliderShotgun
-1606	2770	/NPCs/Soldiers/Hotel/Outside/objSquadBlackLean
-1607	2771	/NPCs/Soldiers/Hotel/Outside/objSquadFatLean
-1608	-1	/NPCs/Soldiers/Hotel/Aftermath/objHotelAftermath
-1609	2678	/Furniture/Jungle/objHotelCars
-1610	2774	/NPCs/Fans/HQ4/objZebraIdle
-1611	2773	/NPCs/Fans/HQ4/objTigerLeanTable
-1612	-1	/NPCs/Fans/HQ4/objFansHQScene4
-1613	2776	/NPCs/Fans/HQ4/objSwanIdleJoint
-1614	2778	/Player/Son/objSonIdleBox
-1615	1786	/NPCs/Son/Hideout2/objHenchmanEnter
-1616	2780	/Furniture/Fans/SwanApartment/objSwanArmChair
-1617	2781	/Furniture/Fans/SwanApartment/objSwanBed
-1618	2782	/Furniture/Fans/SwanApartment/objSwanTable
-1619	2783	/Furniture/Fans/SwanApartment/objSwanPhones
-1620	2784	/Furniture/Fans/SwanApartment/objSwanStereo
-1621	2785	/Furniture/Fans/SwanApartment/objSwanTVShelf
-1622	2787	/Furniture/Fans/SwanApartment/objSwanKitchenIsland
-1623	2793	/Furniture/Fans/SwanApartment/objSwanCouch
-1625	2792	/Misc/objSwanOutfit
-1626	2786	/Misc/objSwanClothes
-1627	2790	/NPCs/Fans/SwanAparmtent/objSwanTowel
-1628	-1	/NPCs/Fans/SwanAparmtent/objSwanAparment
-1629	2795	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsFileCabinetNew
-1630	2796	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsComputerTableNew
-1632	2797	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsCounterNew
-1633	2798	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsKitchenNew
-1634	2799	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsTableNew
-1635	2800	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsKitchenTableNew
-1636	2801	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsFoodPrep
-1637	2802	/NPCs/Cobra/50BlessingsBunker/obj50BlessingsNerd
-1638	2618	/NPCs/Cobra/50BlessingsBunker/obj50ManagerBunker
-1639	2806	/NPCs/Son/Hideout3/objRobberVodka
-1640	2807	/NPCs/Son/Hideout3/objRobberVodkaBag
-1641	-1	/NPCs/Son/Hideout3/objHideout3
-1642	-1	/Misc/LightSmoke/objNightmareLight
-1643	2810	/Furniture/Writer/BikerBar/objBrokenBar
-1644	2811	/Furniture/Writer/BikerBar/objBrokenBarBooth
-1645	2812	/Furniture/Writer/BikerBar/objBrokenBarChair
-1646	2813	/Furniture/Writer/BikerBar/objBrokenBarCouch
-1647	2814	/Furniture/Writer/BikerBar/objBrokenBarTable
-1648	2815	/Furniture/Writer/BikerBar/objBrokenBarTableFans
-1649	2822	/NPCs/Writer/BikerBar/objBikerBroken
-1650	2817	/NPCs/Writer/BikerBar/objZebraBroken
-1651	2818	/NPCs/Writer/BikerBar/sprBearBroken
-1652	2819	/NPCs/Writer/BikerBar/objCobraBroken
-1653	2816	/NPCs/Writer/BikerBar/objSonBroken
-1654	2820	/NPCs/Writer/BikerBar/objPigBroken
-1655	2821	/NPCs/Writer/BikerBar/objNickeBroken
-1656	2022	/NPCs/Writer/BikerBar/objWriterBroken
-1657	-1	/Editor/objCursor
-1658	2837	/Furniture/Fans/DeathWish/objFancyDesk
-1659	2833	/Furniture/Fans/DeathWish/objFancyDeskBase
-1660	2834	/Furniture/Fans/DeathWish/objFancyOfficeChair
-1661	2835	/Furniture/Fans/DeathWish/objFancyOfficeCouch
-1662	2836	/Furniture/Fans/DeathWish/objFancyOfficeCouchSmall
-1663	2838	/Furniture/Fans/DeathWish/objFancyOfficeFountainBig
-1664	2839	/Furniture/Fans/DeathWish/objFancyOfficeFountainMedium
-1665	2840	/Furniture/Fans/DeathWish/objFancyOfficeFountainSmall1
-1666	2841	/Furniture/Fans/DeathWish/objFancyOfficeFountainSmall2
-1667	2842	/Furniture/Fans/DeathWish/objFancyOfficeMeetingTable1
-1668	2843	/Furniture/Fans/DeathWish/objFancyOfficeMeetingTable2
-1669	2844	/Furniture/Fans/DeathWish/objFancyOfficeTable
-1670	2847	/Furniture/Fans/DeathWish/objFancyOfficeMiamiModel
-1671	2845	/Furniture/Fans/DeathWish/objFancyOfficeTree
-1672	2846	/Furniture/Fans/DeathWish/objFancyOfficeWallLamp
-1673	2860	/Furniture/Fans/DeathWish/Lab/objFancyLabCounterBig
-1674	2861	/Furniture/Fans/DeathWish/Lab/objFancyLabCounterSmall1
-1675	2862	/Furniture/Fans/DeathWish/Lab/objFancyLabCounterSmall2
-1676	2863	/Furniture/Fans/DeathWish/Lab/objFancyLabCart
-1677	2875	/Furniture/Fans/DeathWish/objFancyOfficeMeetingTableSmall
-1678	2874	/Furniture/Fans/DeathWish/objFancyFloorLight
-1679	2876	/Effects/Smoke/objWallTV
-1680	2878	/Furniture/Fans/DeathWish/Lab/objFancyLabIsland
-1681	2879	/Furniture/Son/Bank/objBankWhiteBoard
-1682	2880	/Furniture/Fans/DeathWish/objFancyFloorLightDark
-1683	2908	/Furniture/Fans/DeathWish/Roof/objRoofGenerator
-1684	2909	/Furniture/Fans/DeathWish/Roof/objRoofVent
-1685	2907	/Furniture/Fans/DeathWish/Roof/objRoofHelipad
-1686	2910	/Editor/objRoofWallH
-1687	2911	/Editor/objRoofWallV
-1688	2912	/Editor/objRoofWallCorner
-1689	2906	/NPCs/Fans/DeathWish/objSwan2BreakIn
-1690	1735	/NPCs/Fans/DeathWish/objSwan1DeathWish
-1691	293	/NPCs/Fans/DeathWish/objTigerDeathWish
-1692	1775	/NPCs/Fans/DeathWish/objBearDeathWish
-1693	326	/NPCs/Fans/DeathWish/objZebraDeathWish
-1694	-1	/NPCs/Fans/DeathWish/objDeathWishFloor1
-1695	2919	/Furniture/Cop/Mall/objSlidingDoorsDark
-1696	2919	/NPCs/Fans/DeathWish/objLockedSlidingDoors
-1697	-1	/NPCs/Fans/DeathWish/objDeathWishRoof
-1699	468	/NPCs/Fans/DeathWish/objSwanRoof
-1700	-1	/Interface/vcapexample/objVideoCapturer
-1702	2351	/NPCs/Fans/DeathWish/objSonRoof
-1703	-1	/NPCs/Fans/DeathWish/objWalkieTalkie
-1704	2931	/NPCs/Fans/HQParty/objCastanets
-1705	2932	/NPCs/Fans/HQParty/objCocoBryce
-1706	2935	/NPCs/Fans/HQParty/objMagicSword
-1707	2939	/NPCs/Fans/HQParty/objScattle
-1708	2930	/NPCs/Fans/HQParty/objCarpenterBrut
-1709	2933	/NPCs/Fans/HQParty/objElin
-1710	2936	/NPCs/Fans/HQParty/objMagna
-1711	2938	/NPCs/Fans/HQParty/objRiddarna
-1712	2934	/Furniture/Floor/objElTigre
-1713	2937	/Furniture/Floor/objMegaDrive
-1714	2928	/NPCs/Fans/PizzaPlace/objMike
-1715	2927	/NPCs/Fans/PizzaPlace/objNigel
-1716	2926	/NPCs/Fans/PizzaPlace/objHarry
-1717	2925	/NPCs/Fans/PizzaPlace/objAndrew
-1718	2924	/NPCs/Fans/PizzaPlace/objGraeme
-1719	2929	/NPCs/Fans/PizzaPlace/objRick
-1720	1214	/NPCs/Fans/PizzaPlace/objRicksBird
-1721	2940	/Furniture/Fans/PizzaPlace/objPizzaTableNoChairs
-1722	-1	/Interface/Scene/City/objBloodDrawRed
-1723	2941	/Furniture/Writer/Court/objCourtEvidence
-1724	2996	/Editor/objSubwayWallV
-1725	2997	/Editor/objBoatRailingH
-1726	2998	/Editor/objBoatRailingV
-1727	2999	/Furniture/Cop/Boat/objContainerFloor
-1728	3000	/Furniture/Cop/Boat/objContainer
-1729	3001	/Furniture/Cop/Boat/objBoatBridge
-1730	3002	/Furniture/Cop/Boat/objBoatTurbine
-1731	3003	/Furniture/Cop/Boat/objBoatBed
-1732	3004	/Furniture/Cop/Boat/objBoatCargoBig
-1733	3005	/Furniture/Cop/Boat/objBoatCargoSmall
-1734	3006	/Furniture/Cop/Boat/objBoatSuppliesMeds
-1735	3007	/Furniture/Cop/Boat/objBoatTable
-1736	3008	/Furniture/Cop/Boat/objBoatRing
-1737	3009	/Enemies/Colombians/objColombianHiding
-1738	3010	/Effects/BoatWaves/objWaves
-1740	3015	/Furniture/Floor/sprEntryBridge
-1741	3014	/Furniture/Cop/Boat/objBoatRope
-1742	3013	/Furniture/Cop/Boat/objForkLift
-1743	3018	/Furniture/Cop/Boat/objSeagull
-1744	3016	/Furniture/Cop/Boat/objBoatLamp
-1745	3017	/Furniture/Cop/Boat/sprBoatLampBroken
-1746	3021	/Misc/LightSmoke/objBoatFrost
-1747	-1	/Misc/LightSmoke/objFrostSparkle
-1748	1085	/Furniture/Jungle/Trees/objPalmTreeEvening
-1749	1089	/Furniture/Jungle/Trees/objBigTreeEvening
-1750	3027	/NPCs/Soldiers/PowerPlant/objNickeSitGround
-1751	-1	/NPCs/Soldiers/PowerPlant/objTentScene
-1752	3023	/NPCs/Soldiers/PowerPlant/objGeneralCrazy
-1753	3032	/Furniture/Floor/Jungle/objGeneralFlag
-1754	3033	/Furniture/Floor/Jungle/objPantherDead
-1755	3034	/Furniture/Floor/Jungle/objPantherFace
-1757	3041	/Furniture/Jungle/PowerPlant/objPowerPlantBox
-1758	3042	/Furniture/Jungle/PowerPlant/objPowerPlantBox2
-1759	3043	/Furniture/Jungle/PowerPlant/objPowerPlantTesla
-1760	3044	/Furniture/Jungle/PowerPlant/objPowerPlantTurbine
-1761	3045	/Furniture/Jungle/PowerPlant/objPowerPlantTurbineSmall
-1762	3046	/Editor/objPowerPlantFenceH
-1763	3047	/Editor/objPowerPlantFenceV
-1764	3036	/Furniture/Jungle/PowerPlant/objPowerPlantDangerSignBroken
-1765	3035	/Furniture/Jungle/PowerPlant/objPowerPlantDangerSign
-1766	3038	/Furniture/Jungle/PowerPlant/objPowerLineEnd
-1767	3039	/Furniture/Jungle/PowerPlant/objPowerLineMiddle
-1768	3037	/Furniture/Jungle/PowerPlant/objPowerLines
-1769	3040	/Furniture/Jungle/PowerPlant/objPowerPlantPipes
-1770	-1	/Effects/JungleEveningOverlay/objJungleEveningOverlay
-1771	-1	/Interface/Scene/NickeScene/objJungleEveningScene
-1772	-1	/Interface/Scene/NickeScene/objJungleEveningBG
-1773	3050	/NPCs/Soldiers/PowerPlant/objGeneralStand
-1774	3051	/NPCs/Soldiers/Jungle/objSquadFatIdleGun
-1775	-1	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveOpening
-1776	3048	/Furniture/Jungle/PowerPlant/objPowerLineWall
-1777	3056	/Furniture/Jungle/PowerPlant/objParkingLot
-1778	3057	/Furniture/Jungle/PowerPlant/objCarFiat
-1779	3054	/Editor/objPowerPlantWallBroken
-1780	3055	/NPCs/Soldiers/PowerPlant/objSquadBlackPullWall
-1781	3061	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor1
-1782	3058	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor2
-1783	3063	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor3
-1784	3053	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantTerminal
-1785	3060	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantFuseBox
-1786	3069	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor1Dead
-1787	3070	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor2Dead
-1788	3071	/NPCs/Soldiers/PowerPlant/objRussianGeneralSuicide
-1789	3066	/Furniture/Floor/objEngineerDeadWall
-1790	3067	/Furniture/Floor/objEngineerDead
-1791	3072	/NPCs/Soldiers/PowerPlant/objSquadBlackPickLock
-1792	2242	/NPCs/Soldiers/PowerPlant/objSquadJacketPowerPlant
-1793	-1	/NPCs/Soldiers/PowerPlant/objPowerPlantScene
-1794	1320	/Effects/ElevatorExplosion/objExplodingElevator
-1796	-1	/Furniture/Jungle/PowerPlant/CaveStuff/objPowerPlantExplosions
-1797	3085	/NPCs/Soldiers/PowerPlant/Outro/objJacketThanks
-1803	-1	/Effects/NuclearBlast/objNuclearBombNicke
-1804	3093	/Furniture/Cop/Mall/FoodStore/objStoreCounter
-1805	3094	/Player/Nicke/objNickeStore
-1806	-1	/NPCs/Writer/Subway/objSubwayExit
-1809	3154	/Enemies/Bosses/SwanBoss/objSwanBossBody
-1810	3163	/Enemies/Bosses/SwanBoss/objSwanChainsawHead
-1811	3163	/Enemies/Bosses/SwanBoss/objSwanGunHead
-1812	3157	/Enemies/Bosses/SwanBoss/objSwanBullet
-1814	3156	/Enemies/Bosses/SwanBoss/objSwanShadow
-1815	3159	/Enemies/Bosses/SwanBoss/objSwanBrainChunk
-1816	3166	/Enemies/Bosses/SwanBoss/objSwanShadowDive
-1817	3167	/Enemies/Bosses/SwanBoss/objSwanChunks
-1818	3173	/Misc/Weapons/objAxe
-1822	3170	/Enemies/Bosses/BearBoss/objBearBoss
-1823	1772	/Player/objPlayerDieBear
-1824	3178	/Enemies/Bosses/BearBoss/objGolfBag
-1825	3179	/Enemies/Bosses/ZebraBoss/objZebraGlassV
-1826	3180	/Enemies/Bosses/ZebraBoss/objZebraShard
-1827	3181	/Enemies/Bosses/ZebraBoss/objZebraShine
-1828	3182	/Enemies/Bosses/ZebraBoss/objZebraBoss
-1829	-1	/Enemies/Bosses/ZebraBoss/objZebraLauncher
-1830	-1	/Enemies/Bosses/ZebraBoss/objZebraFade
-1831	3184	/Enemies/Bosses/ZebraBoss/objZebraParts
-1832	-1	/Effects/Rainbow/objRainbow
-1833	-1	/Interface/Credits/objCredits
-1834	-1	/Interface/Credits/objCredits2
-1835	3190	/Effects/Rainbow/objHeavensGateLeft
-1836	3191	/Effects/Rainbow/objHeavensGateRight
-1837	-1	/Enemies/objBoss
-1838	3195	/Furniture/Son/LSD/objSonStashTable
-1840	2806	/NPCs/Son/LSD/LSDGate/objMafiaDrinkLSD
-1841	2807	/NPCs/Son/LSD/LSDGate/objMafiaDrinkBagLSD
-1842	3201	/NPCs/Son/LSD/LSDGate/objMafiaSlither
-1843	69	/NPCs/Son/LSD/LSDGate/objMafiaSuicide
-1844	3203	/Player/Kills/Specific/objSonKillMafia
-1845	-1	/NPCs/Son/LSD/LSDGate/objLSDGateScene
-1846	3198	/NPCs/Son/LSD/LSDGate/objSonSuckedIn
-1847	3210	/Furniture/Son/LSD/objSonCouchLSD
-1848	3213	/Furniture/Son/LSD/objLSDSink
-1849	3211	/Furniture/Son/LSD/objSonTableLSD
-1850	-1	/NPCs/Son/LSD/Intro/objLSDIntro
-1851	3245	/NPCs/Son/LSD/Intro/objSonTakeLSD
-1852	1453	/NPCs/Son/LSD/Intro/objMafiaFlip
-1853	304	/Furniture/Son/LSD/objLSDShotgun
-1854	3226	/Enemies/Mafia/objFatMafiaLSD
-1855	-1	/Furniture/Son/LSD/objLSDBush
-1856	3237	/Furniture/Son/LSD/objLSDBushBig
-1857	3239	/Furniture/Son/LSD/objLSDBushCorner
-1858	3241	/Furniture/Son/LSD/objLSDBushSmall
-1859	3238	/Furniture/Son/LSD/objLSDBushBigVines
-1860	3238	/Furniture/Son/LSD/objLSDBushCornerVines
-1861	-1	/Furniture/Son/LSD/objLSDBushVines
-1862	3233	/NPCs/Son/LSD/Intro/objMafiaArcade
-1863	2081	/NPCs/Son/LSD/Intro/objMafiaIdlePhone
-1864	2806	/NPCs/Son/LSD/Intro/objMafiaDrinkStill
-1865	2077	/NPCs/Son/LSD/Intro/objMafiaSmoke
-1866	1453	/NPCs/Son/LSD/Intro/objMafiaStand
-1867	3246	/Effects/Smoke/ArcadeMachines/objArcadeMotherRussia
-1868	3249	/Enemies/Bosses/TigerBoss/objShotgunMonumentLSD
-1869	3248	/Enemies/Bosses/TigerBoss/objShotgunMonumentPileLSD
-1870	-1	/Interface/LSDblend/objLSDBlendNew
-1871	3250	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse1LSD
-1872	3251	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse2LSD
-1873	3252	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse3LSD
-1874	3253	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse4LSD
-1875	-1	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse
-1876	-1	/Enemies/Bosses/SwanBoss/Floor/objMafiaMovingCorpse
-1877	3261	/NPCs/Son/LSD/Floor1/objMafiaEatLSD
-1878	3263	/Effects/objMafiaFlameOut
-1879	3267	/Furniture/Son/LSD/objLSDLabIsland
-1880	3278	/Enemies/Bosses/GangLeader/objGangLeader
-1881	-1	/Enemies/objWayPoint
-1882	3284	/Misc/objGangLeaderPipe
-1883	3277	/Misc/objGangLeaderGlasses
-1886	3287	/Enemies/Dodger/objColombianDodger
-1887	3289	/Furniture/Son/ColombianVilla/objDrumKitDisplay
-1889	3290	/Furniture/Son/ColombianVilla/objGuitarDisplay
-1890	3291	/Furniture/Son/ColombianVilla/objSynthDisplay
-1891	3292	/Furniture/Son/ColombianVilla/objMicrophone
-1892	3293	/Furniture/Son/ColombianVilla/objMicrophoneCords
-1893	3294	/Furniture/Son/ColombianVilla/objMixerTable
-1894	3295	/Furniture/Son/ColombianVilla/objVillaArmchair
-1895	3296	/Furniture/Son/ColombianVilla/objVillaCouchBig
-1896	3297	/Furniture/Son/ColombianVilla/objVillaCouch
-1897	3298	/Furniture/Son/ColombianVilla/objVillaDiningTable
-1898	3299	/Furniture/Son/ColombianVilla/objVillaStatue
-1899	3301	/Furniture/objSmallTable
-1900	3302	/Furniture/objDiningTable
-1901	3303	/Furniture/objBookshelfBig2
-1902	3304	/Furniture/objDresser
-1903	3303	/Furniture/objBookshelfBig
-1904	3307	/Furniture/Son/ColombianVilla/objVillaBar
-1905	3311	/Furniture/Son/ColombianVilla/objVillaPool
-1906	3306	/Furniture/Son/ColombianVilla/objPoolChair
-1907	3308	/Furniture/Son/ColombianVilla/objVillaBed
-1908	3309	/Furniture/Son/ColombianVilla/objVillaDesk
-1909	3310	/Furniture/Son/ColombianVilla/objVillaDeskBase
-1910	3312	/Furniture/Son/ColombianVilla/objVillaSecurity
-1911	3313	/Furniture/Son/ColombianVilla/objVillaStatueSmall
-1912	3314	/Furniture/Son/ColombianVilla/objVillaJacuzzi
-1913	3300	/Furniture/Floor/objGolfPieces
-1914	3320	/NPCs/Son/ColombianVilla/objColombianHenchman
-1915	3316	/NPCs/Son/ColombianVilla/objColombianBoss
-1916	2288	/NPCs/Son/ColombianVilla/objColombianNPC
-1917	1500	/NPCs/Son/ColombianVilla/objMafiaNPC
-1918	3317	/NPCs/Son/ColombianVilla/objColombianBossChair
-1919	-1	/NPCs/Son/ColombianVilla/objColombianVillaScene
-1920	3326	/Furniture/Son/ColombianVilla/objVillaAngel
-1921	3328	/Furniture/Son/ColombianVilla/objVillaEntertainmentSystem
-1922	3331	/Furniture/Son/ColombianVilla/objVillaSwimmingPool
-1923	3329	/Furniture/Son/ColombianVilla/objVillaFountain
-1924	3330	/Furniture/Son/ColombianVilla/objVillaTrophies
-1925	3332	/Furniture/Son/ColombianVilla/objWineRack
-1926	3333	/Furniture/Son/ColombianVilla/objVillaBottles
-1927	3334	/Furniture/Son/ColombianVilla/objPoolTray
-1928	3327	/Furniture/Son/ColombianVilla/objEntryAngel
-1929	3335	/Effects/Smoke/ArcadeMachines/objArcadeGuns2
-1930	3337	/Effects/Smoke/ArcadeMachines/sprArcadeNidhogg
-1931	3339	/Effects/Smoke/ArcadeMachines/objArcadeIsaac
-1932	3341	/Effects/Smoke/ArcadeMachines/objArcadeMeatBoy
-1933	3359	/NPCs/Cop/Nightmare/Phantom/objPhantom
-1934	3348	/Player/Cop/objPhantomChokeCop
-1935	3345	/NPCs/Cop/Nightmare/Phantom/objPhantomFall
-1936	3351	/NPCs/Cop/Nightmare/Phantom/objPoliceTape
-1937	3354	/NPCs/Cop/Nightmare/Phantom/objGolfCart
-1938	2388	/NPCs/Cop/Nightmare/Phantom/objCopGun
-1939	3356	/NPCs/Cop/Nightmare/PoliceStation/objPoliceChief
-1940	3358	/Furniture/Cop/Nightmare/objPoliceChiefDesk
-1941	3354	/NPCs/Cop/Nightmare/PoliceStation/objGolfCartDrive
-1942	3360	/Furniture/objBedNormal
-1943	1335	/NPCs/Cop/Nightmare/PoliceStation/objPolicePoint2
-1944	3367	/NPCs/Cop/Nightmare/PoliceStation/objWriterInterrogation
-1945	3368	/Furniture/Cop/CrimeScenes/CrimeScene1/objBloodMessage
-1946	3369	/Furniture/Cop/CrimeScenes/CrimeScene1/objCrimeSceneSign
-1947	3370	/Furniture/Cop/CrimeScenes/CrimeScene1/objCrimeSceneVictims
-1948	3371	/NPCs/Cop/CrimeScenes/objCSIPhotographer
-1949	3372	/NPCs/Cop/CrimeScenes/objCSIOfficers
-1951	3374	/Furniture/Cop/Apartment/objCopBed
-1952	3376	/Furniture/Cop/Apartment/objCopCloset
-1953	3377	/Furniture/Cop/Apartment/objCopCouch
-1954	3379	/Furniture/Cop/Apartment/objCopCupboard
-1955	3380	/Furniture/Cop/Apartment/objCopCounter
-1956	3381	/Furniture/Cop/Apartment/objCopNightstand
-1957	3384	/Furniture/Cop/Apartment/objCopTable
-1958	3386	/Furniture/Floor/objCSIBag
-1959	3378	/Furniture/Floor/objCopCouchCushion
-1960	3387	/Player/Cop/objCopSearch
-1961	-1	/objNoiseStartBlack
-1962	3390	/Player/Cop/objCopWakeUp
-1963	3394	/NPCs/Fans/DeathWish/Outro/objSwat
-1964	3395	/NPCs/Fans/DeathWish/Outro/objSwatWall
-1965	3396	/NPCs/Fans/DeathWish/Outro/objSwatCorner
-1966	3397	/NPCs/Fans/DeathWish/Outro/objSwatCrouch
-1967	3398	/NPCs/Fans/DeathWish/Outro/objFansDead
-1968	3401	/NPCs/Fans/DeathWish/Outro/objSwatBossStand
-1969	3400	/NPCs/Fans/DeathWish/Outro/objTigerGiveUp
-1970	3394	/NPCs/Fans/DeathWish/Outro/objSwatTalk
-1971	3404	/Furniture/Fans/DeathWish/objSwatBus
-1972	3405	/NPCs/Fans/DeathWish/Outro/objPoliceStand
-1973	3406	/NPCs/Fans/DeathWish/Outro/objSonDeadFall
-1974	-1	/NPCs/Cop/CrimeScenes/CrimeScene1/objCrimeScene1
-1975	3409	/Furniture/Floor/objVomitPuddle
-1977	3408	/NPCs/Cop/CrimeScenes/CrimeScene2/objCSIVomit
-1978	3410	/NPCs/Cop/CrimeScenes/objVictimCar
-1979	3411	/Furniture/Cop/Apartment/objMaskBoxNightmare
-1980	3412	/Furniture/Writer/Home/objWriterBed
-1981	3414	/Furniture/Writer/Home/objFirePlaceWriter
-1982	3420	/Furniture/Writer/Home/objWifeNightStand
-1983	3423	/Furniture/Writer/Home/objWriterChairFallen
-1984	3425	/Furniture/Writer/Home/objCrib
-1985	3426	/Furniture/Writer/Home/objKidBed
-1986	3427	/Furniture/Writer/Home/objWriterKitchenTable
-1987	3428	/Furniture/Writer/Home/objWriterLivingroomTable
-1988	3429	/Furniture/Writer/Home/objWriterNightStand
-1989	3430	/Furniture/Writer/Home/objWriterPhone
-1990	3431	/Furniture/Writer/Home/objWriterVinylTable
-1991	3432	/Furniture/Writer/Home/objWriterDeskChair
-1992	3433	/Furniture/Writer/Home/objWriterDesk
-1993	3413	/Furniture/Writer/Home/objBrokenFrame
-1994	3416	/Furniture/Writer/Home/objNESCartridge
-1995	3417	/Furniture/Writer/Home/objToyGun2
-1996	3418	/Furniture/Writer/Home/objToyLego2
-1997	3419	/Furniture/Writer/Home/objToyTurtle2
-1998	3422	/Furniture/Writer/Home/objCaseFile
-1999	3424	/Furniture/Writer/Home/objWriterDoorMat
-2000	3421	/Furniture/Writer/Home/objWifeNote
-2001	3435	/Furniture/Writer/Home/objWriterKitchenCupboard
-2002	3436	/Furniture/Writer/Home/objWriterKitchenCounter
-2003	3437	/Furniture/Writer/Home/objWriterKitchenSink
-2004	3438	/Furniture/Writer/Home/objWriterTVBench
-2005	3441	/Furniture/Writer/Home/objFireWood
-2006	3442	/Player/Writer/objWriterType
-2007	3444	/Player/Writer/objWriterInterview1
-2008	3445	/Player/Writer/objWriterInterview2
-2009	3446	/Misc/objNotepad
-2010	3447	/Furniture/Writer/Home/objWifeLetter
-2011	3444	/Player/Writer/objWriterInterview3
-2012	3449	/Furniture/Rat/Home/objRatKitchenSink
-2013	3450	/Furniture/Rat/Home/objRatArmChair
-2014	3451	/Furniture/Rat/Home/objRatBed
-2015	3452	/Furniture/Rat/Home/objRatBedSupplies
-2016	3453	/Furniture/Rat/Home/objRatCar
-2017	3454	/Furniture/Rat/Home/objRatCouch
-2018	3455	/Furniture/Rat/Home/objRatKitchenTable
-2019	3456	/Furniture/Rat/Home/objRatKitchenCupboard
-2020	3457	/Furniture/Rat/Home/objRatKitchenCounter
-2021	3458	/Furniture/Rat/Home/objRatMomBed
-2022	3459	/Furniture/Rat/Home/objRatPhone
-2023	3461	/Furniture/Rat/Home/objRatTrophies
-2024	3462	/Furniture/Rat/Home/objRatTrashcan
-2025	3463	/Furniture/Rat/Home/objRatTub
-2026	3464	/Furniture/Rat/Home/objRatElevatorChair
-2027	3465	/Furniture/Rat/Home/objRatElevatorRails
-2028	3466	/Furniture/Rat/Home/objRatVacuum
-2029	3468	/Furniture/Rat/Home/objRatFreezer
-2030	3471	/Furniture/Rat/Home/objHandicapToilet
-2031	3470	/Furniture/Rat/Home/objRatSafe
-2032	3469	/Furniture/Rat/Home/objRatDesk
-2033	3472	/Misc/LightSmoke/objBarSmoke
-2035	3478	/NPCs/Rat/Home/objRatMomLieDown
-2037	3476	/NPCs/Rat/Home/objRatMomSit
-2038	3483	/Player/Cars/Rat_Bus/objRatBus
-2039	3484	/Player/Cars/Rat_Bus/objRatBusFloor
-2040	3485	/Player/Cars/Rat_Bus/objRatBusStop
-2041	3486	/Furniture/Rat/Home/objRatChair
-2042	3477	/NPCs/Rat/Home/objRatMomEat
-2043	3479	/NPCs/Rat/Home/objRatMomSickTalk
-2044	3478	/NPCs/Rat/Home/objRatMomSick
-2045	3483	/Player/Cars/Rat_Bus/objRatBusDrive
-2046	3487	/Furniture/Writer/BikerBar/objBrokenVehicles
-2047	3488	/NPCs/Writer/BikerBar/sprBrokenBarDumpster
-2048	-1	/Interface/objRatClear
-2049	-1	/Interface/SplashScreens/DennatonSplash/objSplash
-2050	3514	/NPCs/Credits/objRatCredits
-2051	-1	/Effects/NuclearBlast/objNukeCredits
-2052	3513	/NPCs/Credits/objMomCredits
-2053	-1	/Credits/objCreditsDennaton
-2054	-1	/Credits/objCreditsDevolver
-2055	-1	/Credits/objCreditsAbstraction
-2056	-1	/Credits/objCreditsMusicians
-2058	-1	/Credits/objCreditsSony
-2059	-1	/Credits/objCreditsSpecialThanks
-2060	3516	/NPCs/Credits/objWriterCredits
-2061	3515	/NPCs/Credits/objWriterBabyCredits
-2062	3517	/NPCs/Credits/objWriterKidCredits
-2063	3518	/NPCs/Credits/objWriterWifeCredits
-2064	3442	/NPCs/Credits/objWriterWriteCredits
-2065	3510	/NPCs/Credits/objCopCredits
-2066	3511	/NPCs/Credits/objCopCreditsBottle
-2067	3509	/NPCs/Credits/objActressCredits
-2068	3524	/NPCs/Credits/objPrisonBedCredits
-2069	3512	/NPCs/Credits/objJacketCredits
-2070	-1	/Credits/Hotline3/objHotlineMiami3
-2071	3530	/Credits/Hotline3/objBrokenHouse
-2072	2076	/NPCs/Son/Hideout2/objStripper1
-2073	3540	/NPCs/Son/Hideout2/objStripper2
-2074	3541	/NPCs/Son/Hideout2/objStripper3
-2075	3542	/NPCs/Son/Hideout2/objStripper4
-2076	3543	/NPCs/Son/Hideout2/objStripperSnort
-2077	2079	/NPCs/Son/Hideout2/objSonHideout2Outro
-2078	3544	/Misc/objMoneyPile
-2079	3545	/NPCs/Intro/objIntroTable
-2080	3546	/NPCs/Intro/objCopIntro
-2081	3547	/NPCs/Intro/objFansIntro
-2082	3548	/NPCs/Intro/objHenchIntro
-2083	3549	/NPCs/Intro/objNickeIntro
-2084	3550	/NPCs/Intro/objPigIntro
-2085	3551	/NPCs/Intro/objRatIntro
-2086	3552	/NPCs/Intro/objRichardIntro
-2087	3553	/NPCs/Intro/objCobraIntro
-2088	3554	/NPCs/Intro/objSonIntro
-2089	3555	/NPCs/Intro/objWriterIntro
-2090	3556	/NPCs/Intro/objMovieScreen
-2091	-1	/NPCs/Intro/objIntroDarkness
-2092	2089	/NPCs/Son/Hideout4/objSonGuardSitTalk
-2093	2778	/Player/Son/objSonIdleBoxColombian
-2094	3560	/Furniture/Son/Hideout/objHumanBoxingBag
-2095	3562	/Furniture/Son/Hideout/objColombianClothes
-2096	3563	/Furniture/Floor/Bunker/objFiftyScribble
-2097	3564	/Furniture/objLamp
-2098	3565	/NPCs/Cobra/CobraHotHeavy/objCobraHotHeavy
-2099	3567	/NPCs/Cobra/CobraHotHeavy/objMafiaCobra
-2100	3569	/Enemies/Bosses/PrisonBoss/objPrisonBoss
-2101	3571	/Enemies/Bosses/PrisonBoss/objPrisonBossKill
-2102	3624	/Editor/objCellDoorV
-2103	3623	/Editor/objBlackRailsV
-2104	3606	/Player/Rat/objRatPrison
-2105	3284	/Misc/Weapons/objPipeBig
-2106	3627	/Misc/Weapons/objBrush
-2107	3628	/Player/Kills/Specific/objRatKillBrush
-2108	-1	/Enemies/Prisoner/objPrisoner
-2109	3575	/Enemies/Prisoner/objPrisonerMeleeRandom
-2110	3578	/Enemies/Prisoner/objPrisonerMeleePatrol
-2111	3576	/Enemies/Prisoner/objPrisonerRandom
-2112	3576	/Enemies/Prisoner/objPrisonerStatic
-2113	3576	/Enemies/Prisoner/objPrisonerPatrol
-2114	3597	/NPCs/Rat/Prison/BossFight/objPrisonerCheer1
-2115	3598	/NPCs/Rat/Prison/BossFight/objPrisonerCheer2
-2116	3599	/NPCs/Rat/Prison/BossFight/objPrisonerCheer3
-2117	3633	/NPCs/Rat/Prison/BossFight/objPrisonerCheerPipe
-2118	3634	/NPCs/Rat/Prison/BossFight/objPrisonerThrow
-2119	3284	/NPCs/Rat/Prison/BossFight/objThrowPipe
-2120	3639	/NPCs/Rat/Prison/BossFight/objPrisonerCheer5
-2121	3638	/NPCs/Rat/Prison/BossFight/objPrisonerCheer4
-2122	3646	/Furniture/Rat/Prison/objVisitorBooth
-2123	3647	/Furniture/Rat/Prison/objVisitorBoothStool
-2124	3642	/NPCs/Rat/Prison/Visit/objJacketPhone
-2125	3644	/NPCs/Rat/Prison/Visit/objLawyerPhone
-2126	3618	/NPCs/Rat/Prison/Visit/objRatPrisonPhone
-2127	3640	/NPCs/Rat/Prison/Visit/objDennis
-2128	3641	/NPCs/Rat/Prison/Visit/objJonatan
-2129	3650	/NPCs/Rat/Prison/Visit/objGuardRatPrison
-2130	3651	/NPCs/Rat/Prison/Visit/objGuardIdleStand
-2131	3657	/Furniture/Rat/Prison/objPrisonBed
-2132	3658	/Furniture/Rat/Prison/objPrisonDesk
-2133	3659	/Furniture/Rat/Prison/objPrisonChair
-2134	3662	/Furniture/Rat/Prison/objPrisonDiningTable
-2135	3663	/Furniture/Rat/Prison/objPrisonLocker
-2137	3660	/Furniture/Floor/Prison/objPrisonCorpses
-2138	3661	/Furniture/Floor/Prison/objPrisonCorpsesWall
-2139	63	/Editor/objFurnitureWallV
-2140	62	/Editor/objFurnitureWallH
-2141	2681	/NPCs/Rat/Prison/Visit/objGuardWallOff
-2142	3668	/Effects/PrisonFire/objBurningBible
-2143	3669	/Effects/PrisonFire/objBurningPaper
-2145	3677	/Enemies/Prisoner/objPrisonerPsycho
-2146	3575	/Enemies/Prisoner/objPrisonerMeleeStatic
-2147	3673	/Player/objPlayerDiePsycho
-2148	3680	/Enemies/Prisoner/objPrisonerFat
-2149	3685	/Furniture/Rat/Prison/objShower
-2150	3686	/Furniture/Rat/Prison/objFloorDrain
-2151	3654	/Furniture/Rat/Prison/objPrisonBible
-2152	3689	/Furniture/Rat/Prison/objPrisonOfficeDesk
-2153	3688	/Furniture/Rat/Prison/objPrisonFileCabinet
-2154	3690	/Furniture/Rat/Prison/objKeyLock
-2155	3687	/Furniture/Rat/Prison/objPrisonSoap
-2156	3692	/Furniture/Floor/Prison/objPrisonBloodWords
-2157	3699	/Player/Rat/objRatGuard
-2158	3664	/Misc/objGuardClothes
-2159	3727	/Furniture/Rat/Prison/objPrisonMonitor
-2160	3726	/Furniture/Rat/Prison/objPrisonFileCabinetFallen
-2161	3729	/Furniture/Rat/Prison/objPrisonGameTable
-2162	3730	/Furniture/Rat/Prison/objPrisonInformationTable
-2163	3728	/Furniture/Floor/objPrisonChairBroken
-2164	3731	/Furniture/Rat/Prison/objPrisonBasketCourt
-2165	3588	/Furniture/Floor/Prison/objPrisonCorpses2
-2166	3732	/Furniture/Floor/Prison/objPrisonerCaptured
-2167	3733	/Enemies/Prisoner/objPrisonerIdleGuns
-2168	3650	/Enemies/Guards/objGuardIdleStick
-2169	-1	/objPrisonAlarm
-2170	2680	/NPCs/Rat/Prison/Riot/objGuardShotgun
-2172	3575	/NPCs/Rat/Prison/Riot/objEscapingPrisoner
-2173	2679	/NPCs/Rat/Prison/Riot/objGuardMagnum
-2174	3737	/Player/Cars/SwatBus/objSwatBusWave
-2175	3740	/Furniture/Floor/Prison/objBasketHoopBroken
-2177	3742	/Furniture/Writer/PoliceEvidence/objPoliceEvidenceTable
-2178	3741	/Furniture/Writer/PoliceEvidence/objPoliceEvidenceShelf
-2179	3743	/Furniture/Writer/PoliceEvidence/objPoliceEvidenceTableCobra
-2180	3746	/NPCs/Writer/PoliceEvidence/objCopEvidence
-2181	219	/Interface/objNextroomNoPlayer
-2183	-1	/Interface/Scene/NickeScene/objJungleReturn
-2184	-1	/Interface/Scene/NickeScene/objForestReturn
-2185	-1	/Interface/Scene/NickeScene/objJungleFade
-2186	3747	/NPCs/Son/Bank/objRobberAmbush
-2187	3753	/NPCs/Writer/Court/Exit/objDemonstratorWave
-2188	3756	/NPCs/Writer/Court/Exit/objPhotographer1
-2189	3751	/NPCs/Writer/Court/Exit/objSwan1Demonstration
-2190	3752	/NPCs/Writer/Court/Exit/objSwan2Demonstation
-2191	1897	/NPCs/Writer/Court/Exit/objReporter1
-2192	1898	/NPCs/Writer/Court/Exit/objInterviewed1
-2193	3757	/NPCs/Writer/Court/Exit/objReporter2
-2194	3754	/NPCs/Writer/Court/Exit/objDemonstrator
-2195	3755	/NPCs/Writer/Court/Exit/objCameraMen
-2196	1550	/NPCs/Writer/Court/Exit/objPoliceStandStill
-2197	3650	/NPCs/Writer/Court/Exit/objGuardStickStill
-2198	3761	/Misc/objWallet
-2199	3773	/Enemies/Bosses/SwatBoss/objSwatBossWaypoint
-2200	3772	/Enemies/Bosses/SwatBoss/objSwatBoss
-2201	3776	/Player/Kills/Specific/objPigKillBoss
-2202	3767	/Misc/objSwatBossHead
-2203	3765	/Enemies/Bosses/SwatBoss/objSwatBossKnockedOut
-2204	3772	/Enemies/Bosses/SwatBoss/objSwatBossAlert
-2205	3778	/Enemies/Bosses/SwatBoss/objSwatBossLock
-2206	3784	/NPCs/Fans/HQParty/objMitchMurder
-2207	3783	/NPCs/Fans/HQParty/objDubmood
-2208	3782	/NPCs/Fans/HQParty/objDaveMinus
-2209	3779	/NPCs/Fans/HQParty/objBenjamin
-2210	3781	/NPCs/Fans/HQParty/objDag
-2211	3780	/NPCs/Fans/HQParty/objBennySmiles
-2212	3785	/NPCs/Writer/Court/Exit/objReporters
-2213	3786	/Interface/objWeaponMenu
-2214	-1	/Interface/Options/objControls
-2215	3794	/Interface/Options/objHouseCloseUp
-2216	3795	/Interface/Options/objHouseSemiCloseUp
-2217	3796	/Interface/Options/objHouseDistant
-2218	3798	/Interface/Options/objSmallFlyingPaper
-2219	3797	/Interface/Options/objFlyingPaper
-2220	3801	/Interface/Options/objCloudSmoke
-2221	3812	/Enemies/objEnemyCrawl
-2222	3810	/Player/Kills/objPKillNeck
-2223	3827	/Player/Kills/objPKillKick
-2224	3829	/Player/Kills/objPKillChainsawCrawl
-2225	3835	/Interface/Scene/City/objSceneGround
-2226	3834	/Interface/Scene/City/objSceneFence
-2227	3840	/NPCs/Cop/BoatDock/objPoliceCarWalkie
-2228	3841	/NPCs/Cop/BoatDock/objColombianHandCuffs1
-2229	3842	/NPCs/Cop/BoatDock/objColombianHandCuffs2
-2230	1335	/NPCs/Cop/BoatDock/objPoliceDock
-2231	1334	/NPCs/Cop/BoatDock/objOfficerDock
-2232	3843	/NPCs/Writer/CopyFlash/objCopyFlashClerk
-2233	3844	/Furniture/Writer/CopyFlash/objCopyFlashCounter
-2234	3845	/Furniture/Writer/CopyFlash/objCopyFlashLogo
-2235	3864	/Misc/objNewsPaper
-2236	3866	/Misc/objRadio
-2237	3860	/Player/objNail
-2238	3860	/Player/objNailStuck
-2239	3874	/Enemies/Soldier/objSoldierBurnt
-2240	3880	/Interface/UnlocksImport/objFansMasks
-2241	3882	/Interface/UnlocksImport/objNickeGuns
-2242	3883	/Interface/UnlocksImport/objCobraMasks
-2243	3884	/Interface/UnlocksImport/objSonStyles
-2244	-1	/Interface/AchievementList/objAchievementList
-2245	-1	/Interface/AchievementList/objAchievementUnlock
-2247	-1	/Interface/Options/objOptions
-2248	3897	/NPCs/Soldiers/Store/objShopPeople
-2249	3898	/NPCs/Soldiers/Store/objShopPeoplePray
-2251	-1	/Interface/VHSMenu/objOnlineHighscores
-2252	-1	/Interface/objPigCredits
-2253	-1	/Credits/objCreditList
-2254	3902	/Editor/objEditorDoorH2
-2255	3903	/Editor/objEditorDoorV2
-2256	3904	/Misc/objHatDrop
-2257	2067	/Misc/objDrugSampleHenchman
-2258	483	/Misc/objNickeGlasses
-2259	3910	/Player/Kills/Specific/objPKillAxe
-2260	-1	/Interface/vhs/VHSOptions/objPauseControls
-2261	3926	/Misc/Weapons/objAcid
-2262	3927	/Effects/Fumes/objFumes
-2263	-1	/Effects/Fumes/objFumer
-2264	3929	/Player/Kills/Specific/objPKillAcid
-2265	3933	/Effects/Taser/objTaserSpark
-2266	3934	/Effects/Taser/objTaserElectric
-2267	3935	/Player/Cars/Cobra_Car/objCobraTruck
-2268	1434	/Player/Cars/Cobra_Car/objCobraTruckFloor
-2269	3943	/Furniture/Floor/objCaveWater
-2271	3940	/Furniture/Jungle/Trees/objCavePlant1
-2272	3941	/Furniture/Jungle/Trees/objCavePlant2
-2273	3942	/Furniture/Jungle/Trees/objCavePlant3
-2274	3944	/Furniture/Jungle/Trees/objJackHammer
-2276	3945	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveStone
-2277	-1	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveStones
-2278	-1	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveTimer
-2279	3946	/Misc/LightSmoke/objSewerCloud
-2280	3947	/Furniture/Floor/objFrodusPoster
-2281	3948	/Furniture/Floor/objDirtyShoes
-2282	3949	/Furniture/Cobra/50BlessingsOffice/objAirCondition
-2283	3950	/Furniture/Son/Hideout/objHenchmanCarWhole
-2284	3951	/Player/Cars/SonVan/objSonVan
-2285	3969	/NPCs/Writer/BikerBar/objHammarin
-2286	3973	/Enemies/Dodger/objGangDodger
-2287	3977	/Enemies/Dodger/objSoldierDodger
-2288	-1	/Enemies/Dodger/objDodger
-2289	3979	/NPCs/Henchman/Home/objHenchmanSearch
-2290	-1	/Interface/Options/Censorship/objCensorship
-2292	306	/Misc/Weapons/objNickeKnife
-2293	3997	/Misc/Weapons/objBottleBroken
-2294	4010	/NPCs/Writer/BikerBar/objCopBroken
-2295	-1	/Misc/LightSmoke/objDeathWishStairsDarkness
-2297	4044	/NextRoom/objEditorNextRoom
-2298	4046	/NextRoom/objTransitionPlacer
-2299	4048	/Misc/objRatCassettes
-2300	1643	/Player/objPlayerGhost
-2301	-1	/Interface/SplashScreens/DevolverAbstraction/objDevolverAbstraction
-2302	4057	/NPCs/Fans/HQParty/objSjellos
-2303	4058	/NPCs/Writer/Court/objBikerCourt
-2304	4059	/NPCs/Fans/HQParty/objSimon
-2305	-1	/AG/objShardRenderer
-2306	-1	/AG/objBulletRenderer
-2307	-1	/AG/objSparkRenderer
-2308	40	/Enemies/Victims/objVictim2Hostile
-2309	-1	/Enemies/Victims/objVictimEnemy
-2310	-1	/AG/objWoodWindowRenderer
-2311	-1	/AG/objCasinoFloor1
-2312	4068	/NPCs/Fans/HQParty/objRasmus
-2313	4062	/NPCs/Fans/HQParty/objGreenKingdom
-2314	4065	/NPCs/Fans/HQParty/objVestronVulture
-2315	4064	/NPCs/Fans/HQParty/objModulogeek
-2316	4063	/NPCs/Fans/HQParty/objCiniMod
-2317	4066	/NPCs/Fans/HQParty/objChromacle
-2318	4069	/NPCs/Fans/HQParty/objBlanchard
-2319	4070	/NPCs/Fans/HQParty/objEvans
-2320	4072	/Furniture/Henchman/ChopShop/objGarageDoorH
-2321	4073	/Furniture/Henchman/ChopShop/objGarageDoorV
-2322	4071	/Furniture/PigButcher/PoliceStation/objInterrogationMirror
-2323	4074	/Player/Kills/Specific/objHenchmanKillSkateboard
-2324	-1	/AG/objZebraShardRenderer
-2326	-1	/AG/objFlameRenderer
-2327	-1	/AG/objStripClubRenderer
-2328	-1	/AG/objPoliceStationFloor2Part2
-2329	4076	/AG/objZebraWall
-2330	-1	/Editor/Editor_Menus/objDuplicator
-2332	-1	/AG/objFloorHoleRenderer
-2333	4096	/Player/objBikerKnife
-2334	4079	/Player/Biker/objBiker
-2335	4129	/Player/Jacket/objJacket
-2337	4149	/Misc/Weapons/objDrill
-2338	4151	/Misc/Weapons/objPotFull
-2339	4150	/Misc/Weapons/objPotEmpty
-2340	4096	/Player/objBikerKnifeStuck
-2341	4139	/Interface/objJacketMaskMenu
-2342	-1	/object2342
-2343	4157	/Misc/Weapons/objSilencedUzi
-2344	4135	/Player/Kills/Specific/objPKillDrill
-2345	4154	/Player/Cars/JacketCar/objJacketCar
-2346	4097	/Misc/Weapons/objCleaver
-2347	4094	/Player/Cars/BikerBike/objBikerBike
-2348	4145	/Player/Kills/Specific/objBikerKillFat
-2349	3354	/Player/Cars/PigCart/objPigCart
-2350	2744	/Editor/Editor_Menus/objDialogueEditor2
-2351	-1	/Editor/Editor_Menus/objFloorSelector
-2352	-1	/Editor/Editor_Menus/objCampaignEditor
-2354	4178	/Editor/HLM2CutsceneEditor/objCutsceneEditor
-2355	4172	/Editor/HLM2CutsceneEditor/objEditorNPC
-2358	-1	/Editor/HLM2CutsceneEditor/objSoundChoice
-2359	-1	/Editor/HLM2CutsceneEditor/objActionChoice
-2360	-1	/Editor/HLM2CutsceneEditor/objWalkChoice
-2361	-1	/Editor/HLM2CutsceneEditor/objCharacterOptions
-2362	-1	/Editor/HLM2CutsceneEditor/objEditorBackground2
-2363	-1	/Editor/HLM2CutsceneEditor/objSongChoice
-2364	-1	/Editor/HLM2CutsceneEditor/objFadeChoice
-2365	-1	/Editor/HLM2CutsceneEditor/objWaitChoice
-2366	-1	/Editor/HLM2CutsceneEditor/objSequenceChoice
-2367	-1	/Editor/HLM2CutsceneEditor/objNextChoice
-2368	-1	/Editor/HLM2CutsceneEditor/objSpriteChoice
-2369	-1	/Editor/HLM2CutsceneEditor/objAnimateChoice
-2370	-1	/Editor/HLM2CutsceneEditor/objInteractChoice
-2371	-1	/Editor/HLM2CutsceneEditor/objCharacterProperties
-2372	-1	/Editor/HLM2CutsceneEditor/objDeathChoice
-2373	-1	/Editor/HLM2CutsceneEditor/objAttackChoice
-2375	-1	/Editor/HLM2CutsceneEditor/objSetSprites
-2376	-1	/Editor/HLM2CutsceneEditor/objTransitionChoice
-2379	-1	/Editor/HLM2CutsceneEditor/objCutsceneFader
-2380	-1	/Editor/Editor_Menus/objRainPlacer
-2381	-1	/Editor/Editor_Menus/objDarknessPlacer
-2382	-1	/Editor/HLM2CutsceneEditor/objEditorItem
-2383	-1	/Editor/HLM2CutsceneEditor/objActivateChoice
-2384	-1	/NPCs/objCustomNPC
-2385	-1	/Editor/HLM2CutsceneEditor/objRotateChoice
-2386	-1	/Editor/objSetBorders
-2387	4162	/Player/Hammer/objTheHammer
-2388	-1	/Editor/HLM2CutsceneEditor/objEditorConversation
-2389	-1	/Editor/Editor_Menus/objBackgroundChoice
-2390	-1	/CustomLevelSelect/objCustomLevelMenu
-2391	-1	/CustomLevelSelect/objCustomLevelBackground
-2392	-1	/Editor/objEditorFader
-2393	-1	/Editor/HLM2CutsceneEditor/objPublishChoice
-2394	4271	/Player/Cars/HammerCar/objHammerCar
-2395	4272	/Player/Cars/HammerCar/objHammerCarFloor
-2396	1118	/Enemies/Soldier/objSoldierMeleePatrol
-2397	-1	/Editor/objCustomLevelQuery
-2398	-1	/Editor/objCoverSelector
-2399	-1	/Editor/objLevelSelector
-2400	-1	/Interface/VHSMenu/objCustomBoxSelector
-2401	-1	/objEditorWeapon
-2402	4283	/Editor/HLM2CutsceneEditor/objCutscenePlayer
-2403	4290	/Player/Kills/Specific/objJacketKillThroat
-2404	4288	/Player/objWaterProjectile
-2405	3927	/Effects/Fumes/objFumeSmall
-2406	4283	/NPCs/objExtra
-2407	2077	/Enemies/Mafia/objEMafiaIdleSmoke
-2408	2078	/Enemies/Mafia/objEMafiaIdlePipe
-2409	1336	/Enemies/Police/objPoliceIdleTalk
-2410	1320	/Editor/NextRoom/objEditorElevator
-2411	4354	/Editor/objEditorBarrier
-2412	4355	/Editor/objEditorEntry
-2413	128	/Editor/objEditorRailsLeft
+0	/Interface/TitleScreen/objTitleScreen	-1	-2
+3	/Interface/TitleScreen/objPalmTree	3	0
+4	/Interface/TitleScreen/objHouses	8	0
+5	/Editor/objEditor	-1	-5
+6	/Interface/objBackgroundColor	-1	1010
+7	/Editor/objEditorWallH	62	-1
+8	/Editor/objEditorWallV	63	-1
+9	/Editor/objWall	-1	0
+10	/Editor/objEditorEnemy	-1	0
+11	/Editor/objEditorObjects	-1	0
+12	/Editor/objCheckbox	71	-5
+13	/Editor/objButtons	77	-6
+14	/Interface/Act/objAct	-1	0
+16	/Interface/Act/objFlock2	-1	100
+19	/Interface/Scene/City/objBloodDraw	-1	0
+20	/Interface/Scene/City/objTextBlood	82	0
+21	/Interface/Scene/City/objPalmTrees	84	0
+22	/Interface/Scene/City/objSeaGlimmer	94	0
+23	/Interface/Scene/City/objSkyline1	95	0
+24	/Interface/Scene/City/objSkyline2	96	0
+25	/Editor/objEditorDoorV	91	0
+26	/Editor/objEditorDoorH	92	0
+27	/Editor/objEditorWindowLeft	87	0
+28	/Editor/objEditorWindowRight	88	0
+29	/Editor/objEditorWindowUp	89	0
+30	/Editor/objEditorWindowDown	90	0
+31	/Editor/objEditorBrickWallV	100	-9
+32	/Editor/objEditorBrickWallH	99	-9
+33	/Editor/objEditorSoftWallV	97	-1
+34	/Editor/objEditorSoftWallH	98	-1
+35	/Player/PigButcher/objPigButcher	12	0
+36	/Player/objPlayer	-1	0
+37	/Interface/objConversation	-1	0
+38	/Interface/objEffector	72	-200
+39	/Furniture/objFurniture	-1	0
+40	/Enemies/Victims/objVictim1	30	0
+41	/Enemies/Victims/objVictim3	38	0
+42	/Enemies/Victims/objVictim2	174	0
+43	/Misc/LightSmoke/objPiglight1	103	-3
+44	/Effects/Blood/objSplat	-1	3
+45	/Interface/objGore	-1	3
+46	/Effects/Blood/objSmudge	-1	3
+47	/Effects/Blood/objBigBlood	-1	3
+48	/Effects/Blood/objTinyBlood	123	3
+49	/Effects/Blood/objBlood	-1	0
+50	/Enemies/objEnemy	-1	0
+51	/Enemies/objDeadBody	42	2
+52	/Effects/Blood/objBloodPool	102	2
+53	/Editor/sprEditorRailsLeft	128	0
+54	/Editor/objEditorRailsRight	130	0
+55	/Editor/objEditorRailsDown	127	0
+56	/Editor/objEditorRailsUp	1863	0
+57	/Furniture/PigButcher/Party/objCouchParty	131	1
+58	/Furniture/PigButcher/Party/objMiscKeg	132	1
+59	/Furniture/PigButcher/Party/objAquariumParty	134	1
+60	/Furniture/PigButcher/Party/objTableParty	135	1
+61	/Furniture/PigButcher/Party/objTableKitchenParty	136	1
+62	/Furniture/PigButcher/Party/objTableBrokenParty	137	1
+63	/Furniture/objSinkParty	138	1
+64	/Furniture/PigButcher/Party/objStrollerParty	140	1
+65	/Furniture/objToiletParty	141	1
+66	/Furniture/objTubParty	142	1
+67	/Furniture/PigButcher/Party/objTVTableParty	143	1
+68	/Furniture/PigButcher/Party/objRecordPlayerParty	144	1
+69	/Furniture/objBenchPorchParty	145	1
+70	/Furniture/objWheelBarrowParty	146	1
+71	/Furniture/objCounterKitchen	125	1
+72	/Furniture/objCupboardKitchen	147	1
+73	/Furniture/objSink	148	1
+74	/Furniture/objFridge	149	1
+75	/Furniture/PigButcher/Party/objStoveParty	139	1
+76	/Interface/objPigBackground	-1	1010
+77	/Interface/objFilmTitle	-1	0
+78	/Enemies/Victims/objVictim3KnockedOut	36	1
+79	/Furniture/Floor/objBrokenVinyls	155	2
+80	/Enemies/objKnockedOut	28	1
+81	/Player/PigButcher/objPigKillBlunt	20	0
+82	/Effects/Blood/objBloodSquirt	156	0
+83	/Misc/Weapons/objBat	158	1
+84	/Furniture/objSolid	-1	0
+85	/Player/objPlayerDead	213	1
+86	/Furniture/objTrashbagOpen	161	1
+87	/Furniture/objTrashbag	163	1
+88	/Furniture/Floor/objPizza	162	2
+89	/Furniture/Floor/objDoorMat	159	2
+90	/Furniture/objHatRack	160	-1
+91	/Furniture/Floor/objCigaretteButts	165	2
+92	/Furniture/Floor/objAlcoholContainers	167	2
+93	/Furniture/PigButcher/Party/objDeskParty	166	1
+94	/Furniture/Floor/objVideoGames	173	2
+95	/Furniture/PigButcher/Party/objGlobe	168	1
+96	/Furniture/PigButcher/Party/objBoxes	170	1
+97	/Furniture/objPhones	172	1
+98	/Furniture/objBookshelf	171	1
+99	/Furniture/objToolbox	169	1
+100	/Misc/Weapons/objShotgunWall	175	-1
+101	/Editor/objEditorPorchWallV	177	0
+102	/Editor/objEditorPorchWallH	176	0
+103	/Furniture/objChairWood	179	1
+104	/Furniture/objArmChair	178	1
+105	/Enemies/Victims/objVictim45Idle	181	0
+106	/Misc/LightSmoke/objPiglight2	180	-3
+107	/Furniture/PigButcher/Party/objBedKid	189	1
+108	/Furniture/objBigBed	188	1
+109	/Furniture/objBoomboxParty	190	1
+110	/Furniture/PigButcher/Party/objTVParty2	191	1
+111	/Furniture/PigButcher/Party/objGuitarRig	186	2
+112	/Furniture/Floor/objShirts	187	2
+113	/Furniture/PigButcher/Party/objDeskKidParty	220	1
+114	/Furniture/objSofaTV	221	1
+115	/Furniture/PigButcher/Party/objTVParty3	222	1
+116	/Furniture/PigButcher/Party/objTVParty4	224	1
+117	/Furniture/objMakeupTable	225	1
+118	/Furniture/objNightstandParty	226	1
+119	/Furniture/objDeskPictures	227	1
+120	/Furniture/Floor/objVaseBroken	228	2
+121	/Furniture/objVaseStand	229	1
+122	/Furniture/objCabinBooze	223	1
+123	/Furniture/objCloset	237	1
+124	/Interface/objNextroom	219	-101
+125	/Enemies/Victims/objVictim5	268	0
+126	/Enemies/Victims/objVictim4	230	0
+127	/Furniture/objClosetHanger1	239	-2
+128	/Furniture/objClosetHanger2	240	-2
+129	/Editor/objDoorWardrobe	243	0
+130	/Furniture/Floor/objMagazines	241	2
+131	/Furniture/objPlantBig	244	-1
+132	/Furniture/objPlantSmall	245	1
+133	/Furniture/objTub	246	1
+134	/Furniture/objToilet	247	1
+135	/Furniture/Floor/objNetDoor	248	1
+136	/Furniture/Floor/objSocks	250	2
+137	/Furniture/Floor/objDressParty	251	2
+138	/Furniture/Floor/objPants	252	2
+139	/Furniture/Floor/objRobeParty	254	2
+140	/Furniture/objLaundryBasket	253	1
+141	/Furniture/Floor/objWaterPuddle	255	2
+142	/Enemies/objVictimCrawl	37	1
+143	/Player/PigButcher/objPKillRape	21	-100
+144	/Misc/Weapons/objHammer	260	1
+145	/Misc/Weapons/objWeapon	-1	0
+146	/Player/PigButcher/objPigKillStomp	22	0
+147	/Player/objBullet	262	0
+148	/Effects/objSpark	263	0
+149	/Effects/objSmokeHit	264	0
+150	/Misc/Weapons/objDoubleBarrel	266	1
+151	/Misc/objMaskDrop	267	2
+152	/Furniture/MovieSet/objMovieWallUp	270	0
+153	/Furniture/MovieSet/objMovieWallRight	272	0
+154	/Furniture/MovieSet/objMovieWallLeft	273	0
+155	/Furniture/MovieSet/objMovieWallDown	271	0
+156	/NPCs/PigButcher/Party/objSoundEngineer	282	0
+157	/NPCs/PigButcher/Party/objCleaner	279	0
+158	/NPCs/PigButcher/Party/objCameraman	278	0
+159	/NPCs/PigButcher/Party/objDirector	281	0
+160	/NPCs/PigButcher/Party/objVictim5Script	39	0
+161	/NPCs/PigButcher/Party/objPigButcherIdle	12	0
+162	/Furniture/MovieSet/objFilmCamera	274	0
+163	/Furniture/MovieSet/objFilmLight	275	0
+164	/Furniture/MovieSet/objPortableGenerator	276	0
+165	/Furniture/MovieSet/objFilmCrew	-1	0
+166	/NPCs/PigButcher/Party/objDirectorWalk	287	0
+167	/Interface/FloorCleared/objFloorCleared	288	0
+169	/Player/Fans/objPlayerTiger	293	0
+170	/Enemies/Gang/objEGangMeleeRandom	205	0
+171	/Enemies/Gang/objEGang	-1	0
+173	/Misc/Weapons/objKnife	307	1
+174	/Misc/Weapons/objChain	308	1
+175	/Misc/Weapons/objButterfly	307	1
+176	/Misc/Weapons/objPipe	305	1
+177	/Misc/Weapons/objShotgun	304	1
+178	/Misc/Weapons/objUzi	303	1
+179	/Misc/Weapons/obj9mm	302	1
+180	/Misc/Weapons/objNailGun	3868	1
+181	/Enemies/objEBullet	262	0
+182	/Effects/Cartridges/objShell	310	2
+183	/Enemies/Gang/objEGangRandom	201	0
+184	/Enemies/Gang/objEGangPatrol	201	0
+185	/Player/Fans/objPlayerZebra	326	0
+186	/Enemies/Gang/objEGangStatic	208	0
+187	/Player/Kills/objPKillChain	333	1
+188	/Player/Kills/objPKillBlunt	20	1
+189	/Player/Kills/objPKillBash	20	1
+190	/Player/Kills/Specific/objTigerKill	292	1
+191	/Player/Kills/objPKillKnife	336	1
+192	/Player/Kills/objPKillLean	334	0
+193	/Furniture/Floor/objTrashFood	370	2
+194	/Furniture/Floor/objWeight	372	2
+195	/Furniture/Floor/objCouchCushion	362	2
+196	/Furniture/Floor/objStyrofoam	357	2
+197	/Furniture/Floor/objDumbbell	356	2
+198	/Furniture/objDeadLift	355	1
+199	/Furniture/Fans/StolenGoods/objTreadmill	371	1
+200	/Furniture/Fans/StolenGoods/objStolenGoodsTV	369	1
+201	/Furniture/Fans/StolenGoods/objStolenGoodsTable	368	1
+202	/Furniture/Fans/StolenGoods/objStolenGoodsBox	367	1
+203	/Furniture/Fans/StolenGoods/objStolenGoods	366	1
+204	/Furniture/Fans/StolenGoods/objSmallTableGang	365	1
+205	/Furniture/Fans/StolenGoods/objTableGang	364	1
+206	/Furniture/objCouchPurple	363	1
+207	/Furniture/objCouchBeige	361	1
+208	/Furniture/Fans/StolenGoods/objBedGang	360	2
+209	/Furniture/Fans/DrugDealer/objBarShelfGang2	359	1
+210	/Furniture/Fans/DrugDealer/objBarGang2	358	1
+212	/Furniture/Fans/DrugDealer/objDrugCrates	353	1
+213	/Furniture/Fans/StolenGoods/objBenchPress	352	1
+214	/Furniture/objKitchenSink	373	1
+215	/Furniture/objTVBig	374	1
+216	/Furniture/Fans/StolenGoods/objWaterPipes	375	1
+217	/Furniture/Fans/StolenGoods/objTableCarStereo	376	1
+218	/Furniture/Fans/DrugDealer/objFusebox	377	-1
+219	/Furniture/Fans/DrugDealer/objTableBluePrints	378	1
+220	/Furniture/objGeneratorBig	379	1
+221	/Furniture/Floor/objHubCaps	380	2
+222	/Furniture/objToolboxBig	382	1
+223	/Furniture/Floor/objSewerGrate	381	3
+224	/Furniture/Fans/StolenGoods/objTableCameras	383	1
+225	/Furniture/Fans/StolenGoods/objConsolesBox	384	1
+226	/Furniture/Floor/objMatressGang	385	2
+227	/Furniture/objLaundryMachine	387	1
+228	/Furniture/Fans/StolenGoods/objClothesLine	386	-2
+229	/Enemies/Gang/objEGangIdlePipe	195	0
+230	/Enemies/Gang/objEGangIdleKnife	211	0
+231	/Enemies/Gang/objEGangIdleSmoke	210	0
+233	/Enemies/Victims/objVictim6	389	0
+234	/Interface/objMaskMenu	391	0
+235	/Player/Cars/Fans_Van/objFansVanBottom	393	2
+236	/Player/Cars/Fans_Van/objFansVan	392	-2
+237	/Interface/objFloorBlood	-1	3
+238	/Interface/FloorCleared/objLevelCleared	-1	0
+239	/Furniture/Floor/objChemicals	395	2
+240	/Furniture/Fans/DrugDealer/objCocaineCrates	396	1
+241	/Furniture/Fans/DrugDealer/objCocaineTable	397	1
+242	/Furniture/Fans/DrugDealer/objTableComputerGang	400	1
+243	/Furniture/Fans/DrugDealer/objFileCabinet	401	1
+244	/Furniture/Fans/DrugDealer/objLightbulbsBox	402	1
+245	/Furniture/Fans/DrugDealer/objMarijuanaBig	403	1
+246	/Furniture/Fans/DrugDealer/objMarijuanaCrate	404	1
+247	/Furniture/Fans/DrugDealer/objMarijuanaCrop	405	1
+248	/Furniture/Fans/DrugDealer/objMarijuanaTable	406	1
+249	/Furniture/Fans/DrugDealer/objMarijuanaSmall	407	1
+250	/Furniture/Floor/objFloorSafe	398	3
+251	/Furniture/Fans/DrugDealer/objTableChemicals	399	1
+252	/Furniture/Fans/DrugDealer/objTableMoney	408	1
+253	/Misc/LightSmoke/objMarijuanaLight	410	-3
+254	/Furniture/Fans/DrugDealer/objGunTable	412	1
+255	/Furniture/Fans/DrugDealer/objGunrack	413	1
+256	/Furniture/Fans/DrugDealer/objAmmoCrates	411	1
+257	/Furniture/Fans/HQ/objStageFans	414	1
+258	/Furniture/Fans/HQ/objFansTable	415	1
+259	/Furniture/Fans/HQ/objFansMannequins	416	1
+260	/Effects/Smoke/ArcadeMachines/objArcadeKDFW	417	1
+261	/Furniture/Fans/HQ/objBarFans	418	1
+262	/Furniture/Fans/HQ/objFansInCouch	419	1
+263	/Furniture/Fans/HQ/objFansComputerTable	422	1
+264	/Furniture/Fans/HQ/objFansCouch1	421	1
+265	/Furniture/Fans/HQ/objMasksBox	420	1
+266	/Player/Fans/objPlayerSwan1	423	0
+267	/Misc/LightSmoke/objFansHQLight	425	-3
+268	/Furniture/Fans/HQ/objFansLights	426	-4
+269	/Furniture/objUrinal	427	1
+270	/Furniture/Fans/HQ/objNeonSign	428	-4
+271	/Furniture/Fans/DrugDealer/objAirHockey	429	1
+272	/Effects/Smoke/ArcadeMachines/objArcadeLuftrausers	430	1
+273	/Effects/Smoke/ArcadeMachines/objArcadeGuns	431	1
+274	/Furniture/Fans/DrugDealer/objBarTable	432	1
+275	/Furniture/Fans/DrugDealer/objBasketballGame	433	1
+276	/Furniture/Fans/DrugDealer/objBarGang	434	1
+277	/Furniture/Fans/DrugDealer/objBarShelfGang	435	1
+278	/Furniture/Fans/DrugDealer/objChairGang	437	1
+279	/Furniture/Fans/DrugDealer/objDJSet	438	1
+280	/Furniture/Fans/DrugDealer/objBarTableTiny	439	1
+281	/Furniture/Fans/DrugDealer/objBarTableGlass	440	1
+282	/NPCs/Fans/DrugDealers/objHenchmanCouch	481	1
+283	/Furniture/Fans/DrugDealer/objKaraokeMachine	442	1
+284	/Furniture/Fans/DrugDealer/objBoothGang	436	1
+285	/Misc/LightSmoke/objBarLight	443	-3
+286	/Furniture/Fans/HQ/objBarLightsBig	444	-4
+287	/Furniture/Fans/HQ/objBarLightsMedium	445	-4
+288	/Furniture/Fans/DrugDealer/objBarLightsSmall	446	-4
+289	/Furniture/objHugePlant	447	-1
+290	/NPCs/Fans/DrugDealers/objHenchmanDie	461	1
+291	/Interface/objRestart	-1	0
+292	/Interface/objGameOverBackground	-1	1010
+293	/NPCs/Fans/HQParty/objPandaBartender	474	0
+294	/NPCs/Fans/HQParty/objPartyBoy1	475	0
+295	/NPCs/Fans/HQParty/objPartyBoy2	476	0
+296	/NPCs/Fans/HQParty/objPartyGirl2	479	0
+297	/NPCs/Fans/HQParty/objPartyGirl1	477	0
+298	/NPCs/Fans/HQParty/objPartyGirl2Mask	478	0
+299	/NPCs/Fans/HQParty/objPartyBoy1Mask	480	0
+300	/NPCs/Fans/HQParty/objMoon	482	0
+301	/NPCs/Fans/HQParty/objMoonGlasses	483	1
+302	/Interface/objVBorder	485	0
+303	/Interface/objHBorder	484	0
+304	/Interface/Points/objPoints	-1	-100
+305	/NPCs/Fans/DrugDealers/objPerturbator	488	0
+306	/NPCs/Fans/HQParty/objJasper	492	0
+307	/NPCs/Fans/HQParty/objBarbecue	491	0
+308	/Interface/HUD/objAmmoDraw	-1	0
+309	/NPCs/PigButcher/Interview/objHost	493	0
+310	/NPCs/PigButcher/Interview/objPigInterview	496	0
+311	/Furniture/PigButcher/Interview/objTalkShowChairs	503	0
+312	/Furniture/PigButcher/Interview/objAudience	502	0
+313	/Furniture/PigButcher/Interview/objTalkShowCurtains	507	0
+314	/Furniture/PigButcher/Interview/objTalkShowDJ	508	0
+315	/Furniture/PigButcher/Interview/objRichard	509	0
+316	/Furniture/PigButcher/Interview/objTalkshowCamera	513	0
+317	/Furniture/PigButcher/Interview/objTalkShowTable	512	0
+318	/Furniture/PigButcher/Interview/objTeleprompter	510	0
+319	/Furniture/PigButcher/Interview/objTalkshowCoach	511	0
+320	/Misc/LightSmoke/objTalkshowLight	-1	-100
+321	/Misc/LightSmoke/objSpotlight	514	0
+322	/Furniture/PigButcher/Interview/objEllenDead	516	0
+323	/NPCs/PigButcher/Interview/objPigInterviewStand	530	0
+324	/Player/Nicke/objNicke	533	0
+325	/Effects/Flamethrower/objFlamer	-1	0
+326	/Effects/Flamethrower/objFlame	539	0
+327	/Effects/Flamethrower/objFireBallFlame	540	0
+328	/Interface/objBackgroundTropicalEvening	-1	1010
+329	/Interface/objBackgroundTropicalNight	-1	1010
+660	/Furniture/Jungle/Trees/objPalmTreeDay	1085	-2
+661	/Furniture/Jungle/Trees/objPalmTreeNight	1085	-2
+662	/Interface/objBackgroundTropicalJungle	-1	1010
+663	/Interface/Rain/objRain	-1	-100
+664	/Interface/Rain/objRainDrop	-1	0
+665	/Interface/Rain/objRainHit	1091	0
+666	/Furniture/Jungle/Trees/objBigTreeDay	1089	-2
+667	/Furniture/Jungle/Trees/objBigTreeNight	1089	-2
+668	/Furniture/Jungle/Trees/objAlienPlant2	1109	1
+669	/Furniture/Jungle/Trees/objAlienPlant2Roots	1110	2
+670	/Furniture/Jungle/Trees/objAlienPlant3	1111	1
+671	/Furniture/Jungle/Trees/objAlienPlant3Roots	1112	1
+672	/Enemies/Soldier/objSoldierMeleeRandom	1118	0
+673	/Enemies/Soldier/objSoldier	-1	0
+674	/Enemies/Soldier/objSoldierRandom	1117	0
+675	/Editor/objWoodWallV	1132	0
+676	/Editor/objWoodWallInteriorV	1133	0
+677	/Editor/objWoodWallH	1131	0
+678	/Editor/objWoodWallInteriorH	1134	0
+679	/Furniture/Jungle/objFirePlace	1136	0
+680	/Furniture/Jungle/objRussianFlag	1138	0
+681	/Furniture/Jungle/objMilitaryJeep	1137	0
+682	/Editor/objWoodWindowV	1143	0
+683	/Editor/objWoodWindowH	1925	0
+684	/Furniture/Jungle/objMilitaryBed	1147	1
+685	/Furniture/Jungle/objMilitaryBunk	1148	1
+686	/Furniture/Jungle/objMilitaryPlans	1149	1
+687	/Furniture/Jungle/objTent	1145	1
+688	/Furniture/Jungle/objBarbedWire	1146	1
+689	/Furniture/Jungle/objRadioCentral	1150	1
+690	/Furniture/Jungle/objSupplies	1155	1
+691	/Furniture/Jungle/objStoveMilitary	1154	1
+692	/Furniture/Jungle/objClosetMilitary	1157	1
+693	/Furniture/Jungle/objAmmoBox	1151	1
+694	/Furniture/Jungle/objSupplyBox	1152	1
+695	/Furniture/Jungle/objFoodBox	1153	1
+696	/Enemies/Soldier/objSoldierPatrol	1117	0
+697	/Enemies/Soldier/objSoldierStatic	1117	0
+698	/Enemies/Soldier/objSoldierFatKnife	1163	0
+699	/Furniture/Jungle/objMilitaryDiningTable	1170	1
+700	/Furniture/Jungle/objMilitaryBuffe	1171	1
+701	/Furniture/Jungle/objMilitaryKitchen	1172	1
+702	/Furniture/Jungle/objHelicopter	1173	0
+703	/Furniture/Floor/Jungle/objBeanCan	1175	2
+704	/Enemies/Soldier/objSoldierFatGun	1161	0
+705	/Editor/objGlassPanel	-1	0
+706	/Enemies/Soldier/objSoldierIdlePonchoSmoke	1178	0
+707	/Enemies/Soldier/objPoncho	1177	1
+708	/Enemies/Soldier/objSoldierIdleRain	1179	0
+709	/Player/objStartPoint	-1	-10
+710	/Editor/objInvisibleWallH	1183	-100
+711	/Editor/objInvisibleWallV	1184	-100
+712	/Editor/objInvisibleWallD1	1185	-100
+713	/Editor/objInvisibleWallD2	1186	-100
+714	/Furniture/Jungle/objSoldierTent	1187	1
+715	/Furniture/Jungle/objWeaponTable	1192	1
+716	/Furniture/Jungle/objFirePlacePot	1188	0
+717	/Furniture/Jungle/objLog	1190	1
+718	/Furniture/Jungle/objGeneralTable	1189	1
+719	/Furniture/Jungle/objTurtleCorpse	1191	1
+720	/Misc/Weapons/objHeavy	1193	1
+721	/Misc/Weapons/objFlameThrower	1195	1
+722	/Misc/Weapons/objSniperRifle	1196	1
+723	/Misc/Weapons/objKalashnikov	1197	1
+724	/Misc/Weapons/objM16	1194	1
+725	/NPCs/Soldiers/Jungle/objSquadBlack1	1199	0
+726	/NPCs/Soldiers/Jungle/objSquadFat1	1200	0
+727	/NPCs/Soldiers/Jungle/objSquadJacket1	1201	0
+728	/NPCs/Soldiers/Jungle/objGeneralTalk1	1202	-1
+729	/NPCs/Soldiers/Jungle/objGeneral	-1	0
+730	/Furniture/Jungle/objGeneralDrapes	-1	0
+731	/Furniture/Jungle/objGeneralDrape	1205	-1
+732	/Furniture/Floor/Jungle/objBones	1206	2
+733	/Furniture/Floor/Jungle/objStoneNight	1216	2
+734	/Furniture/Floor/Jungle/objJeepTyre	1207	2
+735	/Furniture/Floor/Jungle/objAmericanFlag	1209	2
+736	/Furniture/Jungle/objGeneralBed	1215	1
+737	/NPCs/Soldiers/Jungle/objParrot	1210	0
+738	/NPCs/Soldiers/Jungle/objGeneralParrot	1210	0
+740	/Furniture/Floor/Jungle/objStoneDay	1208	2
+741	/Misc/Weapons/objMachete	1198	1
+742	/Interface/Scene/NickeScene/objNickePalmTree	1217	0
+743	/Interface/Scene/NickeScene/objNickeBigTree	1218	1
+744	/Interface/Scene/NickeScene/objForest	-1	-10
+745	/Interface/Scene/NickeScene/objJungleNightBG	-1	10
+746	/Interface/Scene/NickeScene/objNickeGreenery	1220	0
+747	/Interface/Scene/NickeScene/objJungleNightScene	-1	-100
+748	/Interface/Scene/NickeScene/objJungleDayScene	-1	-100
+749	/Interface/Scene/NickeScene/objJungleDayBG	-1	10
+750	/Interface/LevelSelect/objLevelSelect	-1	0
+751	/Interface/LevelSelect/objLevelPalmTree	1222	-1
+752	/Furniture/Cop/Mall/objMallBasketBalls	1223	1
+753	/Furniture/Cop/Mall/objMallRegister	1224	1
+754	/Furniture/Cop/Mall/objMallChair	1225	1
+755	/Furniture/Cop/Mall/objMallFootballs	1226	1
+756	/Furniture/Cop/Mall/objMallGames	1227	1
+757	/Furniture/Cop/Mall/objMallJewels	1228	1
+758	/Furniture/Cop/Mall/objMallShoes	1229	1
+759	/Furniture/Cop/Mall/objMallTrashCan	1230	1
+760	/Furniture/Cop/Mall/objMallTVs	1231	1
+761	/Furniture/Cop/Mall/objMallVinyls	1232	1
+762	/Furniture/Cop/Mall/objMallSuperFunCabinet	1234	1
+763	/Player/Cop/objCop	1243	0
+764	/Player/Cars/Cop_Car/objCopCar	1258	0
+765	/Player/Cars/Cop_Car/objCopCarFloor	1260	2
+766	/Player/Cars/Cop_Car/objCopCarTrunk	1259	-1
+767	/NPCs/Soldiers/Jungle/objSquadField1	1267	0
+768	/NPCs/Soldiers/Jungle/objSquadBlackField1	1268	0
+769	/NPCs/Soldiers/Jungle/objEnemySoldierGivenUp	1270	0
+770	/NPCs/Soldiers/Jungle/objSquadJacket2	1269	0
+771	/NPCs/Soldiers/Jungle/objSquadJacket3Idle	1274	0
+772	/NPCs/Soldiers/Jungle/objSquadFat2Idle	1275	0
+773	/Enemies/Soldier/objSoldierBurn	1279	0
+774	/Enemies/objDyingBody	42	1
+775	/Effects/Flamethrower/objFlameSmoke	1280	0
+776	/Furniture/Cop/Mall/objCheapSign	1284	-1
+777	/Furniture/Cop/Mall/objClothesHanger2	1286	0
+778	/Furniture/Cop/Mall/objEmptyShelf	1282	0
+779	/Furniture/Cop/Mall/objTurtlesRack	1289	1
+780	/Furniture/Cop/Mall/objMallPerfume	1288	1
+781	/Furniture/Cop/Mall/objClothesHanger1	1283	0
+782	/Furniture/Cop/Mall/objSlidingDoors	1293	1
+783	/Furniture/Cop/Mall/objToyGuns	1294	1
+784	/Furniture/Cop/Mall/objStuffSign	1295	-1
+785	/Furniture/Floor/Mall/objTurtle	1290	2
+786	/Furniture/Floor/Mall/objMallSuperFun	1233	2
+787	/Furniture/Floor/Mall/objNesCartridge	1291	2
+788	/Furniture/Floor/Mall/objBrokenPerfume	1281	2
+789	/Furniture/Floor/Mall/objJewelShard	1311	2
+790	/Furniture/Cop/Mall/objBasketBall	1297	1
+791	/Player/Kills/Specific/objCopKillShotgun	1298	1
+792	/Player/Kills/Specific/objPKillStomp	1252	1
+793	/Furniture/Cop/Mall/objNuclearThrone1	1306	0
+794	/Furniture/Cop/Mall/objNuclearThrone2	1307	0
+795	/Furniture/Cop/Mall/objNuclearThrone3	1308	0
+796	/Furniture/Cop/Mall/objNuclearThrone4	1309	0
+797	/Furniture/Cop/Mall/objNuclearThrone5	1310	0
+798	/Furniture/Cop/Mall/objATM	1301	1
+799	/Furniture/Floor/objMoney	1305	2
+800	/Furniture/Cop/Mall/objMallCoffeeTable	1302	1
+801	/Furniture/Cop/Mall/objVendingMachine	1312	0
+802	/Furniture/Cop/Mall/objCleaningCart	1313	0
+803	/Furniture/Cop/Mall/FoodStore/objDoubleFridge	1314	1
+805	/Furniture/Cop/Mall/FoodStore/objFreezer	1316	1
+806	/Furniture/Cop/Mall/FoodStore/objFan	1315	1
+807	/Furniture/Cop/Mall/FoodStore/objFoodFridge	1317	1
+808	/Furniture/Cop/Mall/FoodStore/objMagazineRack	1318	1
+809	/Furniture/Cop/Mall/FoodStore/objStoreShelf	1319	1
+810	/Interface/Elevators/objElevator	1320	1
+811	/Interface/Date/objDate	-1	-1000
+812	/Furniture/Cop/Mall/Storage/objMallSafe	1326	1
+813	/Furniture/Cop/Mall/Storage/objMallStorage	1325	1
+814	/Furniture/Cop/Mall/Storage/objBench	1322	1
+815	/Furniture/Cop/Mall/Storage/objLocker	1323	0
+816	/Furniture/Cop/Mall/Storage/objMallSecurity	1324	1
+817	/Furniture/Floor/Mall/objTowels	1327	2
+818	/Furniture/Cop/Mall/objGangVan	1292	0
+819	/Furniture/Cop/Mall/Storage/objDumpster	1328	1
+820	/Misc/LightSmoke/objFreezerSmoke	1329	-3
+821	/Effects/objSparkle	1330	0
+822	/NPCs/Cop/Mall/objPoliceAim	1334	0
+823	/NPCs/Cop/Mall/objPolicePoint	1335	0
+824	/Furniture/Cop/objPoliceCar	1339	0
+826	/Furniture/Cop/Diner/objDinerBuffe	1344	1
+827	/Furniture/Cop/Diner/objDinerGrill	1347	1
+828	/Furniture/Cop/Diner/objDinerSink	1348	1
+829	/Furniture/Cop/Diner/objDinerSupplies	1349	1
+830	/Furniture/Cop/Diner/objDinerTable	1351	1
+831	/Furniture/Cop/Diner/objDinerSupplies2	1350	1
+832	/Furniture/Cop/Diner/objDinerCounter	1345	1
+833	/Furniture/Cop/Diner/objDinerChair	1368	1
+834	/Furniture/Cobra/Apartment/objFlipperGame	1352	1
+835	/Furniture/Cobra/Apartment/objArmchairBeads	1355	1
+836	/Furniture/Cobra/Apartment/objDirtyBathTub	1356	1
+837	/Furniture/Cobra/Apartment/objRedneckCouch	1359	1
+838	/Furniture/Cobra/Apartment/objDirtySink	1362	1
+839	/Furniture/Cobra/Apartment/objDirtyToilet	1363	1
+840	/Furniture/Fans/PizzaPlace/objPizzaDisplay	1361	1
+841	/Furniture/Cobra/Apartment/objTVDinner	1360	1
+842	/Furniture/Cobra/Apartment/objCobraPhone	1369	1
+843	/Furniture/Fans/PizzaPlace/objPizzaCounter	1364	1
+844	/Furniture/Fans/PizzaPlace/objPizzaTable	1367	1
+845	/Furniture/Fans/PizzaPlace/objPizzaOven	1366	1
+847	/Furniture/Fans/PizzaPlace/objPizzaRegister	1372	1
+848	/Furniture/Cobra/Apartment/objKitchenBench	1371	1
+849	/Furniture/Cobra/Apartment/objDeadPlant	1370	-1
+850	/Furniture/Cop/Diner/objWashingMachine	1374	1
+851	/Furniture/Cop/Diner/objDinerBench	1373	1
+852	/Furniture/Cop/Diner/objPhoneBooth	1375	1
+853	/Furniture/objStove	1376	1
+854	/NPCs/Cop/Diner/objDinerChef	1378	0
+855	/NPCs/Cop/Diner/objDinerWaitress	1377	-1
+856	/Furniture/Cop/Diner/objDinerCup	1346	1
+857	/Editor/objDinerWindowLeft	1389	0
+858	/Editor/objDinerWindowTop	1387	0
+859	/Player/Fans/objPlayerBear	462	0
+860	/Furniture/Fans/PizzaPlace/objPizzaPickUp	1393	0
+861	/Furniture/Cop/Diner/objChange	1394	1
+862	/Editor/objDinerWindowBottom	1395	0
+863	/NPCs/Fans/PizzaPlace/objPizzaDude	1379	-1
+864	/Interface/ScoreScreen/objScoreScreen	-1	0
+865	/Interface/ScoreScreen/objSmallPalmTree	1397	0
+866	/Player/Cobra/objPlayerCobra	1401	0
+867	/Furniture/Cobra/Apartment/objShaver	1354	1
+868	/Furniture/Cobra/Apartment/objHair	1353	2
+869	/Furniture/Cobra/Apartment/objForms	1430	1
+870	/Player/Cars/Cobra_Car/objCobraCar	1432	0
+871	/Player/Cars/Cobra_Car/objCobraCarFloor	1434	2
+873	/Player/Kills/Specific/objPKill9mm	1437	1
+874	/Player/Kills/Specific/objPKillUzi	1438	1
+875	/Enemies/Mafia/objEMafiaMeleeRandom	66	0
+876	/Enemies/Mafia/objEMafiaRandom	70	0
+877	/Enemies/Mafia/objEMafiaStatic	70	0
+878	/Enemies/Mafia/objEMafiaPatrol	70	0
+880	/Misc/Weapons/objSilencer	1458	1
+881	/Misc/Weapons/objClub	1457	1
+882	/Misc/Weapons/objMP5	1459	1
+883	/Enemies/Mafia/objEMafia	-1	0
+884	/Furniture/Cobra/NewsPaper/objCopyMachine	469	1
+885	/Furniture/Cobra/NewsPaper/objEditorTable	1483	1
+886	/Furniture/Cobra/NewsPaper/objBeverageTable	1485	1
+887	/Furniture/Cobra/NewsPaper/objOfficeBoxes	1486	1
+888	/Furniture/Cobra/NewsPaper/objOfficeCabinet	1487	1
+889	/Furniture/Cobra/NewsPaper/objOfficeArmChair	1488	1
+890	/Furniture/Cobra/NewsPaper/objOfficeCouch	1489	1
+891	/Furniture/Cobra/NewsPaper/objOfficeLunchTable	1490	1
+892	/Furniture/Cobra/NewsPaper/objOfficeMiniGolf	1491	2
+893	/Furniture/Cobra/NewsPaper/objOfficeMeetingTable	1492	1
+894	/Furniture/Cobra/NewsPaper/objOfficeConferenceTable	1493	1
+895	/Furniture/Cobra/NewsPaper/objOfficeRoundTable	1494	1
+896	/Furniture/Cobra/NewsPaper/objOfficeReception	1495	1
+897	/Furniture/Cobra/NewsPaper/objOfficeDeskBig	1496	1
+898	/Furniture/Cobra/NewsPaper/objOfficeDeskSmall	1497	1
+899	/Furniture/Cobra/NewsPaper/objOfficeTrophies	1498	0
+900	/Furniture/Cobra/NewsPaper/objEditorAquarium	1503	1
+901	/Furniture/Cobra/NewsPaper/objEditorModernArt	1507	1
+902	/Furniture/Cobra/NewsPaper/objEditorGlassTable	1506	1
+903	/Furniture/Cobra/NewsPaper/objEditorLiquor	1505	1
+904	/Furniture/Cobra/NewsPaper/objEditorCouch	1504	1
+905	/Furniture/Cobra/NewsPaper/objWaterCooler	1509	1
+906	/Editor/objDinerWindowRight	1502	0
+907	/Furniture/Cobra/NewsPaper/objOfficeDrapes	1510	1
+908	/Furniture/Cobra/Tattoo/objTattooTrophies	1536	0
+909	/Furniture/Cobra/NewsPaper/objOfficeProjector	1511	1
+910	/Misc/Weapons/objBottle	1513	1
+911	/Player/Kills/objPKillBottle	1470	1
+912	/Player/Kills/objPKillBottleBroken	1471	1
+914	/NPCs/Cobra/NewsPaper/objNewsPaperEditor	1518	1
+916	/Enemies/Mafia/objEMafiaIdlePhoneSilencer	1521	0
+918	/Interface/objCobraMaskMenu	1524	0
+919	/Furniture/Cobra/Tattoo/objTattooRegister	1531	0
+920	/Furniture/Cobra/Tattoo/objTattooShelf	1535	1
+921	/Furniture/Cobra/Tattoo/objTattooEquipment	1533	1
+923	/Furniture/Cobra/Tattoo/objTattooChair	1530	1
+924	/Furniture/Cobra/Tattoo/objTattooBed	1529	1
+925	/Furniture/Floor/Tattoo/objTattooLogo	1534	2
+926	/NPCs/Cobra/Tattoo/objTattooClient	1538	0
+927	/NPCs/Cobra/Tattoo/objTattooerWork	1537	0
+928	/NPCs/Cobra/Tattoo/objTattooerTalk	1522	0
+929	/Furniture/Cobra/NewsPaper/objMoneyCase	1484	0
+930	/Interface/vhs/objPlay	-1	0
+931	/Enemies/Police/objEPoliceMeleeRandom	1553	0
+932	/Enemies/Police/objEPoliceRandom	1551	0
+933	/Enemies/Police/objEPolicePatrol	1558	0
+934	/Enemies/Police/objEPoliceStatic	1558	0
+935	/Enemies/Police/objPolice	-1	0
+936	/Misc/Weapons/objStick	1567	1
+937	/Enemies/Police/objFatPolice	1570	0
+938	/Enemies/Mafia/objEMafiaMeleePatrol	66	0
+939	/Enemies/Police/objEPoliceMeleePatrol	1553	0
+940	/Misc/Weapons/objTaser	1580	1
+941	/Enemies/Gang/objEGangMeleePatrol	202	0
+942	/Furniture/PigButcher/PoliceStation/objMetalDetector	1587	-10
+943	/NPCs/PigButcher/PoliceStation/Jail/objPoliceInterrogation	1603	0
+944	/NPCs/PigButcher/PoliceStation/Jail/objPigInterrogation	1607	0
+945	/Furniture/PigButcher/PoliceStation/objPoliceDeskPig	1608	0
+946	/Furniture/PigButcher/PoliceStation/objCellDoor	1594	0
+947	/Furniture/PigButcher/PoliceStation/objPoliceChairPig	1611	1
+948	/NPCs/PigButcher/PoliceStation/Jail/objPoliceGuard	1550	0
+949	/NPCs/PigButcher/PoliceStation/Jail/objPigKillNeck	1613	0
+950	/Editor/objBarsH	1609	0
+951	/Editor/objBarsV	1610	0
+952	/Editor/objCellDoorH	1594	0
+953	/Furniture/PigButcher/PoliceStation/objCellBed	1593	0
+954	/Furniture/PigButcher/PoliceStation/objCellToilet	1597	0
+955	/Furniture/PigButcher/PoliceStation/objPoliceDesk	1589	0
+956	/Furniture/PigButcher/PoliceStation/objPolicePhoneTable	1618	0
+957	/Furniture/PigButcher/PoliceStation/objPoliceRecorder	1619	0
+958	/Furniture/PigButcher/PoliceStation/objPoliceSpeakerBooth	1620	0
+959	/Furniture/PigButcher/PoliceStation/objPolicePhone1	1616	0
+960	/Furniture/PigButcher/PoliceStation/objPolicePhone2	1617	0
+961	/Furniture/PigButcher/PoliceStation/objPoliceSpeakerDesk	1621	0
+962	/Furniture/PigButcher/PoliceStation/objPoliceFileCabinet	1590	0
+963	/Furniture/PigButcher/PoliceStation/objCamera	1595	-10
+964	/Furniture/PigButcher/PoliceStation/objPoliceInterrogationDesk	1591	0
+965	/Furniture/PigButcher/PoliceStation/objPoliceForensicsTable	1623	0
+966	/Furniture/PigButcher/PoliceStation/objPoliceCoffeeTable	1624	0
+967	/Furniture/objTrashCan	1592	1
+968	/Furniture/PigButcher/PoliceStation/objPoliceArmChair	1625	1
+969	/Furniture/PigButcher/PoliceStation/objPoliceCouch	1626	1
+970	/Furniture/PigButcher/PoliceStation/objPoliceBlackBoard	1628	0
+971	/Furniture/PigButcher/PoliceStation/objPoliceReception	1627	0
+972	/Furniture/PigButcher/PoliceStation/objPoliceRelaxTable	1633	0
+973	/NPCs/PigButcher/PoliceStation/Jail/objPrisoner1	1634	0
+974	/Interface/smokebackground/objNewBGNormal	-1	1010
+975	/Interface/smokebackground/objNewBGPig	-1	1010
+976	/NPCs/PigButcher/PoliceStation/Interrogation/objGirlRevenge	1629	0
+977	/NPCs/PigButcher/PoliceStation/Interrogation/objFatPoliceInterrogate	1637	0
+978	/NPCs/PigButcher/PoliceStation/Interrogation/objPoliceChairWeigh	1638	0
+979	/Furniture/PigButcher/PoliceStation/objSpeakerTable	1639	0
+980	/Furniture/PigButcher/PoliceStation/objPoliceInterrogationTable	1644	0
+981	/Furniture/Writer/Subway/objTrainSeatsDouble	1645	1
+982	/Furniture/Writer/Subway/objTrainSeatsLine	1646	1
+983	/Furniture/Writer/Subway/objTrainStandHandles	1648	-1
+984	/Furniture/Writer/Subway/objTrainLeanHandles	1651	1
+985	/Furniture/Writer/Subway/objHandles	1647	1
+986	/Editor/objSubwayWallH	1649	-2
+987	/Editor/objSubwayWindowH	1650	-2
+988	/Furniture/Writer/Subway/objSubwayDoors	1652	1
+989	/Interface/objTrain	-1	1001
+990	/objStorm	-1	6
+991	/objSpeedLine	94	0
+992	/NPCs/Writer/Subway/objGirl1Subway	1666	0
+993	/NPCs/Writer/Subway/objMan1Subway	1669	0
+994	/NPCs/Writer/Subway/objBoy2Subway	1665	0
+995	/NPCs/Writer/Subway/objBoy1Subway	1668	0
+996	/NPCs/Writer/Subway/objWoman1Subway	1667	0
+997	/NPCs/objNPC	-1	0
+998	/Player/Writer/objWriterSubway	1654	0
+999	/NPCs/Writer/Subway/objSubwayHobo	1662	0
+1000	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceTakingFood	1675	0
+1001	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceNoHat	1674	0
+1002	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceEat	1673	0
+1003	/Furniture/MovieSet/objMovieDishes	1678	1
+1004	/Furniture/MovieSet/objMovieBuffe	1677	1
+1005	/NPCs/PigButcher/PoliceStation/Filmset/objPoliceTalk	1336	0
+1008	/Furniture/PigButcher/Apartment/objPigTub	1689	0
+1009	/Furniture/PigButcher/Apartment/objPigCouch	1679	0
+1010	/Furniture/PigButcher/Apartment/objPigDinnerTable	1680	0
+1011	/Furniture/PigButcher/Apartment/objPigKitchenShelf	1682	0
+1012	/Furniture/PigButcher/Apartment/objScript	1685	0
+1013	/Furniture/PigButcher/Apartment/objPigPhone	1684	0
+1014	/Furniture/PigButcher/Apartment/objPigKitchenTable	1683	0
+1015	/Furniture/PigButcher/Apartment/objPigKitchenCounter	1681	0
+1016	/NPCs/PigButcher/Apartment/objGirlEscape	1691	0
+1017	/NPCs/PigButcher/Apartment/objPigSleeping	1692	0
+1018	/Furniture/PigButcher/Apartment/objPigPaper	1693	1
+1020	/Furniture/PigButcher/Apartment/objPigTV	1694	0
+1022	/NPCs/PigButcher/Apartment/objPoliceKnock	1601	0
+1023	/Misc/objKeys	1699	0
+1024	/Interface/part/objPartTitle	-1	0
+1025	/Interface/part/Flock/objBirdpoint	1701	0
+1026	/Interface/part/Flock/objFlock	-1	0
+1027	/Interface/part/Flock/objBird	1701	0
+1028	/Furniture/Writer/Court/objCourtBench	1702	1
+1029	/Furniture/Writer/Court/objCourtChair	1703	0
+1030	/Furniture/Writer/Court/objCourtPodium	1704	0
+1031	/Furniture/Writer/Court/objCourtReporterTable	1705	0
+1032	/Furniture/Writer/Court/objCourtTable	1706	0
+1033	/Furniture/Writer/Court/objCourtJurySeats	1707	0
+1034	/Furniture/Writer/Court/objCourtBigTable	1716	0
+1035	/Furniture/Writer/Court/objCourtFence	1717	0
+1036	/Furniture/Writer/Court/objCourtLogo	1708	2
+1037	/NPCs/Writer/Court/objJury	1712	0
+1038	/NPCs/Writer/Court/objJuror2Idle	1714	0
+1039	/NPCs/Writer/Court/objJuror1Idle	1713	0
+1040	/NPCs/Writer/Court/objCourtReporter	1710	0
+1041	/NPCs/Writer/Court/objLawyer	1727	0
+1042	/NPCs/Writer/Court/objJudge	1711	0
+1043	/NPCs/Writer/Court/objJacketCourt	1709	0
+1044	/Player/Writer/objWriterCourt	1719	0
+1045	/objNextRoom	-1	0
+1046	/NPCs/Writer/Court/objInspectorWitness	3356	0
+1047	/NPCs/Writer/Court/objProsecutor	1715	0
+1048	/Player/Writer/objWriter	2022	0
+1049	/Player/Cars/Taxi/objTaxi	1731	0
+1050	/Player/Cars/Taxi/objTaxiFloor	1733	2
+1051	/Player/Fans/objPlayerSwanChainsaw	1735	0
+1052	/Player/Fans/objPlayerSwanGun	1740	0
+1053	/Enemies/objBodyPiece	-1	2
+1054	/Enemies/objSeveredHead	342	1
+1055	/Misc/Weapons/objChainsaw	1754	1
+1057	/Player/Kills/Specific/objPKillChainsaw	1748	1
+1059	/Interface/LSDblend/objLSD	-1	1023
+1060	/NPCs/Henchman/Highway/objHenchmanHighwayCar	1756	0
+1061	/NPCs/Henchman/Highway/objMoneyFly	1758	-1
+1062	/NPCs/Henchman/Highway/objPalmTreeTop	1761	0
+1063	/Player/Kills/Specific/objPKillChainsawLean	1765	0
+1064	/Enemies/Dog/objDogPatrol	1766	0
+1065	/Player/objPlayerDieDog	1772	1
+1066	/Enemies/Dog/objDog	-1	0
+1067	/Player/Henchman/objPlayerHenchman	1786	0
+1068	/Editor/objEditorAtticDoorV	1777	0
+1069	/Editor/objEditorAtticDoorH	92	0
+1070	/Player/Kills/Specific/objTigerKillDog	1809	0
+1071	/Player/Kills/objKill	-1	0
+1072	/Interface/objBG	-1	0
+1073	/Interface/vhs/objPause	-1	0
+1074	/Player/Cars/Fans_Van/objFansVanDrive	392	0
+1075	/Effects/objCellPhone	1841	2
+1076	/Furniture/Henchman/ChopShop/objFerrari	1842	1
+1077	/Furniture/Henchman/ChopShop/objLambourghini	1843	1
+1078	/Furniture/Henchman/ChopShop/objMustang	1844	1
+1079	/Furniture/Henchman/ChopShop/objWinnebago	1845	0
+1080	/Furniture/Floor/Henchman/objCarFinishHose	1846	2
+1081	/Furniture/Henchman/ChopShop/objEngineLift	1847	1
+1082	/Furniture/Henchman/ChopShop/objAcadoGT	1848	1
+1083	/Furniture/Henchman/ChopShop/objCarTyre	1858	1
+1084	/Furniture/Henchman/ChopShop/objCarWorkTable	1857	1
+1085	/Furniture/Henchman/ChopShop/objCarVacuum	1856	1
+1086	/Furniture/Henchman/ChopShop/objCarWashHose	1855	1
+1087	/Furniture/Henchman/ChopShop/objWashBucket	1854	1
+1088	/Furniture/Henchman/ChopShop/objCarFinishSupplies	1849	-1
+1089	/Furniture/Henchman/ChopShop/objCarSuppliesShelf	1853	-1
+1090	/Furniture/Henchman/ChopShop/objCarWashSupplies	1859	1
+1091	/Furniture/Henchman/ChopShop/objCarPartsShelf	1851	-1
+1092	/Furniture/Henchman/ChopShop/objCarSuppliesLocker	1852	1
+1093	/Furniture/Henchman/ChopShop/objCarLocker	1850	0
+1094	/Furniture/Henchman/ChopShop/objCarLift	1860	1
+1095	/Furniture/Henchman/ChopShop/objPoolTable	1861	1
+1096	/Furniture/Fans/Squat/objBox	1867	1
+1097	/Furniture/Fans/Squat/objBoxSmall	1868	1
+1098	/Furniture/Floor/objBrokenWallH	1869	1
+1099	/Furniture/Floor/objBrokenWallV	1870	1
+1100	/Furniture/Fans/Squat/objHookah	1873	1
+1101	/Effects/Water/objWaterPool	1874	2
+1102	/Furniture/Fans/Squat/objAtticParty	1871	3
+1103	/Furniture/Fans/Squat/objHomelessBed	1872	2
+1104	/Furniture/Fans/HQ/objFansCouch2	1875	1
+1105	/NPCs/Fans/HQ2/objBearCheckGun	1879	0
+1106	/NPCs/Fans/HQ2/objSwanRollJoint	1877	0
+1107	/NPCs/Fans/HQ2/objSwan2Sitting	1878	0
+1108	/NPCs/Fans/HQ2/objTigerDrink	1876	0
+1109	/NPCs/Fans/Highway/objFansVanRepair	1882	-2
+1110	/NPCs/Fans/Highway/objHighwayNightBackground	-1	2
+1111	/Furniture/Fans/Highway/objStreetLight	1887	-3
+1112	/NPCs/Fans/HQ2/objFansHQScene2	-1	0
+1113	/NPCs/Fans/Squat/objSister	1890	0
+1115	/Furniture/Floor/Henchman/objSkeletons	1895	2
+1116	/Interface/LSDblend/objLSDSmoke	2050	0
+1117	/Furniture/Floor/Henchman/objSkeletonParts	1894	2
+1118	/NPCs/Henchman/Highway/objCarWreck	1893	1
+1119	/NPCs/Henchman/Highway/objHighwayBackground	-1	3
+1120	/NPCs/Henchman/Home/objHenchmanLostCar	-1	0
+1121	/Furniture/Floor/objTigerFur	1911	2
+1122	/Furniture/Henchman/Home/objHenchmanAquarium	1901	1
+1123	/Furniture/Henchman/Home/objHenchmanBed	1902	1
+1124	/Furniture/Henchman/Home/objHenchmanGlassTable	1896	1
+1125	/Furniture/Henchman/Home/objGlassWall	1904	0
+1126	/Furniture/Henchman/Home/objKitchenIsland	1905	0
+1127	/Furniture/Henchman/Home/objHenchmanTrophies	1907	0
+1128	/Furniture/Henchman/Home/objHenchmanMinibar	1906	0
+1129	/Furniture/Henchman/Home/objHenchmanTVStereo	1908	0
+1130	/Furniture/Henchman/Home/objHenchmanGunCabinet	1909	0
+1131	/Furniture/Henchman/Home/objPoolRack	1910	0
+1132	/Furniture/Henchman/Home/objExerciseBike	1912	0
+1133	/Furniture/Henchman/Home/objHenchmanBar	1913	1
+1134	/Furniture/objLeatherCouch	481	1
+1135	/NPCs/Henchman/Home/objHenchmanGirlfriend	1903	0
+1136	/Furniture/Henchman/Home/objCat	1899	0
+1137	/Furniture/Henchman/Home/objHenchmanKitchen	1917	0
+1138	/Furniture/Henchman/Home/objHenchmanPhone	1914	0
+1139	/Furniture/objBarStool	1918	1
+1140	/Furniture/Henchman/Home/objHenchmanBarStool	1919	1
+1141	/Furniture/Henchman/Home/objHenchmanBedSpecial	1920	0
+1142	/Furniture/Henchman/ChopShop/objSafe	1930	0
+1143	/Furniture/Henchman/ChopShop/objCarDesk	1931	1
+1144	/Enemies/Gang/objEGangIdleMoney	1927	0
+1145	/Furniture/Henchman/ChopShop/objMoneyBag	1928	1
+1146	/NPCs/Henchman/objAndy	210	0
+1147	/Player/Cars/Henchman_Car/objHenchmanCar	1933	0
+1148	/Player/Cars/Henchman_Car/objHenchmanCarFloor	1935	2
+1149	/Furniture/Henchman/ChopShop/objSkateRamp	1941	1
+1150	/Furniture/Henchman/ChopShop/objSkateRail	1940	1
+1151	/Furniture/Henchman/ChopShop/objSkateBox	1939	1
+1152	/Furniture/Henchman/ChopShop/objCarDiningTable	1938	1
+1153	/Furniture/Henchman/Home/objNote	1944	0
+1154	/Furniture/Henchman/ChopShop/objGraffittiCar	1947	1
+1155	/Furniture/Floor/objCarCover	1946	2
+1156	/Glass/objGlassV	1949	0
+1157	/Glass/objShard	1950	2
+1158	/Glass/objShine	1951	0
+1159	/Effects/Smoke/objFirePuff	1952	0
+1161	/Effects/Smoke/objSmokeExhale	1954	0
+1162	/Effects/Smoke/objFireBall	1955	0
+1163	/Effects/Smoke/objFireSpark	1956	0
+1164	/Effects/Smoke/objElectricity	1957	0
+1165	/Effects/Smoke/objComputerMonitorGrey	1958	0
+1166	/Effects/Smoke/objComputerMonitorGreyParts	1959	0
+1167	/Effects/Smoke/objComputerMonitorBlack	1961	0
+1168	/Effects/Smoke/objComputerMonitorBlackParts	1962	0
+1169	/Effects/Smoke/objComputerMonitorGreyBigParts	1964	1
+1170	/Effects/Smoke/objComputerMonitorBlackBigParts	1963	1
+1172	/Effects/Smoke/objTVShards	1968	0
+1173	/Effects/Smoke/objTVBigParts	1969	1
+1174	/Effects/Smoke/objElectricSpark	1956	0
+1175	/Effects/Water/objWaterSplat	-1	3
+1176	/Effects/Water/objWaterSmudge	-1	3
+1177	/Effects/Water/objBigWater	-1	3
+1178	/Effects/Water/objWater	-1	0
+1179	/Glass/objPlasticShard	1991	2
+1180	/Effects/Smoke/objAquarium	1973	0
+1181	/Effects/Smoke/objAquariumWater	1972	1
+1182	/Interface/objJungleBG	-1	0
+1183	/Effects/Blood/objIntestine	1999	2
+1184	/Effects/Blood/objBrains	1998	2
+1185	/Effects/Blood/objHeadPiece	2001	2
+1186	/Interface/LSDblend/objLSDBlend	-1	-10
+1187	/Interface/LSDblend/objEnemyLSD	2041	0
+1188	/Interface/LSDblend/objTigerBoss	2044	0
+1189	/Enemies/Bosses/TigerBoss/objTigerFadeV	2048	-11
+1190	/Enemies/Bosses/TigerBoss/objTigerFadeH	2049	-11
+1191	/Enemies/Bosses/TigerBoss/objNewBGTiger	-1	1010
+1192	/Enemies/Bosses/TigerBoss/objTigerHead	2036	0
+1193	/Furniture/Jungle/Trees/objPalmTreeLSD	2052	-12
+1194	/Furniture/Jungle/Trees/objBigTreeLSD	2051	-12
+1195	/Enemies/Bosses/TigerBoss/objTigerAttack	2035	-2
+1196	/Interface/LSDblend/objLSDBloodWhirl	2054	0
+1197	/Interface/LSDblend/objLSDParticle	-1	0
+1198	/Interface/LSDblend/objLSDBird	2058	-2
+1199	/Player/Son/objSonLSD	2059	0
+1200	/Interface/LSDblend/objLSDFlame	2062	0
+1201	/Interface/LSDblend/objLSDPop	2063	0
+1202	/Editor/objSteelDoorH	2065	0
+1203	/Editor/objSteelDoorH2	2066	0
+1204	/Furniture/Son/Hideout/objSonAmmoBox	2068	1
+1205	/Furniture/Son/Hideout/objSonAquarium	2069	1
+1206	/Furniture/Son/Hideout/objSonCouch	2070	1
+1207	/Furniture/Son/Hideout/objSonShrine	2071	1
+1208	/Furniture/Son/Hideout/objSonDesk	2073	1
+1209	/Furniture/Son/Hideout/objSonTrophies	2074	1
+1210	/Furniture/Son/Hideout/objSonGunTable	2075	1
+1211	/NPCs/Son/Hideout1/objSonGuardIdlePhone	2081	0
+1212	/NPCs/Son/Hideout1/objSonGuardIdleSmoke	2077	0
+1213	/NPCs/Son/Hideout1/objSonGuardIdlePipe	2078	0
+1214	/NPCs/Son/Hideout1/objSonCouchHideout	2079	0
+1215	/Furniture/Son/Hideout/objBoxingBag	2084	0
+1216	/Misc/objDrugSample	2067	0
+1217	/NPCs/Son/Hideout1/objSonGuardIdleSit	2089	0
+1218	/Furniture/Son/Hideout/objSonDeskChair	2088	1
+1219	/Furniture/Son/Hideout/objSonSecurity	2087	1
+1220	/Furniture/Son/Hideout/objSonVodkaBar	2085	1
+1221	/Interface/Elevators/BigElevator/objBigElevator	2095	0
+1222	/Interface/Elevators/BigElevator/objBigElevatorMask	2095	0
+1223	/Interface/Elevators/BigElevator/objBigElevatorFloor	2095	2
+1224	/Furniture/Son/Hideout/objSonCarWhole	2096	1
+1225	/Player/Rat/objRat	2394	0
+1226	/Player/Kills/Specific/objWriterKillPunch	2098	1
+1227	/Misc/Weapons/objDiscardedGun	2103	1
+1228	/Misc/Weapons/objGunClip	2104	1
+1229	/NPCs/Writer/Casino/objSaunaGangster	2136	0
+1230	/Furniture/Writer/Casino/Downstairs/objBlackJackTable	2108	1
+1231	/Furniture/Writer/Casino/Downstairs/objCrapsTable	2109	1
+1232	/Furniture/Writer/Casino/Downstairs/objCasinoRegister	2110	1
+1233	/Furniture/Writer/Casino/Downstairs/objPokerTable	2111	1
+1234	/Furniture/Writer/Casino/Downstairs/objRouletteTable	2112	1
+1235	/Furniture/Writer/Casino/Downstairs/objSlotMachine	2113	1
+1236	/Furniture/Writer/Casino/Downstairs/objVIPArmchair	2114	1
+1237	/Furniture/Writer/Casino/Downstairs/objVIPBar	2115	1
+1238	/Furniture/Writer/Casino/Downstairs/objVIPBarShelf	2116	1
+1239	/Furniture/Writer/Casino/Downstairs/objVIPFootStool	2117	1
+1240	/Furniture/Writer/Casino/Downstairs/objVIPStatue	2118	-1
+1241	/Furniture/Writer/Casino/Downstairs/objVIPTable	2119	1
+1242	/Furniture/Writer/Casino/Upstairs/objMassageTable	2120	1
+1243	/Furniture/Writer/Casino/Upstairs/objSaunaBench	2121	1
+1244	/Furniture/Writer/Casino/Upstairs/objSaunaHeater	2122	1
+1245	/Furniture/Writer/Casino/Upstairs/objSolariumClosed	2123	1
+1246	/Furniture/Writer/Casino/Upstairs/objSolariumOpen	2124	1
+1247	/Furniture/Writer/Casino/Upstairs/objVIPDesk	2125	1
+1248	/Furniture/Writer/Casino/Downstairs/objCasinoEntrance	2137	-1
+1249	/Furniture/Writer/Casino/Downstairs/objCasinoEntranceRibbons	2126	1
+1250	/Furniture/Writer/Casino/Upstairs/objSmallPainting	2127	-1
+1251	/Furniture/Writer/Casino/Upstairs/objVIPJacuzzi	2128	1
+1252	/Furniture/Writer/Casino/Upstairs/objVIPCloset	2129	1
+1253	/Furniture/Writer/Casino/Upstairs/objMassageTools	2130	1
+1254	/Furniture/Writer/Casino/Upstairs/objVIPMiniBar	2131	1
+1255	/Furniture/Writer/Casino/Upstairs/objVIPPhoneStand	2132	1
+1256	/Furniture/Jungle/TikiBar/objTikiBar	2220	1
+1257	/Furniture/Writer/Casino/Upstairs/objVIPSink	2133	1
+1258	/Furniture/Floor/objVIPTowels	2134	2
+1259	/Editor/objBalconyRailsH	2138	0
+1260	/Editor/objBalconyRailsV	2139	0
+1261	/Furniture/Writer/Casino/Upstairs/objTowelBag	2140	1
+1262	/Furniture/Writer/Casino/Upstairs/objTowelDisposal	2141	1
+1263	/NPCs/Writer/Casino/objCasinoGuard	2077	0
+1264	/NPCs/Writer/Casino/objAskForHelp	-1	0
+1265	/NPCs/Writer/Casino/objCasinoEnemy	-1	0
+1266	/Effects/WaterBlood/objSewerWaterLarge	2156	2
+1269	/Effects/WaterBlood/objSewerWaterMedium	2157	2
+1270	/Effects/WaterBlood/objSewerWaterSmall	2168	2
+1271	/Editor/objSewerWallV	2149	-2
+1272	/Editor/objSewerWallH	2148	-2
+1273	/objWaterSplash	2166	1
+1274	/Effects/WaterBlood/objSewerWater	-1	0
+1275	/Furniture/Fans/Sewer/objBigPipe	2175	-1
+1276	/Furniture/Fans/Sewer/objMediumPipe	2174	-1
+1277	/Furniture/Fans/Sewer/objSmallPipe	2173	-1
+1278	/Furniture/Fans/Sewer/objSewerPipe	2153	1
+1279	/Furniture/Fans/Sewer/objSewerPipeEnd	2155	1
+1280	/Furniture/Floor/objSewerVentillation	2172	3
+1281	/Effects/WaterBlood/objWaterSteps	-1	0
+1282	/Interface/Rain/objSewerDrip	-1	-100
+1283	/Interface/smokebackground/objNewBGUNUSED	-1	1010
+1284	/Interface/objSewerBackground	-1	1010
+1285	/Furniture/Fans/Sewer/objSewerEntrance	2150	3
+1286	/Furniture/Floor/Sewers/objLeaveOrDie	2179	3
+1287	/NPCs/Fans/Sewers/objFanSewers	293	0
+1288	/Furniture/Fans/Sewer/objSewerLadder	2151	-1
+1289	/Enemies/Gang/objEGangFat	2194	0
+1290	/Player/Kills/Specific/objTigerKnee	2195	1
+1291	/Furniture/Fans/Sewer/objPlasticFloor	2203	3
+1292	/Furniture/Fans/Sewer/objTortureTable	2204	1
+1293	/Furniture/Fans/Sewer/objAcidBath3	2198	1
+1294	/Furniture/Fans/Sewer/objAcidBath2	2176	1
+1295	/Furniture/Fans/Sewer/objAcidBath1	2197	1
+1296	/Furniture/Fans/Sewer/objAcidContainer	2199	1
+1297	/Furniture/Fans/Sewer/objBodyBag	2200	1
+1298	/Furniture/Fans/Sewer/objBodyBagPart	2201	1
+1299	/Furniture/Fans/Sewer/objManholeToxicWaste	2206	2
+1300	/Furniture/Fans/Sewer/objPlasticCoverChair	2202	1
+1301	/Furniture/Jungle/objPlasticDrape	2207	-1
+1302	/Furniture/Jungle/objPlasticDrapes	-1	0
+1303	/Player/Kills/Specific/objSwanKillFat	2189	0
+1304	/Furniture/Floor/objAcidPuddle	2208	2
+1305	/Furniture/Fans/Sewer/objSewerGrateKick	381	0
+1306	/Furniture/Jungle/TikiBar/objTikiWindowFlap	2224	-2
+1307	/Furniture/Jungle/TikiBar/objTikiTable	2223	1
+1308	/Furniture/Jungle/TikiBar/objTikiStatue	2222	1
+1309	/Furniture/Jungle/TikiBar/objTikiChair	2221	1
+1310	/NPCs/Soldiers/TikiBar/objWarBear	2227	0
+1311	/NPCs/Soldiers/TikiBar/objWarSwan1	2232	0
+1312	/NPCs/Soldiers/TikiBar/objWarSwan2	2233	0
+1313	/NPCs/Soldiers/TikiBar/objWarTiger	2234	0
+1314	/NPCs/Soldiers/TikiBar/objWarZebra	2237	0
+1315	/NPCs/Soldiers/TikiBar/objWarWriter	2235	0
+1316	/NPCs/Soldiers/TikiBar/objWarPhotographer	2228	0
+1317	/NPCs/Soldiers/TikiBar/objUSASoldier	2226	0
+1318	/NPCs/Soldiers/TikiBar/objWarSquadBlack	2239	1
+1319	/NPCs/Soldiers/TikiBar/objWarSquadFat	2240	1
+1320	/NPCs/Soldiers/TikiBar/objWarNicke	2241	1
+1321	/NPCs/Soldiers/TikiBar/objWarJacket	1201	0
+1322	/NPCs/Soldiers/TikiBar/objShelby	2238	0
+1323	/Furniture/Writer/HipsterBar/objHipsterBar	2214	1
+1324	/Furniture/Writer/HipsterBar/objHipsterBarBottles	2215	1
+1325	/Furniture/Writer/HipsterBar/objHipsterChairs	2216	1
+1326	/Furniture/Writer/HipsterBar/objHipsterTable	2217	1
+1327	/Furniture/Writer/HipsterBar/objHipsterJukebox	2218	1
+1328	/NPCs/Writer/HipsterBar/objHipsterBartender	2246	0
+1329	/NPCs/Writer/HipsterBar/objWriterHipsterBar	2245	0
+1330	/NPCs/Writer/HipsterBar/objCopHipsterBar	1385	0
+1331	/NPCs/Writer/HipsterBar/objCopLegsSit	2247	1
+1332	/Interface/VHSMenu/objVHSBox	2251	0
+1333	/Interface/VHSMenu/objBoxSelector	-1	10
+1335	/Interface/VHSMenu/objFader	-1	-10
+1336	/Interface/VHSMenu/objMidnightVHS	2256	0
+1337	/Enemies/Victims/objVictim	-1	0
+1338	/Editor/objWallCorner	2163	-2
+1339	/Editor/objBrickWallCorner	2270	-2
+1340	/Player/Kills/objPigKillLean	2271	0
+1341	/Player/Cars/Military_Jeep/objMilitaryJeepUSA	2225	-2
+1342	/Player/Cars/Military_Jeep/objMilitaryJeepUSARoof	2274	-3
+1343	/Player/Kills/Specific/objWriterKillBlunt	2282	1
+1344	/Player/Kills/Specific/objWriterKillLean	2283	1
+1345	/Editor/objBlackRailsH	2286	1
+1346	/Furniture/Son/StripClub/objStripClubTable	2287	1
+1347	/Player/Son/objSon	2358	0
+1348	/Misc/Weapons/objFamae	2385	1
+1349	/Misc/Weapons/objMendoza	2386	1
+1350	/Misc/Weapons/objShardBlade	2387	1
+1351	/Misc/Weapons/objSkateboard	1942	1
+1352	/Misc/Weapons/objMagnum	2388	1
+1353	/Enemies/Colombians/objColombian	-1	0
+1354	/Enemies/Colombians/objColombianMeleeRandom	2292	0
+1355	/Enemies/Colombians/objColombianMeleePatrol	2290	0
+1356	/Enemies/Colombians/objColombianRandom	2291	0
+1357	/Enemies/Colombians/objColombianStatic	2291	0
+1358	/Enemies/Colombians/objColombianPatrol	2291	0
+1359	/Enemies/Colombians/objColombianIdlePipe	2324	0
+1360	/Interface/objSonStyleMenu	2390	0
+1361	/Player/Kills/Specific/objSonKillKnife	2372	1
+1362	/Player/Kills/Specific/objSonKillClub	2371	1
+1363	/Player/Kills/Specific/objSonKillStomp	2376	1
+1364	/Player/Kills/Specific/objSonKillSword	2374	1
+1365	/Player/Kills/Specific/objPKillMachete	2378	1
+1366	/Player/Cars/Son_Car/objSonCar	2439	-2
+1367	/Player/Cars/Son_Car/objSonCarBottom	2442	2
+1368	/Misc/Weapons/objSword	2444	1
+1369	/Effects/discolights/objDiscoLights	2446	-101
+1370	/Effects/discolights/objDiscoDarkness	-1	-100
+1371	/Furniture/Writer/Subway/objSubwayGate	2448	1
+1372	/Furniture/Writer/Subway/objSubwayGateHolder	2449	1
+1373	/Furniture/Writer/Subway/objSubwayBench	2447	1
+1374	/Furniture/Writer/Subway/objSubwayLocker	2451	1
+1375	/Furniture/Writer/Subway/objSubwayTrain	2463	1
+1376	/Furniture/Writer/Subway/objSubwayBillBoard	2461	0
+1377	/Furniture/Writer/Subway/objSubwayMap	2464	0
+1378	/Furniture/Writer/Subway/objSubwayTicketMachine	2465	0
+1379	/Furniture/Writer/Subway/objSubwayTimeDisplay	2469	-1
+1380	/Furniture/Writer/Subway/objSubwayNameDisplay	2470	-1
+1381	/Furniture/Writer/Subway/objSubwayClosedGate	2471	1
+1382	/Furniture/Writer/Subway/objSubwayGlassWall	2472	1
+1383	/Furniture/Writer/Subway/objHoboCart	2473	1
+1384	/Furniture/Writer/50Blessings/objBunkerBed	2476	0
+1385	/Furniture/Writer/50Blessings/objBunkerCabinet	2477	1
+1386	/Furniture/Writer/50Blessings/objBunkerComputerTable	2478	1
+1387	/Furniture/Writer/50Blessings/objBunkerEmptyBoxes	2479	1
+1388	/Furniture/Floor/Bunker/objBunkerFiles	2480	2
+1389	/Furniture/Writer/50Blessings/objBunkerWaterFilter	2484	0
+1390	/Furniture/Writer/50Blessings/objBunkerGenerators	2481	0
+1391	/Furniture/Writer/50Blessings/objBunkerShelves	2483	0
+1392	/Furniture/Floor/Bunker/objBrokenComputerParts	2475	2
+1393	/Furniture/Floor/Bunker/obj50BlessingsCrap	2474	2
+1394	/Furniture/Floor/Bunker/objBunkerMasks	2482	2
+1395	/Furniture/Floor/MethLab/objMethSupplies	2492	2
+1396	/Furniture/Floor/MethLab/objGasMask	2490	2
+1397	/Furniture/Cobra/MethLab/objMethExplosion	2493	1024
+1398	/Furniture/Cobra/MethLab/objMethLab	2491	1
+1399	/Furniture/Writer/50Blessings/objBasketballHoop	2498	-2
+1400	/Furniture/Writer/50Blessings/objCopyingMachineBroken	2495	1
+1401	/Furniture/Writer/50Blessings/objBunkerMeetingTable	2496	1
+1402	/Furniture/Jungle/Hotel/objBrokenTable	2499	1
+1403	/Furniture/Floor/Bunker/obj50BlessingsFlag	2485	2
+1404	/Furniture/Writer/50Blessings/obj50BlessingsTable	2500	1
+1405	/Furniture/Writer/50Blessings/objBunkerCounter	2501	1
+1406	/Furniture/Writer/50Blessings/objBunkerKitchen	2502	1
+1407	/Furniture/Writer/50Blessings/objBunkerWorkTable	2503	1
+1408	/Furniture/Writer/50Blessings/objBurntOutHoboFire	2504	1
+1409	/Furniture/Writer/50Blessings/objBunkerChair	2497	1
+1410	/Furniture/Writer/50Blessings/objAirDuct	2505	1
+1411	/Editor/objBunkerWallH	2506	-3
+1412	/Editor/objBunkerWallV	2507	-3
+1413	/Editor/objBunkerCorner	2508	-3
+1414	/Furniture/Writer/50Blessings/objBunkerDoor	2509	0
+1415	/objEnemyHide	-1	0
+1416	/objEnemySpawn	-1	0
+1417	/objDarkness	-1	-100
+1418	/Furniture/Jungle/Hotel/objBrokenBlackJackTable	2510	1
+1419	/Furniture/Jungle/Hotel/objBrokenDiceTable	2511	1
+1420	/Furniture/Jungle/Hotel/objBrokenPokerTable	2514	1
+1421	/Furniture/Jungle/Hotel/objBrokenRouletteTable	2515	1
+1422	/Furniture/Jungle/Hotel/objBrokenAquarium	2512	1
+1423	/Furniture/Jungle/Hotel/objBrokenAquariumWater	2512	2
+1424	/Furniture/Floor/Hotel/objBrokenPalmTree	2513	2
+1425	/NPCs/Writer/50Blessings/objMaskHoboOwl	2516	0
+1426	/NPCs/Writer/50Blessings/objMaskHoboWolf	2517	0
+1427	/NPCs/Writer/50Blessings/objMaskHoboGiraffe	2518	0
+1428	/NPCs/Writer/50Blessings/objMaskHoboMonkey	2519	0
+1429	/NPCs/Writer/50Blessings/objMaskHoboPanther	2520	0
+1430	/NPCs/Writer/50Blessings/objMaskHoboLocust	2521	0
+1431	/NPCs/Writer/50Blessings/objMaskHoboChameleon	2522	0
+1432	/NPCs/Writer/50Blessings/objMaskHoboElephant	2523	0
+1433	/NPCs/Writer/50Blessings/objMaskHoboChicken	2524	0
+1434	/NPCs/Writer/50Blessings/objMaskHoboSit	2525	0
+1435	/NPCs/Writer/50Blessings/objMaskHoboStanding	2526	0
+1436	/Furniture/Floor/Bunker/obj50BlessingsLogoCandles	2528	2
+1437	/Misc/objWriterJacket	2568	2
+1438	/Furniture/Floor/Hotel/objHotelPaintingBroken	2580	2
+1439	/Furniture/Floor/Hotel/objHotelPool	2581	2
+1440	/Furniture/Jungle/Hotel/objHotelPlantsHolder1	2573	1
+1441	/Furniture/Jungle/Hotel/objHotelPlant1	2573	-2
+1442	/Furniture/Jungle/Hotel/objHotelPlantsHolder2	2574	1
+1443	/Furniture/Jungle/Hotel/objHotelPlant2	2574	-2
+1444	/Furniture/Jungle/Hotel/objBrokenBar2	2571	1
+1445	/Furniture/Jungle/Hotel/objBrokenBarBottles	2572	1
+1446	/Furniture/Jungle/Hotel/objHotelBed	2575	1
+1447	/Furniture/Jungle/Hotel/objHotelCloset	2576	1
+1448	/Furniture/Jungle/Hotel/objHotelMiniBar	2577	1
+1449	/Furniture/Jungle/Hotel/objHotelNightStand	2578	1
+1450	/Furniture/Jungle/Hotel/objHotelSink	2582	1
+1451	/Furniture/Jungle/Hotel/objBoardedWindow	2583	0
+1452	/Furniture/Jungle/Hotel/objHotelPainting	2579	-1
+1453	/Furniture/Jungle/Hotel/objBrokenDiningTable	2584	1
+1454	/Furniture/Jungle/Hotel/objHotelBuffe	2585	1
+1455	/Effects/Debris/objWoodDebris	2486	2
+1456	/Furniture/Jungle/Hotel/objParasol	2587	-1
+1457	/Furniture/Jungle/Hotel/objSunChair	2586	1
+1458	/Furniture/Jungle/Hotel/objBrokenReception	2588	1
+1460	/Enemies/Soldier/objSoldierHiding	2589	0
+1461	/NPCs/Cobra/Meth/objCobraEnemy	2591	0
+1463	/Furniture/Floor/MethLab/objExplosionGround	2489	2
+1464	/Enemies/Mafia/objEMafiaFat	2596	0
+1466	/Furniture/Cobra/50BlessingsOffice/obj50BlessingsBluePrints	2603	0
+1467	/Furniture/Cobra/50BlessingsOffice/obj50BlessingsForms	2604	0
+1468	/Furniture/Cobra/50BlessingsOffice/obj50BlessingsDesk	2608	1
+1469	/NPCs/Cobra/50Blessings/objCobraChair	2607	1
+1470	/Furniture/Cobra/50BlessingsOffice/objManagerVan	2611	0
+1471	/Effects/Debris/objMethDebris	2612	2
+1472	/NPCs/Cobra/50Blessings/objCobraSitChair	2609	-1
+1473	/NPCs/Cobra/50Blessings/obj50Manager	2618	0
+1474	/Misc/objFloppy	2606	0
+1475	/Furniture/Rat/Bar/objRussianBarFlag	2622	-1
+1476	/Furniture/Rat/Bar/objTVHolder	2623	-1
+1477	/Furniture/Rat/Bar/objRussianBarBottles	2621	-1
+1478	/Furniture/Rat/Bar/objHuntingTrophy	2620	-1
+1479	/Furniture/Rat/Bar/objDartBoard	2619	-1
+1480	/Furniture/Rat/Bar/objRussianBarStove	2625	1
+1481	/Furniture/Rat/Bar/objRussianPokerTable	2626	1
+1482	/Furniture/Son/StripClub/objStripClubArmChair	2627	1
+1483	/Furniture/Son/StripClub/objStripClubBar	2628	1
+1484	/Furniture/Son/StripClub/objStripClubBooth	2629	1
+1485	/Furniture/Son/StripClub/objStripClubBoothSmall	2630	1
+1486	/Furniture/Son/StripClub/objStripClubMinibar	2632	1
+1487	/Furniture/Son/StripClub/objStripClubEntryPodium	2631	1
+1488	/Furniture/Son/StripClub/objStripClubPodium	2634	1
+1489	/Furniture/Son/StripClub/objStripClubPodiumLights	2635	1
+1490	/Furniture/Son/StripClub/objStripClubPole	2636	1
+1491	/Furniture/Son/StripClub/objStripClubRunway	2637	1
+1492	/Furniture/Son/StripClub/objStripClubRunwayLights	2638	1
+1493	/Furniture/Son/StripClub/objStripClubSmallTable	2639	1
+1494	/Furniture/Son/StripClub/objStripClubStool	2640	1
+1495	/Furniture/Son/StripClub/objStripClubWardrobe	2641	1
+1496	/Furniture/Son/StripClub/objStripClubPlant	2633	-1
+1497	/Furniture/Son/StripClub/objStripClubDJPlayer	2642	1
+1498	/Interface/smokebackground/objNewBGSon	-1	1010
+1499	/Effects/discolights/objChangingRoomLight	-1	-100
+1500	/Effects/discolights/objBoothLight	-1	0
+1501	/Furniture/Son/StripClub/objStripClubMakeUpTable	2645	1
+1502	/Furniture/Son/StripClub/objStripClubPodiumPrivate	2647	2
+1503	/Furniture/Son/StripClub/objStripClubClothesRack	2643	0
+1504	/Furniture/Floor/objStripClubClothes	2644	2
+1505	/Editor/objMakeUpMirror	2646	0
+1506	/Furniture/Rat/Abandonned_Building/objFloorHole1	2651	3
+1507	/Furniture/Rat/Abandonned_Building/objFloorHole2	2652	3
+1508	/Furniture/Rat/Abandonned_Building/objFloorHole3	2653	3
+1509	/Furniture/Rat/Abandonned_Building/objFloorHole4	2654	3
+1511	/Furniture/Rat/Abandonned_Building/objRenovationWallH	2656	-1
+1512	/Furniture/Rat/Abandonned_Building/objRenovationWallV	2657	-1
+1513	/Furniture/Rat/Abandonned_Building/objFloorBoard	2650	2
+1514	/Interface/vhs/VHSOptions/objPauseMenu	2660	-1
+1515	/Furniture/Rat/Villa/objChildrensBed	2661	1
+1516	/Furniture/Rat/Villa/objRichDiningTable	2663	1
+1517	/Furniture/Rat/Villa/objRichDesk	2664	1
+1518	/Furniture/Rat/Villa/objSmallLiquorTable	2665	1
+1519	/Furniture/Rat/Villa/objFountainStatue	2662	0
+1520	/Furniture/Rat/Villa/objToyGun	2666	2
+1521	/Furniture/Rat/Villa/objToyLego	2667	2
+1522	/Furniture/Rat/Villa/objToyTurtle	2668	2
+1523	/Furniture/Rat/Villa/objRichWorkTable	2669	1
+1524	/Furniture/Rat/Villa/objRichMinibar	2670	1
+1525	/Furniture/Henchman/ChopShop/objBeerCooler	2672	1
+1526	/Furniture/Henchman/ChopShop/objSkateBox2	2674	1
+1527	/Furniture/Henchman/ChopShop/objHalfPipe	2675	1
+1528	/Furniture/Floor/objBrokenSkateboard	2673	2
+1529	/Furniture/Floor/Hotel/objLuggage	2677	2
+1530	/Enemies/Guards/objGuardMeleeRandom	2681	0
+1531	/Enemies/Guards/objGuardMeleePatrol	2681	0
+1532	/Enemies/Guards/objGuardRandom	2679	0
+1533	/Enemies/Guards/objGuardStatic	2679	0
+1534	/Enemies/Guards/objGuardPatrol	2679	0
+1535	/Enemies/Guards/objGuard	-1	0
+1536	/Furniture/Son/Bank/objBankChair	2701	1
+1537	/Furniture/Son/Bank/objBankArmchair	2702	1
+1538	/Furniture/Son/Bank/objBankSofa	2703	1
+1539	/Furniture/Son/Bank/objBankCouch	2704	1
+1540	/Furniture/Son/Bank/objBankRegisters	2705	1
+1541	/Furniture/Son/Bank/objBankLoungeTable	2706	1
+1542	/Furniture/Son/Bank/objBankDesk	2707	1
+1543	/Furniture/Son/Bank/objBankSecurity	2708	1
+1544	/Furniture/Son/Bank/objArmoredTransport	2648	-1
+1545	/Player/Kills/objPKillStick	2430	1
+1546	/NPCs/Son/Bank/objRobberBag	2710	0
+1547	/NPCs/Son/Bank/objRobber	1453	0
+1548	/Misc/objWeaponBag	2718	2
+1549	/Furniture/Son/Bank/objVaultOpening	2725	-1
+1550	/Furniture/Son/Bank/objBankLunchTable	2721	1
+1551	/Furniture/Son/Bank/objBankMeetingTable	2722	1
+1552	/Furniture/Son/Bank/objBankMoneyTable	2724	1
+1553	/Furniture/Son/Bank/objBankMoneyCarrier	2723	2
+1555	/Editor/objVaultDoor	2726	0
+1556	/Furniture/Son/Bank/objBankMoneyCarrierStack	2727	1
+1557	/Furniture/Son/Bank/objBankLocker	2720	1
+1558	/NPCs/Son/Bank/objBanker	2716	1
+1560	/Furniture/Son/Bank/objGoldBar	2730	2
+1561	/Furniture/Son/Bank/objGoldStack	2731	2
+1562	/Furniture/Son/Bank/objVaultMoneyBag	2732	2
+1563	/Furniture/Son/Bank/objVaultTrophy	2733	2
+1564	/NPCs/Son/Bank/objBodyGuard	2735	0
+1565	/NPCs/Son/Bank/objGrandFather	2738	0
+1566	/NPCs/Son/Bank/objFather	2737	0
+1567	/Furniture/Son/Bank/objVaultMoneyCase	1484	2
+1568	/Interface/objShade	-1	-2
+1569	/Editor/Editor_Menus/objWindowList	2744	-5
+1571	/Furniture/Jungle/Trees/objAlienPlant1	1114	1
+1572	/Furniture/Jungle/Trees/objAlienPlant4	1113	1
+1573	/Furniture/Fans/Squat/objFootBall	1866	1
+1574	/Furniture/objLeatherCouchSmall	460	1
+1575	/Interface/objEditorBackgroundColor	-1	1010
+1576	/Editor/Editor_Menus/objTopMenu	-1	-100
+1577	/Editor/Editor_Menus/objQuery	-1	-100
+1578	/Editor/Editor_Menus/objSelectPlayer	-1	-100
+1579	/Editor/Editor_Menus/objEditorWindow	-1	-100
+1580	/Editor/objEditorCharacters	-1	0
+1581	/Editor/objNextButton	2748	-6
+1582	/Editor/objEditorPlayer	-1	0
+1583	/Editor/objEditorCar	-1	0
+1584	/Editor/objLoadLevel	-1	1024
+1585	/Player/Cars/objCar	-1	0
+1586	/Editor/Editor_Menus/objDialogueEditor	2744	-100
+1587	/Furniture/Fans/HQ/objBearCar	2750	1
+1588	/Furniture/Fans/HQ/objBearCarTrunk	2751	0
+1589	/Misc/objMaskBox	2749	0
+1590	/NPCs/Fans/HQ5/objFansHQScene5	-1	0
+1591	/NPCs/Fans/HQ5/objSwan1HQ5	2753	0
+1592	/NPCs/Fans/HQ5/objTigerHQ5	2754	0
+1593	/NPCs/Fans/HQ5/objZebraHQ5	2755	0
+1594	/NPCs/Fans/HQ5/objBearHQ5	462	0
+1595	/NPCs/Fans/HQ5/objSwan2HQ5	2757	0
+1596	/Effects/Ocean/objOcean	-1	0
+1598	/Effects/Ocean/objOceanDay	-1	0
+1599	/NPCs/Soldiers/Hotel/Beach/objJacketSunBathing	2761	1
+1600	/NPCs/Soldiers/Hotel/Beach/objSquadCards	2763	1
+1601	/NPCs/Soldiers/Hotel/Beach/objGeneralDrink	2762	1
+1602	/Furniture/Floor/Jungle/objSurfBoard	2764	2
+1603	/Furniture/Jungle/Beach/objCrab	2766	0
+1604	/NPCs/Soldiers/Hotel/Outside/objUSASoldierM16	2768	0
+1605	/NPCs/Soldiers/Hotel/Outside/objUSASoliderShotgun	2769	0
+1606	/NPCs/Soldiers/Hotel/Outside/objSquadBlackLean	2770	0
+1607	/NPCs/Soldiers/Hotel/Outside/objSquadFatLean	2771	0
+1608	/NPCs/Soldiers/Hotel/Aftermath/objHotelAftermath	-1	0
+1609	/Furniture/Jungle/objHotelCars	2678	0
+1610	/NPCs/Fans/HQ4/objZebraIdle	2774	0
+1611	/NPCs/Fans/HQ4/objTigerLeanTable	2773	0
+1612	/NPCs/Fans/HQ4/objFansHQScene4	-1	0
+1613	/NPCs/Fans/HQ4/objSwanIdleJoint	2776	0
+1614	/Player/Son/objSonIdleBox	2778	0
+1615	/NPCs/Son/Hideout2/objHenchmanEnter	1786	0
+1616	/Furniture/Fans/SwanApartment/objSwanArmChair	2780	1
+1617	/Furniture/Fans/SwanApartment/objSwanBed	2781	1
+1618	/Furniture/Fans/SwanApartment/objSwanTable	2782	1
+1619	/Furniture/Fans/SwanApartment/objSwanPhones	2783	1
+1620	/Furniture/Fans/SwanApartment/objSwanStereo	2784	1
+1621	/Furniture/Fans/SwanApartment/objSwanTVShelf	2785	0
+1622	/Furniture/Fans/SwanApartment/objSwanKitchenIsland	2787	1
+1623	/Furniture/Fans/SwanApartment/objSwanCouch	2793	1
+1625	/Misc/objSwanOutfit	2792	2
+1626	/Misc/objSwanClothes	2786	2
+1627	/NPCs/Fans/SwanAparmtent/objSwanTowel	2790	0
+1628	/NPCs/Fans/SwanAparmtent/objSwanAparment	-1	0
+1629	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsFileCabinetNew	2795	0
+1630	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsComputerTableNew	2796	0
+1632	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsCounterNew	2797	0
+1633	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsKitchenNew	2798	0
+1634	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsTableNew	2799	0
+1635	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsKitchenTableNew	2800	0
+1636	/Furniture/Cobra/50BlessingsBunker/obj50BlessingsFoodPrep	2801	0
+1637	/NPCs/Cobra/50BlessingsBunker/obj50BlessingsNerd	2802	0
+1638	/NPCs/Cobra/50BlessingsBunker/obj50ManagerBunker	2618	0
+1639	/NPCs/Son/Hideout3/objRobberVodka	2806	0
+1640	/NPCs/Son/Hideout3/objRobberVodkaBag	2807	0
+1641	/NPCs/Son/Hideout3/objHideout3	-1	0
+1642	/Misc/LightSmoke/objNightmareLight	-1	-100
+1643	/Furniture/Writer/BikerBar/objBrokenBar	2810	1
+1644	/Furniture/Writer/BikerBar/objBrokenBarBooth	2811	1
+1645	/Furniture/Writer/BikerBar/objBrokenBarChair	2812	1
+1646	/Furniture/Writer/BikerBar/objBrokenBarCouch	2813	1
+1647	/Furniture/Writer/BikerBar/objBrokenBarTable	2814	1
+1648	/Furniture/Writer/BikerBar/objBrokenBarTableFans	2815	1
+1649	/NPCs/Writer/BikerBar/objBikerBroken	2822	0
+1650	/NPCs/Writer/BikerBar/objZebraBroken	2817	0
+1651	/NPCs/Writer/BikerBar/sprBearBroken	2818	0
+1652	/NPCs/Writer/BikerBar/objCobraBroken	2819	0
+1653	/NPCs/Writer/BikerBar/objSonBroken	2816	0
+1654	/NPCs/Writer/BikerBar/objPigBroken	2820	0
+1655	/NPCs/Writer/BikerBar/objNickeBroken	2821	0
+1656	/NPCs/Writer/BikerBar/objWriterBroken	2022	0
+1657	/Editor/objCursor	-1	-102
+1658	/Furniture/Fans/DeathWish/objFancyDesk	2837	1
+1659	/Furniture/Fans/DeathWish/objFancyDeskBase	2833	1
+1660	/Furniture/Fans/DeathWish/objFancyOfficeChair	2834	1
+1661	/Furniture/Fans/DeathWish/objFancyOfficeCouch	2835	1
+1662	/Furniture/Fans/DeathWish/objFancyOfficeCouchSmall	2836	1
+1663	/Furniture/Fans/DeathWish/objFancyOfficeFountainBig	2838	1
+1664	/Furniture/Fans/DeathWish/objFancyOfficeFountainMedium	2839	1
+1665	/Furniture/Fans/DeathWish/objFancyOfficeFountainSmall1	2840	1
+1666	/Furniture/Fans/DeathWish/objFancyOfficeFountainSmall2	2841	1
+1667	/Furniture/Fans/DeathWish/objFancyOfficeMeetingTable1	2842	1
+1668	/Furniture/Fans/DeathWish/objFancyOfficeMeetingTable2	2843	1
+1669	/Furniture/Fans/DeathWish/objFancyOfficeTable	2844	1
+1670	/Furniture/Fans/DeathWish/objFancyOfficeMiamiModel	2847	1
+1671	/Furniture/Fans/DeathWish/objFancyOfficeTree	2845	-1
+1672	/Furniture/Fans/DeathWish/objFancyOfficeWallLamp	2846	-1
+1673	/Furniture/Fans/DeathWish/Lab/objFancyLabCounterBig	2860	1
+1674	/Furniture/Fans/DeathWish/Lab/objFancyLabCounterSmall1	2861	1
+1675	/Furniture/Fans/DeathWish/Lab/objFancyLabCounterSmall2	2862	1
+1676	/Furniture/Fans/DeathWish/Lab/objFancyLabCart	2863	1
+1677	/Furniture/Fans/DeathWish/objFancyOfficeMeetingTableSmall	2875	1
+1678	/Furniture/Fans/DeathWish/objFancyFloorLight	2874	2
+1679	/Effects/Smoke/objWallTV	2876	0
+1680	/Furniture/Fans/DeathWish/Lab/objFancyLabIsland	2878	1
+1681	/Furniture/Son/Bank/objBankWhiteBoard	2879	1
+1682	/Furniture/Fans/DeathWish/objFancyFloorLightDark	2880	2
+1683	/Furniture/Fans/DeathWish/Roof/objRoofGenerator	2908	1
+1684	/Furniture/Fans/DeathWish/Roof/objRoofVent	2909	1
+1685	/Furniture/Fans/DeathWish/Roof/objRoofHelipad	2907	1
+1686	/Editor/objRoofWallH	2910	1
+1687	/Editor/objRoofWallV	2911	1
+1688	/Editor/objRoofWallCorner	2912	1
+1689	/NPCs/Fans/DeathWish/objSwan2BreakIn	2906	0
+1690	/NPCs/Fans/DeathWish/objSwan1DeathWish	1735	0
+1691	/NPCs/Fans/DeathWish/objTigerDeathWish	293	0
+1692	/NPCs/Fans/DeathWish/objBearDeathWish	1775	0
+1693	/NPCs/Fans/DeathWish/objZebraDeathWish	326	0
+1694	/NPCs/Fans/DeathWish/objDeathWishFloor1	-1	0
+1695	/Furniture/Cop/Mall/objSlidingDoorsDark	2919	1
+1696	/NPCs/Fans/DeathWish/objLockedSlidingDoors	2919	1
+1697	/NPCs/Fans/DeathWish/objDeathWishRoof	-1	0
+1699	/NPCs/Fans/DeathWish/objSwanRoof	468	0
+1700	/Interface/vcapexample/objVideoCapturer	-1	0
+1702	/NPCs/Fans/DeathWish/objSonRoof	2351	0
+1703	/NPCs/Fans/DeathWish/objWalkieTalkie	-1	0
+1704	/NPCs/Fans/HQParty/objCastanets	2931	0
+1705	/NPCs/Fans/HQParty/objCocoBryce	2932	0
+1706	/NPCs/Fans/HQParty/objMagicSword	2935	0
+1707	/NPCs/Fans/HQParty/objScattle	2939	0
+1708	/NPCs/Fans/HQParty/objCarpenterBrut	2930	0
+1709	/NPCs/Fans/HQParty/objElin	2933	0
+1710	/NPCs/Fans/HQParty/objMagna	2936	0
+1711	/NPCs/Fans/HQParty/objRiddarna	2938	0
+1712	/Furniture/Floor/objElTigre	2934	2
+1713	/Furniture/Floor/objMegaDrive	2937	2
+1714	/NPCs/Fans/PizzaPlace/objMike	2928	0
+1715	/NPCs/Fans/PizzaPlace/objNigel	2927	0
+1716	/NPCs/Fans/PizzaPlace/objHarry	2926	0
+1717	/NPCs/Fans/PizzaPlace/objAndrew	2925	0
+1718	/NPCs/Fans/PizzaPlace/objGraeme	2924	0
+1719	/NPCs/Fans/PizzaPlace/objRick	2929	0
+1720	/NPCs/Fans/PizzaPlace/objRicksBird	1214	0
+1721	/Furniture/Fans/PizzaPlace/objPizzaTableNoChairs	2940	1
+1722	/Interface/Scene/City/objBloodDrawRed	-1	0
+1723	/Furniture/Writer/Court/objCourtEvidence	2941	0
+1724	/Editor/objSubwayWallV	2996	-2
+1725	/Editor/objBoatRailingH	2997	-2
+1726	/Editor/objBoatRailingV	2998	-2
+1727	/Furniture/Cop/Boat/objContainerFloor	2999	2
+1728	/Furniture/Cop/Boat/objContainer	3000	-2
+1729	/Furniture/Cop/Boat/objBoatBridge	3001	1
+1730	/Furniture/Cop/Boat/objBoatTurbine	3002	-1
+1731	/Furniture/Cop/Boat/objBoatBed	3003	1
+1732	/Furniture/Cop/Boat/objBoatCargoBig	3004	1
+1733	/Furniture/Cop/Boat/objBoatCargoSmall	3005	1
+1734	/Furniture/Cop/Boat/objBoatSuppliesMeds	3006	1
+1735	/Furniture/Cop/Boat/objBoatTable	3007	1
+1736	/Furniture/Cop/Boat/objBoatRing	3008	1
+1737	/Enemies/Colombians/objColombianHiding	3009	0
+1738	/Effects/BoatWaves/objWaves	3010	10
+1740	/Furniture/Floor/sprEntryBridge	3015	3
+1741	/Furniture/Cop/Boat/objBoatRope	3014	1
+1742	/Furniture/Cop/Boat/objForkLift	3013	-2
+1743	/Furniture/Cop/Boat/objSeagull	3018	-11
+1744	/Furniture/Cop/Boat/objBoatLamp	3016	-1
+1745	/Furniture/Cop/Boat/sprBoatLampBroken	3017	-1
+1746	/Misc/LightSmoke/objBoatFrost	3021	-3
+1747	/Misc/LightSmoke/objFrostSparkle	-1	-12
+1748	/Furniture/Jungle/Trees/objPalmTreeEvening	1085	-2
+1749	/Furniture/Jungle/Trees/objBigTreeEvening	1089	-2
+1750	/NPCs/Soldiers/PowerPlant/objNickeSitGround	3027	0
+1751	/NPCs/Soldiers/PowerPlant/objTentScene	-1	0
+1752	/NPCs/Soldiers/PowerPlant/objGeneralCrazy	3023	0
+1753	/Furniture/Floor/Jungle/objGeneralFlag	3032	2
+1754	/Furniture/Floor/Jungle/objPantherDead	3033	2
+1755	/Furniture/Floor/Jungle/objPantherFace	3034	2
+1757	/Furniture/Jungle/PowerPlant/objPowerPlantBox	3041	-2
+1758	/Furniture/Jungle/PowerPlant/objPowerPlantBox2	3042	-2
+1759	/Furniture/Jungle/PowerPlant/objPowerPlantTesla	3043	-2
+1760	/Furniture/Jungle/PowerPlant/objPowerPlantTurbine	3044	-1
+1761	/Furniture/Jungle/PowerPlant/objPowerPlantTurbineSmall	3045	-1
+1762	/Editor/objPowerPlantFenceH	3046	-2
+1763	/Editor/objPowerPlantFenceV	3047	-2
+1764	/Furniture/Jungle/PowerPlant/objPowerPlantDangerSignBroken	3036	3
+1765	/Furniture/Jungle/PowerPlant/objPowerPlantDangerSign	3035	-1
+1766	/Furniture/Jungle/PowerPlant/objPowerLineEnd	3038	-3
+1767	/Furniture/Jungle/PowerPlant/objPowerLineMiddle	3039	-3
+1768	/Furniture/Jungle/PowerPlant/objPowerLines	3037	-3
+1769	/Furniture/Jungle/PowerPlant/objPowerPlantPipes	3040	-1
+1770	/Effects/JungleEveningOverlay/objJungleEveningOverlay	-1	-4
+1771	/Interface/Scene/NickeScene/objJungleEveningScene	-1	-100
+1772	/Interface/Scene/NickeScene/objJungleEveningBG	-1	10
+1773	/NPCs/Soldiers/PowerPlant/objGeneralStand	3050	0
+1774	/NPCs/Soldiers/Jungle/objSquadFatIdleGun	3051	0
+1775	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveOpening	-1	-1
+1776	/Furniture/Jungle/PowerPlant/objPowerLineWall	3048	-3
+1777	/Furniture/Jungle/PowerPlant/objParkingLot	3056	3
+1778	/Furniture/Jungle/PowerPlant/objCarFiat	3057	0
+1779	/Editor/objPowerPlantWallBroken	3054	-2
+1780	/NPCs/Soldiers/PowerPlant/objSquadBlackPullWall	3055	0
+1781	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor1	3061	1
+1782	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor2	3058	1
+1783	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor3	3063	1
+1784	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantTerminal	3053	1
+1785	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantFuseBox	3060	-1
+1786	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor1Dead	3069	1
+1787	/Furniture/Jungle/PowerPlant/Inside/objPowerPlantMonitor2Dead	3070	1
+1788	/NPCs/Soldiers/PowerPlant/objRussianGeneralSuicide	3071	0
+1789	/Furniture/Floor/objEngineerDeadWall	3066	2
+1790	/Furniture/Floor/objEngineerDead	3067	2
+1791	/NPCs/Soldiers/PowerPlant/objSquadBlackPickLock	3072	0
+1792	/NPCs/Soldiers/PowerPlant/objSquadJacketPowerPlant	2242	0
+1793	/NPCs/Soldiers/PowerPlant/objPowerPlantScene	-1	-100
+1794	/Effects/ElevatorExplosion/objExplodingElevator	1320	0
+1796	/Furniture/Jungle/PowerPlant/CaveStuff/objPowerPlantExplosions	-1	0
+1797	/NPCs/Soldiers/PowerPlant/Outro/objJacketThanks	3085	0
+1803	/Effects/NuclearBlast/objNuclearBombNicke	-1	-100
+1804	/Furniture/Cop/Mall/FoodStore/objStoreCounter	3093	1
+1805	/Player/Nicke/objNickeStore	3094	0
+1806	/NPCs/Writer/Subway/objSubwayExit	-1	0
+1809	/Enemies/Bosses/SwanBoss/objSwanBossBody	3154	0
+1810	/Enemies/Bosses/SwanBoss/objSwanChainsawHead	3163	-1
+1811	/Enemies/Bosses/SwanBoss/objSwanGunHead	3163	-2
+1812	/Enemies/Bosses/SwanBoss/objSwanBullet	3157	0
+1814	/Enemies/Bosses/SwanBoss/objSwanShadow	3156	0
+1815	/Enemies/Bosses/SwanBoss/objSwanBrainChunk	3159	2
+1816	/Enemies/Bosses/SwanBoss/objSwanShadowDive	3166	0
+1817	/Enemies/Bosses/SwanBoss/objSwanChunks	3167	2
+1818	/Misc/Weapons/objAxe	3173	1
+1822	/Enemies/Bosses/BearBoss/objBearBoss	3170	0
+1823	/Player/objPlayerDieBear	1772	1
+1824	/Enemies/Bosses/BearBoss/objGolfBag	3178	2
+1825	/Enemies/Bosses/ZebraBoss/objZebraGlassV	3179	0
+1826	/Enemies/Bosses/ZebraBoss/objZebraShard	3180	0
+1827	/Enemies/Bosses/ZebraBoss/objZebraShine	3181	0
+1828	/Enemies/Bosses/ZebraBoss/objZebraBoss	3182	0
+1829	/Enemies/Bosses/ZebraBoss/objZebraLauncher	-1	0
+1830	/Enemies/Bosses/ZebraBoss/objZebraFade	-1	-100
+1831	/Enemies/Bosses/ZebraBoss/objZebraParts	3184	0
+1832	/Effects/Rainbow/objRainbow	-1	2
+1833	/Interface/Credits/objCredits	-1	0
+1834	/Interface/Credits/objCredits2	-1	0
+1835	/Effects/Rainbow/objHeavensGateLeft	3190	-11
+1836	/Effects/Rainbow/objHeavensGateRight	3191	-11
+1837	/Enemies/objBoss	-1	0
+1838	/Furniture/Son/LSD/objSonStashTable	3195	1
+1840	/NPCs/Son/LSD/LSDGate/objMafiaDrinkLSD	2806	0
+1841	/NPCs/Son/LSD/LSDGate/objMafiaDrinkBagLSD	2807	0
+1842	/NPCs/Son/LSD/LSDGate/objMafiaSlither	3201	2
+1843	/NPCs/Son/LSD/LSDGate/objMafiaSuicide	69	0
+1844	/Player/Kills/Specific/objSonKillMafia	3203	-1
+1845	/NPCs/Son/LSD/LSDGate/objLSDGateScene	-1	0
+1846	/NPCs/Son/LSD/LSDGate/objSonSuckedIn	3198	0
+1847	/Furniture/Son/LSD/objSonCouchLSD	3210	1
+1848	/Furniture/Son/LSD/objLSDSink	3213	1
+1849	/Furniture/Son/LSD/objSonTableLSD	3211	1
+1850	/NPCs/Son/LSD/Intro/objLSDIntro	-1	0
+1851	/NPCs/Son/LSD/Intro/objSonTakeLSD	3245	0
+1852	/NPCs/Son/LSD/Intro/objMafiaFlip	1453	0
+1853	/Furniture/Son/LSD/objLSDShotgun	304	-1
+1854	/Enemies/Mafia/objFatMafiaLSD	3226	0
+1855	/Furniture/Son/LSD/objLSDBush	-1	0
+1856	/Furniture/Son/LSD/objLSDBushBig	3237	-2
+1857	/Furniture/Son/LSD/objLSDBushCorner	3239	-2
+1858	/Furniture/Son/LSD/objLSDBushSmall	3241	-2
+1859	/Furniture/Son/LSD/objLSDBushBigVines	3238	2
+1860	/Furniture/Son/LSD/objLSDBushCornerVines	3238	2
+1861	/Furniture/Son/LSD/objLSDBushVines	-1	0
+1862	/NPCs/Son/LSD/Intro/objMafiaArcade	3233	0
+1863	/NPCs/Son/LSD/Intro/objMafiaIdlePhone	2081	0
+1864	/NPCs/Son/LSD/Intro/objMafiaDrinkStill	2806	0
+1865	/NPCs/Son/LSD/Intro/objMafiaSmoke	2077	0
+1866	/NPCs/Son/LSD/Intro/objMafiaStand	1453	0
+1867	/Effects/Smoke/ArcadeMachines/objArcadeMotherRussia	3246	1
+1868	/Enemies/Bosses/TigerBoss/objShotgunMonumentLSD	3249	0
+1869	/Enemies/Bosses/TigerBoss/objShotgunMonumentPileLSD	3248	2
+1870	/Interface/LSDblend/objLSDBlendNew	-1	-1
+1871	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse1LSD	3250	1
+1872	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse2LSD	3251	1
+1873	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse3LSD	3252	1
+1874	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse4LSD	3253	1
+1875	/Enemies/Bosses/SwanBoss/Floor/objMafiaCorpse	-1	0
+1876	/Enemies/Bosses/SwanBoss/Floor/objMafiaMovingCorpse	-1	0
+1877	/NPCs/Son/LSD/Floor1/objMafiaEatLSD	3261	0
+1878	/Effects/objMafiaFlameOut	3263	0
+1879	/Furniture/Son/LSD/objLSDLabIsland	3267	1
+1880	/Enemies/Bosses/GangLeader/objGangLeader	3278	0
+1881	/Enemies/objWayPoint	-1	0
+1882	/Misc/objGangLeaderPipe	3284	2
+1883	/Misc/objGangLeaderGlasses	3277	2
+1886	/Enemies/Dodger/objColombianDodger	3287	0
+1887	/Furniture/Son/ColombianVilla/objDrumKitDisplay	3289	1
+1889	/Furniture/Son/ColombianVilla/objGuitarDisplay	3290	1
+1890	/Furniture/Son/ColombianVilla/objSynthDisplay	3291	1
+1891	/Furniture/Son/ColombianVilla/objMicrophone	3292	0
+1892	/Furniture/Son/ColombianVilla/objMicrophoneCords	3293	3
+1893	/Furniture/Son/ColombianVilla/objMixerTable	3294	0
+1894	/Furniture/Son/ColombianVilla/objVillaArmchair	3295	0
+1895	/Furniture/Son/ColombianVilla/objVillaCouchBig	3296	0
+1896	/Furniture/Son/ColombianVilla/objVillaCouch	3297	0
+1897	/Furniture/Son/ColombianVilla/objVillaDiningTable	3298	0
+1898	/Furniture/Son/ColombianVilla/objVillaStatue	3299	0
+1899	/Furniture/objSmallTable	3301	1
+1900	/Furniture/objDiningTable	3302	1
+1901	/Furniture/objBookshelfBig2	3303	1
+1902	/Furniture/objDresser	3304	1
+1903	/Furniture/objBookshelfBig	3303	-1
+1904	/Furniture/Son/ColombianVilla/objVillaBar	3307	0
+1905	/Furniture/Son/ColombianVilla/objVillaPool	3311	2
+1906	/Furniture/Son/ColombianVilla/objPoolChair	3306	0
+1907	/Furniture/Son/ColombianVilla/objVillaBed	3308	0
+1908	/Furniture/Son/ColombianVilla/objVillaDesk	3309	0
+1909	/Furniture/Son/ColombianVilla/objVillaDeskBase	3310	0
+1910	/Furniture/Son/ColombianVilla/objVillaSecurity	3312	-1
+1911	/Furniture/Son/ColombianVilla/objVillaStatueSmall	3313	-1
+1912	/Furniture/Son/ColombianVilla/objVillaJacuzzi	3314	0
+1913	/Furniture/Floor/objGolfPieces	3300	2
+1914	/NPCs/Son/ColombianVilla/objColombianHenchman	3320	0
+1915	/NPCs/Son/ColombianVilla/objColombianBoss	3316	0
+1916	/NPCs/Son/ColombianVilla/objColombianNPC	2288	0
+1917	/NPCs/Son/ColombianVilla/objMafiaNPC	1500	0
+1918	/NPCs/Son/ColombianVilla/objColombianBossChair	3317	2
+1919	/NPCs/Son/ColombianVilla/objColombianVillaScene	-1	0
+1920	/Furniture/Son/ColombianVilla/objVillaAngel	3326	0
+1921	/Furniture/Son/ColombianVilla/objVillaEntertainmentSystem	3328	-1
+1922	/Furniture/Son/ColombianVilla/objVillaSwimmingPool	3331	2
+1923	/Furniture/Son/ColombianVilla/objVillaFountain	3329	0
+1924	/Furniture/Son/ColombianVilla/objVillaTrophies	3330	0
+1925	/Furniture/Son/ColombianVilla/objWineRack	3332	0
+1926	/Furniture/Son/ColombianVilla/objVillaBottles	3333	0
+1927	/Furniture/Son/ColombianVilla/objPoolTray	3334	0
+1928	/Furniture/Son/ColombianVilla/objEntryAngel	3327	0
+1929	/Effects/Smoke/ArcadeMachines/objArcadeGuns2	3335	1
+1930	/Effects/Smoke/ArcadeMachines/sprArcadeNidhogg	3337	1
+1931	/Effects/Smoke/ArcadeMachines/objArcadeIsaac	3339	1
+1932	/Effects/Smoke/ArcadeMachines/objArcadeMeatBoy	3341	1
+1933	/NPCs/Cop/Nightmare/Phantom/objPhantom	3359	0
+1934	/Player/Cop/objPhantomChokeCop	3348	0
+1935	/NPCs/Cop/Nightmare/Phantom/objPhantomFall	3345	3
+1936	/NPCs/Cop/Nightmare/Phantom/objPoliceTape	3351	0
+1937	/NPCs/Cop/Nightmare/Phantom/objGolfCart	3354	-2
+1938	/NPCs/Cop/Nightmare/Phantom/objCopGun	2388	0
+1939	/NPCs/Cop/Nightmare/PoliceStation/objPoliceChief	3356	0
+1940	/Furniture/Cop/Nightmare/objPoliceChiefDesk	3358	1
+1941	/NPCs/Cop/Nightmare/PoliceStation/objGolfCartDrive	3354	-1
+1942	/Furniture/objBedNormal	3360	1
+1943	/NPCs/Cop/Nightmare/PoliceStation/objPolicePoint2	1335	0
+1944	/NPCs/Cop/Nightmare/PoliceStation/objWriterInterrogation	3367	0
+1945	/Furniture/Cop/CrimeScenes/CrimeScene1/objBloodMessage	3368	2
+1946	/Furniture/Cop/CrimeScenes/CrimeScene1/objCrimeSceneSign	3369	2
+1947	/Furniture/Cop/CrimeScenes/CrimeScene1/objCrimeSceneVictims	3370	2
+1948	/NPCs/Cop/CrimeScenes/objCSIPhotographer	3371	0
+1949	/NPCs/Cop/CrimeScenes/objCSIOfficers	3372	0
+1951	/Furniture/Cop/Apartment/objCopBed	3374	1
+1952	/Furniture/Cop/Apartment/objCopCloset	3376	1
+1953	/Furniture/Cop/Apartment/objCopCouch	3377	1
+1954	/Furniture/Cop/Apartment/objCopCupboard	3379	1
+1955	/Furniture/Cop/Apartment/objCopCounter	3380	1
+1956	/Furniture/Cop/Apartment/objCopNightstand	3381	1
+1957	/Furniture/Cop/Apartment/objCopTable	3384	1
+1958	/Furniture/Floor/objCSIBag	3386	2
+1959	/Furniture/Floor/objCopCouchCushion	3378	2
+1960	/Player/Cop/objCopSearch	3387	0
+1961	/objNoiseStartBlack	-1	1023
+1962	/Player/Cop/objCopWakeUp	3390	0
+1963	/NPCs/Fans/DeathWish/Outro/objSwat	3394	0
+1964	/NPCs/Fans/DeathWish/Outro/objSwatWall	3395	0
+1965	/NPCs/Fans/DeathWish/Outro/objSwatCorner	3396	0
+1966	/NPCs/Fans/DeathWish/Outro/objSwatCrouch	3397	0
+1967	/NPCs/Fans/DeathWish/Outro/objFansDead	3398	0
+1968	/NPCs/Fans/DeathWish/Outro/objSwatBossStand	3401	0
+1969	/NPCs/Fans/DeathWish/Outro/objTigerGiveUp	3400	0
+1970	/NPCs/Fans/DeathWish/Outro/objSwatTalk	3394	0
+1971	/Furniture/Fans/DeathWish/objSwatBus	3404	-1
+1972	/NPCs/Fans/DeathWish/Outro/objPoliceStand	3405	0
+1973	/NPCs/Fans/DeathWish/Outro/objSonDeadFall	3406	2
+1974	/NPCs/Cop/CrimeScenes/CrimeScene1/objCrimeScene1	-1	0
+1975	/Furniture/Floor/objVomitPuddle	3409	2
+1977	/NPCs/Cop/CrimeScenes/CrimeScene2/objCSIVomit	3408	0
+1978	/NPCs/Cop/CrimeScenes/objVictimCar	3410	0
+1979	/Furniture/Cop/Apartment/objMaskBoxNightmare	3411	1
+1980	/Furniture/Writer/Home/objWriterBed	3412	1
+1981	/Furniture/Writer/Home/objFirePlaceWriter	3414	1
+1982	/Furniture/Writer/Home/objWifeNightStand	3420	1
+1983	/Furniture/Writer/Home/objWriterChairFallen	3423	1
+1984	/Furniture/Writer/Home/objCrib	3425	1
+1985	/Furniture/Writer/Home/objKidBed	3426	1
+1986	/Furniture/Writer/Home/objWriterKitchenTable	3427	1
+1987	/Furniture/Writer/Home/objWriterLivingroomTable	3428	1
+1988	/Furniture/Writer/Home/objWriterNightStand	3429	1
+1989	/Furniture/Writer/Home/objWriterPhone	3430	1
+1990	/Furniture/Writer/Home/objWriterVinylTable	3431	1
+1991	/Furniture/Writer/Home/objWriterDeskChair	3432	1
+1992	/Furniture/Writer/Home/objWriterDesk	3433	1
+1993	/Furniture/Writer/Home/objBrokenFrame	3413	2
+1994	/Furniture/Writer/Home/objNESCartridge	3416	2
+1995	/Furniture/Writer/Home/objToyGun2	3417	2
+1996	/Furniture/Writer/Home/objToyLego2	3418	2
+1997	/Furniture/Writer/Home/objToyTurtle2	3419	2
+1998	/Furniture/Writer/Home/objCaseFile	3422	2
+1999	/Furniture/Writer/Home/objWriterDoorMat	3424	2
+2000	/Furniture/Writer/Home/objWifeNote	3421	0
+2001	/Furniture/Writer/Home/objWriterKitchenCupboard	3435	1
+2002	/Furniture/Writer/Home/objWriterKitchenCounter	3436	1
+2003	/Furniture/Writer/Home/objWriterKitchenSink	3437	1
+2004	/Furniture/Writer/Home/objWriterTVBench	3438	1
+2005	/Furniture/Writer/Home/objFireWood	3441	1
+2006	/Player/Writer/objWriterType	3442	0
+2007	/Player/Writer/objWriterInterview1	3444	0
+2008	/Player/Writer/objWriterInterview2	3445	0
+2009	/Misc/objNotepad	3446	0
+2010	/Furniture/Writer/Home/objWifeLetter	3447	0
+2011	/Player/Writer/objWriterInterview3	3444	0
+2012	/Furniture/Rat/Home/objRatKitchenSink	3449	1
+2013	/Furniture/Rat/Home/objRatArmChair	3450	1
+2014	/Furniture/Rat/Home/objRatBed	3451	1
+2015	/Furniture/Rat/Home/objRatBedSupplies	3452	1
+2016	/Furniture/Rat/Home/objRatCar	3453	0
+2017	/Furniture/Rat/Home/objRatCouch	3454	1
+2018	/Furniture/Rat/Home/objRatKitchenTable	3455	1
+2019	/Furniture/Rat/Home/objRatKitchenCupboard	3456	1
+2020	/Furniture/Rat/Home/objRatKitchenCounter	3457	1
+2021	/Furniture/Rat/Home/objRatMomBed	3458	1
+2022	/Furniture/Rat/Home/objRatPhone	3459	1
+2023	/Furniture/Rat/Home/objRatTrophies	3461	1
+2024	/Furniture/Rat/Home/objRatTrashcan	3462	2
+2025	/Furniture/Rat/Home/objRatTub	3463	1
+2026	/Furniture/Rat/Home/objRatElevatorChair	3464	1
+2027	/Furniture/Rat/Home/objRatElevatorRails	3465	2
+2028	/Furniture/Rat/Home/objRatVacuum	3466	2
+2029	/Furniture/Rat/Home/objRatFreezer	3468	1
+2030	/Furniture/Rat/Home/objHandicapToilet	3471	1
+2031	/Furniture/Rat/Home/objRatSafe	3470	1
+2032	/Furniture/Rat/Home/objRatDesk	3469	1
+2033	/Misc/LightSmoke/objBarSmoke	3472	-3
+2035	/NPCs/Rat/Home/objRatMomLieDown	3478	0
+2037	/NPCs/Rat/Home/objRatMomSit	3476	0
+2038	/Player/Cars/Rat_Bus/objRatBus	3483	-1
+2039	/Player/Cars/Rat_Bus/objRatBusFloor	3484	2
+2040	/Player/Cars/Rat_Bus/objRatBusStop	3485	0
+2041	/Furniture/Rat/Home/objRatChair	3486	1
+2042	/NPCs/Rat/Home/objRatMomEat	3477	0
+2043	/NPCs/Rat/Home/objRatMomSickTalk	3479	0
+2044	/NPCs/Rat/Home/objRatMomSick	3478	0
+2045	/Player/Cars/Rat_Bus/objRatBusDrive	3483	-1
+2046	/Furniture/Writer/BikerBar/objBrokenVehicles	3487	-1
+2047	/NPCs/Writer/BikerBar/sprBrokenBarDumpster	3488	0
+2048	/Interface/objRatClear	-1	0
+2049	/Interface/SplashScreens/DennatonSplash/objSplash	-1	0
+2050	/NPCs/Credits/objRatCredits	3514	0
+2051	/Effects/NuclearBlast/objNukeCredits	-1	-300
+2052	/NPCs/Credits/objMomCredits	3513	0
+2053	/Credits/objCreditsDennaton	-1	0
+2054	/Credits/objCreditsDevolver	-1	0
+2055	/Credits/objCreditsAbstraction	-1	0
+2056	/Credits/objCreditsMusicians	-1	0
+2058	/Credits/objCreditsSony	-1	0
+2059	/Credits/objCreditsSpecialThanks	-1	0
+2060	/NPCs/Credits/objWriterCredits	3516	0
+2061	/NPCs/Credits/objWriterBabyCredits	3515	0
+2062	/NPCs/Credits/objWriterKidCredits	3517	0
+2063	/NPCs/Credits/objWriterWifeCredits	3518	0
+2064	/NPCs/Credits/objWriterWriteCredits	3442	0
+2065	/NPCs/Credits/objCopCredits	3510	0
+2066	/NPCs/Credits/objCopCreditsBottle	3511	0
+2067	/NPCs/Credits/objActressCredits	3509	0
+2068	/NPCs/Credits/objPrisonBedCredits	3524	0
+2069	/NPCs/Credits/objJacketCredits	3512	0
+2070	/Credits/Hotline3/objHotlineMiami3	-1	0
+2071	/Credits/Hotline3/objBrokenHouse	3530	0
+2072	/NPCs/Son/Hideout2/objStripper1	2076	0
+2073	/NPCs/Son/Hideout2/objStripper2	3540	0
+2074	/NPCs/Son/Hideout2/objStripper3	3541	0
+2075	/NPCs/Son/Hideout2/objStripper4	3542	0
+2076	/NPCs/Son/Hideout2/objStripperSnort	3543	0
+2077	/NPCs/Son/Hideout2/objSonHideout2Outro	2079	0
+2078	/Misc/objMoneyPile	3544	0
+2079	/NPCs/Intro/objIntroTable	3545	0
+2080	/NPCs/Intro/objCopIntro	3546	0
+2081	/NPCs/Intro/objFansIntro	3547	0
+2082	/NPCs/Intro/objHenchIntro	3548	0
+2083	/NPCs/Intro/objNickeIntro	3549	0
+2084	/NPCs/Intro/objPigIntro	3550	0
+2085	/NPCs/Intro/objRatIntro	3551	0
+2086	/NPCs/Intro/objRichardIntro	3552	0
+2087	/NPCs/Intro/objCobraIntro	3553	0
+2088	/NPCs/Intro/objSonIntro	3554	0
+2089	/NPCs/Intro/objWriterIntro	3555	0
+2090	/NPCs/Intro/objMovieScreen	3556	0
+2091	/NPCs/Intro/objIntroDarkness	-1	-100
+2092	/NPCs/Son/Hideout4/objSonGuardSitTalk	2089	0
+2093	/Player/Son/objSonIdleBoxColombian	2778	0
+2094	/Furniture/Son/Hideout/objHumanBoxingBag	3560	0
+2095	/Furniture/Son/Hideout/objColombianClothes	3562	2
+2096	/Furniture/Floor/Bunker/objFiftyScribble	3563	2
+2097	/Furniture/objLamp	3564	1
+2098	/NPCs/Cobra/CobraHotHeavy/objCobraHotHeavy	3565	0
+2099	/NPCs/Cobra/CobraHotHeavy/objMafiaCobra	3567	0
+2100	/Enemies/Bosses/PrisonBoss/objPrisonBoss	3569	0
+2101	/Enemies/Bosses/PrisonBoss/objPrisonBossKill	3571	0
+2102	/Editor/objCellDoorV	3624	0
+2103	/Editor/objBlackRailsV	3623	1
+2104	/Player/Rat/objRatPrison	3606	0
+2105	/Misc/Weapons/objPipeBig	3284	2
+2106	/Misc/Weapons/objBrush	3627	1
+2107	/Player/Kills/Specific/objRatKillBrush	3628	1
+2108	/Enemies/Prisoner/objPrisoner	-1	0
+2109	/Enemies/Prisoner/objPrisonerMeleeRandom	3575	0
+2110	/Enemies/Prisoner/objPrisonerMeleePatrol	3578	0
+2111	/Enemies/Prisoner/objPrisonerRandom	3576	0
+2112	/Enemies/Prisoner/objPrisonerStatic	3576	0
+2113	/Enemies/Prisoner/objPrisonerPatrol	3576	0
+2114	/NPCs/Rat/Prison/BossFight/objPrisonerCheer1	3597	-6
+2115	/NPCs/Rat/Prison/BossFight/objPrisonerCheer2	3598	-6
+2116	/NPCs/Rat/Prison/BossFight/objPrisonerCheer3	3599	-6
+2117	/NPCs/Rat/Prison/BossFight/objPrisonerCheerPipe	3633	-6
+2118	/NPCs/Rat/Prison/BossFight/objPrisonerThrow	3634	-6
+2119	/NPCs/Rat/Prison/BossFight/objThrowPipe	3284	-6
+2120	/NPCs/Rat/Prison/BossFight/objPrisonerCheer5	3639	-6
+2121	/NPCs/Rat/Prison/BossFight/objPrisonerCheer4	3638	-6
+2122	/Furniture/Rat/Prison/objVisitorBooth	3646	1
+2123	/Furniture/Rat/Prison/objVisitorBoothStool	3647	1
+2124	/NPCs/Rat/Prison/Visit/objJacketPhone	3642	0
+2125	/NPCs/Rat/Prison/Visit/objLawyerPhone	3644	0
+2126	/NPCs/Rat/Prison/Visit/objRatPrisonPhone	3618	0
+2127	/NPCs/Rat/Prison/Visit/objDennis	3640	0
+2128	/NPCs/Rat/Prison/Visit/objJonatan	3641	0
+2129	/NPCs/Rat/Prison/Visit/objGuardRatPrison	3650	0
+2130	/NPCs/Rat/Prison/Visit/objGuardIdleStand	3651	0
+2131	/Furniture/Rat/Prison/objPrisonBed	3657	1
+2132	/Furniture/Rat/Prison/objPrisonDesk	3658	1
+2133	/Furniture/Rat/Prison/objPrisonChair	3659	1
+2134	/Furniture/Rat/Prison/objPrisonDiningTable	3662	1
+2135	/Furniture/Rat/Prison/objPrisonLocker	3663	-1
+2137	/Furniture/Floor/Prison/objPrisonCorpses	3660	2
+2138	/Furniture/Floor/Prison/objPrisonCorpsesWall	3661	2
+2139	/Editor/objFurnitureWallV	63	-2
+2140	/Editor/objFurnitureWallH	62	-2
+2141	/NPCs/Rat/Prison/Visit/objGuardWallOff	2681	0
+2142	/Effects/PrisonFire/objBurningBible	3668	-6
+2143	/Effects/PrisonFire/objBurningPaper	3669	-6
+2145	/Enemies/Prisoner/objPrisonerPsycho	3677	0
+2146	/Enemies/Prisoner/objPrisonerMeleeStatic	3575	0
+2147	/Player/objPlayerDiePsycho	3673	1
+2148	/Enemies/Prisoner/objPrisonerFat	3680	0
+2149	/Furniture/Rat/Prison/objShower	3685	-1
+2150	/Furniture/Rat/Prison/objFloorDrain	3686	2
+2151	/Furniture/Rat/Prison/objPrisonBible	3654	2
+2152	/Furniture/Rat/Prison/objPrisonOfficeDesk	3689	1
+2153	/Furniture/Rat/Prison/objPrisonFileCabinet	3688	-1
+2154	/Furniture/Rat/Prison/objKeyLock	3690	1
+2155	/Furniture/Rat/Prison/objPrisonSoap	3687	2
+2156	/Furniture/Floor/Prison/objPrisonBloodWords	3692	2
+2157	/Player/Rat/objRatGuard	3699	0
+2158	/Misc/objGuardClothes	3664	0
+2159	/Furniture/Rat/Prison/objPrisonMonitor	3727	1
+2160	/Furniture/Rat/Prison/objPrisonFileCabinetFallen	3726	1
+2161	/Furniture/Rat/Prison/objPrisonGameTable	3729	1
+2162	/Furniture/Rat/Prison/objPrisonInformationTable	3730	1
+2163	/Furniture/Floor/objPrisonChairBroken	3728	2
+2164	/Furniture/Rat/Prison/objPrisonBasketCourt	3731	2
+2165	/Furniture/Floor/Prison/objPrisonCorpses2	3588	2
+2166	/Furniture/Floor/Prison/objPrisonerCaptured	3732	2
+2167	/Enemies/Prisoner/objPrisonerIdleGuns	3733	0
+2168	/Enemies/Guards/objGuardIdleStick	3650	0
+2169	/objPrisonAlarm	-1	-101
+2170	/NPCs/Rat/Prison/Riot/objGuardShotgun	2680	0
+2172	/NPCs/Rat/Prison/Riot/objEscapingPrisoner	3575	0
+2173	/NPCs/Rat/Prison/Riot/objGuardMagnum	2679	0
+2174	/Player/Cars/SwatBus/objSwatBusWave	3737	-1
+2175	/Furniture/Floor/Prison/objBasketHoopBroken	3740	2
+2177	/Furniture/Writer/PoliceEvidence/objPoliceEvidenceTable	3742	1
+2178	/Furniture/Writer/PoliceEvidence/objPoliceEvidenceShelf	3741	1
+2179	/Furniture/Writer/PoliceEvidence/objPoliceEvidenceTableCobra	3743	1
+2180	/NPCs/Writer/PoliceEvidence/objCopEvidence	3746	0
+2181	/Interface/objNextroomNoPlayer	219	-101
+2183	/Interface/Scene/NickeScene/objJungleReturn	-1	10
+2184	/Interface/Scene/NickeScene/objForestReturn	-1	-10
+2185	/Interface/Scene/NickeScene/objJungleFade	-1	-100
+2186	/NPCs/Son/Bank/objRobberAmbush	3747	0
+2187	/NPCs/Writer/Court/Exit/objDemonstratorWave	3753	0
+2188	/NPCs/Writer/Court/Exit/objPhotographer1	3756	0
+2189	/NPCs/Writer/Court/Exit/objSwan1Demonstration	3751	0
+2190	/NPCs/Writer/Court/Exit/objSwan2Demonstation	3752	0
+2191	/NPCs/Writer/Court/Exit/objReporter1	1897	0
+2192	/NPCs/Writer/Court/Exit/objInterviewed1	1898	0
+2193	/NPCs/Writer/Court/Exit/objReporter2	3757	0
+2194	/NPCs/Writer/Court/Exit/objDemonstrator	3754	0
+2195	/NPCs/Writer/Court/Exit/objCameraMen	3755	0
+2196	/NPCs/Writer/Court/Exit/objPoliceStandStill	1550	0
+2197	/NPCs/Writer/Court/Exit/objGuardStickStill	3650	0
+2198	/Misc/objWallet	3761	2
+2199	/Enemies/Bosses/SwatBoss/objSwatBossWaypoint	3773	0
+2200	/Enemies/Bosses/SwatBoss/objSwatBoss	3772	0
+2201	/Player/Kills/Specific/objPigKillBoss	3776	0
+2202	/Misc/objSwatBossHead	3767	0
+2203	/Enemies/Bosses/SwatBoss/objSwatBossKnockedOut	3765	1
+2204	/Enemies/Bosses/SwatBoss/objSwatBossAlert	3772	0
+2205	/Enemies/Bosses/SwatBoss/objSwatBossLock	3778	0
+2206	/NPCs/Fans/HQParty/objMitchMurder	3784	0
+2207	/NPCs/Fans/HQParty/objDubmood	3783	0
+2208	/NPCs/Fans/HQParty/objDaveMinus	3782	0
+2209	/NPCs/Fans/HQParty/objBenjamin	3779	0
+2210	/NPCs/Fans/HQParty/objDag	3781	0
+2211	/NPCs/Fans/HQParty/objBennySmiles	3780	0
+2212	/NPCs/Writer/Court/Exit/objReporters	3785	0
+2213	/Interface/objWeaponMenu	3786	0
+2214	/Interface/Options/objControls	-1	0
+2215	/Interface/Options/objHouseCloseUp	3794	0
+2216	/Interface/Options/objHouseSemiCloseUp	3795	0
+2217	/Interface/Options/objHouseDistant	3796	0
+2218	/Interface/Options/objSmallFlyingPaper	3798	0
+2219	/Interface/Options/objFlyingPaper	3797	0
+2220	/Interface/Options/objCloudSmoke	3801	0
+2221	/Enemies/objEnemyCrawl	3812	2
+2222	/Player/Kills/objPKillNeck	3810	0
+2223	/Player/Kills/objPKillKick	3827	0
+2224	/Player/Kills/objPKillChainsawCrawl	3829	0
+2225	/Interface/Scene/City/objSceneGround	3835	0
+2226	/Interface/Scene/City/objSceneFence	3834	0
+2227	/NPCs/Cop/BoatDock/objPoliceCarWalkie	3840	0
+2228	/NPCs/Cop/BoatDock/objColombianHandCuffs1	3841	2
+2229	/NPCs/Cop/BoatDock/objColombianHandCuffs2	3842	1
+2230	/NPCs/Cop/BoatDock/objPoliceDock	1335	0
+2231	/NPCs/Cop/BoatDock/objOfficerDock	1334	0
+2232	/NPCs/Writer/CopyFlash/objCopyFlashClerk	3843	0
+2233	/Furniture/Writer/CopyFlash/objCopyFlashCounter	3844	1
+2234	/Furniture/Writer/CopyFlash/objCopyFlashLogo	3845	2
+2235	/Misc/objNewsPaper	3864	1
+2236	/Misc/objRadio	3866	1
+2237	/Player/objNail	3860	0
+2238	/Player/objNailStuck	3860	0
+2239	/Enemies/Soldier/objSoldierBurnt	3874	2
+2240	/Interface/UnlocksImport/objFansMasks	3880	0
+2241	/Interface/UnlocksImport/objNickeGuns	3882	0
+2242	/Interface/UnlocksImport/objCobraMasks	3883	0
+2243	/Interface/UnlocksImport/objSonStyles	3884	0
+2244	/Interface/AchievementList/objAchievementList	-1	0
+2245	/Interface/AchievementList/objAchievementUnlock	-1	-201
+2247	/Interface/Options/objOptions	-1	0
+2248	/NPCs/Soldiers/Store/objShopPeople	3897	0
+2249	/NPCs/Soldiers/Store/objShopPeoplePray	3898	0
+2251	/Interface/VHSMenu/objOnlineHighscores	-1	0
+2252	/Interface/objPigCredits	-1	-199
+2253	/Credits/objCreditList	-1	0
+2254	/Editor/objEditorDoorH2	3902	0
+2255	/Editor/objEditorDoorV2	3903	0
+2256	/Misc/objHatDrop	3904	2
+2257	/Misc/objDrugSampleHenchman	2067	0
+2258	/Misc/objNickeGlasses	483	2
+2259	/Player/Kills/Specific/objPKillAxe	3910	1
+2260	/Interface/vhs/VHSOptions/objPauseControls	-1	0
+2261	/Misc/Weapons/objAcid	3926	1
+2262	/Effects/Fumes/objFumes	3927	-1
+2263	/Effects/Fumes/objFumer	-1	0
+2264	/Player/Kills/Specific/objPKillAcid	3929	1
+2265	/Effects/Taser/objTaserSpark	3933	0
+2266	/Effects/Taser/objTaserElectric	3934	0
+2267	/Player/Cars/Cobra_Car/objCobraTruck	3935	0
+2268	/Player/Cars/Cobra_Car/objCobraTruckFloor	1434	2
+2269	/Furniture/Floor/objCaveWater	3943	2
+2271	/Furniture/Jungle/Trees/objCavePlant1	3940	2
+2272	/Furniture/Jungle/Trees/objCavePlant2	3941	2
+2273	/Furniture/Jungle/Trees/objCavePlant3	3942	2
+2274	/Furniture/Jungle/Trees/objJackHammer	3944	0
+2276	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveStone	3945	-1
+2277	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveStones	-1	0
+2278	/Furniture/Jungle/PowerPlant/CaveStuff/objCaveTimer	-1	-201
+2279	/Misc/LightSmoke/objSewerCloud	3946	-3
+2280	/Furniture/Floor/objFrodusPoster	3947	2
+2281	/Furniture/Floor/objDirtyShoes	3948	2
+2282	/Furniture/Cobra/50BlessingsOffice/objAirCondition	3949	0
+2283	/Furniture/Son/Hideout/objHenchmanCarWhole	3950	1
+2284	/Player/Cars/SonVan/objSonVan	3951	-2
+2285	/NPCs/Writer/BikerBar/objHammarin	3969	0
+2286	/Enemies/Dodger/objGangDodger	3973	0
+2287	/Enemies/Dodger/objSoldierDodger	3977	0
+2288	/Enemies/Dodger/objDodger	-1	0
+2289	/NPCs/Henchman/Home/objHenchmanSearch	3979	0
+2290	/Interface/Options/Censorship/objCensorship	-1	0
+2292	/Misc/Weapons/objNickeKnife	306	1
+2293	/Misc/Weapons/objBottleBroken	3997	1
+2294	/NPCs/Writer/BikerBar/objCopBroken	4010	0
+2295	/Misc/LightSmoke/objDeathWishStairsDarkness	-1	0
+2297	/NextRoom/objEditorNextRoom	4044	0
+2298	/NextRoom/objTransitionPlacer	4046	0
+2299	/Misc/objRatCassettes	4048	1
+2300	/Player/objPlayerGhost	1643	-4
+2301	/Interface/SplashScreens/DevolverAbstraction/objDevolverAbstraction	-1	0
+2302	/NPCs/Fans/HQParty/objSjellos	4057	2
+2303	/NPCs/Writer/Court/objBikerCourt	4058	0
+2304	/NPCs/Fans/HQParty/objSimon	4059	0
+2305	/AG/objShardRenderer	-1	2
+2306	/AG/objBulletRenderer	-1	0
+2307	/AG/objSparkRenderer	-1	0
+2308	/Enemies/Victims/objVictim2Hostile	40	0
+2309	/Enemies/Victims/objVictimEnemy	-1	0
+2310	/AG/objWoodWindowRenderer	-1	0
+2311	/AG/objCasinoFloor1	-1	0
+2312	/NPCs/Fans/HQParty/objRasmus	4068	0
+2313	/NPCs/Fans/HQParty/objGreenKingdom	4062	0
+2314	/NPCs/Fans/HQParty/objVestronVulture	4065	0
+2315	/NPCs/Fans/HQParty/objModulogeek	4064	0
+2316	/NPCs/Fans/HQParty/objCiniMod	4063	0
+2317	/NPCs/Fans/HQParty/objChromacle	4066	2
+2318	/NPCs/Fans/HQParty/objBlanchard	4069	0
+2319	/NPCs/Fans/HQParty/objEvans	4070	0
+2320	/Furniture/Henchman/ChopShop/objGarageDoorH	4072	-1
+2321	/Furniture/Henchman/ChopShop/objGarageDoorV	4073	-1
+2322	/Furniture/PigButcher/PoliceStation/objInterrogationMirror	4071	-1
+2323	/Player/Kills/Specific/objHenchmanKillSkateboard	4074	1
+2324	/AG/objZebraShardRenderer	-1	0
+2326	/AG/objFlameRenderer	-1	0
+2327	/AG/objStripClubRenderer	-1	0
+2328	/AG/objPoliceStationFloor2Part2	-1	0
+2329	/AG/objZebraWall	4076	0
+2330	/Editor/Editor_Menus/objDuplicator	-1	-1
+2332	/AG/objFloorHoleRenderer	-1	0
+2333	/Player/objBikerKnife	4096	0
+2334	/Player/Biker/objBiker	4079	0
+2335	/Player/Jacket/objJacket	4129	0
+2337	/Misc/Weapons/objDrill	4149	1
+2338	/Misc/Weapons/objPotFull	4151	1
+2339	/Misc/Weapons/objPotEmpty	4150	1
+2340	/Player/objBikerKnifeStuck	4096	0
+2341	/Interface/objJacketMaskMenu	4139	0
+2342	/object2342	-1	0
+2343	/Misc/Weapons/objSilencedUzi	4157	1
+2344	/Player/Kills/Specific/objPKillDrill	4135	0
+2345	/Player/Cars/JacketCar/objJacketCar	4154	-2
+2346	/Misc/Weapons/objCleaver	4097	1
+2347	/Player/Cars/BikerBike/objBikerBike	4094	0
+2348	/Player/Kills/Specific/objBikerKillFat	4145	0
+2349	/Player/Cars/PigCart/objPigCart	3354	-2
+2350	/Editor/Editor_Menus/objDialogueEditor2	2744	-5
+2351	/Editor/Editor_Menus/objFloorSelector	-1	-100
+2352	/Editor/Editor_Menus/objCampaignEditor	-1	-100
+2354	/Editor/HLM2CutsceneEditor/objCutsceneEditor	4178	-5
+2355	/Editor/HLM2CutsceneEditor/objEditorNPC	4172	0
+2358	/Editor/HLM2CutsceneEditor/objSoundChoice	-1	-100
+2359	/Editor/HLM2CutsceneEditor/objActionChoice	-1	-100
+2360	/Editor/HLM2CutsceneEditor/objWalkChoice	-1	-100
+2361	/Editor/HLM2CutsceneEditor/objCharacterOptions	-1	-100
+2362	/Editor/HLM2CutsceneEditor/objEditorBackground2	-1	1010
+2363	/Editor/HLM2CutsceneEditor/objSongChoice	-1	-100
+2364	/Editor/HLM2CutsceneEditor/objFadeChoice	-1	-100
+2365	/Editor/HLM2CutsceneEditor/objWaitChoice	-1	-100
+2366	/Editor/HLM2CutsceneEditor/objSequenceChoice	-1	-100
+2367	/Editor/HLM2CutsceneEditor/objNextChoice	-1	-100
+2368	/Editor/HLM2CutsceneEditor/objSpriteChoice	-1	-100
+2369	/Editor/HLM2CutsceneEditor/objAnimateChoice	-1	-100
+2370	/Editor/HLM2CutsceneEditor/objInteractChoice	-1	-100
+2371	/Editor/HLM2CutsceneEditor/objCharacterProperties	-1	-100
+2372	/Editor/HLM2CutsceneEditor/objDeathChoice	-1	-100
+2373	/Editor/HLM2CutsceneEditor/objAttackChoice	-1	-100
+2375	/Editor/HLM2CutsceneEditor/objSetSprites	-1	-100
+2376	/Editor/HLM2CutsceneEditor/objTransitionChoice	-1	-100
+2379	/Editor/HLM2CutsceneEditor/objCutsceneFader	-1	-1000
+2380	/Editor/Editor_Menus/objRainPlacer	-1	-4
+2381	/Editor/Editor_Menus/objDarknessPlacer	-1	-5
+2382	/Editor/HLM2CutsceneEditor/objEditorItem	-1	0
+2383	/Editor/HLM2CutsceneEditor/objActivateChoice	-1	-100
+2384	/NPCs/objCustomNPC	-1	0
+2385	/Editor/HLM2CutsceneEditor/objRotateChoice	-1	-100
+2386	/Editor/objSetBorders	-1	0
+2387	/Player/Hammer/objTheHammer	4162	0
+2388	/Editor/HLM2CutsceneEditor/objEditorConversation	-1	-100
+2389	/Editor/Editor_Menus/objBackgroundChoice	-1	-100
+2390	/CustomLevelSelect/objCustomLevelMenu	-1	0
+2391	/CustomLevelSelect/objCustomLevelBackground	-1	2
+2392	/Editor/objEditorFader	-1	-1000
+2393	/Editor/HLM2CutsceneEditor/objPublishChoice	-1	-100
+2394	/Player/Cars/HammerCar/objHammerCar	4271	-2
+2395	/Player/Cars/HammerCar/objHammerCarFloor	4272	2
+2396	/Enemies/Soldier/objSoldierMeleePatrol	1118	0
+2397	/Editor/objCustomLevelQuery	-1	-2
+2398	/Editor/objCoverSelector	-1	-101
+2399	/Editor/objLevelSelector	-1	-101
+2400	/Interface/VHSMenu/objCustomBoxSelector	-1	0
+2401	/objEditorWeapon	-1	0
+2402	/Editor/HLM2CutsceneEditor/objCutscenePlayer	4283	0
+2403	/Player/Kills/Specific/objJacketKillThroat	4290	0
+2404	/Player/objWaterProjectile	4288	0
+2405	/Effects/Fumes/objFumeSmall	3927	-1
+2406	/NPCs/objExtra	4283	0
+2407	/Enemies/Mafia/objEMafiaIdleSmoke	2077	0
+2408	/Enemies/Mafia/objEMafiaIdlePipe	2078	0
+2409	/Enemies/Police/objPoliceIdleTalk	1336	0
+2410	/Editor/NextRoom/objEditorElevator	1320	0
+2411	/Editor/objEditorBarrier	4354	-3
+2412	/Editor/objEditorEntry	4355	-3
+2413	/Editor/objEditorRailsLeft	128	0

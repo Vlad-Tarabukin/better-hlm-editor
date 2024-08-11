@@ -202,7 +202,8 @@ func _ready():
 	var cars_file = FileAccess.open("res://cars.tsv", FileAccess.READ)
 	while !cars_file.eof_reached():
 		var params = cars_file.get_csv_line("\t")
-		cars.append(HLMObject.new(int(params[1]), int(params[2])))
+		cars.append(ObjectsLoader.objects[int(params[1])])
+		cars[-1].sprite_id = int(params[2])
 		car_item_list.add_item(params[0], ObjectsLoader.get_sprite(int(params[2]))["frames"][0])
 
 func _on_music_option_button_item_selected(index):
@@ -229,7 +230,8 @@ func _on_player_item_list_item_selected(index):
 func refresh_sprite():
 	if player_item_list.is_anything_selected():
 		var index = player_item_list.get_selected_items()[0]
-		object_to_place = HLMObject.new(characters[index]["object_id"], characters[index]["sprites"][curr_player_sprite])
+		object_to_place = ObjectsLoader[characters[index]["object_id"]]
+		object_to_place.sprite_id = characters[index]["sprites"][curr_player_sprite]
 		var sprite = ObjectsLoader.get_sprite(characters[index]["sprites"][curr_player_sprite])
 		App.cursor.texture = sprite["frames"][0]
 		App.cursor.offset = sprite["center"]

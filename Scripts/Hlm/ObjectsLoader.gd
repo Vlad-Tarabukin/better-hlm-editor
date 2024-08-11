@@ -1,6 +1,7 @@
 extends Node
 
 var sprites = {}
+var objects = {}
 var tiles = []
 var sounds = {}
 
@@ -28,10 +29,17 @@ func load_info():
 	tiles_tsv.close()
 	
 	sprites[-1] = {
-		"name": "noTexture",
+		"name": "No Texture",
 		"center": -Vector2i(10,10),
 		"frames": [preload("res://Textures/default_texture.png")]
 	}
+	
+	var objects_tsv = FileAccess.open("res://objects.tsv", FileAccess.READ)
+	while !objects_tsv.eof_reached():
+		var st = objects_tsv.get_csv_line("\t")
+		objects[int(st[0])] = HLMObject.new(int(st[0]), st[1], int(st[2]), -int(st[3]))
+		if !ObjectsLoader.sprites.has(objects[int(st[0])].sprite_id):
+			objects[int(st[0])].sprite_id = -1
 
 func load_assets(file_path="res://base.wad"):
 	var base = file_path == "res://base.wad"
@@ -39,13 +47,14 @@ func load_assets(file_path="res://base.wad"):
 	var wad_sprites = wad_sprite_parser.parse_sprites(file_path, file_path == "res://base.wad")
 	for sprite in sprites.values():
 		if wad_sprites.has(sprite["name"]):
-			sprite["frames"] = wad_sprites[sprite["name"]]
+			sprite["frames"] = wad_sprites[sprite["name"]]["frames"]
+			sprite["name"] = wad_sprites[sprite["name"]]["file_name"] + "/" + sprite["name"]
 		elif file_path == "res://base.wad":
 			sprite["frames"] = sprites[-1]["frames"]
 	
 	for tile in tiles:
 		if wad_sprites.has(tile["name"]):
-			var tilemap = wad_sprites[tile["name"]][0]
+			var tilemap = wad_sprites[tile["name"]]["frames"][0]
 			tile["tilemap"] = tilemap
 			tilemap = tilemap.get_image()
 			var size = 16

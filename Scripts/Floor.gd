@@ -175,11 +175,12 @@ func load_floor(floor_path):
 					var submode = 0
 					var mode = ItemsTab.TAB_INDEX
 					
-					if parent_id == 9 or parent_id == 10:
+					if parent_id == 10 or object_id in GameplayTab.weapon_ids:
 						mode = GameplayTab.TAB_INDEX
 					elif parent_id == 1582 or parent_id == 1583:
 						mode = LevelTab.TAB_INDEX
-					var object = HLMObject.new(object_id, sprite_id)
+					var object = ObjectsLoader.objects[object_id].clone()
+					object.sprite_id = sprite_id
 					var object_sprite = ObjectSprite.new(object, frame, mode, parent_id)
 					object_sprite.submode = submode
 					object_sprite.global_position = Vector2(x, y)
@@ -473,6 +474,7 @@ func save():
 	itm_file.store_line(str(len(cutscene["items"])))
 	
 	var objects = get_children().duplicate()
+	objects.reverse()
 	objects.sort_custom(sorting)
 	
 	for obj in objects:
