@@ -32,7 +32,7 @@ func new_folder():
 func _on_Level_List_item_selected(index):
 	if index == 0:
 		var path = new_folder()
-		DirAccess.copy_absolute("res://default_level.hlm", path + "/level.hlm")
+		FileAccess.open(path + "/level.hlm", FileAccess.WRITE).store_string(FileAccess.open("res://default_level.hlm", FileAccess.READ).get_as_text())
 		App.load_level(path)
 		visible = false
 
