@@ -230,7 +230,7 @@ func _on_player_item_list_item_selected(index):
 func refresh_sprite():
 	if player_item_list.is_anything_selected():
 		var index = player_item_list.get_selected_items()[0]
-		object_to_place = ObjectsLoader[characters[index]["object_id"]]
+		object_to_place = ObjectsLoader.objects[characters[index]["object_id"]]
 		object_to_place.sprite_id = characters[index]["sprites"][curr_player_sprite]
 		var sprite = ObjectsLoader.get_sprite(characters[index]["sprites"][curr_player_sprite])
 		App.cursor.texture = sprite["frames"][0]
