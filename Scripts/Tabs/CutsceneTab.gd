@@ -61,7 +61,7 @@ func refresh_sprites(filter = ""):
 		var sprite = ObjectsLoader.sprites[sprite_id]
 		if filter == "" or sprite["name"].to_lower().count(filter.to_lower()) > 0:
 			listed_sprites.append(sprite_id)
-			item_list.add_item("{name} ({id})".format({"name": sprite["name"], "id": sprite_id}), sprite["frames"][0])
+			item_list.add_item("{name} ({id})".format({"name": sprite["file_name"], "id": sprite_id}), sprite["frames"][0])
 
 func _on_cutscene_tab_container_tab_selected(tab):
 	App.cursor.texture = null

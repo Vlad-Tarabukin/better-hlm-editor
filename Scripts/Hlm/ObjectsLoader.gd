@@ -48,7 +48,7 @@ func load_assets(file_path="res://base.wad"):
 	for sprite in sprites.values():
 		if wad_sprites.has(sprite["name"]):
 			sprite["frames"] = wad_sprites[sprite["name"]]["frames"]
-			sprite["name"] = wad_sprites[sprite["name"]]["file_name"] + "/" + sprite["name"]
+			sprite["file_name"] = wad_sprites[sprite["name"]]["file_name"] + "/" + sprite["name"]
 		elif file_path == "res://base.wad":
 			sprite["frames"] = sprites[-1]["frames"]
 	

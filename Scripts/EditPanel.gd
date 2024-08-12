@@ -29,4 +29,4 @@ func _on_sprite_spin_box_value_changed(value):
 	frame_spin_box.value = 0
 	var sprite = ObjectsLoader.get_sprite(int(value))
 	frame_spin_box.max_value = len(sprite["frames"]) - 1
-	sprite_label.text = sprite["name"]
+	sprite_label.text = sprite["file_name"]
