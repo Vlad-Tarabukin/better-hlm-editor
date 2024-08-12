@@ -10,23 +10,23 @@ const SECOND_GRID_LINE_COLOR = Color(1, 1, 1, 0.05)
 var target_zoom = 1.0
 
 func _draw():
-	var main_color
-	var start_x = int((position.x - get_viewport_rect().size.x / 2 * target_zoom) / 16) * 16
-	var end_x = start_x + get_viewport_rect().size.x * target_zoom
-	var start_y = int((position.y - get_viewport_rect().size.y / 2 * target_zoom) / 16) * 16
-	var end_y = start_y + get_viewport_rect().size.y * target_zoom
-	for x in range(start_x, end_x, 16):
-		var actual_x = x - position.x
-		var color = SECOND_GRID_LINE_COLOR
-		if x % 32 == 0:
-			color = MAIN_GRID_LINE_COLOR
-		draw_line(Vector2(actual_x, get_viewport_rect().size.y / 2 * target_zoom), Vector2(actual_x, -get_viewport_rect().size.y / 2 * target_zoom), color)
-	for y in range(start_y, end_y, 16):
-		var actual_y = y - position.y
-		var color = SECOND_GRID_LINE_COLOR
-		if y % 32 == 0:
-			color = MAIN_GRID_LINE_COLOR
-		draw_line(Vector2(get_viewport_rect().size.x / 2 * target_zoom, actual_y), Vector2(-get_viewport_rect().size.x / 2 * target_zoom, actual_y), color)
+	if App.settings["grid"]:
+		var start_x = int((position.x - get_viewport_rect().size.x / 2 * target_zoom) / 16) * 16
+		var end_x = start_x + get_viewport_rect().size.x * target_zoom
+		var start_y = int((position.y - get_viewport_rect().size.y / 2 * target_zoom) / 16) * 16
+		var end_y = start_y + get_viewport_rect().size.y * target_zoom
+		for x in range(start_x, end_x, 16):
+			var actual_x = x - position.x
+			var color = SECOND_GRID_LINE_COLOR
+			if x % 32 == 0:
+				color = MAIN_GRID_LINE_COLOR
+			draw_line(Vector2(actual_x, get_viewport_rect().size.y / 2 * target_zoom), Vector2(actual_x, -get_viewport_rect().size.y / 2 * target_zoom), color)
+		for y in range(start_y, end_y, 16):
+			var actual_y = y - position.y
+			var color = SECOND_GRID_LINE_COLOR
+			if y % 32 == 0:
+				color = MAIN_GRID_LINE_COLOR
+			draw_line(Vector2(get_viewport_rect().size.x / 2 * target_zoom, actual_y), Vector2(-get_viewport_rect().size.x / 2 * target_zoom, actual_y), color)
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:

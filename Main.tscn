@@ -1423,6 +1423,32 @@ text = "Undo"
 layout_mode = 2
 text = "Redo"
 
+[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+
+[node name="Settings MenuButton" type="MenuButton" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+text = "Show settings"
+flat = false
+switch_on_hover = true
+item_count = 4
+popup/item_0/text = "Show Grid"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+popup/item_1/text = "Show Wall Hint"
+popup/item_1/checkable = 1
+popup/item_1/checked = true
+popup/item_1/id = 1
+popup/item_2/text = "Show Transition Hint"
+popup/item_2/checkable = 1
+popup/item_2/checked = true
+popup/item_2/id = 2
+popup/item_3/text = "Show Rain"
+popup/item_3/checkable = 1
+popup/item_3/checked = true
+popup/item_3/id = 3
+
 [node name="Cursor" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.392157)
 texture_repeat = 2

@@ -25,18 +25,20 @@ func _init(_index):
 
 func _draw():
 	var floor_node = get_node_or_null("../Floor" + str(index - 1))
-	if floor_node != null:
+	if App.settings["wall"] and floor_node != null:
 		for obj in floor_node.get_children():
 			if obj is WallSprite:
 				draw_rect(Rect2(obj.global_position, obj.get_rect().size), WALL_HINT_COLOR)
-	if rain:
+	
+	if App.settings["rain"] and rain:
 		for rect in rain_rects:
 			draw_texture_rect(RAIN_TEXTURE, rect, true)
 	
-	for marker in transition_markers:
-		var rect = marker.region_rect
-		rect.position = marker.position + Vector2(marker.transition_offset)
-		draw_rect(rect, TRANSITION_HINT_COLOR)
+	if App.settings["transition"]:
+		for marker in transition_markers:
+			var rect = marker.region_rect
+			rect.position = marker.position + Vector2(marker.transition_offset)
+			draw_rect(rect, TRANSITION_HINT_COLOR)
 	
 	for i in range(len(cutscene["rects"])):
 		draw_rect(cutscene["rects"][i], Color.GREEN, false)
