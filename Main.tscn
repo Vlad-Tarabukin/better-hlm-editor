@@ -40,7 +40,6 @@ script = ExtResource("4")
 script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
-visible = false
 clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -64,7 +63,14 @@ offset_right = 606.0
 offset_bottom = 31.0
 text = "Load"
 
+[node name="Quit Button" type="Button" parent="CanvasLayer/Level List"]
+offset_left = 615.0
+offset_right = 657.0
+offset_bottom = 31.0
+text = "Quit"
+
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1578,6 +1584,7 @@ filters = PackedStringArray("*.png")
 [connection signal="visibility_changed" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_visibility_changed"]
 [connection signal="button_up" from="CanvasLayer/Level List/Backup Button" to="CanvasLayer/Level List" method="_on_backup_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Load Button" to="CanvasLayer/Level List" method="_on_load_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Level List/Quit Button" to="CanvasLayer" method="_on_quit_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Cancel Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Ok Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_ok_button_button_up"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer" method="_on_TabContainer_tab_selected"]
