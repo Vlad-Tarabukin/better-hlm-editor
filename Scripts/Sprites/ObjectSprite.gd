@@ -8,7 +8,7 @@ var parent
 var last_mode
 
 func _init(_object: HLMObject, _object_frame, _mode, _parent = 11):
-	object = _object
+	object = _object.clone()
 	object_frame = _object_frame
 	mode = _mode
 	var spr = ObjectsLoader.get_sprite(object.sprite_id)

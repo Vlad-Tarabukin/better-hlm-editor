@@ -313,8 +313,8 @@ func _on_door_button_button_up():
 	barrier_button.button_pressed = false
 	entry_button.button_pressed = false
 	direction_option_button.visible = entry_button.button_pressed or door_button.button_pressed
-	locked_check_box.visible = true
-	cutscene_check_box.visible = true
+	locked_check_box.visible = door_button.button_pressed
+	cutscene_check_box.visible = door_button.button_pressed
 	if door_button.button_pressed:
 		var sprite = ObjectsLoader.get_sprite(DoorSprite.sprite_ids[direction_option_button.selected])
 		App.cursor.texture = sprite["frames"][0]

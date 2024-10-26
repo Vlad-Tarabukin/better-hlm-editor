@@ -5,8 +5,6 @@ extends CanvasLayer
 @onready var main_gui = $"Main GUI"
 @onready var settings_menu_button = $"Main GUI/Buttons HBoxContainer/Settings MenuButton"
 
-const PREVIEW_SCALE = 5
-
 func _on_TabContainer_tab_selected(tab):
 	App.mode = tab
 	App.submode = 0
@@ -17,19 +15,6 @@ func _on_TabContainer_tab_selected(tab):
 
 func _on_Save_Button_button_up():
 	App.save_level()
-	
-	var viewport = get_tree().get_root().get_node("Main/Screenshot SubViewport")
-	for obj in viewport.get_children().slice(2):
-		obj.queue_free()
-	viewport.size = (App.level_info["level_boundaries"].size - App.level_info["level_boundaries"].position) * PREVIEW_SCALE
-	for obj in get_tree().get_root().get_node("Main/Floors").get_children()[0].get_children():
-		if obj is ObjectSprite or obj is TileSprite or obj is WallSprite or obj is DoorSprite or obj is ElevatorSprite or obj is DarknessSprite or obj is CutsceneSprite:
-			var new_obj = obj.duplicate(0)
-			new_obj.position *= PREVIEW_SCALE
-			new_obj.scale *= PREVIEW_SCALE
-			viewport.add_child(new_obj)
-	await get_tree().create_timer(0.1, false).timeout
-	viewport.get_texture().get_image().save_png(App.level_path + "/screen.png")
 
 func _on_CanvasLayer_ready():
 	var tab = 1

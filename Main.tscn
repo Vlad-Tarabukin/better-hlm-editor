@@ -223,7 +223,7 @@ offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 11
-current_tab = 1
+current_tab = 4
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -361,6 +361,7 @@ offset_bottom = 581.0
 text = "Cutscene"
 
 [node name="Items" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("9_jdnfe")
@@ -573,7 +574,6 @@ offset_bottom = 990.0
 text = "Random angle"
 
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("15")
@@ -822,6 +822,14 @@ offset_top = 675.0
 offset_right = 58.0
 offset_bottom = 698.0
 text = "S rank:"
+
+[node name="Screenshot Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 805.0
+offset_right = 155.0
+offset_bottom = 836.0
+text = "Make Preview"
 
 [node name="Cover Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Level"]
 layout_mode = 0
@@ -1458,7 +1466,7 @@ script = ExtResource("3")
 [node name="Screenshot SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 canvas_item_default_texture_filter = 0
-size = Vector2i(1024, 512)
+size = Vector2i(1000, 1000)
 render_target_update_mode = 4
 
 [node name="Background" type="Control" parent="Screenshot SubViewport"]
@@ -1472,8 +1480,7 @@ grow_vertical = 2
 [node name="Watermark TextureRect" type="TextureRect" parent="Screenshot SubViewport/Background"]
 z_index = 4096
 layout_mode = 1
-offset_right = 1324.0
-offset_bottom = 256.0
+scale = Vector2(2, 2)
 texture = ExtResource("24_pao8c")
 
 [node name="ColorRect" type="ColorRect" parent="Screenshot SubViewport/Background"]
@@ -1564,6 +1571,7 @@ filters = PackedStringArray("*.png")
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Car ItemList" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_car_item_list_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Sprite HSlider" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_sprite_h_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/S SpinBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_s_spin_box_value_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Screenshot Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_screenshot_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Panel/TabContainer/Level/Cover Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cover_button_button_up"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_cutscene_tab_container_tab_selected"]
 [connection signal="toggled" from="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene/TabContainer/Cutscene/Cutscene CheckBox" to="CanvasLayer/Main GUI/Panel/TabContainer/Cutscene" method="_on_cutscene_check_box_toggled"]

@@ -263,7 +263,17 @@ func _on_cover_button_button_up():
 	file_dialog.show()
 
 func _on_file_dialog_file_selected(path):
-	var texture = ImageTexture.create_from_image(Image.load_from_file(path))
-	cover_texture_rect.texture = texture
-	cover_texture_rect.size = texture.get_size() * 3
+	cover_texture_rect.texture = ImageTexture.create_from_image(Image.load_from_file(path).get_region(Rect2i(0, 0, 34, 57)))
 	DirAccess.copy_absolute(path, App.level_path + "/level.png")
+
+func _on_screenshot_button_button_up():
+	var viewport = get_tree().get_root().get_node("Main/Screenshot SubViewport")
+	for obj in viewport.get_children().slice(2):
+		obj.queue_free()
+	for obj in get_tree().get_root().get_node("Main/Floors").get_children()[0].get_children():
+		if obj is ObjectSprite or obj is TileSprite or obj is WallSprite or obj is DoorSprite or obj is ElevatorSprite or obj is DarknessSprite or obj is CutsceneSprite:
+			viewport.add_child(obj.duplicate(0))
+	await get_tree().create_timer(0.5, false).timeout
+	var image = viewport.get_texture().get_image()
+	image.resize(500, 500)
+	image.save_png(App.level_path + "/screen.png")
