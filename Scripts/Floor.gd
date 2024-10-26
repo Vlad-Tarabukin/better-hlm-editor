@@ -18,9 +18,12 @@ const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
 const TRANSITION_HINT_COLOR = Color(1, 0, 0, 0.2)
 const RAIN_TEXTURE = preload("res://Textures/rain.png")
 
-func _init(_index):
+func set_index(_index):
 	index = _index
 	name = "Floor" + str(index)
+
+func _init(_index):
+	set_index(_index)
 	z_index = 99
 
 func _draw():
@@ -462,14 +465,14 @@ func sorting(a, b):
 		return a.position.x < b.position.x or a.position.y < b.position.y
 	return false
 
-func save():
-	var obj_file = FileAccess.open(App.level_path + "/level" + str(index) + ".obj", FileAccess.WRITE)
-	var tls_file = FileAccess.open(App.level_path + "/level" + str(index) + ".tls", FileAccess.WRITE)
-	var wll_file = FileAccess.open(App.level_path + "/level" + str(index) + ".wll", FileAccess.WRITE)
-	var play_file = FileAccess.open(App.level_path + "/level" + str(index) + ".play", FileAccess.WRITE)
-	var npc_file = FileAccess.open(App.level_path + "/level" + str(index) + ".npc", FileAccess.WRITE)
-	var itm_file = FileAccess.open(App.level_path + "/level" + str(index) + ".itm", FileAccess.WRITE)
-	var csf_file = FileAccess.open(App.level_path + "/level" + str(index) + ".csf", FileAccess.WRITE)
+func save_floor(path=App.level_path + "/level" + str(index)):
+	var obj_file = FileAccess.open(path + ".obj", FileAccess.WRITE)
+	var tls_file = FileAccess.open(path + ".tls", FileAccess.WRITE)
+	var wll_file = FileAccess.open(path + ".wll", FileAccess.WRITE)
+	var play_file = FileAccess.open(path + ".play", FileAccess.WRITE)
+	var npc_file = FileAccess.open(path + ".npc", FileAccess.WRITE)
+	var itm_file = FileAccess.open(path + ".itm", FileAccess.WRITE)
+	var csf_file = FileAccess.open(path + ".csf", FileAccess.WRITE)
 	play_file.store_line("0")
 	play_file.store_line("-1")
 	npc_file.store_line(str(len(cutscene["npc"])))

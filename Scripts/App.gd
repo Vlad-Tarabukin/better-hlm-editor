@@ -44,14 +44,39 @@ func set_floor(_floor):
 		level_floor.visible = level == i
 		i += 1
 
+func get_floor(index) -> Floor:
+	return get_tree().get_root().get_node("Main/Floors/Floor" + str(index))
+
 func get_current_floor() -> Floor:
-	return get_tree().get_root().get_node("Main/Floors/Floor" + str(level))
+	return get_floor(level)
 
 func add_floor():
 	level_info["floors"] += 1
 	var level_floor = Floor.new(level_info["floors"])
-	level_floor.visible = false
 	get_tree().get_root().get_node("Main/Floors").add_child(level_floor)
+	set_floor(level_info["floors"])
+
+func duplicate_floor():
+	var temp_folder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor/_temp"
+	if !DirAccess.dir_exists_absolute(temp_folder):
+		DirAccess.make_dir_recursive_absolute(temp_folder)
+	get_current_floor().save_floor(temp_folder + '/temp')
+	add_floor()
+	var new_floor = get_current_floor()
+	new_floor.load_floor(temp_folder + "/temp" + ".obj")
+	new_floor.load_floor(temp_folder + "/temp" + ".tls")
+	new_floor.load_floor(temp_folder + "/temp" + ".wll")
+	new_floor.load_floor(temp_folder + "/temp" + ".npc")
+	new_floor.load_floor(temp_folder + "/temp" + ".itm")
+	new_floor.load_floor(temp_folder + "/temp" + ".csf")
+
+func delete_floor():
+	get_current_floor().queue_free()
+	level_info["floors"] -= 1
+	await get_current_floor().tree_exited
+	for i in range(level + 1, level_info["floors"] + 2):
+		get_floor(i).set_index(i - 1)
+	set_floor(max(level - 1, 0))
 
 func load_level(_level_path):
 	level_path = _level_path
@@ -98,8 +123,6 @@ func load_level(_level_path):
 		level_floor.visible = false
 		floors_node.add_child(level_floor)
 	
-	floors_node.get_child(0).visible = true
-	
 	for i in range(level_info["floors"] + 1):
 		var level_floor = floors_node.get_child(i)
 		level_floor.load_floor(level_path + "/level" + str(i) + ".obj")
@@ -112,6 +135,9 @@ func load_level(_level_path):
 	queue_redraw()
 	get_tree().get_root().get_node("Main/CanvasLayer").show_levels()
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Panel/TabContainer/Level").show_level_info()
+	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Bottom-Left/Floor List").select(0)
+	
+	set_floor(0)
 
 func save_level():
 	var file = FileAccess.open(level_path + "/level.hlm", FileAccess.WRITE)
@@ -140,4 +166,4 @@ func save_level():
 	file.store_line(level_info["address"])
 	
 	for level_floor in get_tree().get_root().get_node("Main/Floors").get_children():
-		level_floor.save()
+		level_floor.save_floor()

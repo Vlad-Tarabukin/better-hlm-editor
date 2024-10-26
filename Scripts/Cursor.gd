@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @onready var label = $"../CanvasLayer/Main GUI/Angle Label"
-@onready var position_label = $"../CanvasLayer/Main GUI/Position Label"
+@onready var position_label = $"../CanvasLayer/Main GUI/Bottom-Left/Position Label"
 
 var snap = 1
 var move = true

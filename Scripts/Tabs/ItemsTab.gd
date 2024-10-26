@@ -117,7 +117,7 @@ func _unhandled_input(event: InputEvent):
 
 func _ready():
 	var objects_tsv_paths = []
-	var custom_tsv_folder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor"
+	var custom_tsv_folder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor/custom_tsv"
 	if !DirAccess.dir_exists_absolute(custom_tsv_folder):
 		DirAccess.make_dir_recursive_absolute(custom_tsv_folder)
 	else:
