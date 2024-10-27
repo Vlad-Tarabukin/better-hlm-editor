@@ -84,10 +84,13 @@ func load_level(_level_path):
 	for fl in get_tree().get_root().get_node("Main/Floors").get_children():
 		fl.queue_free()
 	
-	var mods = DirAccess.get_files_at(level_path + "/mods")
-	for mod in mods:
-		if mod.match("*.patchwad"):
-			ObjectsLoader.load_assets(level_path + "/mods/" + mod)
+	if DirAccess.dir_exists_absolute(level_path + "/mods"):
+		var mods = DirAccess.get_files_at(level_path + "/mods")
+		for mod in mods:
+			if mod.match("*.patchwad"):
+				ObjectsLoader.load_assets(level_path + "/mods/" + mod)
+	else:
+		DirAccess.make_dir_recursive_absolute(level_path + "/mods")
 	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(false)
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(true)
