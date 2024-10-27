@@ -1530,7 +1530,7 @@ layout_mode = 2
 text = "Show settings"
 flat = false
 switch_on_hover = true
-item_count = 4
+item_count = 5
 popup/item_0/text = "Show Grid"
 popup/item_0/checkable = 1
 popup/item_0/checked = true
@@ -1547,6 +1547,10 @@ popup/item_3/text = "Show Rain"
 popup/item_3/checkable = 1
 popup/item_3/checked = true
 popup/item_3/id = 3
+popup/item_4/text = "Show Level Border"
+popup/item_4/checkable = 1
+popup/item_4/checked = true
+popup/item_4/id = 4
 
 [node name="Bottom-Left" type="Control" parent="CanvasLayer/Main GUI"]
 layout_mode = 1

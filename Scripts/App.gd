@@ -9,7 +9,7 @@ var level_path
 var level_info = {}
 var selected_object : ObjectSprite
 var undo_redo : UndoRedo = UndoRedo.new()
-var settings = {"grid": true, "wall": true, "transition": true, "rain": true}
+var settings = {"grid": true, "wall": true, "transition": true, "rain": true, "border": true}
 
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
 
@@ -22,7 +22,7 @@ func _ready():
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(false)
 
 func _draw():
-	if level_info.has("level_boundaries"):
+	if settings["border"] and level_info.has("level_boundaries"):
 		draw_rect(level_info["level_boundaries"], Color.RED, false)
 
 func change_level_boundaries(left, top, right, bottom):
