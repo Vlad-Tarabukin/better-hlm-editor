@@ -81,7 +81,8 @@ func delete_floor():
 func load_level(_level_path):
 	level_path = _level_path
 	
-	get_tree().get_root().get_node("Main/Floors")
+	for fl in get_tree().get_root().get_node("Main/Floors").get_children():
+		fl.queue_free()
 	
 	var mods = DirAccess.get_files_at(level_path + "/mods")
 	for mod in mods:
@@ -138,6 +139,7 @@ func load_level(_level_path):
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Bottom-Left/Floor List").select(0)
 	
 	set_floor(0)
+	undo_redo.clear_history()
 
 func save_level():
 	var file = FileAccess.open(level_path + "/level.hlm", FileAccess.WRITE)

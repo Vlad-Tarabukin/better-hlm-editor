@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=40 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -19,12 +19,25 @@
 [ext_resource type="Script" path="res://Scripts/Tabs/LevelTab.gd" id="15"]
 [ext_resource type="Script" path="res://Scripts/Tabs/EffectsTab.gd" id="15_tiai6"]
 [ext_resource type="Script" path="res://Scripts/EditPanel.gd" id="15_vmsa4"]
+[ext_resource type="Texture2D" uid="uid://daxfum27ugdep" path="res://Textures/masks/biker.png" id="17_ljdga"]
+[ext_resource type="Texture2D" uid="uid://cbgdkri6i8kne" path="res://Textures/masks/cobra.png" id="18_mx5uh"]
 [ext_resource type="Script" path="res://Scripts/Tabs/CutsceneTab.gd" id="18_wg3gp"]
+[ext_resource type="Texture2D" uid="uid://bjmdbo7wgf4lo" path="res://Textures/masks/cop.png" id="19_r7g3u"]
 [ext_resource type="Texture2D" uid="uid://djbhtc64tvtm7" path="res://Textures/create.png" id="19_ugaxn"]
+[ext_resource type="Texture2D" uid="uid://bs1k2kbtuvfy2" path="res://Textures/masks/fans.png" id="20_kt1ev"]
 [ext_resource type="Script" path="res://Scripts/EditCutsceneSpritePanel.gd" id="20_l1xlu"]
 [ext_resource type="Texture2D" uid="uid://bl6o0peaql6mg" path="res://Textures/delete.png" id="20_tsx7a"]
+[ext_resource type="Texture2D" uid="uid://gn80ajlq0owi" path="res://Textures/masks/henchman.png" id="21_1v8f8"]
+[ext_resource type="Texture2D" uid="uid://dqkho2r66dosw" path="res://Textures/masks/hammer.png" id="21_p3gax"]
 [ext_resource type="Texture2D" uid="uid://c2vs0hssvv6ll" path="res://Textures/duplicate.png" id="21_spoe4"]
+[ext_resource type="Texture2D" uid="uid://wukdjx6q6nri" path="res://Textures/masks/jacket.png" id="22_fghot"]
+[ext_resource type="Texture2D" uid="uid://ddc6kjs82vnnb" path="res://Textures/masks/pig.png" id="23_b5cis"]
 [ext_resource type="Texture2D" uid="uid://dx5mqvx34srx4" path="res://Textures/watermark.png" id="24_pao8c"]
+[ext_resource type="Texture2D" uid="uid://bnaaf7eoacgcg" path="res://Textures/masks/prison.png" id="24_r6j10"]
+[ext_resource type="Texture2D" uid="uid://c54i6kqgudc6d" path="res://Textures/masks/rat.png" id="25_1dkn1"]
+[ext_resource type="Texture2D" uid="uid://qq73ifxoq31j" path="res://Textures/masks/soldier.png" id="26_rui6v"]
+[ext_resource type="Texture2D" uid="uid://cxqtqaxil7v32" path="res://Textures/masks/son.png" id="27_d5yru"]
+[ext_resource type="Texture2D" uid="uid://bucr07hnlrgc2" path="res://Textures/masks/writer.png" id="28_s7xnj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -40,6 +53,7 @@ script = ExtResource("4")
 script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
+visible = false
 clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -64,13 +78,13 @@ offset_bottom = 31.0
 text = "Load"
 
 [node name="Quit Button" type="Button" parent="CanvasLayer/Level List"]
+layout_mode = 0
 offset_left = 615.0
 offset_right = 657.0
 offset_bottom = 31.0
 text = "Quit"
 
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -219,7 +233,7 @@ offset_bottom = -626.667
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 11
-current_tab = 4
+current_tab = 3
 
 [node name="Build" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
 visible = false
@@ -496,7 +510,6 @@ toggle_mode = true
 text = "Edit rain"
 
 [node name="Gameplay" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
-visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("13_vo8kq")
@@ -562,14 +575,123 @@ same_column_width = true
 fixed_column_width = 40
 fixed_icon_size = Vector2i(39, 39)
 
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 965.0
+offset_right = 217.0
+offset_bottom = 988.0
+theme_override_font_sizes/font_size = 14
+text = "Who can use this weapon:"
+
+[node name="Masks HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
+layout_mode = 0
+offset_top = 988.0
+offset_right = 360.0
+offset_bottom = 1020.0
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Biker TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Biker"
+texture = ExtResource("17_ljdga")
+expand_mode = 2
+
+[node name="Cobra TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Cobra"
+texture = ExtResource("18_mx5uh")
+expand_mode = 2
+
+[node name="Cop TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Cop"
+texture = ExtResource("19_r7g3u")
+expand_mode = 2
+
+[node name="Fans TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "All Fans"
+texture = ExtResource("20_kt1ev")
+expand_mode = 2
+
+[node name="Hammer TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Hammer"
+texture = ExtResource("21_p3gax")
+expand_mode = 2
+
+[node name="Henchman TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Henchman"
+texture = ExtResource("21_1v8f8")
+expand_mode = 2
+
+[node name="Jacket TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Jacket"
+texture = ExtResource("22_fghot")
+expand_mode = 2
+
+[node name="Pig TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Butcher"
+texture = ExtResource("23_b5cis")
+expand_mode = 2
+
+[node name="Prison TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Rat Prison, Rat Guard"
+texture = ExtResource("24_r6j10")
+expand_mode = 2
+
+[node name="Rat TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Rat"
+texture = ExtResource("25_1dkn1")
+expand_mode = 2
+
+[node name="Soldier TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Soldier"
+texture = ExtResource("26_rui6v")
+expand_mode = 2
+
+[node name="Son TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Son"
+texture = ExtResource("27_d5yru")
+expand_mode = 2
+
+[node name="Writer TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay/Masks HBoxContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "Writer"
+texture = ExtResource("28_s7xnj")
+expand_mode = 2
+
 [node name="CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Gameplay"]
 layout_mode = 0
-offset_top = 965.0
+offset_top = 1020.0
 offset_right = 150.0
-offset_bottom = 990.0
+offset_bottom = 1051.0
 text = "Random angle"
 
 [node name="Level" type="TabBar" parent="CanvasLayer/Main GUI/Panel/TabContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 script = ExtResource("15")

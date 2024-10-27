@@ -18,6 +18,7 @@ static var weapon_ids = []
 @onready var fraction_label = $"Enemies/Fraction Label"
 @onready var weapon_list = $"Weapon List"
 @onready var check_box = $CheckBox
+@onready var masks_h_box_container = $"Masks HBoxContainer"
 
 func show_enemies():
 	curr_enemy_sprite = 0
@@ -62,8 +63,9 @@ func _on_Gameplay_ready():
 		weapons.append({
 			"name": params[0],
 			"object": int(params[1]),
-			"sprite": int(params[2])
-		})
+			"sprite": int(params[2]),
+			"masks": Array(params[3].rsplit()).map(func(x): return x == "1")
+			})
 		weapon_ids.append(int(params[1]))
 	weapons_tsv.close()
 
@@ -113,8 +115,13 @@ func _on_Enemy_List_item_selected(index):
 func _on_Weapon_List_item_selected(_index):
 	enemy_list.deselect_all()
 	App.cursor.rotation_degrees = 0
-	App.cursor.texture = ObjectsLoader.sprites[weapons[weapon_list.get_selected_items()[0]]["sprite"]]["frames"][0]
-	App.cursor.offset = ObjectsLoader.sprites[weapons[weapon_list.get_selected_items()[0]]["sprite"]]["center"]
+	
+	var weapon = weapons[weapon_list.get_selected_items()[0]]
+	
+	App.cursor.texture = ObjectsLoader.sprites[weapon["sprite"]]["frames"][0]
+	App.cursor.offset = ObjectsLoader.sprites[weapon["sprite"]]["center"]
+	for i in range(len(weapon["masks"])):
+		masks_h_box_container.get_child(i).visible = weapon["masks"][i]
 
 func _unhandled_input(event: InputEvent):
 	if active and event is InputEventMouseButton:
