@@ -127,8 +127,9 @@ func _ready():
 			var objects_tsv = FileAccess.open(objects_tsv_path, FileAccess.READ)
 			while !objects_tsv.eof_reached():
 				var st = objects_tsv.get_csv_line("\t")
-				if st[0].is_valid_int() and st[2].is_valid_int() and st[3].is_valid_int():
-					objects.append(HLMObject.new(int(st[0]), st[1], int(st[2]), -int(st[3])))
+				if st[0].is_valid_int() and ObjectsLoader.objects.has(int(st[0])) and st[2].is_valid_int() and st[3].is_valid_int():
+					objects.append(HLMObject.new(int(st[0]), st[1], int(st[2]), -int(st[3]), 
+					ObjectsLoader.objects[int(st[0])].mask_id))
 					if !ObjectsLoader.sprites.has(objects[-1].sprite_id):
 						objects[-1].sprite_id = -1
 	

@@ -95,3 +95,6 @@ func _on_settings_menu_button_pressed(index):
 	elif index == 4:
 		App.settings["border"] = state
 		App.queue_redraw()
+	elif index == 5:
+		App.settings["collision"] = state
+		App.get_current_floor().propagate_call("queue_redraw")

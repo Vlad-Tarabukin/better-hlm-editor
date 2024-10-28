@@ -13,6 +13,13 @@ func _init(_info):
 func should_delete():
 	return false
 
+func _draw():
+	if App.settings["collision"] and info.has("solid") and info["solid"] and ObjectsLoader.masks.has(info["sprite_id"]):
+		var mask = ObjectsLoader.masks[info["sprite_id"]]
+		draw_texture(mask["texture"], mask["center"], COLLISION_HINT_COLOR)
+	if App.mode == mode:
+		draw_rect(get_rect(), Color.WHITE, false)
+
 func change_sprite(id):
 	info["sprite_id"] = id
 	var sprite = ObjectsLoader.get_sprite(info["sprite_id"])

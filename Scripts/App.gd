@@ -9,7 +9,7 @@ var level_path
 var level_info = {}
 var selected_object : ObjectSprite
 var undo_redo : UndoRedo = UndoRedo.new()
-var settings = {"grid": true, "wall": true, "transition": true, "rain": true, "border": true}
+var settings = {"grid": true, "wall": true, "transition": true, "rain": true, "border": true, "collision": false}
 
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
 

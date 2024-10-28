@@ -6,6 +6,7 @@ var object: HLMObject
 var object_frame
 var parent
 var last_mode
+var patrol_path_points = []
 
 func _init(_object: HLMObject, _object_frame, _mode, _parent = 11):
 	object = _object.clone()
@@ -18,6 +19,9 @@ func _init(_object: HLMObject, _object_frame, _mode, _parent = 11):
 	z_index = object.z_index
 
 func _draw():
+	if App.settings["collision"] and object.mask_id != null:
+		var mask = ObjectsLoader.masks[object.mask_id]
+		draw_texture(mask["texture"], mask["center"], COLLISION_HINT_COLOR)
 	if App.mode == mode:
 		draw_rect(get_rect(), Color.WHITE, false)
 

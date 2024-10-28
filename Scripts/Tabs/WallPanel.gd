@@ -3,6 +3,7 @@ extends Panel
 class_name WallPanel
 
 static var walls = []
+static var horizontal = {}
 
 @onready var build = $".."
 
@@ -17,11 +18,12 @@ func _on_main_objects_loaded():
 	for wall in walls:
 		var texture_rect = TextureRect.new()
 		var sprite = ObjectsLoader.get_sprite(wall["sprite_id"])
-		wall["horizontal"] = i % 2 == 0
+		horizontal[wall["object_id"]] = i % 2 == 0
 		var texture = ImageTexture.create_from_image(sprite["frames"][0].get_image().get_region(Rect2(sprite["center"], Vector2(32, 32)))) #,2
 		wall["texture"] = texture
+		wall["offset"] = sprite["center"]
 		var texture_sprite
-		if wall["horizontal"]:
+		if horizontal[wall["object_id"]]:
 			texture_sprite = ImageTexture.create_from_image(texture.get_image().get_region(Rect2(Vector2.ZERO, Vector2(32, 8))))
 		else:
 			texture_sprite = ImageTexture.create_from_image(texture.get_image().get_region(Rect2(Vector2.ZERO, Vector2(8, 32))))

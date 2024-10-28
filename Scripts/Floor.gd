@@ -43,9 +43,10 @@ func _draw():
 			rect.position = marker.position + Vector2(marker.transition_offset)
 			draw_rect(rect, TRANSITION_HINT_COLOR)
 	
-	for i in range(len(cutscene["rects"])):
-		draw_rect(cutscene["rects"][i], Color.GREEN, false)
-		draw_string(Control.new().get_theme_default_font(), cutscene["rects"][i].position + Vector2(0, 10), "Trigger " + str(i), HORIZONTAL_ALIGNMENT_LEFT, -1, 10, Color.GREEN)
+	if App.mode == CutsceneTab.TAB_INDEX:
+		for i in range(len(cutscene["rects"])):
+			draw_rect(cutscene["rects"][i], Color.GREEN, false)
+			draw_string(Control.new().get_theme_default_font(), cutscene["rects"][i].position + Vector2(0, 10), "Trigger " + str(i), HORIZONTAL_ALIGNMENT_LEFT, -1, 10, Color.GREEN)
 
 func load_floor(floor_path):
 	var file = FileAccess.open(floor_path, FileAccess.READ)
@@ -239,11 +240,12 @@ func load_floor(floor_path):
 				var sprite_id = int(params.pop_front())
 				var _depth = int(params.pop_front())
 				
-				var wall_sprite = WallSprite.new(object_id, sprite_id)
-				wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
-				wall_sprite.level = index
-				wall_sprite.register_creation = false
-				add_child(wall_sprite)
+				if WallPanel.horizontal.has(object_id):
+					var wall_sprite = WallSprite.new(object_id, sprite_id)
+					wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
+					wall_sprite.level = index
+					wall_sprite.register_creation = false
+					add_child(wall_sprite)
 		elif floor_path.get_extension() == "npc":
 			for _i in range(int(file.get_line())):
 				var character_name = file.get_line()

@@ -1,98 +1,98 @@
-Colombians	Melee Random	1354	2289,2290,2292
-Colombians	Melee Patrol	1355	2289,2290,2292
-Colombians	Range Random	1356	2288,2291,2293,2294
-Colombians	Range Static 	1357	2288,2291,2293,2294
-Colombians	Range Patrol	1358	2288,2291,2293,2294
-Colombians	Dodger	1886	3287
-Colombians	Hide	1737	3009
-Colombians	Idle	1359	2324
-Colombians	Fat	1464	2596
-Colombians	Dog	1064	1766
-Colombians	Unarmed	1357	2295
-Colombians	Unarmed Look Around	1356	2295
-Colombians	Crawl	2221	3819
-Gang	Melee Random	170	202,203,204,205
-Gang	Melee Patrol	941	202,203,204,205
-Gang	Range Random	183	201,206,208
-Gang	Range Static	186	201,206,208
-Gang	Range Patrol	184	201,206,208
-Gang	Dodger	2286	3973
-Gang	Idle Pipe	229	195
-Gang	Idle Knife	230	211
-Gang	Idle Smoke	231	210
-Gang	Idle Money	1144	1927
-Gang	Fat	1289	2194
-Gang	Dog	1064	1766
-Gang	Unarmed	186	207
-Gang	Unarmed Look Around	183	207
-Gang	Crawl	2221	3812
-Guards	Melee Random	1530	2681
-Guards	Melee Patrol	1531	2681
-Guards	Range Random	1532	2679,2680
-Guards	Range Static	1533	2679,2680
-Guards	Range Patrol	1534	2679,2680
-Guards	Idle	2168	3650
-Guards	Dog	1064	1766
-Guards	Unarmed	1533	2682
-Guards	Unarmed Look Around	1532	2682
-Guards	Crawl	2221	3822
-LSD	Melee Random	875	3219
-LSD	Melee Patrol	938	3219
-LSD	Range Random	876	3223,3217,3231
-LSD	Range Static	877	3223,3217,3231
-LSD	Range Patrol	878	3223,3217,3231
-LSD	Dog	1064	1766	3234,3258
-LSD	Fat	1854	3226
-LSD	Dog	1064	1766
-LSD	Unarmed	877	3218
-LSD	Unarmed Look Around	876	3218
-Mafia	Melee Random	875	66,67,73,74
-Mafia	Melee Patrol	938	66,67,73,74
-Mafia	Range Random	876	68,69,70,75,1500
-Mafia	Range Static	877	68,69,70,75,1500
-Mafia	Range Patrol	878	68,69,70,75,1500
-Mafia	Idle	2407	2077,2081,2089
-Mafia	Idle Phone Silencer	916	1521
-Mafia	Idle Pipe	2407	2078
-Mafia	Fat	1464	2596
-Mafia	Dog	1064	1766
-Mafia	Unarmed	877	1453
-Mafia	Unarmed Look Around	876	1453
-Mafia	Crawl	2221	3813
-Police	Melee Random	931	1553
-Police	Melee Patrol	939	1553
-Police	Range Random	932	1551,1558
-Police	Range Static	934	1551,1558
-Police	Range Patrol	933	1551,1558
-Police	Idle	2409	1336
-Police	Fat	937	1570
-Police	Dog	1064	1766
-Police	Unarmed	934	1550
-Police	Unarmed Look Around	932	1550
-Police	Crawl	2221	3817
-Prisoner	Melee Random	2109	3575,3577,3578,3632
-Prisoner	Melee Patrol	2110	3575,3577,3578,3632
-Prisoner	Range Random	2111	3576,3674
-Prisoner	Range Static	2112	3576,3674
-Prisoner	Range Patrol	2113	3576,3674
-Prisoner	Psycho	2145	3677
-Prisoner	Idle Bash	2167	3733
-Prisoner	Fat	2148	3680
-Prisoner	Unarmed	2112	3579
-Prisoner	Unarmed Look Around	2111	3579
-Prisoner	Crawl	2221	3823
-Soldier	Melee Random	672	1118
-Soldier	Melee Patrol	2396	1118
-Soldier	Range Random	674	1117
-Soldier	Range Static	697	1117
-Soldier	Range Patrol	696	1117
-Soldier	Dodger	2287	3977
-Soldier	Hide	1460	2589
-Soldier	Idle Poncho	706	1178
-Soldier	Idle Rain	708	1179
-Soldier	Fat Melee	698	1163
-Soldier	Fat Range	704	1161
-Soldier	Dog	1064	1766
-Soldier	Unarmed	697	1116
-Soldier	Unarmed Look Around	674	1116
-Soldier	Crawl	2221	3815
+Colombians	Melee Random	1354	2289,2290,2292	0
+Colombians	Melee Patrol	1355	2289,2290,2292	1
+Colombians	Range Random	1356	2288,2291,2293,2294	0
+Colombians	Range Static 	1357	2288,2291,2293,2294	0
+Colombians	Range Patrol	1358	2288,2291,2293,2294	1
+Colombians	Dodger	1886	3287	0
+Colombians	Hide	1737	3009	0
+Colombians	Idle	1359	2324	0
+Colombians	Fat	1464	2596	1
+Colombians	Dog	1064	1766	0
+Colombians	Unarmed	1357	2295	0
+Colombians	Unarmed Look Around	1356	2295	0
+Colombians	Crawl	2221	3819	0
+Gang	Melee Random	170	202,203,204,205	0
+Gang	Melee Patrol	941	202,203,204,205	1
+Gang	Range Random	183	201,206,208	0
+Gang	Range Static	186	201,206,208	0
+Gang	Range Patrol	184	201,206,208	1
+Gang	Dodger	2286	3973	0
+Gang	Idle Pipe	229	195	0
+Gang	Idle Knife	230	211	0
+Gang	Idle Smoke	231	210	0
+Gang	Idle Money	1144	1927	0
+Gang	Fat	1289	2194	1
+Gang	Dog	1064	1766	0
+Gang	Unarmed	186	207	0
+Gang	Unarmed Look Around	183	207	0
+Gang	Crawl	2221	3812	0
+Guards	Melee Random	1530	2681	0
+Guards	Melee Patrol	1531	2681	1
+Guards	Range Random	1532	2679,2680	0
+Guards	Range Static	1533	2679,2680	0
+Guards	Range Patrol	1534	2679,2680	1
+Guards	Idle	2168	3650	0
+Guards	Dog	1064	1766	0
+Guards	Unarmed	1533	2682	0
+Guards	Unarmed Look Around	1532	2682	0
+Guards	Crawl	2221	3822	0
+LSD	Melee Random	875	3219	0
+LSD	Melee Patrol	938	3219	1
+LSD	Range Random	876	3223,3217,3231	0
+LSD	Range Static	877	3223,3217,3231	0
+LSD	Range Patrol	878	3223,3217,3231	1
+LSD	Dog	1064	1766	3234,3258	0
+LSD	Fat	1854	3226	1
+LSD	Dog	1064	1766	0
+LSD	Unarmed	877	3218	0
+LSD	Unarmed Look Around	876	3218	0
+Mafia	Melee Random	875	66,67,73,74	0
+Mafia	Melee Patrol	938	66,67,73,74	1
+Mafia	Range Random	876	68,69,70,75,1500	0
+Mafia	Range Static	877	68,69,70,75,1500	0
+Mafia	Range Patrol	878	68,69,70,75,1500	1
+Mafia	Idle	2407	2077,2081,2089	0
+Mafia	Idle Phone Silencer	916	1521	0
+Mafia	Idle Pipe	2407	2078	0
+Mafia	Fat	1464	2596	1
+Mafia	Dog	1064	1766	0
+Mafia	Unarmed	877	1453	0
+Mafia	Unarmed Look Around	876	1453	0
+Mafia	Crawl	2221	3813	0
+Police	Melee Random	931	1553	0
+Police	Melee Patrol	939	1553	1
+Police	Range Random	932	1551,1558	0
+Police	Range Static	934	1551,1558	0
+Police	Range Patrol	933	1551,1558	1
+Police	Idle	2409	1336	0
+Police	Fat	937	1570	1
+Police	Dog	1064	1766	0
+Police	Unarmed	934	1550	0
+Police	Unarmed Look Around	932	1550	0
+Police	Crawl	2221	3817	0
+Prisoner	Melee Random	2109	3575,3577,3578,3632	0
+Prisoner	Melee Patrol	2110	3575,3577,3578,3632	1
+Prisoner	Range Random	2111	3576,3674	0
+Prisoner	Range Static	2112	3576,3674	0
+Prisoner	Range Patrol	2113	3576,3674	1
+Prisoner	Psycho	2145	3677	0
+Prisoner	Idle Bash	2167	3733	0
+Prisoner	Fat	2148	3680	1
+Prisoner	Unarmed	2112	3579	0
+Prisoner	Unarmed Look Around	2111	3579	0
+Prisoner	Crawl	2221	3823	0
+Soldier	Melee Random	672	1118	0
+Soldier	Melee Patrol	2396	1118	1
+Soldier	Range Random	674	1117	0
+Soldier	Range Static	697	1117	0
+Soldier	Range Patrol	696	1117	1
+Soldier	Dodger	2287	3977	0
+Soldier	Hide	1460	2589	0
+Soldier	Idle Poncho	706	1178	0
+Soldier	Idle Rain	708	1179	0
+Soldier	Fat Melee	698	1163	1
+Soldier	Fat Range	704	1161	1
+Soldier	Dog	1064	1766	0
+Soldier	Unarmed	697	1116	0
+Soldier	Unarmed Look Around	674	1116	0
+Soldier	Crawl	2221	3815	0

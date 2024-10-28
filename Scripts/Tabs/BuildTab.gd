@@ -89,7 +89,7 @@ func set_wall(wall):
 	App.cursor.region_enabled = true
 	App.cursor.move = true
 	App.submode = 1
-	App.cursor.offset = Vector2.ZERO
+	App.cursor.offset = curr_wall["offset"]
 	App.cursor.snap = 32
 	App.cursor.region_rect = Rect2i(0, 0, 32, 32)
 	App.cursor.texture = curr_wall["texture"]
@@ -123,9 +123,9 @@ func erase_tile_rect():
 	App.undo_redo.add_undo_method(func(): erase.map(func(obj): obj.set_visibile_no_register(true)))
 	App.undo_redo.commit_action()
 
-func erase_wall_rect():
+func erase_wall_rect(horizontal = null):
 	var erase_rect = Rect2i(start_pos + App.cursor.region_rect.position, App.cursor.region_rect.size)
-	var erase = App.get_current_floor().get_children().filter(func(obj): return obj.visible and obj is WallSprite and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect))
+	var erase = App.get_current_floor().get_children().filter(func(obj): return obj.visible and obj is WallSprite and (horizontal == null or obj.horizontal == horizontal) and Rect2(obj.global_position, obj.get_rect().size).intersects(erase_rect))
 	App.undo_redo.create_action("Remove walls")
 	App.undo_redo.add_do_method(func(): erase.map(func(obj): obj.set_visibile_no_register(false)))
 	App.undo_redo.add_undo_method(func(): erase.map(func(obj): obj.set_visibile_no_register(true)))
@@ -191,6 +191,7 @@ func _unhandled_input(event):
 					App.cursor.move = true
 				elif curr_wall != null:
 					if event.button_index == 1:
+						erase_wall_rect(WallPanel.horizontal[curr_wall["object_id"]])
 						var walls = []
 						for x in range(start_pos.x + App.cursor.region_rect.position.x, start_pos.x + App.cursor.region_rect.end.x, 32):
 							for y in range(start_pos.y + App.cursor.region_rect.position.y, start_pos.y + App.cursor.region_rect.end.y, 32):
@@ -229,7 +230,7 @@ func _unhandled_input(event):
 				if curr_barrier == null:
 					var size = snap_vector(pos - start_pos) + Vector2.ONE * App.cursor.snap
 					if curr_wall != null and !Input.is_mouse_button_pressed(2):
-						if curr_wall["horizontal"]:
+						if WallPanel.horizontal[curr_wall["object_id"]]:
 							size.y = App.cursor.snap
 						else:
 							size.x = App.cursor.snap

@@ -2,6 +2,8 @@ extends Sprite2D
 
 class_name BaseSprite
 
+const COLLISION_HINT_COLOR = Color(1, 0, 1, 0.6)
+
 var mode
 var submode = 0
 var level
