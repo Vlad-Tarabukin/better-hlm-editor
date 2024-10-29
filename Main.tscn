@@ -1555,6 +1555,15 @@ popup/item_5/text = "Show Collision Masks"
 popup/item_5/checkable = 1
 popup/item_5/id = 5
 
+[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+
+[node name="Snap MenuButton" type="MenuButton" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+text = "Snap: 1px"
+flat = false
+switch_on_hover = true
+
 [node name="Bottom-Left" type="Control" parent="CanvasLayer/Main GUI"]
 layout_mode = 1
 anchors_preset = 2

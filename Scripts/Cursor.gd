@@ -3,7 +3,12 @@ extends Sprite2D
 @onready var label = $"../CanvasLayer/Main GUI/Angle Label"
 @onready var position_label = $"../CanvasLayer/Main GUI/Bottom-Left/Position Label"
 
-var snap = 1
+signal snap_changed
+
+var snap = 1 :
+	set(_snap):
+		snap = _snap
+		snap_changed.emit()
 var move = true
 var outline = true
 

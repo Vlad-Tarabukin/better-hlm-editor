@@ -4,6 +4,9 @@ extends CanvasLayer
 @onready var floor_list = $"Main GUI/Bottom-Left/Floor List"
 @onready var main_gui = $"Main GUI"
 @onready var settings_menu_button = $"Main GUI/Buttons HBoxContainer/Settings MenuButton"
+@onready var snap_menu_button = $"Main GUI/Buttons HBoxContainer/Snap MenuButton"
+
+const MAX_SNAP = 8
 
 func _on_TabContainer_tab_selected(tab):
 	App.mode = tab
@@ -25,6 +28,11 @@ func _on_CanvasLayer_ready():
 	tab_container.size.x = 360 / size_factor
 	settings_menu_button.get_popup().hide_on_checkable_item_selection = false
 	settings_menu_button.get_popup().index_pressed.connect(_on_settings_menu_button_pressed)
+	snap_menu_button.get_popup().index_pressed.connect(_on_snap_menu_button_pressed)
+	for i in range(MAX_SNAP):
+		snap_menu_button.get_popup().add_radio_check_item(str(2 ** i) + "px", i)
+	snap_menu_button.get_popup().set_item_checked(0, true)
+	App.cursor.snap_changed.connect(func(): _on_snap_menu_button_pressed(int(log(App.cursor.snap) / log(2))))
 
 func _on_floor_list_item_selected(index):
 	App.set_floor(index)
@@ -98,3 +106,10 @@ func _on_settings_menu_button_pressed(index):
 	elif index == 5:
 		App.settings["collision"] = state
 		App.get_current_floor().propagate_call("queue_redraw")
+
+func _on_snap_menu_button_pressed(index):
+	if !snap_menu_button.get_popup().is_item_checked(index):
+		for i in range(MAX_SNAP):
+			snap_menu_button.get_popup().set_item_checked(i, i == index)
+		App.cursor.snap = 2 ** index
+		snap_menu_button.text = "Snap: " + snap_menu_button.get_popup().get_item_text(index)
