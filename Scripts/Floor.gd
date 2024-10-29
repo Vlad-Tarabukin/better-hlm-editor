@@ -475,7 +475,7 @@ func save_floor(path=App.level_path + "/level" + str(index)):
 	var npc_file = FileAccess.open(path + ".npc", FileAccess.WRITE)
 	var itm_file = FileAccess.open(path + ".itm", FileAccess.WRITE)
 	var csf_file = FileAccess.open(path + ".csf", FileAccess.WRITE)
-	play_file.store_line("0")
+	play_file.store_line(str(App.level_info["character_id"]))
 	play_file.store_line("-1")
 	npc_file.store_line(str(len(cutscene["npc"])))
 	itm_file.store_line(str(len(cutscene["items"])))
