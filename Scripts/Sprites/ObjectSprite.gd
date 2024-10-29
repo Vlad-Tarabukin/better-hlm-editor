@@ -22,6 +22,8 @@ func _draw():
 	if App.settings["collision"] and object.mask_id != null:
 		var mask = ObjectsLoader.masks[object.mask_id]
 		draw_texture(mask["texture"], mask["center"], COLLISION_HINT_COLOR)
+	if App.settings["center"]:
+		draw_circle(Vector2.ZERO, 2, Color.YELLOW)
 	if App.mode == mode:
 		draw_rect(get_rect(), Color.WHITE, false)
 

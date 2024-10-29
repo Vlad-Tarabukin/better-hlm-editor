@@ -1530,7 +1530,7 @@ layout_mode = 2
 text = "Show settings"
 flat = false
 switch_on_hover = true
-item_count = 6
+item_count = 7
 popup/item_0/text = "Show Grid"
 popup/item_0/checkable = 1
 popup/item_0/checked = true
@@ -1554,6 +1554,9 @@ popup/item_4/id = 4
 popup/item_5/text = "Show Collision Masks"
 popup/item_5/checkable = 1
 popup/item_5/id = 5
+popup/item_6/text = "Show Origins of Objects"
+popup/item_6/checkable = 1
+popup/item_6/id = 6
 
 [node name="VSeparator5" type="VSeparator" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
 layout_mode = 2

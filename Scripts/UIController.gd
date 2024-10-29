@@ -106,6 +106,9 @@ func _on_settings_menu_button_pressed(index):
 	elif index == 5:
 		App.settings["collision"] = state
 		App.get_current_floor().propagate_call("queue_redraw")
+	elif index == 6:
+		App.settings["center"] = state
+		App.get_current_floor().propagate_call("queue_redraw")
 
 func _on_snap_menu_button_pressed(index):
 	if !snap_menu_button.get_popup().is_item_checked(index):
