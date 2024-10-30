@@ -12,6 +12,8 @@ static var characters = []
 var cars = []
 var object_to_place
 var curr_player_sprite
+static var car_ids = []
+static var player_ids = []
 
 const TAB_INDEX = 4
 
@@ -198,11 +200,13 @@ func _ready():
 			"object_id": int(params[1]),
 			"sprites": sprites
 		})
+		player_ids.append(int(params[1]))
 		player_item_list.add_item(params[0], ObjectsLoader.get_sprite(sprites[0])["frames"][0])
 	var cars_file = FileAccess.open("res://cars.tsv", FileAccess.READ)
 	while !cars_file.eof_reached():
 		var params = cars_file.get_csv_line("\t")
-		cars.append(ObjectsLoader.objects[int(params[1])])
+		cars.append(ObjectsLoader.objects[int(params[1])].clone())
+		car_ids.append(int(params[1]))
 		cars[-1].sprite_id = int(params[2])
 		car_item_list.add_item(params[0], ObjectsLoader.get_sprite(int(params[2]))["frames"][0])
 

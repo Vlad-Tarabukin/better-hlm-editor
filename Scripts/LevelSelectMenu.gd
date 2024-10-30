@@ -6,20 +6,45 @@ var level_paths = []
 
 func _on_visibility_changed():
 	clear()
-	level_paths = []
-	add_item("-Create Level-")
-	var levels_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single"
-	var dir = DirAccess.open(levels_path)
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
+	level_paths = [null, null]
+	add_item("- Create a New Level -")
+	add_item("Single Levels")
+	
+	var single_levels_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single"
+	var single_levels_dir = DirAccess.open(single_levels_path)
+	single_levels_dir.list_dir_begin()
+	var file_name = single_levels_dir.get_next()
 	while file_name != "":
-		var hlm_path = levels_path + "/" + file_name + "/level.hlm"
-		if dir.current_is_dir() and dir.file_exists(hlm_path):
+		var hlm_path = single_levels_path + "/" + file_name + "/level.hlm"
+		if single_levels_dir.current_is_dir() and single_levels_dir.file_exists(hlm_path):
 			var level_hlm = FileAccess.open(hlm_path, FileAccess.READ)
-			var level_name = level_hlm.get_line()
-			add_item(level_name)
-			level_paths.append(levels_path + "/" + file_name)
-		file_name = dir.get_next()
+			add_item("   " + level_hlm.get_line())
+			level_paths.append(single_levels_path + "/" + file_name + "/level")
+		file_name = single_levels_dir.get_next()
+	
+	add_item("Campaigns")
+	level_paths.append(null)
+	
+	var campaigns_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/campaigns"
+	var campaigns_dir = DirAccess.open(campaigns_path)
+	campaigns_dir.list_dir_begin()
+	file_name = campaigns_dir.get_next()
+	while file_name != "":
+		var cpg_path = campaigns_path + "/" + file_name + "/campaign.cpg"
+		if campaigns_dir.current_is_dir() and campaigns_dir.file_exists(cpg_path):
+			var campaign_cpg = FileAccess.open(cpg_path, FileAccess.READ)
+			add_item("   " + campaign_cpg.get_line(), null, false)
+			level_paths.append(campaigns_path + "/" + file_name + "/" + file_name)
+			campaign_cpg.get_line()
+			var level_count = int(campaign_cpg.get_line())
+			for i in range(level_count):
+				var paths = ["/intro" + str(i), "/main" + str(i), "/outro" + str(i)]
+				for path in paths:
+					if campaigns_dir.file_exists(campaigns_path + "/" + file_name + path + ".hlm"):
+						var level_hlm = FileAccess.open(campaigns_path + "/" + file_name + path + ".hlm", FileAccess.READ)
+						add_item("      " + level_hlm.get_line())
+						level_paths.append(campaigns_path + "/" + file_name + path)
+		file_name = campaigns_dir.get_next()
 
 func new_folder():
 	var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single/" + uuid.v4()
@@ -38,7 +63,7 @@ func _on_Level_List_item_selected(index):
 
 func _on_load_button_button_up():
 	if is_anything_selected():
-		App.load_level(level_paths[get_selected_items()[0] - 1])
+		App.load_level(level_paths[get_selected_items()[0]])
 		visible = false
 
 func _on_backup_button_button_up():

@@ -6,6 +6,8 @@ var mode = 0
 var submode = 0
 var level = 0
 var level_path
+var level_hlm_prefix
+var level_prefix
 var level_info = {}
 var selected_object : ObjectSprite
 var undo_redo : UndoRedo = UndoRedo.new()
@@ -80,7 +82,10 @@ func delete_floor():
 	set_floor(max(level - 1, 0))
 
 func load_level(_level_path):
-	level_path = _level_path
+	var prefix_index = _level_path.rfind("/") + 1
+	level_path = _level_path.substr(0, prefix_index)
+	level_hlm_prefix = _level_path.substr(prefix_index)
+	level_prefix = level_hlm_prefix + "_" if level_hlm_prefix.right(1).is_valid_int() else ""
 	
 	for fl in get_tree().get_root().get_node("Main/Floors").get_children():
 		fl.queue_free()
@@ -97,7 +102,7 @@ func load_level(_level_path):
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(true)
 	
 	var floors_node = get_tree().get_root().get_node("Main/Floors")
-	var file = FileAccess.open(level_path + "/level.hlm", FileAccess.READ)
+	var file = FileAccess.open(level_path + "/" + level_hlm_prefix + ".hlm", FileAccess.READ)
 	level_info["name"] = file.get_line()
 	level_info["floors"] = int(file.get_line())
 	level_info["author"] = file.get_line()
@@ -130,12 +135,16 @@ func load_level(_level_path):
 	
 	for i in range(level_info["floors"] + 1):
 		var level_floor = floors_node.get_child(i)
-		level_floor.load_floor(level_path + "/level" + str(i) + ".obj")
-		level_floor.load_floor(level_path + "/level" + str(i) + ".tls")
-		level_floor.load_floor(level_path + "/level" + str(i) + ".wll")
-		level_floor.load_floor(level_path + "/level" + str(i) + ".npc")
-		level_floor.load_floor(level_path + "/level" + str(i) + ".itm")
-		level_floor.load_floor(level_path + "/level" + str(i) + ".csf")
+		var start_path = level_path + "/" + level_prefix + str(i)
+		if FileAccess.file_exists(start_path + ".obj") and FileAccess.file_exists(start_path + ".wll"):
+			level_floor.load_floor(start_path + ".obj")
+			level_floor.load_floor(start_path + ".wll")
+		else:
+			level_floor.load_floor(start_path + ".play")
+		level_floor.load_floor(start_path + ".tls")
+		level_floor.load_floor(start_path + ".npc")
+		level_floor.load_floor(start_path + ".itm")
+		level_floor.load_floor(start_path + ".csf")
 	
 	queue_redraw()
 	get_tree().get_root().get_node("Main/CanvasLayer").show_levels()
@@ -146,7 +155,7 @@ func load_level(_level_path):
 	undo_redo.clear_history()
 
 func save_level():
-	var file = FileAccess.open(level_path + "/level.hlm", FileAccess.WRITE)
+	var file = FileAccess.open(level_path + "/" + level_hlm_prefix + ".hlm", FileAccess.WRITE)
 	file.store_line(level_info["name"])
 	file.store_line(str(level_info["floors"]))
 	file.store_line(level_info["author"])

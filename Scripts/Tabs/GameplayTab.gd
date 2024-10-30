@@ -13,7 +13,7 @@ var active = false
 var enemies_on_list = []
 var weapons = []
 static var weapon_ids = []
-static var patrol_ids = []
+static var enemies_ids = []
 
 @onready var enemy_list = $"Enemies/Enemy List"
 @onready var fraction_label = $"Enemies/Fraction Label"
@@ -56,8 +56,7 @@ func _on_Gameplay_ready():
 			"object": int(params[2]),
 			"sprites": sprites
 		})
-		if params[4] == "1":
-			patrol_ids.append(int(params[2]))
+		enemies_ids.append(int(params[2]))
 	enemies_tsv.close()
 	
 	var weapons_tsv = FileAccess.open("res://weapons.tsv", FileAccess.READ)

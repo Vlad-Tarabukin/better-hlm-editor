@@ -194,6 +194,188 @@ func load_floor(floor_path):
 					object_sprite.level = index
 					object_sprite.register_creation = false
 					add_child(object_sprite)
+		elif floor_path.get_extension() == "wll":
+			while !file.eof_reached():
+				var params = []
+				var proper = true
+				for _i in range(5):
+					var line = file.get_line()
+					if line == "":
+						proper = false
+						break
+					params.append(line)
+				if !proper:
+					break
+				var object_id = int(params.pop_front())
+				var x = int(params.pop_front())
+				var y = int(params.pop_front())
+				var sprite_id = int(params.pop_front())
+				var _depth = int(params.pop_front())
+				
+				if WallPanel.horizontal.has(object_id):
+					var wall_sprite = WallSprite.new(object_id, sprite_id)
+					wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
+					wall_sprite.level = index
+					wall_sprite.register_creation = false
+					add_child(wall_sprite)
+		elif floor_path.get_extension() == "play":
+			file.get_line()
+			file.get_line()
+			while !file.eof_reached():
+				var object_id = int(file.get_line())
+				var params = []
+				var proper = true
+				var params_amount = 5
+				var rain_rects_amount
+				if object_id == 124:
+					params_amount = 9
+				if object_id == 810:
+					params_amount = 6
+				if object_id == 2411:
+					params_amount = 4
+				if object_id == 1417:
+					params_amount = 4
+				elif object_id == 663:
+					rain_rects_amount = int(file.get_line())
+					params_amount = 4 * rain_rects_amount
+				elif object_id in DoorSprite.object_ids:
+					params_amount = 6
+				elif object_id == 1770:
+					light_overlays.append(int(file.get_line()))
+					continue
+				for _i in range(params_amount):
+					var line = file.get_line()
+					if line == "":
+						proper = false
+						break
+					params.append(line)
+				if !proper:
+					break
+				print(object_id, params)
+				if object_id == 124:
+					var trigger_rect = Rect2(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
+					trigger_rect.position -= trigger_rect.size / 2
+					var hor_direction = max(min(int(params.pop_front()), 1), -1)
+					var ver_direction = max(min(int(params.pop_front()), 1), -1)
+					var target_floor = int(params.pop_front())
+					var offset = Vector2(int(params.pop_front()), int(params.pop_front()))
+					var direction = 0
+					if hor_direction == 0 and ver_direction == -1:
+						direction = 1
+					elif hor_direction == -1 and ver_direction == 0:
+						direction = 2
+					elif hor_direction == 0 and ver_direction == 1:
+						direction = 3
+					
+					var transition_sprite = TransitionSprite.new(trigger_rect, direction, target_floor, offset)
+					transition_sprite.level = index
+					transition_sprite.register_creation = false
+					add_child(transition_sprite)
+				elif object_id == 810:
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					var angle = int(params.pop_front())
+					var target_floor = int(params.pop_front())
+					var offset = Vector2i(int(params.pop_front()), int(params.pop_front()))
+					
+					var elevator_sprite = ElevatorSprite.new(target_floor, offset)
+					elevator_sprite.level = index
+					elevator_sprite.global_position = Vector2(x, y)
+					elevator_sprite.global_rotation_degrees = angle
+					elevator_sprite.register_creation = false
+					add_child(elevator_sprite)
+				elif object_id == 2411:
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					var lenght = float(params.pop_front())
+					var angle = -int(params.pop_front())
+					
+					var barrier_sprite = BarrierSprite.new(lenght)
+					barrier_sprite.level = index
+					barrier_sprite.global_position = Vector2(x, y)
+					barrier_sprite.global_rotation_degrees = angle
+					barrier_sprite.register_creation = false
+					add_child(barrier_sprite)
+				elif object_id in [302, 303]:
+					var trigger_rect = Rect2(int(params.pop_front()), int(params.pop_front()), int(float(params.pop_front()) * 16), int(float(params.pop_front()) * 16))
+					
+					var mul_direction = max(min(int(params.pop_front()), 1), -1)
+					
+					var direction = 0
+					if object_id == 302:
+						direction = 0 if mul_direction == 1 else 2
+					else:
+						direction = 3 if mul_direction == 1 else 1
+					
+					var entry_sprite = EntrySprite.new(trigger_rect, direction)
+					entry_sprite.level = index
+					entry_sprite.register_creation = false
+					add_child(entry_sprite)
+				elif object_id == 1417:
+					var darkness_rect = Rect2i(int(params[0]), int(params[2]), int(params[1]) - int(params[0]), int(params[3]) - int(params[2]))
+					var darkness_sprite = DarknessSprite.new(darkness_rect)
+					darkness_sprite.level = index
+					darkness_sprite.register_creation = false
+					add_child(darkness_sprite)
+				elif object_id == 663:
+					rain = true
+					rain_rects.clear()
+					for i in range(rain_rects_amount):
+						var x = int(params[0 + i * 4])
+						var y = int(params[2 + i * 4])
+						rain_rects.append(Rect2i(x, y, int(params[1 + i * 4]) - x, int(params[3 + i * 4]) - y))
+					queue_redraw()
+				elif object_id in DoorSprite.object_ids:
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					params.pop_front()
+					params.pop_front()
+					var locked = int(params.pop_front())
+					var cutscene = int(params.pop_front())
+					
+					var door_sprite = DoorSprite.new(object_id, locked, cutscene)
+					door_sprite.level = index
+					door_sprite.position = Vector2(x, y)
+					door_sprite.register_creation = false
+					add_child(door_sprite)
+				elif WallPanel.horizontal.has(object_id):
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					var sprite_id = int(params.pop_front())
+					
+					var wall_sprite = WallSprite.new(object_id, sprite_id)
+					wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
+					wall_sprite.level = index
+					wall_sprite.register_creation = false
+					add_child(wall_sprite)
+				else:
+					var x = int(params.pop_front())
+					var y = int(params.pop_front())
+					var sprite_id = int(params.pop_front())
+					var angle = -int(params.pop_front())
+					var frame = int(params.pop_front())
+					var parent_id = 11
+					
+					var submode = 0
+					var mode = ItemsTab.TAB_INDEX
+					
+					if object_id in GameplayTab.enemies_ids or object_id in GameplayTab.weapon_ids:
+						mode = GameplayTab.TAB_INDEX
+						if object_id in GameplayTab.enemies_ids:
+							parent_id = 10
+					elif object_id in LevelTab.car_ids or object_id in LevelTab.player_ids:
+						mode = LevelTab.TAB_INDEX
+						parent_id = 1583 if object_id in LevelTab.car_ids else 1582
+					
+					var object = ObjectsLoader.objects[object_id].clone()
+					object.sprite_id = sprite_id
+					var object_sprite = ObjectSprite.new(object, frame, mode, parent_id)
+					object_sprite.submode = submode
+					object_sprite.global_position = Vector2(x, y)
+					object_sprite.rotation_degrees = angle
+					object_sprite.level = index
+					object_sprite.register_creation = false
+					add_child(object_sprite)
 		elif floor_path.get_extension() == "tls":
 			while !file.eof_reached():
 				var params = []
@@ -222,30 +404,6 @@ func load_floor(floor_path):
 				tile_sprite.level = index
 				tile_sprite.register_creation = false
 				add_child(tile_sprite)
-		elif floor_path.get_extension() == "wll":
-			while !file.eof_reached():
-				var params = []
-				var proper = true
-				for _i in range(5):
-					var line = file.get_line()
-					if line == "":
-						proper = false
-						break
-					params.append(line)
-				if !proper:
-					break
-				var object_id = int(params.pop_front())
-				var x = int(params.pop_front())
-				var y = int(params.pop_front())
-				var sprite_id = int(params.pop_front())
-				var _depth = int(params.pop_front())
-				
-				if WallPanel.horizontal.has(object_id):
-					var wall_sprite = WallSprite.new(object_id, sprite_id)
-					wall_sprite.global_position = Vector2(x, y) - Vector2(wall_sprite.wall_offset)
-					wall_sprite.level = index
-					wall_sprite.register_creation = false
-					add_child(wall_sprite)
 		elif floor_path.get_extension() == "npc":
 			for _i in range(int(file.get_line())):
 				var character_name = file.get_line()
@@ -457,6 +615,7 @@ func load_floor(floor_path):
 				messages[-1]["character"] = file.get_line()
 			for message in dialogue_messages:
 				cutscene["frames"][message["frame"]]["actions"][message["index"]]["messages"] = messages.slice(message["start"], message["end"])
+	return file != null
 
 func sorting(a, b):
 	if a is WallSprite and b is WallSprite:
@@ -467,7 +626,7 @@ func sorting(a, b):
 		return a.position.x < b.position.x or a.position.y < b.position.y
 	return false
 
-func save_floor(path=App.level_path + "/level" + str(index)):
+func save_floor(path=App.level_path + "/" + App.level_prefix + str(index)):
 	var obj_file = FileAccess.open(path + ".obj", FileAccess.WRITE)
 	var tls_file = FileAccess.open(path + ".tls", FileAccess.WRITE)
 	var wll_file = FileAccess.open(path + ".wll", FileAccess.WRITE)
