@@ -8,7 +8,7 @@ var trigger_rect
 var placing_transition
 var placing_elevator
 var last_time_string
-var characters = []
+static var characters = []
 var cars = []
 var object_to_place
 var curr_player_sprite

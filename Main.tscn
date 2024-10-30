@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=41 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://qq73ifxoq31j" path="res://Textures/masks/soldier.png" id="26_rui6v"]
 [ext_resource type="Texture2D" uid="uid://cxqtqaxil7v32" path="res://Textures/masks/son.png" id="27_d5yru"]
 [ext_resource type="Texture2D" uid="uid://bucr07hnlrgc2" path="res://Textures/masks/writer.png" id="28_s7xnj"]
+[ext_resource type="Script" path="res://Scripts/ErrorsBoxContainer.gd" id="34_v5mgl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -1167,6 +1168,57 @@ offset_left = 160.0
 offset_right = 241.0
 offset_bottom = 31.0
 text = "Finish"
+
+[node name="Errors VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main GUI/Panel"]
+layout_mode = 0
+offset_left = -370.0
+offset_top = 15.0
+offset_right = -50.0
+offset_bottom = 226.0
+mouse_filter = 2
+script = ExtResource("34_v5mgl")
+
+[node name="No Player" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❗ No player found on first floor"
+autowrap_mode = 1
+
+[node name="No Fans Vehicle" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❗ No Fans van found on first floor"
+autowrap_mode = 1
+
+[node name="No Soldier Vehicle" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❗ No Soldier's jeep found on first floor"
+autowrap_mode = 3
+
+[node name="No Son Vehicle" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❗ No Son's car found on first floor"
+autowrap_mode = 1
+
+[node name="No Cobra Vehicle" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❗ No Cobra's car found on first floor"
+autowrap_mode = 1
+
+[node name="No Name" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❕ Level is untitled"
+autowrap_mode = 1
+
+[node name="No Author" type="Label" parent="CanvasLayer/Main GUI/Panel/Errors VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "❕ Author name is empty"
+autowrap_mode = 1
 
 [node name="Angle Label" type="Label" parent="CanvasLayer/Main GUI"]
 layout_mode = 0
