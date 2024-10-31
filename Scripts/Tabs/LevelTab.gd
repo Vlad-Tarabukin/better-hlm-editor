@@ -62,6 +62,9 @@ func show_level_info():
 	top_bound_spin_box.set_value_no_signal(App.level_info["level_boundaries"].position.y)
 	right_bound_spin_box.set_value_no_signal(App.level_info["level_boundaries"].end.x)
 	bottom_bound_spin_box.set_value_no_signal(App.level_info["level_boundaries"].end.y)
+	var cover = Image.load_from_file(App.level_path + "/" + App.level_hlm_prefix + ".png")
+	if cover:
+		cover_texture_rect.texture = ImageTexture.create_from_image(cover.get_region(Rect2i(0, 0, 34, 57)))
 
 func _on_boundaries_change(_value):
 	App.change_level_boundaries(left_bound_spin_box.value, top_bound_spin_box.value, right_bound_spin_box.value, bottom_bound_spin_box.value)
@@ -279,5 +282,5 @@ func _on_screenshot_button_button_up():
 			viewport.add_child(obj.duplicate(0))
 	await get_tree().create_timer(0.5, false).timeout
 	var image = viewport.get_texture().get_image()
-	image.resize(500, 500)
+	image.resize(512, 512)
 	image.save_png(App.level_path + "/screen.png")
