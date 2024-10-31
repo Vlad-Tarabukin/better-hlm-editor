@@ -4,11 +4,21 @@ extends ItemList
 
 var level_paths = []
 
+const SINGLE_COVER = preload("res://Textures/single_cover.png")
+const CAMPAIGN_COVER = preload("res://Textures/campaign_cover.png")
+
+func get_cover(path, single):
+	var image = Image.load_from_file(path)
+	if image:
+		return ImageTexture.create_from_image(image)
+	else:
+		return SINGLE_COVER if single else CAMPAIGN_COVER
+
 func _on_visibility_changed():
 	clear()
 	level_paths = [null, null]
 	add_item("- Create a New Level -")
-	add_item("Single Levels")
+	add_item("Single Levels", null, false)
 	
 	var single_levels_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/single"
 	var single_levels_dir = DirAccess.open(single_levels_path)
@@ -18,11 +28,11 @@ func _on_visibility_changed():
 		var hlm_path = single_levels_path + "/" + file_name + "/level.hlm"
 		if single_levels_dir.current_is_dir() and single_levels_dir.file_exists(hlm_path):
 			var level_hlm = FileAccess.open(hlm_path, FileAccess.READ)
-			add_item("   " + level_hlm.get_line())
+			add_item("   " + level_hlm.get_line(), get_cover(single_levels_path + "/" + file_name + "/level.png", true))
 			level_paths.append(single_levels_path + "/" + file_name + "/level")
 		file_name = single_levels_dir.get_next()
 	
-	add_item("Campaigns")
+	add_item("Campaigns", null, false)
 	level_paths.append(null)
 	
 	var campaigns_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/Levels/campaigns"
@@ -33,7 +43,7 @@ func _on_visibility_changed():
 		var cpg_path = campaigns_path + "/" + file_name + "/campaign.cpg"
 		if campaigns_dir.current_is_dir() and campaigns_dir.file_exists(cpg_path):
 			var campaign_cpg = FileAccess.open(cpg_path, FileAccess.READ)
-			add_item("   " + campaign_cpg.get_line(), null, false)
+			add_item("   " + campaign_cpg.get_line(), get_cover(campaigns_path + "/" + file_name + "/campaign.png", false), false)
 			level_paths.append(campaigns_path + "/" + file_name + "/" + file_name)
 			campaign_cpg.get_line()
 			var level_count = int(campaign_cpg.get_line())
@@ -42,7 +52,7 @@ func _on_visibility_changed():
 				for path in paths:
 					if campaigns_dir.file_exists(campaigns_path + "/" + file_name + path + ".hlm"):
 						var level_hlm = FileAccess.open(campaigns_path + "/" + file_name + path + ".hlm", FileAccess.READ)
-						add_item("      " + level_hlm.get_line())
+						add_item("      " + level_hlm.get_line(), get_cover(campaigns_path + "/" + file_name + "/main" + str(i) + ".png", true))
 						level_paths.append(campaigns_path + "/" + file_name + path)
 		file_name = campaigns_dir.get_next()
 

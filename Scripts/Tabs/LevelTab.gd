@@ -268,7 +268,7 @@ func _on_cover_button_button_up():
 
 func _on_file_dialog_file_selected(path):
 	cover_texture_rect.texture = ImageTexture.create_from_image(Image.load_from_file(path).get_region(Rect2i(0, 0, 34, 57)))
-	DirAccess.copy_absolute(path, App.level_path + "/level.png")
+	DirAccess.copy_absolute(path, App.level_path + "/" + App.level_hlm_prefix + ".png")
 
 func _on_screenshot_button_button_up():
 	var viewport = get_tree().get_root().get_node("Main/Screenshot SubViewport")
