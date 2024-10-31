@@ -68,7 +68,7 @@ func _on_Level_List_item_selected(index):
 	if index == 0:
 		var path = new_folder()
 		FileAccess.open(path + "/level.hlm", FileAccess.WRITE).store_string(FileAccess.open("res://default_level.hlm", FileAccess.READ).get_as_text())
-		App.load_level(path)
+		App.load_level(path + "/level")
 		visible = false
 
 func _on_load_button_button_up():
