@@ -85,7 +85,7 @@ func load_level(_level_path):
 	var prefix_index = _level_path.rfind("/") + 1
 	level_path = _level_path.substr(0, prefix_index)
 	level_hlm_prefix = _level_path.substr(prefix_index)
-	level_prefix = level_hlm_prefix + "_" if level_hlm_prefix.right(1).is_valid_int() else ""
+	level_prefix = level_hlm_prefix + ("_" if level_hlm_prefix.right(1).is_valid_int() else "")
 	
 	for fl in get_tree().get_root().get_node("Main/Floors").get_children():
 		fl.queue_free()
