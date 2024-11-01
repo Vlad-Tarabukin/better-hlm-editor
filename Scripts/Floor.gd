@@ -13,6 +13,7 @@ var cutscene = {
 	"items": []
 }
 var transition_markers = []
+var static_objects = []
 
 const WALL_HINT_COLOR = Color(0, 1, 0, 0.4)
 const TRANSITION_HINT_COLOR = Color(1, 0, 0, 0.2)
@@ -185,15 +186,19 @@ func load_floor(floor_path):
 						mode = GameplayTab.TAB_INDEX
 					elif parent_id == 1582 or parent_id == 1583:
 						mode = LevelTab.TAB_INDEX
-					var object = ObjectsLoader.objects[object_id].clone()
-					object.sprite_id = sprite_id
-					var object_sprite = ObjectSprite.new(object, frame, mode, parent_id)
-					object_sprite.submode = submode
-					object_sprite.global_position = Vector2(x, y)
-					object_sprite.rotation_degrees = angle
-					object_sprite.level = index
-					object_sprite.register_creation = false
-					add_child(object_sprite)
+					
+					if object_id in EffectsTab.effect_ids:
+						static_objects.append(object_id)
+					else:
+						var object = ObjectsLoader.objects[object_id].clone()
+						object.sprite_id = sprite_id
+						var object_sprite = ObjectSprite.new(object, frame, mode, parent_id)
+						object_sprite.submode = submode
+						object_sprite.global_position = Vector2(x, y)
+						object_sprite.rotation_degrees = angle
+						object_sprite.level = index
+						object_sprite.register_creation = false
+						add_child(object_sprite)
 		elif floor_path.get_extension() == "wll":
 			while !file.eof_reached():
 				var params = []
@@ -803,6 +808,21 @@ func save_floor(path=App.level_path + "/" + App.level_prefix + str(index)):
 		obj_file.store_line(str(light_overlay))
 		play_file.store_line("1770")
 		play_file.store_line(str(light_overlay))
+	
+	for static_object in static_objects:
+		obj_file.store_line('11')
+		obj_file.store_line('0')
+		obj_file.store_line('0')
+		obj_file.store_line('-1')
+		obj_file.store_line('0')
+		obj_file.store_line(str(static_object))
+		obj_file.store_line('0')
+		play_file.store_line(str(static_object))
+		play_file.store_line('0')
+		play_file.store_line('0')
+		play_file.store_line('-1')
+		play_file.store_line('0')
+		play_file.store_line('0')
 	
 	if rain:
 		obj_file.store_line("663")

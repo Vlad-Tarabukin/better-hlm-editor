@@ -12,9 +12,28 @@ var active
 @onready var darkness_button = $"Darkness Button"
 @onready var rain_check_box = $"Rain CheckBox"
 @onready var rain_button = $"Rain Button"
+@onready var v_box_container = $VBoxContainer
 
 var last_floor
 var start_pos
+static var effect_ids = []
+
+func _ready():
+	var effects_tsv = FileAccess.open("res://effects.tsv", FileAccess.READ)
+	while !effects_tsv.eof_reached():
+		var params = effects_tsv.get_csv_line("\t")
+		var checkbox = CheckBox.new()
+		checkbox.text = params[0]
+		v_box_container.add_child(checkbox)
+		checkbox.pressed.connect(_on_effect_checkbox_pressed)
+		effect_ids.append(int(params[1]))
+
+func _on_effect_checkbox_pressed():
+	var static_objects = App.get_current_floor().static_objects
+	static_objects.clear()
+	for i in range(len(effect_ids)):
+		if v_box_container.get_child(i).button_pressed:
+			static_objects.append(effect_ids[i])
 
 func _process(delta):
 	if active and last_floor != App.level:
@@ -24,6 +43,10 @@ func _process(delta):
 		day_check_box.button_pressed = 1 in light_overlays
 		twilight_check_box.button_pressed = 2 in light_overlays
 		rain_check_box.button_pressed = App.get_current_floor().rain
+		
+		var static_objects = App.get_current_floor().static_objects
+		for i in range(len(effect_ids)):
+			v_box_container.get_child(i).button_pressed = effect_ids[i] in static_objects
 
 func _on_tab_container_tab_selected(tab):
 	active = tab == TAB_INDEX
