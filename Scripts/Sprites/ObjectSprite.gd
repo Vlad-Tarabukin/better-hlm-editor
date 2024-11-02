@@ -45,6 +45,9 @@ func _unhandled_input(event):
 						App.selected_object = self
 					elif App.selected_object == self:
 						App.selected_object = null
+				elif mode == ItemsTab.TAB_INDEX and event.button_index == MOUSE_BUTTON_MIDDLE and event.pressed:
+					get_tree().get_root().get_node("Main/CanvasLayer/Main GUI/Panel/TabContainer/Items").set_filter(object.object_name)
+					get_tree().get_root().set_input_as_handled()
 		elif event is InputEventMouseMotion:
 			if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 				if App.selected_object == self and App.cursor.texture == null and get_rect().has_point(to_local(GlobalCamera.get_mouse_position())):

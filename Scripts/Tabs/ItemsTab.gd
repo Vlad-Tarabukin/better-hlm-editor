@@ -9,10 +9,9 @@ const TAB_INDEX = 1
 @onready var name_label = $"Object Info/Name Label"
 @onready var size_label = $"Object Info/Size Label"
 @onready var frame_label = $"Object Info/Frame Label"
+@onready var line_edit = $LineEdit
 
 var active = false
-
-var filter = "/Furniture/"
 
 var curr_obj = 0
 var curr_frame = 0
@@ -26,7 +25,7 @@ func filter_list():
 	object_list = []
 	var i = 0
 	for o in objects:
-		if (filter == "" or o.object_name.to_lower().count(filter.to_lower()) > 0):
+		if (line_edit.text == "" or o.object_name.to_lower().count(line_edit.text.to_lower()) > 0):
 			var texture = ObjectsLoader.get_sprite(o.sprite_id)["frames"][0]
 			if texture != null:
 				item_list.add_icon_item(texture)
@@ -67,17 +66,22 @@ func refresh_sprite():
 		size_label.text = ""
 		frame_label.text = ""
 
-func _on_LineEdit_text_changed(new_text):
-	filter = new_text
+func refresh_list():
 	filter_list()
 	refresh_sprite()
+
+func set_filter(filter):
+	line_edit.text = filter
+	refresh_list()
+
+func _on_LineEdit_text_changed():
+	refresh_list()
 
 func _on_TabContainer_tab_selected(tab):
 	active = tab == TAB_INDEX
 	if active:
 		App.cursor.snap = 1
-		refresh_sprite()
-		filter_list()
+		refresh_list()
 		App.cursor.outline = true
 		App.cursor.region_enabled = false
 	else:
