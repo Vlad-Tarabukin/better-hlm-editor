@@ -1864,6 +1864,7 @@ filters = PackedStringArray("*.png")
 [connection signal="visibility_changed" from="CanvasLayer/Main GUI/Edit Panel" to="CanvasLayer/Main GUI/Edit Panel" method="_on_visibility_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Object SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_object_spin_box_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Sprite SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_sprite_spin_box_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Frame SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_frame_spin_box_value_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_ok_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_cancel_button_button_up"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC/Trigger OptionButton" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_trigger_option_button_item_selected"]
