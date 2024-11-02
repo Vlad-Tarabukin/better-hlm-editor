@@ -19,13 +19,18 @@ func _on_TabContainer_tab_selected(tab):
 func _on_Save_Button_button_up():
 	App.save_level()
 
+func _process(delta):
+	var size_factor = min(main_gui.size.y, 1080) / 1080
+	tab_container.scale = Vector2.ONE * size_factor
+	tab_container.size.y = 1080 * 1080 / main_gui.size.y
+	tab_container.position.x = 360 * (1 - size_factor)
+
 func _on_CanvasLayer_ready():
 	var tab = 1
 	tab_container.current_tab = tab
 	App.mode = tab
 	var size_factor = min(main_gui.size.y, 1080) / 1080
-	tab_container.scale = Vector2.ONE * size_factor 
-	tab_container.size.x = 360 / size_factor
+	tab_container.scale = Vector2.ONE * size_factor
 	settings_menu_button.get_popup().hide_on_checkable_item_selection = false
 	settings_menu_button.get_popup().index_pressed.connect(_on_settings_menu_button_pressed)
 	snap_menu_button.get_popup().index_pressed.connect(_on_snap_menu_button_pressed)
@@ -90,24 +95,31 @@ func _on_settings_menu_button_pressed(index):
 	var state = !settings_menu_button.get_popup().is_item_checked(index)
 	settings_menu_button.get_popup().set_item_checked(index, state)
 	if index == 0:
+		if state:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_min_size(Vector2i(1080, 720))
+			DisplayServer.window_set_size(DisplayServer.screen_get_size() - Vector2i(200, 200))
+	elif index == 1:
 		App.settings["grid"] = state
 		GlobalCamera.queue_redraw()
-	elif index == 1:
+	elif index == 2:
 		App.settings["wall"] = state
 		App.get_current_floor().queue_redraw()
-	elif index == 2:
+	elif index == 3:
 		App.settings["transition"] = state
 		App.get_current_floor().queue_redraw()
-	elif index == 3:
+	elif index == 4:
 		App.settings["rain"] = state
 		App.get_current_floor().queue_redraw()
-	elif index == 4:
+	elif index == 5:
 		App.settings["border"] = state
 		App.queue_redraw()
-	elif index == 5:
+	elif index == 6:
 		App.settings["collision"] = state
 		App.get_current_floor().propagate_call("queue_redraw")
-	elif index == 6:
+	elif index == 7:
 		App.settings["center"] = state
 		App.get_current_floor().propagate_call("queue_redraw")
 

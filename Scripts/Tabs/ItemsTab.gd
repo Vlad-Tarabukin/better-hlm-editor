@@ -74,7 +74,7 @@ func set_filter(filter):
 	line_edit.text = filter
 	refresh_list()
 
-func _on_LineEdit_text_changed():
+func _on_LineEdit_text_changed(_new_text):
 	refresh_list()
 
 func _on_TabContainer_tab_selected(tab):
