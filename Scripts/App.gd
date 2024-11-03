@@ -90,13 +90,22 @@ func load_level(_level_path):
 	for fl in get_tree().get_root().get_node("Main/Floors").get_children():
 		fl.queue_free()
 	
-	if DirAccess.dir_exists_absolute(level_path + "/mods"):
-		var mods = DirAccess.get_files_at(level_path + "/mods")
-		for mod in mods:
-			if mod.match("*.patchwad"):
-				ObjectsLoader.load_assets(level_path + "/mods/" + mod)
+	var mods = []
+	var mods_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/mods"
+	if DirAccess.dir_exists_absolute(mods_path):
+		mods.append_array(DirAccess.get_files_at(mods_path))
 	else:
-		DirAccess.make_dir_recursive_absolute(level_path + "/mods")
+		DirAccess.make_dir_recursive_absolute(mods_path)
+	
+	var level_mods_path = level_path + "/mods"
+	if DirAccess.dir_exists_absolute(level_mods_path):
+		mods.append_array(DirAccess.get_files_at(level_mods_path))
+	else:
+		DirAccess.make_dir_recursive_absolute(level_mods_path)
+	
+	for mod in mods:
+		if mod.match("*.patchwad"):
+			ObjectsLoader.load_assets(level_path + "/mods/" + mod)
 	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(false)
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(true)
