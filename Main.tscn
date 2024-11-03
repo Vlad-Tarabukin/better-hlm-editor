@@ -1247,7 +1247,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Edit Panel" type="Panel" parent="CanvasLayer/Main GUI"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1293,7 +1292,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 100.0
 offset_top = 10.0
-offset_right = 220.0
+offset_right = 183.063
 offset_bottom = 41.0
 max_value = 0.0
 allow_greater = true
@@ -1304,7 +1303,7 @@ update_on_text_changed = true
 layout_mode = 0
 offset_left = 100.0
 offset_top = 50.0
-offset_right = 220.0
+offset_right = 183.063
 offset_bottom = 81.0
 max_value = 0.0
 allow_greater = true
@@ -1315,7 +1314,7 @@ update_on_text_changed = true
 layout_mode = 0
 offset_left = 100.0
 offset_top = 90.0
-offset_right = 220.0
+offset_right = 183.063
 offset_bottom = 121.0
 max_value = 0.0
 update_on_text_changed = true
@@ -1340,7 +1339,7 @@ text = "Cancel"
 
 [node name="Object Label" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
-offset_left = 230.0
+offset_left = 190.0
 offset_top = 10.0
 offset_right = 350.0
 offset_bottom = 40.0
@@ -1351,7 +1350,7 @@ max_lines_visible = 2
 
 [node name="Sprite Label" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
-offset_left = 230.0
+offset_left = 190.0
 offset_top = 50.0
 offset_right = 350.0
 offset_bottom = 80.0
@@ -1359,6 +1358,14 @@ theme_override_font_sizes/font_size = 12
 vertical_alignment = 1
 autowrap_mode = 1
 max_lines_visible = 2
+
+[node name="Comment LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 90.0
+offset_right = 350.0
+offset_bottom = 121.0
+placeholder_text = "Comment"
 
 [node name="Edit Cutscene Sprite Panel" type="Panel" parent="CanvasLayer/Main GUI"]
 visible = false

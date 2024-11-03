@@ -640,7 +640,7 @@ func save_floor(path=App.level_path + "/" + App.level_prefix + str(index)):
 	var itm_file = FileAccess.open(path + ".itm", FileAccess.WRITE)
 	var csf_file = FileAccess.open(path + ".csf", FileAccess.WRITE)
 	play_file.store_line(str(App.level_info["character_id"]))
-	play_file.store_line("-1")
+	play_file.store_line(str(App.level_info["mask_id"]))
 	npc_file.store_line(str(len(cutscene["npc"])))
 	itm_file.store_line(str(len(cutscene["items"])))
 	
@@ -651,14 +651,15 @@ func save_floor(path=App.level_path + "/" + App.level_prefix + str(index)):
 	for obj in objects:
 		if obj.visible:
 			if obj is ObjectSprite:
-				obj_file.store_line(str(obj.parent))
+				var comment = "\t//" + obj.comment if obj.comment != "" else ""
+				obj_file.store_line(str(obj.parent) + comment)
 				obj_file.store_line(str(obj.position.x))
 				obj_file.store_line(str(obj.position.y))
 				obj_file.store_line(str(obj.object.sprite_id))
 				obj_file.store_line(str((720 - int(round(obj.rotation_degrees)) % 360) % 360) )
 				obj_file.store_line(str(obj.object.object_id))
 				obj_file.store_line(str(obj.object_frame))
-				play_file.store_line(str(obj.object.object_id))
+				play_file.store_line(str(obj.object.object_id) + comment)
 				play_file.store_line(str(obj.position.x))
 				play_file.store_line(str(obj.position.y))
 				play_file.store_line(str(obj.object.sprite_id))

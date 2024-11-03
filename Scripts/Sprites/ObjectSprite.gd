@@ -4,6 +4,7 @@ class_name ObjectSprite
 
 var object: HLMObject
 var object_frame
+var comment = ""
 var parent
 var last_mode
 var patrol_path_points = []

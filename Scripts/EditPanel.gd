@@ -5,18 +5,23 @@ extends Panel
 @onready var frame_spin_box = $"Frame SpinBox"
 @onready var object_label = $"Object Label"
 @onready var sprite_label = $"Sprite Label"
+@onready var comment_line_edit = $"Comment LineEdit"
 
 var old_object_id
 var old_sprite_id
 var old_frame
 
-func _on_cancel_button_button_up():
-	App.selected_object.set_ids(old_object_id, old_sprite_id, old_frame)
-	_on_ok_button_button_up()
-
-func _on_ok_button_button_up():
+func close():
 	App.selected_object = null
 	visible = false
+
+func _on_cancel_button_button_up():
+	App.selected_object.set_ids(old_object_id, old_sprite_id, old_frame)
+	close()
+
+func _on_ok_button_button_up():
+	App.selected_object.comment = comment_line_edit.text
+	close()
 
 func _on_visibility_changed():
 	if visible:
