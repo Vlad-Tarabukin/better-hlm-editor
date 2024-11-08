@@ -274,13 +274,16 @@ func _on_file_dialog_file_selected(path):
 	DirAccess.copy_absolute(path, App.level_path + "/" + App.level_hlm_prefix + ".png")
 
 func _on_screenshot_button_button_up():
-	var viewport = get_tree().get_root().get_node("Main/Screenshot SubViewport")
-	for obj in viewport.get_children().slice(2):
+	var viewport = get_tree().get_root().get_node("Main/Preview SubViewport")
+	for obj in viewport.get_children().slice(1):
 		obj.queue_free()
+	var offset = Vector2(512, 512) - Vector2(App.level_info["level_boundaries"].get_center())
 	for obj in get_tree().get_root().get_node("Main/Floors").get_children()[0].get_children():
 		if obj is ObjectSprite or obj is TileSprite or obj is WallSprite or obj is DoorSprite or obj is ElevatorSprite or obj is DarknessSprite or obj is CutsceneSprite:
-			viewport.add_child(obj.duplicate(0))
+			var new_obj = obj.duplicate(0)
+			new_obj.position += offset
+			viewport.add_child(new_obj)
 	await get_tree().create_timer(0.5, false).timeout
 	var image = viewport.get_texture().get_image()
-	image.resize(512, 512)
+	image.resize(512, 512, Image.INTERPOLATE_TRILINEAR)
 	image.save_png(App.level_path + "/screen.png")

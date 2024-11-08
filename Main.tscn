@@ -1750,35 +1750,17 @@ texture_repeat = 2
 centered = false
 script = ExtResource("3")
 
-[node name="Screenshot SubViewport" type="SubViewport" parent="."]
-transparent_bg = true
+[node name="Preview SubViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
-size = Vector2i(1000, 1000)
+size = Vector2i(1024, 1024)
 render_target_update_mode = 4
 
-[node name="Background" type="Control" parent="Screenshot SubViewport"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Watermark TextureRect" type="TextureRect" parent="Screenshot SubViewport/Background"]
+[node name="TextureRect" type="TextureRect" parent="Preview SubViewport"]
 z_index = 4096
-layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("24_pao8c")
-
-[node name="ColorRect" type="ColorRect" parent="Screenshot SubViewport/Background"]
-z_index = -4096
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.266575, 0.266575, 0.266575, 1)
 
 [node name="Quit ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = "Quit"
