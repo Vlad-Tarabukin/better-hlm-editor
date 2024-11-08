@@ -623,13 +623,11 @@ func load_floor(floor_path):
 	return file != null
 
 func sorting(a, b):
-	if a is WallSprite and b is WallSprite:
-		if a.position.x == b.position.x:
-			return a.position.y < b.position.y
-		if a.position.y == b.position.y:
-			return a.position.x < b.position.x
-		return a.position.x < b.position.x or a.position.y < b.position.y
-	return false
+	if a.position.x == b.position.x:
+		return a.position.y < b.position.y
+	if a.position.y == b.position.y:
+		return a.position.x < b.position.x
+	return a.position.x < b.position.x or a.position.y < b.position.y
 
 func save_floor(path=App.level_path + "/" + App.level_prefix + str(index)):
 	var obj_file = FileAccess.open(path + ".obj", FileAccess.WRITE)
@@ -644,11 +642,18 @@ func save_floor(path=App.level_path + "/" + App.level_prefix + str(index)):
 	npc_file.store_line(str(len(cutscene["npc"])))
 	itm_file.store_line(str(len(cutscene["items"])))
 	
-	var objects = get_children().duplicate()
-	objects.reverse()
-	objects.sort_custom(sorting)
-	
+	var objects = get_children().duplicate().filter(func(x): return x.visible)
+	var walls = []
+	var final_objects = []
 	for obj in objects:
+		if obj is WallSprite:
+			walls.append(obj)
+		else:
+			final_objects.append(obj)
+	walls.sort_custom(sorting)
+	final_objects.append_array(walls)
+	
+	for obj in final_objects:
 		if obj.visible:
 			if obj is ObjectSprite:
 				var comment = "\t//" + obj.comment if obj.comment != "" else ""
