@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var main_gui = $"Main GUI"
 @onready var settings_menu_button = $"Main GUI/Buttons HBoxContainer/Settings MenuButton"
 @onready var snap_menu_button = $"Main GUI/Buttons HBoxContainer/Snap MenuButton"
+@onready var screenshot_panel = $"Main GUI/Screenshot Panel"
 
 const MAX_SNAP = 8
 
@@ -129,3 +130,12 @@ func _on_snap_menu_button_pressed(index):
 			snap_menu_button.get_popup().set_item_checked(i, i == index)
 		App.cursor.snap = 2 ** index
 		snap_menu_button.text = "Snap: " + snap_menu_button.get_popup().get_item_text(index)
+
+func _on_screenshot_button_button_up():
+	screenshot_panel.show_panel()
+
+func _on_open_screenshot_button_button_up():
+	var path = App.custom_folder_path + "screenshots"
+	if !DirAccess.dir_exists_absolute(path):
+		DirAccess.make_dir_recursive_absolute(path)
+	OS.shell_show_in_file_manager(path)

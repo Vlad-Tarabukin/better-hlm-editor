@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=42 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://cxqtqaxil7v32" path="res://Textures/masks/son.png" id="27_d5yru"]
 [ext_resource type="Texture2D" uid="uid://bucr07hnlrgc2" path="res://Textures/masks/writer.png" id="28_s7xnj"]
 [ext_resource type="Script" path="res://Scripts/ErrorsBoxContainer.gd" id="34_v5mgl"]
+[ext_resource type="Script" path="res://Scripts/ScreenshotPanel.gd" id="37_q8is4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -1558,6 +1559,158 @@ theme_override_colors/font_hover_color = Color(1, 0.392157, 0.392157, 1)
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 text = "Delete"
 
+[node name="Screenshot Panel" type="Panel" parent="CanvasLayer/Main GUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -200.0
+offset_right = 375.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("37_q8is4")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 390.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Main GUI/Screenshot Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 5.0
+offset_right = 640.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 21
+text = "Screenshot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 40.0
+offset_right = 442.0
+offset_bottom = 70.0
+text = "Start:"
+vertical_alignment = 1
+
+[node name="Start X SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 40.0
+offset_right = 540.0
+offset_bottom = 71.0
+max_value = 0.0
+allow_lesser = true
+prefix = "X:"
+
+[node name="Start Y SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 71.0
+max_value = 0.0
+allow_lesser = true
+prefix = "Y:"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 80.0
+offset_right = 442.0
+offset_bottom = 110.0
+text = "End:"
+vertical_alignment = 1
+
+[node name="End X SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 80.0
+offset_right = 540.0
+offset_bottom = 111.0
+max_value = 0.0
+allow_greater = true
+prefix = "X:"
+
+[node name="End Y SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 80.0
+offset_right = 640.0
+offset_bottom = 111.0
+max_value = 0.0
+allow_greater = true
+prefix = "Y:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 120.0
+offset_right = 600.0
+offset_bottom = 310.0
+theme_override_constants/separation = 1
+
+[node name="Walls CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Screenshot Panel/VBoxContainer"]
+layout_mode = 2
+text = "Show Walls"
+
+[node name="Tiles CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Screenshot Panel/VBoxContainer"]
+layout_mode = 2
+text = "Show Tiles"
+
+[node name="Corners CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Screenshot Panel/VBoxContainer"]
+layout_mode = 2
+text = "Show Corners"
+
+[node name="Objects CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Screenshot Panel/VBoxContainer"]
+layout_mode = 2
+text = "Show Objects"
+
+[node name="Tilted CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Screenshot Panel/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Include tilted"
+
+[node name="Other CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Screenshot Panel/VBoxContainer"]
+layout_mode = 2
+text = "Show Other"
+
+[node name="File Name LineEdit" type="LineEdit" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 320.0
+offset_right = 550.0
+offset_bottom = 351.0
+placeholder_text = "File name"
+
+[node name="Save Button" type="Button" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 320.0
+offset_right = 640.0
+offset_bottom = 351.0
+text = "Save"
+
+[node name="Close Button" type="Button" parent="CanvasLayer/Main GUI/Screenshot Panel"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 360.0
+offset_right = 560.0
+offset_bottom = 391.0
+text = "Close"
+
 [node name="Buttons HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Main GUI"]
 layout_mode = 0
 offset_right = 200.0
@@ -1650,6 +1803,17 @@ layout_mode = 2
 text = "Snap: 1px"
 flat = false
 switch_on_hover = true
+
+[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+
+[node name="Screenshot Button" type="Button" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+text = "Screenshot"
+
+[node name="Open Screenshot Button" type="Button" parent="CanvasLayer/Main GUI/Buttons HBoxContainer"]
+layout_mode = 2
+text = "Open Screenshots Folder"
 
 [node name="Bottom-Left" type="Control" parent="CanvasLayer/Main GUI"]
 layout_mode = 1
@@ -1762,6 +1926,52 @@ offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("24_pao8c")
 
+[node name="Screenshot SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="Screenshot SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Walls" type="Control" parent="Screenshot SubViewport/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tiles" type="Control" parent="Screenshot SubViewport/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Corners" type="Control" parent="Screenshot SubViewport/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Objects" type="Control" parent="Screenshot SubViewport/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tilted" type="Control" parent="Screenshot SubViewport/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Other" type="Control" parent="Screenshot SubViewport/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Quit ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = "Quit"
 initial_position = 4
@@ -1865,12 +2075,21 @@ filters = PackedStringArray("*.png")
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_ok_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/Delete Button" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_delete_button_button_up"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Screenshot Panel/Start X SpinBox" to="CanvasLayer/Main GUI/Screenshot Panel" method="_spinbox_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Screenshot Panel/Start Y SpinBox" to="CanvasLayer/Main GUI/Screenshot Panel" method="_spinbox_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Screenshot Panel/End X SpinBox" to="CanvasLayer/Main GUI/Screenshot Panel" method="_spinbox_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Screenshot Panel/End Y SpinBox" to="CanvasLayer/Main GUI/Screenshot Panel" method="_spinbox_on_value_changed"]
+[connection signal="text_changed" from="CanvasLayer/Main GUI/Screenshot Panel/File Name LineEdit" to="CanvasLayer/Main GUI/Screenshot Panel" method="_on_file_name_line_edit_text_changed"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Screenshot Panel/Save Button" to="CanvasLayer/Main GUI/Screenshot Panel" method="_on_save_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Screenshot Panel/Close Button" to="CanvasLayer/Main GUI/Screenshot Panel" method="_on_close_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Quit Button" to="CanvasLayer" method="_on_quit_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Save Button" to="CanvasLayer" method="_on_Save_Button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Load Button" to="CanvasLayer" method="_on_load_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Open Button" to="CanvasLayer" method="_on_open_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Undo Button" to="CanvasLayer" method="_on_undo_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Redo Button" to="CanvasLayer" method="_on_redo_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Screenshot Button" to="CanvasLayer" method="_on_screenshot_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Main GUI/Buttons HBoxContainer/Open Screenshot Button" to="CanvasLayer" method="_on_open_screenshot_button_button_up"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Bottom-Left/Floor List" to="CanvasLayer" method="_on_floor_list_item_selected"]
 [connection signal="ready" from="CanvasLayer/Main GUI/Bottom-Left/Floor List" to="CanvasLayer" method="_on_floor_list_ready"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Bottom-Left/New Floor Button" to="CanvasLayer" method="_on_new_floor_button_button_up"]

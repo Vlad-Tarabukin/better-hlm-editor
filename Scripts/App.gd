@@ -13,6 +13,7 @@ var selected_object : ObjectSprite
 var undo_redo : UndoRedo = UndoRedo.new()
 var settings = {"grid": true, "wall": true, "transition": true, "rain": true,
  "border": true, "collision": false, "center": false}
+var custom_folder_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor/"
 
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
 
@@ -60,7 +61,7 @@ func add_floor():
 	set_floor(level_info["floors"])
 
 func duplicate_floor():
-	var temp_folder = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor/_temp"
+	var temp_folder = custom_folder_path + "_temp"
 	if !DirAccess.dir_exists_absolute(temp_folder):
 		DirAccess.make_dir_recursive_absolute(temp_folder)
 	get_current_floor().save_floor(temp_folder + '/temp')
@@ -91,21 +92,23 @@ func load_level(_level_path):
 		fl.queue_free()
 	
 	var mods = []
-	var mods_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/mods"
+	var mods_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/HotlineMiami2/mods/"
 	if DirAccess.dir_exists_absolute(mods_path):
-		mods.append_array(DirAccess.get_files_at(mods_path))
+		for mod in DirAccess.get_files_at(mods_path):
+			mods.append(mods_path + mod)
 	else:
 		DirAccess.make_dir_recursive_absolute(mods_path)
 	
-	var level_mods_path = level_path + "/mods"
+	var level_mods_path = level_path + "/mods/"
 	if DirAccess.dir_exists_absolute(level_mods_path):
-		mods.append_array(DirAccess.get_files_at(level_mods_path))
+		for mod in DirAccess.get_files_at(level_mods_path):
+			mods.append(level_mods_path + mod)
 	else:
 		DirAccess.make_dir_recursive_absolute(level_mods_path)
 	
 	for mod in mods:
 		if mod.match("*.patchwad"):
-			ObjectsLoader.load_assets(level_path + "/mods/" + mod)
+			ObjectsLoader.load_assets(mod)
 	
 	get_tree().get_root().get_node("Main/CanvasLayer/Level List").set_visible(false)
 	get_tree().get_root().get_node("Main/CanvasLayer/Main GUI").set_visible(true)
