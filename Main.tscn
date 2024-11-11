@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=43 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bucr07hnlrgc2" path="res://Textures/masks/writer.png" id="28_s7xnj"]
 [ext_resource type="Script" path="res://Scripts/ErrorsBoxContainer.gd" id="34_v5mgl"]
 [ext_resource type="Script" path="res://Scripts/ScreenshotPanel.gd" id="37_q8is4"]
+[ext_resource type="Script" path="res://Scripts/UpdatePanel.gd" id="38_uim0n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -55,7 +56,6 @@ script = ExtResource("4")
 script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
-visible = false
 clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -87,7 +87,60 @@ offset_right = 657.0
 offset_bottom = 31.0
 text = "Quit"
 
+[node name="Update Panel" type="Panel" parent="CanvasLayer/Level List"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 510.0
+offset_top = -300.0
+offset_right = 1110.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("38_uim0n")
+
+[node name="Label" type="Label" parent="CanvasLayer/Level List/Update Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 27
+text = "New version of Better HLM Editor available!"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Level List/Update Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 50.0
+offset_right = 590.0
+offset_bottom = 650.0
+bbcode_enabled = true
+
+[node name="Close Button" type="Button" parent="CanvasLayer/Level List/Update Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 660.0
+offset_right = 250.0
+offset_bottom = 691.0
+text = "Skip New Version"
+
+[node name="Load Button" type="Button" parent="CanvasLayer/Level List/Update Panel"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 660.0
+offset_right = 500.0
+offset_bottom = 691.0
+text = "Load New Version"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Level List/Update Panel"]
+
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2002,6 +2055,8 @@ filters = PackedStringArray("*.png")
 [connection signal="button_up" from="CanvasLayer/Level List/Backup Button" to="CanvasLayer/Level List" method="_on_backup_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Load Button" to="CanvasLayer/Level List" method="_on_load_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Quit Button" to="CanvasLayer" method="_on_quit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Level List/Update Panel/Close Button" to="CanvasLayer/Level List/Update Panel" method="_on_close_button_button_up"]
+[connection signal="request_completed" from="CanvasLayer/Level List/Update Panel/HTTPRequest" to="CanvasLayer/Level List/Update Panel" method="_on_http_request_request_completed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Cancel Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Ok Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_ok_button_button_up"]
 [connection signal="tab_selected" from="CanvasLayer/Main GUI/Panel/TabContainer" to="CanvasLayer" method="_on_TabContainer_tab_selected"]
