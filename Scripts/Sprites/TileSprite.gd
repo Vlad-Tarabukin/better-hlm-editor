@@ -8,7 +8,7 @@ var tile_y
 var depth
 
 func should_delete():
-	return !Input.is_key_pressed(KEY_CTRL)
+	return !Input.is_key_pressed(KEY_CTRL) and is_pixel_opaque(to_local(GlobalCamera.get_mouse_position()))
 
 func _init(_tile_id, _tile_x, _tile_y, _depth, _submode=0):
 	tile_id = _tile_id

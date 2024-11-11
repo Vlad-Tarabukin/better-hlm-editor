@@ -28,7 +28,8 @@ func load_info():
 			"id": int(tile[2]),
 			"depth": int(tile[3]),
 			"size": int(tile[4]),
-			"tiles": {}
+			"tiles": {},
+			"view_tiles": {}
 		})
 	tiles_tsv.close()
 	
@@ -78,6 +79,14 @@ func load_assets(file_path="res://base.wad"):
 				for y in range(0, tilemap.get_height(), size):
 					var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, size, size)))
 					tile["tiles"][str(x) + " " + str(y)] = image_texture
+			if tile["size"] != 8 and tile["size"] != 16:
+				size = tile["size"]
+				for x in range(0, tilemap.get_width(), size):
+					for y in range(0, tilemap.get_height(), size):
+						var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, size, size)))
+						tile["view_tiles"][str(x) + " " + str(y)] = image_texture
+			else:
+				tile["view_tiles"] = tile["tiles"]
 	
 	sounds = wad_sprite_parser.parse_sounds()
 

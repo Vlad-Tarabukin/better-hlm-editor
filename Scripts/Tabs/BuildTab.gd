@@ -69,10 +69,10 @@ func set_tile(pos):
 	App.cursor.offset = Vector2.ZERO
 	default_snap = tile_select.tile_size
 	App.cursor.snap = default_snap
-	App.cursor.region_rect = Rect2i(0, 0, 16, 16)
+	App.cursor.region_rect = Rect2i(0, 0, default_snap, default_snap)
 	pos = str(pos.x) + " " + str(pos.y)
-	if ObjectsLoader.tiles[curr_tiles]["tiles"].has(pos):
-		App.cursor.texture = ObjectsLoader.tiles[curr_tiles]["tiles"][pos]
+	if ObjectsLoader.tiles[curr_tiles]["view_tiles"].has(pos):
+		App.cursor.texture = ObjectsLoader.tiles[curr_tiles]["view_tiles"][pos]
 	else:
 		App.cursor.texture = null
 
