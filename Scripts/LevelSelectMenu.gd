@@ -98,3 +98,7 @@ func _on_backup_button_button_up():
 		hlm_file.close()
 		App.load_level(path)
 		visible = false
+
+func _on_open_button_button_up():
+	if is_anything_selected():
+		OS.shell_show_in_file_manager(level_paths[get_selected_items()[0]].get_base_dir())

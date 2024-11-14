@@ -71,7 +71,7 @@ layout_mode = 0
 offset_left = 410.0
 offset_right = 550.0
 offset_bottom = 31.0
-text = "Backup and load"
+text = "Backup and Load"
 
 [node name="Load Button" type="Button" parent="CanvasLayer/Level List"]
 layout_mode = 0
@@ -80,10 +80,17 @@ offset_right = 606.0
 offset_bottom = 31.0
 text = "Load"
 
-[node name="Quit Button" type="Button" parent="CanvasLayer/Level List"]
+[node name="Open Button" type="Button" parent="CanvasLayer/Level List"]
 layout_mode = 0
 offset_left = 615.0
-offset_right = 657.0
+offset_right = 765.0
+offset_bottom = 31.0
+text = "Open Level Folder"
+
+[node name="Quit Button" type="Button" parent="CanvasLayer/Level List"]
+layout_mode = 0
+offset_left = 775.0
+offset_right = 817.0
 offset_bottom = 31.0
 text = "Quit"
 
@@ -2054,6 +2061,7 @@ filters = PackedStringArray("*.png")
 [connection signal="visibility_changed" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_visibility_changed"]
 [connection signal="button_up" from="CanvasLayer/Level List/Backup Button" to="CanvasLayer/Level List" method="_on_backup_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Load Button" to="CanvasLayer/Level List" method="_on_load_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Level List/Open Button" to="CanvasLayer/Level List" method="_on_open_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Quit Button" to="CanvasLayer" method="_on_quit_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Update Panel/Close Button" to="CanvasLayer/Level List/Update Panel" method="_on_close_button_button_up"]
 [connection signal="request_completed" from="CanvasLayer/Level List/Update Panel/HTTPRequest" to="CanvasLayer/Level List/Update Panel" method="_on_http_request_request_completed"]
