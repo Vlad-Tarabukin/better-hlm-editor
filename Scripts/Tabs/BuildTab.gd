@@ -160,6 +160,11 @@ func _unhandled_input(event):
 					App.add_object(door)
 			if event.button_index == 2 and event.is_pressed() and curr_wall != null and Input.is_key_pressed(KEY_SHIFT):
 				wall_panel.set_next_wall(curr_wall)
+			if event.button_index == 3 and corner_mode and Input.is_key_pressed(KEY_CTRL):
+				for obj in App.get_current_floor().get_children():
+					if obj is TileSprite and obj.tile_id == 10 and Rect2(obj.global_position, obj.get_rect().size).has_point(GlobalCamera.get_mouse_position()):
+						set_corner(snap_vector(Vector2(obj.tile_x, obj.tile_y)))
+						corner_select.set_pos(snap_vector(Vector2(obj.tile_x, obj.tile_y)))
 			if !corner_mode and !door_button.button_pressed and (event.button_index == 1 or event.button_index == 2 and Input.is_key_pressed(KEY_CTRL)) and event.is_pressed() and (App.cursor.snap == default_snap or barrier_button.button_pressed or entry_button.button_pressed):
 				start_pos = App.cursor.global_position
 				App.cursor.move = false
@@ -192,14 +197,14 @@ func _unhandled_input(event):
 					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
 						erase_tile_rect()
 						set_tile(curr_pos)
-					elif event.button_index == 3:
+					elif event.button_index == 3 and Input.is_key_pressed(KEY_CTRL):
 						for obj in App.get_current_floor().get_children():
 							if obj is TileSprite and obj.tile_id != 10 and Rect2(obj.global_position, obj.get_rect().size).has_point(GlobalCamera.get_mouse_position()):
-								if obj.is_pixel_opaque(obj.to_local(GlobalCamera.get_mouse_position())):
-									var index = option_button.get_item_index(obj.tile_id)
-									option_button.select(index)
-									_on_OptionButton_item_selected(index)
-									set_tile(snap_vector(Vector2(obj.tile_x, obj.tile_y)))
+								var index = option_button.get_item_index(obj.tile_id)
+								option_button.select(index)
+								_on_OptionButton_item_selected(index)
+								set_tile(snap_vector(Vector2(obj.tile_x, obj.tile_y)))
+								tile_select.set_pos(snap_vector(Vector2(obj.tile_x, obj.tile_y)))
 					App.cursor.move = true
 				elif curr_wall != null and App.cursor.snap == default_snap:
 					if event.button_index == 1:
@@ -221,6 +226,14 @@ func _unhandled_input(event):
 					elif event.button_index == 2 and Input.is_key_pressed(KEY_CTRL):
 						erase_wall_rect()
 						set_wall(curr_wall)
+					elif event.button_index == 3 and Input.is_key_pressed(KEY_CTRL):
+						for obj in App.get_current_floor().get_children():
+							if obj is WallSprite and Rect2(obj.global_position, obj.get_rect().size).has_point(GlobalCamera.get_mouse_position()):
+								for i in range(len(wall_panel.walls)):
+									if wall_panel.walls[i]["object_id"] == obj.object_id:
+										wall_panel.set_pos(Vector2(int(i / 4) * 32, (i % 4) * 32))
+										set_wall(wall_panel.walls[i])
+										break
 					App.cursor.move = true
 				elif curr_barrier != null:
 					App.cursor.move = true
