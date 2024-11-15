@@ -56,6 +56,7 @@ script = ExtResource("4")
 script = ExtResource("7")
 
 [node name="Level List" type="ItemList" parent="CanvasLayer"]
+visible = false
 clip_contents = false
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -147,7 +148,6 @@ text = "Load New Version"
 [node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Level List/Update Panel"]
 
 [node name="Main GUI" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1318,7 +1318,7 @@ anchor_bottom = 0.5
 offset_left = -180.0
 offset_top = -85.0
 offset_right = 180.0
-offset_bottom = 85.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("15_vmsa4")
@@ -1381,24 +1381,6 @@ offset_bottom = 121.0
 max_value = 0.0
 update_on_text_changed = true
 
-[node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 130.0
-offset_right = 110.0
-offset_bottom = 161.0
-focus_mode = 0
-text = "Ok"
-
-[node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 130.0
-offset_right = 220.0
-offset_bottom = 161.0
-focus_mode = 0
-text = "Cancel"
-
 [node name="Object Label" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
 layout_mode = 0
 offset_left = 190.0
@@ -1428,6 +1410,65 @@ offset_top = 90.0
 offset_right = 350.0
 offset_bottom = 121.0
 placeholder_text = "Comment"
+
+[node name="X SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 130.0
+offset_right = 100.0
+offset_bottom = 161.0
+max_value = 0.0
+step = 0.01
+allow_greater = true
+allow_lesser = true
+prefix = "X"
+
+[node name="Y SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
+offset_left = 110.0
+offset_top = 130.0
+offset_right = 200.0
+offset_bottom = 161.0
+max_value = 0.0
+step = 0.01
+allow_greater = true
+allow_lesser = true
+prefix = "Y"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Main GUI/Edit Panel"]
+offset_left = 210.0
+offset_top = 130.0
+offset_right = 258.0
+offset_bottom = 160.0
+text = "Angle:"
+vertical_alignment = 1
+
+[node name="Angle SpinBox" type="SpinBox" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 130.0
+offset_right = 353.063
+offset_bottom = 161.0
+max_value = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Ok Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 170.0
+offset_right = 110.0
+offset_bottom = 201.0
+focus_mode = 0
+text = "Ok"
+
+[node name="Cancel Button" type="Button" parent="CanvasLayer/Main GUI/Edit Panel"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 170.0
+offset_right = 220.0
+offset_bottom = 201.0
+focus_mode = 0
+text = "Cancel"
 
 [node name="Edit Cutscene Sprite Panel" type="Panel" parent="CanvasLayer/Main GUI"]
 visible = false
@@ -2135,6 +2176,9 @@ filters = PackedStringArray("*.png")
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Object SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_object_spin_box_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Sprite SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_sprite_spin_box_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Frame SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_frame_spin_box_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/X SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_x_spin_box_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Y SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_y_spin_box_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Main GUI/Edit Panel/Angle SpinBox" to="CanvasLayer/Main GUI/Edit Panel" method="_on_angle_spin_box_value_changed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Ok Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_ok_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Edit Panel/Cancel Button" to="CanvasLayer/Main GUI/Edit Panel" method="_on_cancel_button_button_up"]
 [connection signal="item_selected" from="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel/NPC/Trigger OptionButton" to="CanvasLayer/Main GUI/Edit Cutscene Sprite Panel" method="_on_trigger_option_button_item_selected"]

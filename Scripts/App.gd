@@ -9,7 +9,7 @@ var level_path
 var level_hlm_prefix
 var level_prefix
 var level_info = {}
-var selected_object : ObjectSprite
+var moving_object : ObjectSprite
 var undo_redo : UndoRedo = UndoRedo.new()
 var settings = {"grid": true, "wall": true, "transition": true, "rain": true,
  "border": true, "collision": false, "center": false}
