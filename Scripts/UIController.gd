@@ -36,9 +36,13 @@ func _on_CanvasLayer_ready():
 	settings_menu_button.get_popup().index_pressed.connect(_on_settings_menu_button_pressed)
 	snap_menu_button.get_popup().index_pressed.connect(_on_snap_menu_button_pressed)
 	for i in range(MAX_SNAP):
-		snap_menu_button.get_popup().add_radio_check_item(str(2 ** i) + "px", i)
-	snap_menu_button.get_popup().set_item_checked(0, true)
-	App.cursor.snap_changed.connect(func(): _on_snap_menu_button_pressed(int(log(App.cursor.snap) / log(2))))
+		snap_menu_button.get_popup().add_radio_check_item(str(2 ** i) + "px", i + 1)
+	snap_menu_button.get_popup().set_item_checked(1, true)
+	App.cursor.snap_changed.connect(func(): 
+		if App.cursor.snap == 0:
+			_on_snap_menu_button_pressed(0)
+		else:
+			_on_snap_menu_button_pressed(int(log(App.cursor.snap) / log(2)) + 1))
 
 func _on_floor_list_item_selected(index):
 	App.set_floor(index)
@@ -126,9 +130,12 @@ func _on_settings_menu_button_pressed(index):
 
 func _on_snap_menu_button_pressed(index):
 	if !snap_menu_button.get_popup().is_item_checked(index):
-		for i in range(MAX_SNAP):
+		for i in range(MAX_SNAP + 1):
 			snap_menu_button.get_popup().set_item_checked(i, i == index)
-		App.cursor.snap = 2 ** index
+		if index == 0:
+			App.cursor.snap = 0
+		else:
+			App.cursor.snap = 2 ** (index - 1)
 		snap_menu_button.text = "Snap: " + snap_menu_button.get_popup().get_item_text(index)
 
 func _on_screenshot_button_button_up():

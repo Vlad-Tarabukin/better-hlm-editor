@@ -16,8 +16,9 @@ func _unhandled_input(event):
 	if move and (event is InputEventMouseMotion or event is InputEventMouseButton and \
 	 (event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN)):
 		global_position = GlobalCamera.get_mouse_position()
-		global_position.x = floor(global_position.x / snap) * snap
-		global_position.y = floor(global_position.y / snap) * snap
+		if snap != 0:
+			global_position.x = floor(global_position.x / snap) * snap
+			global_position.y = floor(global_position.y / snap) * snap
 		position_label.text = str(global_position.x) + " " + str(global_position.y)
 
 func _draw():

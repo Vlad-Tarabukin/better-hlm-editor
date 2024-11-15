@@ -101,8 +101,8 @@ func load_floor(floor_path):
 					transition_sprite.register_creation = false
 					add_child(transition_sprite)
 				elif parent_id == 2410:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var angle = int(params.pop_front())
 					var target_floor = int(params.pop_front())
 					var offset = Vector2i(int(params.pop_front()), int(params.pop_front()))
@@ -114,8 +114,8 @@ func load_floor(floor_path):
 					elevator_sprite.register_creation = false
 					add_child(elevator_sprite)
 				elif parent_id == 2411:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var lenght = float(params.pop_front())
 					var angle = -int(params.pop_front())
 					
@@ -154,13 +154,13 @@ func load_floor(floor_path):
 					rain = true
 					rain_rects.clear()
 					for i in range(rain_rects_amount):
-						var x = int(params[0 + i * 4])
-						var y = int(params[2 + i * 4])
-						rain_rects.append(Rect2i(x, y, int(params[1 + i * 4]) - x, int(params[3 + i * 4]) - y))
+						var x = float(params[0 + i * 4])
+						var y = float(params[2 + i * 4])
+						rain_rects.append(Rect2(x, y, float(params[1 + i * 4]) - x, float(params[3 + i * 4]) - y))
 					queue_redraw()
 				elif parent_id in DoorSprite.object_ids:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					params.pop_front()
 					params.pop_front()
 					var locked = int(params.pop_front())
@@ -172,8 +172,8 @@ func load_floor(floor_path):
 					door_sprite.register_creation = false
 					add_child(door_sprite)
 				else:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var sprite_id = int(params.pop_front())
 					var angle = -int(params.pop_front())
 					var object_id = int(params.pop_front())
@@ -212,8 +212,8 @@ func load_floor(floor_path):
 				if !proper:
 					break
 				var object_id = int(params.pop_front())
-				var x = int(params.pop_front())
-				var y = int(params.pop_front())
+				var x = float(params.pop_front())
+				var y = float(params.pop_front())
 				var sprite_id = int(params.pop_front())
 				var _depth = int(params.pop_front())
 				
@@ -277,8 +277,8 @@ func load_floor(floor_path):
 					transition_sprite.register_creation = false
 					add_child(transition_sprite)
 				elif object_id == 810:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var angle = int(params.pop_front())
 					var target_floor = int(params.pop_front())
 					var offset = Vector2i(int(params.pop_front()), int(params.pop_front()))
@@ -290,8 +290,8 @@ func load_floor(floor_path):
 					elevator_sprite.register_creation = false
 					add_child(elevator_sprite)
 				elif object_id == 2411:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var lenght = float(params.pop_front())
 					var angle = -int(params.pop_front())
 					
@@ -326,13 +326,13 @@ func load_floor(floor_path):
 					rain = true
 					rain_rects.clear()
 					for i in range(rain_rects_amount):
-						var x = int(params[0 + i * 4])
-						var y = int(params[2 + i * 4])
-						rain_rects.append(Rect2i(x, y, int(params[1 + i * 4]) - x, int(params[3 + i * 4]) - y))
+						var x = float(params[0 + i * 4])
+						var y = float(params[2 + i * 4])
+						rain_rects.append(Rect2i(x, y, float(params[1 + i * 4]) - x, float(params[3 + i * 4]) - y))
 					queue_redraw()
 				elif object_id in DoorSprite.object_ids:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					params.pop_front()
 					params.pop_front()
 					var locked = int(params.pop_front())
@@ -344,8 +344,8 @@ func load_floor(floor_path):
 					door_sprite.register_creation = false
 					add_child(door_sprite)
 				elif WallPanel.horizontal.has(object_id):
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var sprite_id = int(params.pop_front())
 					
 					var wall_sprite = WallSprite.new(object_id, sprite_id)
@@ -354,8 +354,8 @@ func load_floor(floor_path):
 					wall_sprite.register_creation = false
 					add_child(wall_sprite)
 				else:
-					var x = int(params.pop_front())
-					var y = int(params.pop_front())
+					var x = float(params.pop_front())
+					var y = float(params.pop_front())
 					var sprite_id = int(params.pop_front())
 					var angle = -int(params.pop_front())
 					var frame = int(params.pop_front())
