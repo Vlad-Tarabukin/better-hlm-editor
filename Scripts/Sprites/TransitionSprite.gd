@@ -41,9 +41,8 @@ func get_hor_direction():
 		return 1
 	return 0
 
-func _enter_tree():
-	get_tree().get_root().get_node("Main/Floors").get_children()[target_floor].transition_markers.append(self)
-
-func _exit_tree():
-	var floor_node = get_tree().get_root().get_node("Main/Floors").get_children()[target_floor]
-	floor_node.transition_markers.remove_at(floor_node.transition_markers.rfind(self))
+func _visibility_changed():
+	if visible:
+		App.get_floor(target_floor).transition_markers.append(self)
+	else:
+		App.get_floor(target_floor).transition_markers.erase(self)
