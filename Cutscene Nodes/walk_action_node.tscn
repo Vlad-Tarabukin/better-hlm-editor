@@ -104,4 +104,5 @@ layout_mode = 1
 [connection signal="item_selected" from="Positions ItemList" to="." method="_on_positions_item_list_item_selected"]
 [connection signal="value_changed" from="X SpinBox" to="." method="_on_x_spin_box_value_changed"]
 [connection signal="value_changed" from="Y SpinBox" to="." method="_on_y_spin_box_value_changed"]
+[connection signal="toggled" from="Add Point Button" to="." method="_on_add_point_button_toggled"]
 [connection signal="button_up" from="Delete Point Button" to="." method="_on_delete_point_button_button_up"]

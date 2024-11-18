@@ -16,6 +16,7 @@ var settings = {"grid": true, "wall": true, "transition": true, "rain": true,
 var custom_folder_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/My Games/Better HLM Editor/"
 
 @onready var cursor = get_tree().get_root().get_node("Main/Cursor")
+@onready var waypoints = get_tree().get_root().get_node("Main/Waypoints")
 
 func _ready():
 	ObjectsLoader.load_info()

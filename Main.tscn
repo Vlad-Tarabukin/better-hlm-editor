@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cbioi6sofo75t"]
+[gd_scene load_steps=44 format=3 uid="uid://cbioi6sofo75t"]
 
 [ext_resource type="Script" path="res://Scripts/App.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="3"]
@@ -41,6 +41,7 @@
 [ext_resource type="Script" path="res://Scripts/ErrorsBoxContainer.gd" id="34_v5mgl"]
 [ext_resource type="Script" path="res://Scripts/ScreenshotPanel.gd" id="37_q8is4"]
 [ext_resource type="Script" path="res://Scripts/UpdatePanel.gd" id="38_uim0n"]
+[ext_resource type="Script" path="res://Scripts/Waypoints.gd" id="41_8e1co"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylfqq"]
 
@@ -523,58 +524,58 @@ script = ExtResource("15_tiai6")
 
 [node name="Sunset CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 10.0
 offset_top = 5.0
-offset_right = 86.0
+offset_right = 91.0
 offset_bottom = 36.0
 text = "Sunset"
 
 [node name="Day CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
-offset_left = 100.0
+offset_left = 105.0
 offset_top = 5.0
-offset_right = 158.0
+offset_right = 163.0
 offset_bottom = 36.0
 text = "Day"
 
 [node name="Twilight CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
-offset_left = 175.0
+offset_left = 180.0
 offset_top = 5.0
-offset_right = 264.0
+offset_right = 269.0
 offset_bottom = 36.0
 text = "Twilight"
 
 [node name="Darkness Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 10.0
 offset_top = 40.0
-offset_right = 119.0
+offset_right = 130.0
 offset_bottom = 71.0
 toggle_mode = true
 text = "Edit Darkness"
 
 [node name="Rain CheckBox" type="CheckBox" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 75.0
-offset_right = 68.0
-offset_bottom = 106.0
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 225.0
+offset_bottom = 71.0
 text = "Rain"
 
 [node name="Rain Button" type="Button" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 75.0
-offset_right = 158.0
-offset_bottom = 106.0
+offset_left = 235.0
+offset_top = 40.0
+offset_right = 308.0
+offset_bottom = 71.0
 toggle_mode = true
 text = "Edit rain"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 150.0
+offset_top = 110.0
 offset_right = 350.0
 offset_bottom = 1050.0
 theme_override_constants/separation = 5
@@ -582,9 +583,9 @@ theme_override_constants/separation = 5
 [node name="Label" type="Label" parent="CanvasLayer/Main GUI/Panel/TabContainer/Effects"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 115.0
+offset_top = 80.0
 offset_right = 350.0
-offset_bottom = 145.0
+offset_bottom = 110.0
 text = "Object Effects
 "
 horizontal_alignment = 1
@@ -2019,6 +2020,10 @@ modulate = Color(1, 1, 1, 0.392157)
 texture_repeat = 2
 centered = false
 script = ExtResource("3")
+
+[node name="Waypoints" type="Node2D" parent="."]
+visible = false
+script = ExtResource("41_8e1co")
 
 [node name="Preview SubViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0

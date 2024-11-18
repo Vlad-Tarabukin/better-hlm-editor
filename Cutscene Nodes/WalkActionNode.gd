@@ -32,21 +32,30 @@ func _on_npc_button_item_selected(index):
 func _unhandled_input(event):
 	if add_point_button.button_pressed and event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-			var pos = GlobalCamera.get_mouse_position()
+			var pos = Waypoints.get_mouse_point(action["positions"][-1] if len(action["positions"]) > 0 else null)
 			pos.x = int(pos.x)
 			pos.y = int(pos.y)
 			action["positions"].append(pos)
 			positions_item_list.add_item(str(pos.x) + " " + str(pos.y))
+			positions_item_list.select(positions_item_list.item_count - 1)
+			if positions_item_list.item_count > 0:
+				_on_positions_item_list_item_selected(positions_item_list.item_count - 1)
 
 func _on_delete_point_button_button_up():
 	if positions_item_list.is_anything_selected():
 		var index = positions_item_list.get_selected_items()[0]
 		positions_item_list.remove_item(index)
 		action["positions"].remove_at(index)
+		positions_item_list.select(positions_item_list.item_count - 1)
+		if positions_item_list.item_count > 0:
+			_on_positions_item_list_item_selected(positions_item_list.item_count - 1)
 
 func _on_positions_item_list_item_selected(index):
 	x_spin_box.value = action["positions"][index].x
 	y_spin_box.value = action["positions"][index].y
+	App.waypoints.visible = true
+	App.waypoints.points = action["positions"]
+	App.waypoints.selected = index
 
 func _on_x_spin_box_value_changed(value):
 	if positions_item_list.is_anything_selected():
@@ -59,3 +68,9 @@ func _on_y_spin_box_value_changed(value):
 		var index = positions_item_list.get_selected_items()[0]
 		action["positions"][index].y = value
 		positions_item_list.set_item_text(index, str(action["positions"][index].x) + " " + str(action["positions"][index].y))
+
+func _on_add_point_button_toggled(toggled_on):
+	App.waypoints.visible = toggled_on or positions_item_list.is_anything_selected()
+	App.waypoints.mouse = toggled_on
+	if toggled_on:
+		App.waypoints.points = action["positions"]
