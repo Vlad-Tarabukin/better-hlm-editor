@@ -2106,7 +2106,6 @@ filters = PackedStringArray("*.png")
 
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build" method="_on_main_objects_loaded"]
 [connection signal="objects_loaded" from="." to="CanvasLayer/Main GUI/Panel/TabContainer/Build/Wall Panel" method="_on_main_objects_loaded"]
-[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="CanvasLayer" to="CanvasLayer" method="_on_CanvasLayer_ready"]
 [connection signal="item_selected" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_Level_List_item_selected"]
 [connection signal="visibility_changed" from="CanvasLayer/Level List" to="CanvasLayer/Level List" method="_on_visibility_changed"]

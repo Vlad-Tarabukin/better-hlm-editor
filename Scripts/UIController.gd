@@ -74,7 +74,6 @@ func _on_delete_floor_confirmation_dialog_confirmed():
 func _on_load_button_button_up():
 	for i in tab_container.get_children():
 		i.active = false
-	ObjectsLoader.load_assets()
 	for i in $"../Floors".get_children():
 		i.queue_free()
 	$"Main GUI".visible = false
