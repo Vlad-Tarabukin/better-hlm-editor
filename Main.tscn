@@ -2114,6 +2114,7 @@ filters = PackedStringArray("*.png")
 [connection signal="button_up" from="CanvasLayer/Level List/Open Button" to="CanvasLayer/Level List" method="_on_open_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Quit Button" to="CanvasLayer" method="_on_quit_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Level List/Update Panel/Close Button" to="CanvasLayer/Level List/Update Panel" method="_on_close_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Level List/Update Panel/Load Button" to="CanvasLayer/Level List/Update Panel" method="_on_load_button_button_up"]
 [connection signal="request_completed" from="CanvasLayer/Level List/Update Panel/HTTPRequest" to="CanvasLayer/Level List/Update Panel" method="_on_http_request_request_completed"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Cancel Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_cancel_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Main GUI/Transition Panel/Ok Button" to="CanvasLayer/Main GUI/Panel/TabContainer/Level" method="_on_ok_button_button_up"]

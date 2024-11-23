@@ -1,7 +1,8 @@
 extends Panel
 
-const current_version = 113
-const releases_url = "https://api.github.com/repos/Vlad-Tarabukin/better-hlm-editor/releases"
+var current_version
+var releases_url
+var latest_url
 
 @onready var rich_text_label = $RichTextLabel
 @onready var http_request = $HTTPRequest
@@ -24,12 +25,20 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 					rich_text_label.pop()
 					rich_text_label.append_text(st)
 	if should_show:
-		await rich_text_label.finished
+		if !rich_text_label.is_ready():
+			await rich_text_label.finished
 		visible = true
-		load_button.button_up.connect(func(): OS.shell_open(releases[0]["html_url"]))
+		load_button.button_up.connect(func(): )
 
 func _ready():
+	var version = FileAccess.open("res://version.txt", FileAccess.READ)
+	current_version = int(version.get_line())
+	releases_url = version.get_line()
+	latest_url = version.get_line()
 	http_request.request(releases_url)
 
 func _on_close_button_button_up():
 	visible = false
+
+func _on_load_button_button_up():
+	OS.shell_open(latest_url)
