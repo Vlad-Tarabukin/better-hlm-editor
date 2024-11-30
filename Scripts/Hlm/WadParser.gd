@@ -9,14 +9,12 @@ var files = {}
 
 func parse_wads(file_paths): 
 	var result = {}
-	var r_file_paths = file_paths.duplicate()
-	r_file_paths.reverse()
-	for file_path in r_file_paths:
-		var file = FileAccess.open(file_path, FileAccess.READ)
+	for file_index in range(len(file_paths), 0, -1):
+		var file = FileAccess.open(file_paths[file_index - 1], FileAccess.READ)
 		file.seek(16)
 		var asset_locations = {}
 		var assets_amount = file.get_32()
-		for _i in range(assets_amount):
+		for i in range(assets_amount):
 			var asset_name = file.get_buffer(file.get_32()).get_string_from_ascii()
 			if !result.has(asset_name) and FILTERS.any(func(x): return asset_name.match(x)):
 				asset_locations[asset_name] = {}
@@ -25,15 +23,17 @@ func parse_wads(file_paths):
 			else:
 				file.seek(file.get_position() + 16)
 		var dirs_amount = file.get_32()
-		for _i in range(dirs_amount):
+		for i in range(dirs_amount):
 			var dir_name_len = file.get_32()
 			file.seek(file.get_position() + dir_name_len)
 			var entries_amount = file.get_32()
-			for _j in range(entries_amount):
+			for j in range(entries_amount):
 				var entry_name_len = file.get_32()
 				file.seek(file.get_position() + 1 + entry_name_len)
 		var files_position = file.get_position()
-		for asset_name in asset_locations:
+		var asset_names = asset_locations.keys()
+		asset_names.reverse()
+		for asset_name in asset_names:
 			file.seek(files_position + asset_locations[asset_name]["start"])
 			result[asset_name] = WadFile.new(file.get_buffer(asset_locations[asset_name]["len"]))
 		file.close()
@@ -51,8 +51,9 @@ func load_constant_wads():
 	return parse_wads(mods)
 
 func load_wads(wads):
+	files = constant_files.duplicate()
 	if wads:
-		files = parse_wads(wads)
-		files.merge(constant_files)
-	else:
-		files = constant_files.duplicate()
+		var new_files = parse_wads(wads)
+		for new_file_name in new_files:
+			files.erase(new_file_name)
+			files[new_file_name] = new_files[new_file_name]
