@@ -1,25 +1,24 @@
 # BETTER HLM2 EDITOR
-Program to create custom levels for Hotline Miami 2: Wrong number
+Program to create custom levels for Hotline Miami 2: Wrong Number
 
 ## CONTROLS:
  - MMB - move camera
  - Scroll wheel - zoom
  - Double click LMB - edit object
  - Shift + LMB - move object
+ - ESC - Cancel Object Placement Mode
 ### Build tab:
 **Tile mode:**
  - LMB - place tiles
  - RMB - delete tile
  - Ctrl + RMB - clear area
  - Ctrl + MMB - pick tile
-
 **Wall mode:**
  - LMB - place walls
  - RMB - delete wall
  - Ctrl + RMB - clear area
  - Shift + RMB - choose other variant of the wall
  - Ctrl + MMB - pick wall
-   
 **Corner mode:**
  - LMB - place corner
  - RMB - delete corner
