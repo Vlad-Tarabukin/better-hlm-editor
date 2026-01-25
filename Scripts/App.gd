@@ -175,7 +175,6 @@ func save_level():
 	file.store_line(str(level_info["level_boundaries"].end.x))
 	file.store_line(str(level_info["level_boundaries"].end.y))
 	file.store_line(str(level_info["background_id"]))
-	file.store_line("0")
 	file.store_line(level_info["hour"])
 	file.store_line(level_info["minute"])
 	file.store_line(level_info["day"])
@@ -184,6 +183,9 @@ func save_level():
 	file.store_line(level_info["city"])
 	file.store_line(level_info["state"])
 	file.store_line(level_info["address"])
+	file.store_line("0")
+	file.store_line("9999")
+	file.store_line("9999")
 	
 	for level_floor in get_tree().get_root().get_node("Main/Floors").get_children():
 		level_floor.save_floor()
