@@ -61,7 +61,14 @@ func refresh_sprites(filter = ""):
 		var sprite = ObjectsLoader.sprites[sprite_id]
 		if filter == "" or sprite["name"].to_lower().count(filter.to_lower()) > 0:
 			listed_sprites.append(sprite_id)
-			item_list.add_item("{name} ({id})".format({"name": sprite["file_name"], "id": sprite_id}), sprite["frames"][0])
+			var frames = sprite.get("frames", [])
+			var label = "{name} ({id})".format({"name": sprite.get("file_name", sprite["name"]), "id": sprite_id})
+			if frames.is_empty():
+				var index = item_list.add_item(label + " [missing texture]", null, false)
+				item_list.set_item_disabled(index, true)
+				item_list.set_item_tooltip(index, "No sprite frames found in the loaded WAD files.")
+			else:
+				item_list.add_item(label, frames[0])
 
 func _on_cutscene_tab_container_tab_selected(tab):
 	App.cursor.texture = null

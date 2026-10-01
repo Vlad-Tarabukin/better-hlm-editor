@@ -51,7 +51,7 @@ func refresh_tiles():
 	App.cursor.region_rect = Rect2i(0, 0, tile_select.tile_size, tile_select.tile_size)
 
 func set_tile(pos):
-	curr_pos = pos
+	curr_pos = TileCoordinates.normalize(pos.x, pos.y)
 	curr_wall = null
 	corner_mode = false
 	corner_select.set_pos(null)
@@ -70,9 +70,9 @@ func set_tile(pos):
 	default_snap = tile_select.tile_size
 	App.cursor.snap = default_snap
 	App.cursor.region_rect = Rect2i(0, 0, default_snap, default_snap)
-	pos = str(pos.x) + " " + str(pos.y)
-	if ObjectsLoader.tiles[curr_tiles]["view_tiles"].has(pos):
-		App.cursor.texture = ObjectsLoader.tiles[curr_tiles]["view_tiles"][pos]
+	var tile_key = TileCoordinates.key(curr_pos.x, curr_pos.y)
+	if ObjectsLoader.tiles[curr_tiles]["view_tiles"].has(tile_key):
+		App.cursor.texture = ObjectsLoader.tiles[curr_tiles]["view_tiles"][tile_key]
 	else:
 		App.cursor.texture = null
 
@@ -99,7 +99,7 @@ func set_wall(wall):
 	App.cursor.texture = curr_wall["texture"]
 	
 func set_corner(pos):
-	curr_pos = pos
+	curr_pos = TileCoordinates.normalize(pos.x, pos.y)
 	corner_mode = true
 	curr_wall = null
 	wall_panel.set_pos(null)
@@ -117,8 +117,8 @@ func set_corner(pos):
 	App.cursor.offset = Vector2.ZERO
 	default_snap = 8
 	App.cursor.snap = default_snap
-	pos = str(pos.x) + " " + str(pos.y)
-	App.cursor.texture = ObjectsLoader.tiles[-1]["tiles"][pos]
+	var tile_key = TileCoordinates.key(curr_pos.x, curr_pos.y)
+	App.cursor.texture = ObjectsLoader.tiles[-1]["tiles"].get(tile_key)
 
 func erase_tile_rect():
 	var erase_rect = Rect2i(start_pos + App.cursor.region_rect.position, App.cursor.region_rect.size)

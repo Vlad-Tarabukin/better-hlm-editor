@@ -50,6 +50,8 @@ func _process(delta):
 
 func _on_tab_container_tab_selected(tab):
 	active = tab == TAB_INDEX
+	if !is_node_ready():
+		return
 	if active:
 		App.cursor.snap = 8
 		App.cursor.outline = false

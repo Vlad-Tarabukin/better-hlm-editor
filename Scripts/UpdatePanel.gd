@@ -28,9 +28,10 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 		if !rich_text_label.is_ready():
 			await rich_text_label.finished
 		visible = true
-		load_button.button_up.connect(func(): )
 
 func _ready():
+	if !FileAccess.file_exists("res://version.txt"):
+		return
 	var version = FileAccess.open("res://version.txt", FileAccess.READ)
 	current_version = int(version.get_line())
 	releases_url = version.get_line()

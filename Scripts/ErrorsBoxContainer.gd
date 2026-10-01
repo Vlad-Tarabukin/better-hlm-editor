@@ -9,12 +9,20 @@ extends VBoxContainer
 @onready var no_author = $"No Author"
 
 var player_ids = []
+var missing_tile_textures: Label
 
 func _ready():
 	player_ids = LevelTab.characters.map(func(c): return c["object_id"])
+	missing_tile_textures = Label.new()
+	missing_tile_textures.name = "Missing Tile Textures"
+	missing_tile_textures.visible = false
+	missing_tile_textures.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	missing_tile_textures.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(missing_tile_textures)
 
 func _process(delta):
 	if App.level_path:
+		refresh_missing_tile_textures()
 		var first_floor = App.get_floor(0)
 		if first_floor:
 			no_name.visible = App.level_info["name"] == "UNTITLED"
@@ -31,3 +39,19 @@ func _process(delta):
 					no_soldier_vehicle.visible = no_soldier_vehicle.visible and obj.object.object_id != 1341
 					no_son_vehicle.visible = no_son_vehicle.visible and obj.object.object_id != 1366
 					no_cobra_vehicle.visible = no_cobra_vehicle.visible and not(obj.object.object_id in [870, 2267])
+	else:
+		missing_tile_textures.visible = false
+
+func refresh_missing_tile_textures():
+	var details: Array[String] = []
+	for floor_node in get_tree().get_root().get_node("Main/Floors").get_children():
+		for obj in floor_node.get_children():
+			if obj is TileSprite and obj.visible and obj.missing_texture:
+				details.append("floor %d, tile %d, atlas (%d, %d)" % [floor_node.index + 1, obj.tile_id, obj.tile_x, obj.tile_y])
+	missing_tile_textures.visible = not details.is_empty()
+	if details.is_empty():
+		return
+	missing_tile_textures.text = "Missing tile texture: %s.\nTile data is preserved." % details[0]
+	if details.size() > 1:
+		missing_tile_textures.text += " (%d more)" % (details.size() - 1)
+	missing_tile_textures.tooltip_text = "\n".join(details)

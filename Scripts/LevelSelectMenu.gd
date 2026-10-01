@@ -8,6 +8,8 @@ const SINGLE_COVER = preload("res://Textures/single_cover.png")
 const CAMPAIGN_COVER = preload("res://Textures/campaign_cover.png")
 
 func get_cover(path, single):
+	if not FileAccess.file_exists(path):
+		return SINGLE_COVER if single else CAMPAIGN_COVER
 	var image = Image.load_from_file(path)
 	if image:
 		return ImageTexture.create_from_image(image)

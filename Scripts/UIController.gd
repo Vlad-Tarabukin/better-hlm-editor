@@ -10,6 +10,8 @@ extends CanvasLayer
 const MAX_SNAP = 8
 
 func _on_TabContainer_tab_selected(tab):
+	if !is_node_ready():
+		return
 	App.mode = tab
 	App.submode = 0
 	App.cursor.texture = null

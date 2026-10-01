@@ -73,6 +73,8 @@ func _on_Gameplay_ready():
 
 func _on_TabContainer_tab_selected(tab):
 	active = tab == TAB_INDEX
+	if !is_node_ready():
+		return
 	if active:
 		App.cursor.snap = 1
 		show_enemies()

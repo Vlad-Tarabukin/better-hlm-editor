@@ -111,13 +111,13 @@ func load_wads(wads):
 			for x in range(0, tilemap.get_width(), size):
 				for y in range(0, tilemap.get_height(), size):
 					var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, size, size)))
-					tile["tiles"][str(x) + " " + str(y)] = image_texture
+					tile["tiles"][TileCoordinates.key(x, y)] = image_texture
 			if tile["size"] != 8 and tile["size"] != 16:
 				size = tile["size"]
 				for x in range(0, tilemap.get_width(), size):
 					for y in range(0, tilemap.get_height(), size):
 						var image_texture = ImageTexture.create_from_image(tilemap.get_region(Rect2i(x, y, size, size)))
-						tile["view_tiles"][str(x) + " " + str(y)] = image_texture
+						tile["view_tiles"][TileCoordinates.key(x, y)] = image_texture
 			else:
 				tile["view_tiles"] = tile["tiles"]
 	

@@ -62,7 +62,11 @@ func show_level_info():
 	top_bound_spin_box.set_value_no_signal(App.level_info["level_boundaries"].position.y)
 	right_bound_spin_box.set_value_no_signal(App.level_info["level_boundaries"].end.x)
 	bottom_bound_spin_box.set_value_no_signal(App.level_info["level_boundaries"].end.y)
-	var cover = Image.load_from_file(App.level_path + "/" + App.level_hlm_prefix + ".png")
+	cover_texture_rect.texture = null
+	var cover_path = App.level_path.path_join(App.level_hlm_prefix + ".png")
+	if not FileAccess.file_exists(cover_path):
+		return
+	var cover = Image.load_from_file(cover_path)
 	if cover:
 		cover_texture_rect.texture = ImageTexture.create_from_image(cover.get_region(Rect2i(0, 0, 34, 57)))
 

@@ -3,3 +3,7 @@
 export_presets.cfg
 
 version.txt
+
+# Local game data must not be added to contributions.
+*.wad
+*.patchwad

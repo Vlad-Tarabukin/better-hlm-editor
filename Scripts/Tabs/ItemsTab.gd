@@ -79,6 +79,8 @@ func _on_LineEdit_text_changed(_new_text):
 
 func _on_TabContainer_tab_selected(tab):
 	active = tab == TAB_INDEX
+	if !is_node_ready():
+		return
 	if active:
 		App.cursor.snap = 1
 		refresh_list()
